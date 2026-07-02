@@ -48,3 +48,7 @@ next-env.d.ts
 # local secrets
 pasword.file
 pasword.file.save
+
+# deployment artifacts
+deploy/
+science-lab-tools-hostinger.zip
