@@ -1,5 +1,15 @@
 import fs from "node:fs";
 
+const fallbackSiteUrl = "http://localhost:3000";
+
+function normalizeSiteUrl(value) {
+  return value.replace(/\/+$/, "");
+}
+
+const siteUrl = normalizeSiteUrl(
+  process.env.NEXT_PUBLIC_SITE_URL ?? fallbackSiteUrl,
+);
+
 const requiredRoutes = [
   [".next/server/app/index.html", "Homepage"],
   [".next/server/app/calculators.html", "Calculators"],
@@ -167,7 +177,7 @@ if (!canonicalMatch) {
   const canonicalUrl = new URL(canonicalMatch[1]);
 
   if (
-    canonicalUrl.origin !== "http://localhost:3000" ||
+    canonicalUrl.origin !== new URL(siteUrl).origin ||
     canonicalUrl.pathname !== "/"
   ) {
     console.error(`INVALID: Homepage canonical (${canonicalMatch[1]})`);
@@ -218,7 +228,7 @@ const calculatorHtml = fs.readFileSync(calculatorFile, "utf8");
 const calculatorChecks = [
   ["Percent Error Calculator", "Calculator title and heading"],
   [
-    'href="http://localhost:3000/calculators/percent-error-calculator"',
+    `href="${siteUrl}/calculators/percent-error-calculator"`,
     "Calculator canonical",
   ],
   ["EducationalApplication", "Web application structured data"],
@@ -254,7 +264,7 @@ const percentDifferenceChecks = [
     "Percent difference title and heading",
   ],
   [
-    'href="http://localhost:3000/calculators/percent-difference-calculator"',
+    `href="${siteUrl}/calculators/percent-difference-calculator"`,
     "Percent difference canonical",
   ],
   [
@@ -299,7 +309,7 @@ const molarityHtml = fs.readFileSync(molarityFile, "utf8");
 const molarityChecks = [
   ["Molarity Calculator", "Molarity title and heading"],
   [
-    'href="http://localhost:3000/calculators/molarity-calculator"',
+    `href="${siteUrl}/calculators/molarity-calculator"`,
     "Molarity canonical",
   ],
   [
@@ -332,7 +342,7 @@ const dilutionHtml = fs.readFileSync(dilutionFile, "utf8");
 const dilutionChecks = [
   ["Dilution Calculator", "Dilution title and heading"],
   [
-    'href="http://localhost:3000/calculators/dilution-calculator"',
+    `href="${siteUrl}/calculators/dilution-calculator"`,
     "Dilution canonical",
   ],
   [
@@ -369,7 +379,7 @@ const densityHtml = fs.readFileSync(densityFile, "utf8");
 const densityChecks = [
   ["Density Calculator", "Density title and heading"],
   [
-    'href="http://localhost:3000/calculators/density-calculator"',
+    `href="${siteUrl}/calculators/density-calculator"`,
     "Density canonical",
   ],
   [
@@ -405,7 +415,7 @@ const specificHeatHtml = fs.readFileSync(
 const specificHeatChecks = [
   ["Specific Heat Calculator", "Specific heat title and heading"],
   [
-    'href="http://localhost:3000/calculators/specific-heat-calculator"',
+    `href="${siteUrl}/calculators/specific-heat-calculator"`,
     "Specific heat canonical",
   ],
   [
@@ -453,7 +463,7 @@ const labReportChecks = [
   ],
   [
     labReportsHubHtml,
-    'href="http://localhost:3000/lab-reports"',
+    `href="${siteUrl}/lab-reports"`,
     "Lab reports hub canonical",
   ],
   [
@@ -468,7 +478,7 @@ const labReportChecks = [
   ],
   [
     labGuideHtml,
-    'href="http://localhost:3000/lab-reports/how-to-write-a-lab-report"',
+    `href="${siteUrl}/lab-reports/how-to-write-a-lab-report"`,
     "Lab report guide canonical",
   ],
   [
@@ -517,7 +527,7 @@ const labFormatHtml = fs.readFileSync(
 const labFormatChecks = [
   ["Lab Report Format", "Lab report format title and heading"],
   [
-    'href="http://localhost:3000/lab-reports/lab-report-format"',
+    `href="${siteUrl}/lab-reports/lab-report-format"`,
     "Lab report format canonical",
   ],
   [
@@ -562,7 +572,7 @@ const labIntroductionChecks = [
     "Lab introduction title and heading",
   ],
   [
-    'href="http://localhost:3000/lab-reports/lab-report-introduction"',
+    `href="${siteUrl}/lab-reports/lab-report-introduction"`,
     "Lab introduction canonical",
   ],
   [
@@ -615,7 +625,7 @@ const materialsMethodsChecks = [
     "Materials and methods title and heading",
   ],
   [
-    'href="http://localhost:3000/lab-reports/materials-and-methods"',
+    `href="${siteUrl}/lab-reports/materials-and-methods"`,
     "Materials and methods canonical",
   ],
   [
@@ -668,7 +678,7 @@ const labResultsChecks = [
     "Lab results title and heading",
   ],
   [
-    'href="http://localhost:3000/lab-reports/lab-report-results"',
+    `href="${siteUrl}/lab-reports/lab-report-results"`,
     "Lab results canonical",
   ],
   [
@@ -725,7 +735,7 @@ const labDiscussionChecks = [
     "Lab discussion title and heading",
   ],
   [
-    'href="http://localhost:3000/lab-reports/lab-report-discussion"',
+    `href="${siteUrl}/lab-reports/lab-report-discussion"`,
     "Lab discussion canonical",
   ],
   [
@@ -778,7 +788,7 @@ const labConclusionChecks = [
     "Lab conclusion title and heading",
   ],
   [
-    'href="http://localhost:3000/lab-reports/lab-report-conclusion"',
+    `href="${siteUrl}/lab-reports/lab-report-conclusion"`,
     "Lab conclusion canonical",
   ],
   [
@@ -831,7 +841,7 @@ const significantFiguresChecks = [
     "Significant figures title and heading",
   ],
   [
-    'href="http://localhost:3000/lab-reports/significant-figures-in-lab-reports"',
+    `href="${siteUrl}/lab-reports/significant-figures-in-lab-reports"`,
     "Significant figures canonical",
   ],
   [
@@ -884,7 +894,7 @@ const tablesGraphsChecks = [
     "Tables and graphs title and heading",
   ],
   [
-    'href="http://localhost:3000/lab-reports/tables-and-graphs"',
+    `href="${siteUrl}/lab-reports/tables-and-graphs"`,
     "Tables and graphs canonical",
   ],
   [
@@ -937,7 +947,7 @@ const labTemplateChecks = [
     "Lab report template title and heading",
   ],
   [
-    'href="http://localhost:3000/lab-reports/lab-report-template"',
+    `href="${siteUrl}/lab-reports/lab-report-template"`,
     "Lab report template canonical",
   ],
   [
@@ -993,7 +1003,7 @@ const scientificMethodChecks = [
     "Scientific method hub title and heading",
   ],
   [
-    'href="http://localhost:3000/scientific-method"',
+    `href="${siteUrl}/scientific-method"`,
     "Scientific method hub canonical",
   ],
   [
@@ -1045,7 +1055,7 @@ const scientificMethodStepsChecks = [
     "Scientific method steps title and heading",
   ],
   [
-    'href="http://localhost:3000/scientific-method/steps-of-the-scientific-method"',
+    `href="${siteUrl}/scientific-method/steps-of-the-scientific-method"`,
     "Scientific method steps canonical",
   ],
   [
@@ -1101,7 +1111,7 @@ const scientificQuestionChecks = [
     "Scientific question title and heading",
   ],
   [
-    'href="http://localhost:3000/scientific-method/scientific-question"',
+    `href="${siteUrl}/scientific-method/scientific-question"`,
     "Scientific question canonical",
   ],
   [
@@ -1161,7 +1171,7 @@ const hypothesisChecks = [
     "Hypothesis title and heading",
   ],
   [
-    'href="http://localhost:3000/scientific-method/how-to-write-a-hypothesis"',
+    `href="${siteUrl}/scientific-method/how-to-write-a-hypothesis"`,
     "Hypothesis canonical",
   ],
   [
@@ -1225,7 +1235,7 @@ const variablesChecks = [
     "Variables title and heading",
   ],
   [
-    'href="http://localhost:3000/scientific-method/independent-dependent-controlled-variables"',
+    `href="${siteUrl}/scientific-method/independent-dependent-controlled-variables"`,
     "Variables canonical",
   ],
   [
@@ -1289,7 +1299,7 @@ const controlGroupChecks = [
     "Control group title and heading",
   ],
   [
-    'href="http://localhost:3000/scientific-method/control-group-and-experimental-group"',
+    `href="${siteUrl}/scientific-method/control-group-and-experimental-group"`,
     "Control group canonical",
   ],
   [
@@ -1353,7 +1363,7 @@ const experimentalDesignChecks = [
     "Experimental design title and heading",
   ],
   [
-    'href="http://localhost:3000/scientific-method/experimental-design"',
+    `href="${siteUrl}/scientific-method/experimental-design"`,
     "Experimental design canonical",
   ],
   [
@@ -1413,7 +1423,7 @@ const dataCollectionChecks = [
     "Data collection title and heading",
   ],
   [
-    'href="http://localhost:3000/scientific-method/collect-and-record-data"',
+    `href="${siteUrl}/scientific-method/collect-and-record-data"`,
     "Data collection canonical",
   ],
   [
@@ -1473,7 +1483,7 @@ const resultsAnalysisChecks = [
     "Results analysis title and heading",
   ],
   [
-    'href="http://localhost:3000/scientific-method/analyze-experimental-results"',
+    `href="${siteUrl}/scientific-method/analyze-experimental-results"`,
     "Results analysis canonical",
   ],
   [
@@ -1533,7 +1543,7 @@ const templatesHubChecks = [
     "Templates hub title and heading",
   ],
   [
-    'href="http://localhost:3000/templates"',
+    `href="${siteUrl}/templates"`,
     "Templates hub canonical",
   ],
   [
@@ -1581,7 +1591,7 @@ const printableLabReportTemplateChecks = [
     "Printable lab report title and heading",
   ],
   [
-    'href="http://localhost:3000/templates/printable-lab-report-template"',
+    `href="${siteUrl}/templates/printable-lab-report-template"`,
     "Printable lab report canonical",
   ],
   [
@@ -1652,7 +1662,7 @@ const scientificMethodWorksheetChecks = [
     "Scientific method worksheet title and heading",
   ],
   [
-    'href="http://localhost:3000/templates/scientific-method-worksheet"',
+    `href="${siteUrl}/templates/scientific-method-worksheet"`,
     "Scientific method worksheet canonical",
   ],
   [
@@ -1723,7 +1733,7 @@ const experimentPlanningTemplateChecks = [
     "Experiment planning template title and heading",
   ],
   [
-    'href="http://localhost:3000/templates/experiment-planning-template"',
+    `href="${siteUrl}/templates/experiment-planning-template"`,
     "Experiment planning template canonical",
   ],
   [
@@ -1790,7 +1800,7 @@ const dataTableTemplateChecks = [
     "Data table template title and heading",
   ],
   [
-    'href="http://localhost:3000/templates/data-table-template"',
+    `href="${siteUrl}/templates/data-table-template"`,
     "Data table template canonical",
   ],
   [
@@ -1857,7 +1867,7 @@ const graphingScientificDataWorksheetChecks = [
     "Graphing worksheet title and heading",
   ],
   [
-    'href="http://localhost:3000/templates/graphing-scientific-data-worksheet"',
+    `href="${siteUrl}/templates/graphing-scientific-data-worksheet"`,
     "Graphing worksheet canonical",
   ],
   [
@@ -1924,7 +1934,7 @@ const variablesWorksheetChecks = [
     "Variables worksheet title and heading",
   ],
   [
-    'href="http://localhost:3000/templates/variables-worksheet"',
+    `href="${siteUrl}/templates/variables-worksheet"`,
     "Variables worksheet canonical",
   ],
   [
