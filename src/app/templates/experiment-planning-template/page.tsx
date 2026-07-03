@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Experiment Planning Template";
 const pageDescription =
-  "Use this printable experiment planning template to define a research question, hypothesis, variables, controls, materials, procedure, measurements, trials, and safety precautions.";
+  "Use this printable experiment planning template to define a research question, hypothesis, variables, controls, materials, procedure, measurements, trials, and safety.";
 
 export const metadata: Metadata = {
   title: pageTitle,

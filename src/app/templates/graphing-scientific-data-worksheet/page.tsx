@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Graphing Scientific Data Worksheet";
 const pageDescription =
-  "Use this printable graphing scientific data worksheet to choose graph types, label axes, include units, select scales, plot measurements, and describe experimental trends.";
+  "Use this printable graphing worksheet to choose graph types, label axes, include units, select scales, plot measurements, and describe experimental trends.";
 
 export const metadata: Metadata = {
   title: pageTitle,

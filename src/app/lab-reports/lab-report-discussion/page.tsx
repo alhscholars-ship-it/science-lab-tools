@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "How to Write a Lab Report Discussion";
 const pageDescription =
-  "Learn how to write a lab report discussion by interpreting results, evaluating the hypothesis, explaining anomalies, assessing uncertainty, and proposing realistic improvements.";
+  "Learn how to write a lab report discussion by interpreting results, evaluating the hypothesis, explaining anomalies, assessing uncertainty, and suggesting improvements.";
 
 export const metadata: Metadata = {
   title: pageTitle,

@@ -8,7 +8,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Percent Difference Calculator";
 const pageDescription =
-  "Calculate percent difference between two measurements. See the formula, worked example, calculation steps, and the difference between percent error and percent difference.";
+  "Calculate percent difference between two measurements with the formula, worked example, calculation steps, and a clear comparison with percent error.";
 
 export const metadata: Metadata = {
   title: pageTitle,

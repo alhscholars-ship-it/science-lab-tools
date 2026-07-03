@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle =
-  "Independent, Dependent, and Controlled Variables";
+  "Independent, Dependent & Controlled Variables";
 const pageDescription =
   "Learn how to identify independent, dependent, and controlled variables in scientific experiments using clear definitions, examples, and practical checks.";
 
