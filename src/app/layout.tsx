@@ -51,6 +51,13 @@ export const metadata: Metadata = {
     },
   },
   category: "education",
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+    other: {
+      "msvalidate.01":
+        process.env.BING_SITE_VERIFICATION ?? "",
+    },
+  },
 };
 
 export const viewport: Viewport = {
