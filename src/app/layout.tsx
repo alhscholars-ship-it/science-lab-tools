@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -67,6 +68,9 @@ export const viewport: Viewport = {
   themeColor: "#0f172a",
 };
 
+const gaMeasurementId =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -90,6 +94,27 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
           }}
         />
+        {gaMeasurementId ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+            >
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaMeasurementId}', {
+                  anonymize_ip: true
+                });
+              `}
+            </Script>
+          </>
+        ) : null}
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>
