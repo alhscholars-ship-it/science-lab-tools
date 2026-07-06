@@ -96,6 +96,10 @@ const requiredRoutes = [
     "Standard deviation calculator",
   ],
   [
+    ".next/server/app/calculators/uncertainty-propagation-calculator.html",
+    "Uncertainty propagation calculator",
+  ],
+  [
     ".next/server/app/calculators/measurement-uncertainty-calculator.html",
     "Measurement uncertainty calculator",
   ],
@@ -471,6 +475,72 @@ if (
   failed = true;
 } else {
   console.log("OK: Specific heat calculator is indexable");
+}
+
+const uncertaintyPropagationCalculatorFile =
+  ".next/server/app/calculators/uncertainty-propagation-calculator.html";
+
+const uncertaintyPropagationCalculatorHtml = fs.readFileSync(
+  uncertaintyPropagationCalculatorFile,
+  "utf8",
+);
+
+const uncertaintyPropagationCalculatorChecks = [
+  [
+    "Uncertainty Propagation Calculator",
+    "Uncertainty propagation title and heading",
+  ],
+  [
+    `href="${siteUrl}/calculators/uncertainty-propagation-calculator"`,
+    "Uncertainty propagation canonical",
+  ],
+  [
+    "EducationalApplication",
+    "Uncertainty propagation application structured data",
+  ],
+  [
+    "FAQPage",
+    "Uncertainty propagation FAQ structured data",
+  ],
+  [
+    'href="/calculators/measurement-uncertainty-calculator"',
+    "Uncertainty propagation measurement calculator internal link",
+  ],
+  [
+    'href="/lab-reports/significant-figures-in-lab-reports"',
+    "Uncertainty propagation significant figures internal link",
+  ],
+  [
+    'href="/lab-reports/lab-report-discussion"',
+    "Uncertainty propagation discussion internal link",
+  ],
+];
+
+for (
+  const [needle, label] of
+    uncertaintyPropagationCalculatorChecks
+) {
+  if (!uncertaintyPropagationCalculatorHtml.includes(needle)) {
+    console.error(`MISSING: ${label}`);
+    failed = true;
+  } else {
+    console.log(`OK: ${label}`);
+  }
+}
+
+if (
+  uncertaintyPropagationCalculatorHtml.includes(
+    'name="robots" content="noindex',
+  )
+) {
+  console.error(
+    "INVALID: Uncertainty propagation calculator is noindex",
+  );
+  failed = true;
+} else {
+  console.log(
+    "OK: Uncertainty propagation calculator is indexable",
+  );
 }
 
 const measurementUncertaintyCalculatorFile =

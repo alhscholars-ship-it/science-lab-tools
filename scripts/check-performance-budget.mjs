@@ -11,6 +11,8 @@ const routes = {
     ".next/server/app/calculators/percent-error-calculator/page_client-reference-manifest.js",
   "Percent difference":
     ".next/server/app/calculators/percent-difference-calculator/page_client-reference-manifest.js",
+  "Uncertainty propagation":
+    ".next/server/app/calculators/uncertainty-propagation-calculator/page_client-reference-manifest.js",
   "Measurement uncertainty":
     ".next/server/app/calculators/measurement-uncertainty-calculator/page_client-reference-manifest.js",
   "Linear regression":
@@ -162,6 +164,7 @@ for (const [label, chunks] of routeChunks) {
     "Coefficient variation",
     "Linear regression",
     "Measurement uncertainty",
+    "Uncertainty propagation",
     "Dilution",
     "Mass to moles",
     "Density",

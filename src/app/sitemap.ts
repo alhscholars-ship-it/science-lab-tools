@@ -54,6 +54,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: absoluteUrl(
+        "/calculators/uncertainty-propagation-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl(
         "/calculators/measurement-uncertainty-calculator",
       ),
       changeFrequency: "monthly",

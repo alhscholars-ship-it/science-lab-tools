@@ -87,6 +87,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "uncertainty-propagation-calculator",
+    name: "Uncertainty Propagation Calculator",
+    shortDescription:
+      "Propagate uncertainty through addition, subtraction, multiplication, and division.",
+    category: "Laboratory",
+    href: "/calculators/uncertainty-propagation-calculator",
+    keywords: [
+      "uncertainty propagation calculator",
+      "propagation of error calculator",
+      "combined uncertainty calculator",
+      "absolute and relative uncertainty calculator",
+    ],
+  },
+  {
     slug: "measurement-uncertainty-calculator",
     name: "Measurement Uncertainty Calculator",
     shortDescription:
