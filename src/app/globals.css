@@ -1793,3 +1793,24 @@ summary {
     color: #000;
   }
 }
+
+.calculator-textarea {
+  width: 100%;
+  min-height: 11rem;
+  resize: vertical;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.7rem;
+  background: white;
+  color: var(--heading);
+  padding: 0.85rem 0.9rem;
+  line-height: 1.6;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.calculator-textarea:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgb(15 118 110 / 0.14);
+  outline: none;
+}

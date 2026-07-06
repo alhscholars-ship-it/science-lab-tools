@@ -45,6 +45,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "standard-deviation-calculator",
+    name: "Standard Deviation Calculator",
+    shortDescription:
+      "Calculate sample and population standard deviation, mean, range, and dataset size.",
+    category: "Laboratory",
+    href: "/calculators/standard-deviation-calculator",
+    keywords: [
+      "standard deviation calculator",
+      "sample standard deviation calculator",
+      "population standard deviation calculator",
+      "mean and standard deviation calculator",
+    ],
+  },
+  {
     slug: "molarity-calculator",
     name: "Molarity Calculator",
     shortDescription:

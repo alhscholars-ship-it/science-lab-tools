@@ -84,6 +84,10 @@ const requiredRoutes = [
     "Significant figures calculator",
   ],
   [
+    ".next/server/app/calculators/standard-deviation-calculator.html",
+    "Standard deviation calculator",
+  ],
+  [
     ".next/server/app/calculators/molarity-calculator.html",
     "Molarity calculator",
   ],
@@ -451,6 +455,67 @@ if (
   failed = true;
 } else {
   console.log("OK: Specific heat calculator is indexable");
+}
+
+const standardDeviationCalculatorFile =
+  ".next/server/app/calculators/standard-deviation-calculator.html";
+
+const standardDeviationCalculatorHtml = fs.readFileSync(
+  standardDeviationCalculatorFile,
+  "utf8",
+);
+
+const standardDeviationCalculatorChecks = [
+  [
+    "Standard Deviation Calculator",
+    "Standard deviation title and heading",
+  ],
+  [
+    `href="${siteUrl}/calculators/standard-deviation-calculator"`,
+    "Standard deviation canonical",
+  ],
+  [
+    "EducationalApplication",
+    "Standard deviation application structured data",
+  ],
+  [
+    "FAQPage",
+    "Standard deviation FAQ structured data",
+  ],
+  [
+    'href="/scientific-method/analyze-experimental-results"',
+    "Standard deviation analysis guide internal link",
+  ],
+  [
+    'href="/calculators/significant-figures-calculator"',
+    "Standard deviation significant figures internal link",
+  ],
+];
+
+for (
+  const [needle, label] of standardDeviationCalculatorChecks
+) {
+  if (!standardDeviationCalculatorHtml.includes(needle)) {
+    console.error(`MISSING: ${label}`);
+    failed = true;
+  } else {
+    console.log(`OK: ${label}`);
+  }
+}
+
+if (
+  standardDeviationCalculatorHtml.includes(
+    'name="robots" content="noindex',
+  )
+) {
+  console.error(
+    "INVALID: Standard deviation calculator is noindex",
+  );
+  failed = true;
+} else {
+  console.log(
+    "OK: Standard deviation calculator is indexable",
+  );
 }
 
 const significantFiguresCalculatorFile =
