@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "node scripts/start-standalone.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm check:seo && pnpm check:performance",
