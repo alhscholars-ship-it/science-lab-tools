@@ -104,6 +104,10 @@ const requiredRoutes = [
     "Measurement uncertainty calculator",
   ],
   [
+    ".next/server/app/calculators/rate-of-change-calculator.html",
+    "Rate of change calculator",
+  ],
+  [
     ".next/server/app/calculators/linear-regression-calculator.html",
     "Linear regression calculator",
   ],
@@ -610,6 +614,71 @@ if (
 } else {
   console.log(
     "OK: Measurement uncertainty calculator is indexable",
+  );
+}
+
+const rateOfChangeCalculatorFile =
+  ".next/server/app/calculators/rate-of-change-calculator.html";
+
+const rateOfChangeCalculatorHtml = fs.readFileSync(
+  rateOfChangeCalculatorFile,
+  "utf8",
+);
+
+const rateOfChangeCalculatorChecks = [
+  [
+    "Rate of Change Calculator",
+    "Rate of change title and heading",
+  ],
+  [
+    `href="${siteUrl}/calculators/rate-of-change-calculator"`,
+    "Rate of change canonical",
+  ],
+  [
+    "EducationalApplication",
+    "Rate of change application structured data",
+  ],
+  [
+    "FAQPage",
+    "Rate of change FAQ structured data",
+  ],
+  [
+    'href="/calculators/linear-regression-calculator"',
+    "Rate of change linear regression internal link",
+  ],
+  [
+    'href="/scientific-method/analyze-experimental-results"',
+    "Rate of change analysis guide internal link",
+  ],
+  [
+    'href="/lab-reports/tables-and-graphs"',
+    "Rate of change tables and graphs internal link",
+  ],
+];
+
+for (
+  const [needle, label] of rateOfChangeCalculatorChecks
+) {
+  if (!rateOfChangeCalculatorHtml.includes(needle)) {
+    console.error(`MISSING: ${label}`);
+    failed = true;
+  } else {
+    console.log(`OK: ${label}`);
+  }
+}
+
+if (
+  rateOfChangeCalculatorHtml.includes(
+    'name="robots" content="noindex',
+  )
+) {
+  console.error(
+    "INVALID: Rate of change calculator is noindex",
+  );
+  failed = true;
+} else {
+  console.log(
+    "OK: Rate of change calculator is indexable",
   );
 }
 

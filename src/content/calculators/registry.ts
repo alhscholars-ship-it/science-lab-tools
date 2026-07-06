@@ -115,6 +115,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "rate-of-change-calculator",
+    name: "Rate of Change Calculator",
+    shortDescription:
+      "Calculate absolute change, percentage change, interval, and average rate of change.",
+    category: "Laboratory",
+    href: "/calculators/rate-of-change-calculator",
+    keywords: [
+      "rate of change calculator",
+      "average rate of change calculator",
+      "change over time calculator",
+      "percentage change calculator",
+    ],
+  },
+  {
     slug: "linear-regression-calculator",
     name: "Linear Regression Calculator",
     shortDescription:

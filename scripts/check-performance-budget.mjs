@@ -15,6 +15,8 @@ const routes = {
     ".next/server/app/calculators/uncertainty-propagation-calculator/page_client-reference-manifest.js",
   "Measurement uncertainty":
     ".next/server/app/calculators/measurement-uncertainty-calculator/page_client-reference-manifest.js",
+  "Rate of change":
+    ".next/server/app/calculators/rate-of-change-calculator/page_client-reference-manifest.js",
   "Linear regression":
     ".next/server/app/calculators/linear-regression-calculator/page_client-reference-manifest.js",
   "Coefficient variation":
@@ -163,6 +165,7 @@ for (const [label, chunks] of routeChunks) {
     "Mean median mode",
     "Coefficient variation",
     "Linear regression",
+    "Rate of change",
     "Measurement uncertainty",
     "Uncertainty propagation",
     "Dilution",
