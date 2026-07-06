@@ -84,6 +84,10 @@ const requiredRoutes = [
     "Significant figures calculator",
   ],
   [
+    ".next/server/app/calculators/coefficient-variation-calculator.html",
+    "Coefficient of variation calculator",
+  ],
+  [
     ".next/server/app/calculators/mean-median-mode-calculator.html",
     "Mean median mode calculator",
   ],
@@ -459,6 +463,72 @@ if (
   failed = true;
 } else {
   console.log("OK: Specific heat calculator is indexable");
+}
+
+const coefficientVariationCalculatorFile =
+  ".next/server/app/calculators/coefficient-variation-calculator.html";
+
+const coefficientVariationCalculatorHtml = fs.readFileSync(
+  coefficientVariationCalculatorFile,
+  "utf8",
+);
+
+const coefficientVariationCalculatorChecks = [
+  [
+    "Coefficient of Variation Calculator",
+    "Coefficient variation title and heading",
+  ],
+  [
+    `href="${siteUrl}/calculators/coefficient-variation-calculator"`,
+    "Coefficient variation canonical",
+  ],
+  [
+    "EducationalApplication",
+    "Coefficient variation application structured data",
+  ],
+  [
+    "FAQPage",
+    "Coefficient variation FAQ structured data",
+  ],
+  [
+    'href="/calculators/standard-deviation-calculator"',
+    "Coefficient variation standard deviation internal link",
+  ],
+  [
+    'href="/calculators/mean-median-mode-calculator"',
+    "Coefficient variation mean median mode internal link",
+  ],
+  [
+    'href="/scientific-method/analyze-experimental-results"',
+    "Coefficient variation analysis guide internal link",
+  ],
+];
+
+for (
+  const [needle, label] of
+    coefficientVariationCalculatorChecks
+) {
+  if (!coefficientVariationCalculatorHtml.includes(needle)) {
+    console.error(`MISSING: ${label}`);
+    failed = true;
+  } else {
+    console.log(`OK: ${label}`);
+  }
+}
+
+if (
+  coefficientVariationCalculatorHtml.includes(
+    'name="robots" content="noindex',
+  )
+) {
+  console.error(
+    "INVALID: Coefficient variation calculator is noindex",
+  );
+  failed = true;
+} else {
+  console.log(
+    "OK: Coefficient variation calculator is indexable",
+  );
 }
 
 const meanMedianModeCalculatorFile =

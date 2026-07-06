@@ -45,6 +45,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "coefficient-variation-calculator",
+    name: "Coefficient of Variation Calculator",
+    shortDescription:
+      "Calculate relative dataset variation using sample or population standard deviation.",
+    category: "Laboratory",
+    href: "/calculators/coefficient-variation-calculator",
+    keywords: [
+      "coefficient of variation calculator",
+      "cv calculator statistics",
+      "relative standard deviation calculator",
+      "sample coefficient of variation",
+    ],
+  },
+  {
     slug: "mean-median-mode-calculator",
     name: "Mean, Median and Mode Calculator",
     shortDescription:

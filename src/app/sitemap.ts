@@ -33,6 +33,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: absoluteUrl(
+        "/calculators/coefficient-variation-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl(
         "/calculators/mean-median-mode-calculator",
       ),
       changeFrequency: "monthly",
