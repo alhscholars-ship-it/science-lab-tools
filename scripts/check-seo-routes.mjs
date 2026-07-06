@@ -96,6 +96,10 @@ const requiredRoutes = [
     "Standard deviation calculator",
   ],
   [
+    ".next/server/app/calculators/measurement-uncertainty-calculator.html",
+    "Measurement uncertainty calculator",
+  ],
+  [
     ".next/server/app/calculators/linear-regression-calculator.html",
     "Linear regression calculator",
   ],
@@ -467,6 +471,76 @@ if (
   failed = true;
 } else {
   console.log("OK: Specific heat calculator is indexable");
+}
+
+const measurementUncertaintyCalculatorFile =
+  ".next/server/app/calculators/measurement-uncertainty-calculator.html";
+
+const measurementUncertaintyCalculatorHtml = fs.readFileSync(
+  measurementUncertaintyCalculatorFile,
+  "utf8",
+);
+
+const measurementUncertaintyCalculatorChecks = [
+  [
+    "Measurement Uncertainty Calculator",
+    "Measurement uncertainty title and heading",
+  ],
+  [
+    `href="${siteUrl}/calculators/measurement-uncertainty-calculator"`,
+    "Measurement uncertainty canonical",
+  ],
+  [
+    "EducationalApplication",
+    "Measurement uncertainty application structured data",
+  ],
+  [
+    "FAQPage",
+    "Measurement uncertainty FAQ structured data",
+  ],
+  [
+    'href="/lab-reports/significant-figures-in-lab-reports"',
+    "Measurement uncertainty significant figures internal link",
+  ],
+  [
+    'href="/lab-reports/lab-report-discussion"',
+    "Measurement uncertainty discussion internal link",
+  ],
+  [
+    'href="/lab-reports/tables-and-graphs"',
+    "Measurement uncertainty tables and graphs internal link",
+  ],
+  [
+    'href="/calculators/percent-error-calculator"',
+    "Measurement uncertainty percent error internal link",
+  ],
+];
+
+for (
+  const [needle, label] of
+    measurementUncertaintyCalculatorChecks
+) {
+  if (!measurementUncertaintyCalculatorHtml.includes(needle)) {
+    console.error(`MISSING: ${label}`);
+    failed = true;
+  } else {
+    console.log(`OK: ${label}`);
+  }
+}
+
+if (
+  measurementUncertaintyCalculatorHtml.includes(
+    'name="robots" content="noindex',
+  )
+) {
+  console.error(
+    "INVALID: Measurement uncertainty calculator is noindex",
+  );
+  failed = true;
+} else {
+  console.log(
+    "OK: Measurement uncertainty calculator is indexable",
+  );
 }
 
 const linearRegressionCalculatorFile =

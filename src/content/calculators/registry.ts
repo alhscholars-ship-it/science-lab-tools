@@ -87,6 +87,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "measurement-uncertainty-calculator",
+    name: "Measurement Uncertainty Calculator",
+    shortDescription:
+      "Calculate relative uncertainty, percentage uncertainty, range, and plus-or-minus notation.",
+    category: "Laboratory",
+    href: "/calculators/measurement-uncertainty-calculator",
+    keywords: [
+      "measurement uncertainty calculator",
+      "percentage uncertainty calculator",
+      "relative uncertainty calculator",
+      "absolute uncertainty calculator",
+    ],
+  },
+  {
     slug: "linear-regression-calculator",
     name: "Linear Regression Calculator",
     shortDescription:
