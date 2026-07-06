@@ -45,6 +45,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "mean-median-mode-calculator",
+    name: "Mean, Median and Mode Calculator",
+    shortDescription:
+      "Calculate mean, median, mode, sum, range, minimum, maximum, and sorted values.",
+    category: "Laboratory",
+    href: "/calculators/mean-median-mode-calculator",
+    keywords: [
+      "mean median mode calculator",
+      "average calculator",
+      "median calculator",
+      "mode calculator",
+    ],
+  },
+  {
     slug: "standard-deviation-calculator",
     name: "Standard Deviation Calculator",
     shortDescription:

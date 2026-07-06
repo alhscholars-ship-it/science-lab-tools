@@ -1,9 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import {
-  calculateStandardDeviation,
-  parseDataset,
-} from "../standard-deviation";
+import { parseDataset } from "../dataset";
+import { calculateStandardDeviation } from "../standard-deviation";
 
 describe("parseDataset", () => {
   it("parses comma-separated values", () => {

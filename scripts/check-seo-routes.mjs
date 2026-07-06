@@ -84,6 +84,10 @@ const requiredRoutes = [
     "Significant figures calculator",
   ],
   [
+    ".next/server/app/calculators/mean-median-mode-calculator.html",
+    "Mean median mode calculator",
+  ],
+  [
     ".next/server/app/calculators/standard-deviation-calculator.html",
     "Standard deviation calculator",
   ],
@@ -455,6 +459,67 @@ if (
   failed = true;
 } else {
   console.log("OK: Specific heat calculator is indexable");
+}
+
+const meanMedianModeCalculatorFile =
+  ".next/server/app/calculators/mean-median-mode-calculator.html";
+
+const meanMedianModeCalculatorHtml = fs.readFileSync(
+  meanMedianModeCalculatorFile,
+  "utf8",
+);
+
+const meanMedianModeCalculatorChecks = [
+  [
+    "Mean, Median and Mode Calculator",
+    "Mean median mode title and heading",
+  ],
+  [
+    `href="${siteUrl}/calculators/mean-median-mode-calculator"`,
+    "Mean median mode canonical",
+  ],
+  [
+    "EducationalApplication",
+    "Mean median mode application structured data",
+  ],
+  [
+    "FAQPage",
+    "Mean median mode FAQ structured data",
+  ],
+  [
+    'href="/calculators/standard-deviation-calculator"',
+    "Mean median mode standard deviation internal link",
+  ],
+  [
+    'href="/scientific-method/analyze-experimental-results"',
+    "Mean median mode analysis guide internal link",
+  ],
+];
+
+for (
+  const [needle, label] of meanMedianModeCalculatorChecks
+) {
+  if (!meanMedianModeCalculatorHtml.includes(needle)) {
+    console.error(`MISSING: ${label}`);
+    failed = true;
+  } else {
+    console.log(`OK: ${label}`);
+  }
+}
+
+if (
+  meanMedianModeCalculatorHtml.includes(
+    'name="robots" content="noindex',
+  )
+) {
+  console.error(
+    "INVALID: Mean median mode calculator is noindex",
+  );
+  failed = true;
+} else {
+  console.log(
+    "OK: Mean median mode calculator is indexable",
+  );
 }
 
 const standardDeviationCalculatorFile =

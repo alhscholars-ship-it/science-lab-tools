@@ -4,30 +4,30 @@ import { useState, type FormEvent } from "react";
 
 import { parseDataset } from "@/lib/calculators/dataset";
 import {
-  calculateStandardDeviation,
-  type StandardDeviationResult,
-} from "@/lib/calculators/standard-deviation";
+  calculateMeanMedianMode,
+  type MeanMedianModeResult,
+} from "@/lib/calculators/mean-median-mode";
 import { formatCalculatedNumber } from "@/lib/calculators/number-format";
 
 const examples = [
   {
-    label: "Classic dataset",
-    values: "2, 4, 4, 4, 5, 5, 7, 9",
+    label: "Single mode",
+    values: "2, 4, 4, 6, 8",
+  },
+  {
+    label: "Two modes",
+    values: "1, 1, 2, 2, 3",
   },
   {
     label: "Repeated trials",
-    values: "12.1, 12.4, 12.2, 12.5, 12.3",
-  },
-  {
-    label: "Temperature data",
-    values: "21.4\n21.8\n21.5\n22.0\n21.7",
+    values: "12.1, 12.4, 12.2, 12.4, 12.3",
   },
 ] as const;
 
-export function StandardDeviationCalculator() {
+export function MeanMedianModeCalculator() {
   const [dataset, setDataset] = useState("");
   const [result, setResult] =
-    useState<StandardDeviationResult | null>(null);
+    useState<MeanMedianModeResult | null>(null);
   const [error, setError] = useState("");
 
   function calculate(
@@ -39,7 +39,7 @@ export function StandardDeviationCalculator() {
 
     try {
       const values = parseDataset(dataset);
-      setResult(calculateStandardDeviation(values));
+      setResult(calculateMeanMedianMode(values));
     } catch (calculationError) {
       setError(
         calculationError instanceof Error
@@ -56,7 +56,7 @@ export function StandardDeviationCalculator() {
     setError("");
 
     const values = parseDataset(example.values);
-    setResult(calculateStandardDeviation(values));
+    setResult(calculateMeanMedianMode(values));
   }
 
   function resetCalculator() {
@@ -64,6 +64,13 @@ export function StandardDeviationCalculator() {
     setResult(null);
     setError("");
   }
+
+  const formattedMode =
+    result === null
+      ? ""
+      : result.formattedModes.length === 0
+        ? "No mode"
+        : result.formattedModes.join(", ");
 
   return (
     <div className="calculator-panel">
@@ -77,7 +84,7 @@ export function StandardDeviationCalculator() {
             <p className="calculator-form__label">
               Enter your dataset
             </p>
-            <h2>Calculate standard deviation</h2>
+            <h2>Calculate central tendency</h2>
           </div>
 
           <span className="calculator-form__status">
@@ -86,36 +93,35 @@ export function StandardDeviationCalculator() {
         </div>
 
         <div className="form-field">
-          <label htmlFor="standard-deviation-values">
+          <label htmlFor="mean-median-mode-values">
             Numerical values
           </label>
 
           <textarea
-            id="standard-deviation-values"
+            id="mean-median-mode-values"
             name="values"
             className="calculator-textarea"
             rows={8}
-            placeholder="Example: 2, 4, 4, 4, 5, 5, 7, 9"
+            placeholder="Example: 2, 4, 4, 6, 8"
             value={dataset}
             onChange={(event) => {
               setDataset(event.target.value);
               setResult(null);
               setError("");
             }}
-            aria-describedby="standard-deviation-values-help"
+            aria-describedby="mean-median-mode-values-help"
             spellCheck={false}
           />
 
-          <p id="standard-deviation-values-help">
+          <p id="mean-median-mode-values-help">
             Separate values with commas, spaces, semicolons,
             or new lines.
           </p>
         </div>
 
         <p className="calculator-unit-note">
-          Sample standard deviation uses n − 1 and requires
-          at least two values. Population standard deviation
-          uses n.
+          The calculator sorts the values automatically and
+          reports multiple modes when frequencies are tied.
         </p>
 
         {error ? (
@@ -171,39 +177,41 @@ export function StandardDeviationCalculator() {
         {result ? (
           <>
             <p className="calculator-result__label">
-              Sample standard deviation
+              Mean
             </p>
 
             <p className="calculator-result__value">
-              {result.formattedSampleStandardDeviation ??
-                "N/A"}
+              {result.formattedMean}
             </p>
 
             <dl className="calculator-result__details">
               <div>
-                <dt>Population standard deviation</dt>
-                <dd>
-                  {
-                    result.formattedPopulationStandardDeviation
-                  }
-                </dd>
+                <dt>Median</dt>
+                <dd>{result.formattedMedian}</dd>
               </div>
 
               <div>
-                <dt>Mean</dt>
-                <dd>{result.formattedMean}</dd>
+                <dt>Mode</dt>
+                <dd>{formattedMode}</dd>
               </div>
 
               <div>
                 <dt>Number of values</dt>
-                <dd>{result.details.count}</dd>
+                <dd>{result.count}</dd>
+              </div>
+
+              <div>
+                <dt>Sum</dt>
+                <dd>
+                  {formatCalculatedNumber(result.sum)}
+                </dd>
               </div>
 
               <div>
                 <dt>Minimum</dt>
                 <dd>
                   {formatCalculatedNumber(
-                    result.details.minimum,
+                    result.minimum,
                   )}
                 </dd>
               </div>
@@ -212,7 +220,7 @@ export function StandardDeviationCalculator() {
                 <dt>Maximum</dt>
                 <dd>
                   {formatCalculatedNumber(
-                    result.details.maximum,
+                    result.maximum,
                   )}
                 </dd>
               </div>
@@ -220,31 +228,29 @@ export function StandardDeviationCalculator() {
               <div>
                 <dt>Range</dt>
                 <dd>
-                  {formatCalculatedNumber(
-                    result.details.range,
-                  )}
+                  {formatCalculatedNumber(result.range)}
                 </dd>
               </div>
             </dl>
 
             <div className="calculator-result__working">
-              <h3>Dataset summary</h3>
+              <h3>Sorted dataset</h3>
               <p>
-                n = {result.details.count}; Σx ={" "}
-                {formatCalculatedNumber(
-                  result.details.sum,
-                )}
-                ; x̄ = {result.formattedMean}
+                {result.sortedValues
+                  .map((value) =>
+                    formatCalculatedNumber(value),
+                  )
+                  .join(", ")}
               </p>
             </div>
           </>
         ) : (
           <div className="calculator-result__empty">
-            <span aria-hidden="true">σ</span>
+            <span aria-hidden="true">x̄</span>
             <h2>Your statistics will appear here</h2>
             <p>
-              Enter repeated measurements or another
-              numerical dataset, then calculate.
+              Enter a numerical dataset to calculate its
+              mean, median, mode, and range.
             </p>
           </div>
         )}
