@@ -80,6 +80,10 @@ const requiredRoutes = [
     "Percent difference calculator",
   ],
   [
+    ".next/server/app/calculators/significant-figures-calculator.html",
+    "Significant figures calculator",
+  ],
+  [
     ".next/server/app/calculators/molarity-calculator.html",
     "Molarity calculator",
   ],
@@ -447,6 +451,65 @@ if (
   failed = true;
 } else {
   console.log("OK: Specific heat calculator is indexable");
+}
+
+const significantFiguresCalculatorFile =
+  ".next/server/app/calculators/significant-figures-calculator.html";
+
+const significantFiguresCalculatorHtml = fs.readFileSync(
+  significantFiguresCalculatorFile,
+  "utf8",
+);
+
+const significantFiguresCalculatorChecks = [
+  [
+    "Significant Figures Calculator",
+    "Significant figures title and heading",
+  ],
+  [
+    `href="${siteUrl}/calculators/significant-figures-calculator"`,
+    "Significant figures canonical",
+  ],
+  [
+    "EducationalApplication",
+    "Significant figures application structured data",
+  ],
+  [
+    "FAQPage",
+    "Significant figures FAQ structured data",
+  ],
+  [
+    'href="/lab-reports/significant-figures-in-lab-reports"',
+    "Significant figures guide internal link",
+  ],
+  [
+    'href="/calculators/percent-error-calculator"',
+    "Significant figures percent error internal link",
+  ],
+];
+
+for (const [needle, label] of significantFiguresCalculatorChecks) {
+  if (!significantFiguresCalculatorHtml.includes(needle)) {
+    console.error(`MISSING: ${label}`);
+    failed = true;
+  } else {
+    console.log(`OK: ${label}`);
+  }
+}
+
+if (
+  significantFiguresCalculatorHtml.includes(
+    'name="robots" content="noindex',
+  )
+) {
+  console.error(
+    "INVALID: Significant figures calculator is noindex",
+  );
+  failed = true;
+} else {
+  console.log(
+    "OK: Significant figures calculator is indexable",
+  );
 }
 
 const massMolesFile =

@@ -11,6 +11,8 @@ const routes = {
     ".next/server/app/calculators/percent-error-calculator/page_client-reference-manifest.js",
   "Percent difference":
     ".next/server/app/calculators/percent-difference-calculator/page_client-reference-manifest.js",
+  "Significant figures":
+    ".next/server/app/calculators/significant-figures-calculator/page_client-reference-manifest.js",
   Molarity:
     ".next/server/app/calculators/molarity-calculator/page_client-reference-manifest.js",
   "Mass to moles":
@@ -144,6 +146,7 @@ for (const [label, chunks] of routeChunks) {
     "Percent error",
     "Percent difference",
     "Molarity",
+    "Significant figures",
     "Dilution",
     "Mass to moles",
     "Density",

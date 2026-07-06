@@ -31,6 +31,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["percent difference calculator"],
   },
   {
+    slug: "significant-figures-calculator",
+    name: "Significant Figures Calculator",
+    shortDescription:
+      "Count significant figures and round measured values to a selected precision.",
+    category: "Laboratory",
+    href: "/calculators/significant-figures-calculator",
+    keywords: [
+      "significant figures calculator",
+      "sig figs calculator",
+      "round to significant figures",
+      "significant digits calculator",
+    ],
+  },
+  {
     slug: "molarity-calculator",
     name: "Molarity Calculator",
     shortDescription:
