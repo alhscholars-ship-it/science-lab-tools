@@ -1,5 +1,3 @@
-export type LabReportResourceStatus = "published" | "planned";
-
 export type LabReportResource = {
   slug: string;
   title: string;
@@ -9,7 +7,6 @@ export type LabReportResource = {
     | "Report Section"
     | "Writing Skill"
     | "Template";
-  status: LabReportResourceStatus;
   href: string;
   keywords: readonly string[];
 };
@@ -21,7 +18,6 @@ export const labReportResources: readonly LabReportResource[] = [
     shortDescription:
       "Learn the complete laboratory report structure from title and hypothesis to results and conclusion.",
     category: "Core Guide",
-    status: "published",
     href: "/lab-reports/how-to-write-a-lab-report",
     keywords: [
       "how to write a lab report",
@@ -35,7 +31,6 @@ export const labReportResources: readonly LabReportResource[] = [
     shortDescription:
       "Review the standard order, purpose, and content of each section in a scientific laboratory report.",
     category: "Core Guide",
-    status: "published",
     href: "/lab-reports/lab-report-format",
     keywords: [
       "lab report format",
@@ -49,7 +44,6 @@ export const labReportResources: readonly LabReportResource[] = [
     shortDescription:
       "Write focused background information, scientific context, objectives, and a testable hypothesis.",
     category: "Report Section",
-    status: "published",
     href: "/lab-reports/lab-report-introduction",
     keywords: [
       "lab report introduction",
@@ -62,7 +56,6 @@ export const labReportResources: readonly LabReportResource[] = [
     shortDescription:
       "Document equipment, variables, and experimental procedures clearly enough for replication.",
     category: "Report Section",
-    status: "published",
     href: "/lab-reports/materials-and-methods",
     keywords: [
       "lab report methods",
@@ -76,7 +69,6 @@ export const labReportResources: readonly LabReportResource[] = [
     shortDescription:
       "Present measurements, observations, tables, graphs, and calculated values without unnecessary interpretation.",
     category: "Report Section",
-    status: "published",
     href: "/lab-reports/lab-report-results",
     keywords: [
       "lab report results",
@@ -90,7 +82,6 @@ export const labReportResources: readonly LabReportResource[] = [
     shortDescription:
       "Interpret results, evaluate evidence, explain limitations, and connect findings to scientific principles.",
     category: "Report Section",
-    status: "published",
     href: "/lab-reports/lab-report-discussion",
     keywords: [
       "lab report discussion",
@@ -103,7 +94,6 @@ export const labReportResources: readonly LabReportResource[] = [
     shortDescription:
       "Summarize the investigation, answer the research question, and evaluate whether evidence supports the hypothesis.",
     category: "Report Section",
-    status: "published",
     href: "/lab-reports/lab-report-conclusion",
     keywords: [
       "lab report conclusion",
@@ -116,7 +106,6 @@ export const labReportResources: readonly LabReportResource[] = [
     shortDescription:
       "Apply significant-figure rules consistently when recording measurements and reporting calculated results.",
     category: "Writing Skill",
-    status: "published",
     href: "/lab-reports/significant-figures-in-lab-reports",
     keywords: [
       "significant figures lab report",
@@ -129,7 +118,6 @@ export const labReportResources: readonly LabReportResource[] = [
     shortDescription:
       "Create clear scientific tables and graphs with correct variables, units, titles, and labels.",
     category: "Writing Skill",
-    status: "published",
     href: "/lab-reports/tables-and-graphs",
     keywords: [
       "lab report graphs",
@@ -143,7 +131,6 @@ export const labReportResources: readonly LabReportResource[] = [
     shortDescription:
       "Use a structured laboratory report outline covering every major section of a scientific investigation.",
     category: "Template",
-    status: "published",
     href: "/lab-reports/lab-report-template",
     keywords: [
       "lab report template",
@@ -151,16 +138,6 @@ export const labReportResources: readonly LabReportResource[] = [
     ],
   },
 ];
-
-export const publishedLabReportResources =
-  labReportResources.filter(
-    (resource) => resource.status === "published",
-  );
-
-export const plannedLabReportResources =
-  labReportResources.filter(
-    (resource) => resource.status === "planned",
-  );
 
 export const labReportCategories = [
   "Core Guide",

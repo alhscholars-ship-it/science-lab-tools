@@ -3,8 +3,6 @@ import { describe, expect, it } from "vitest";
 import {
   labReportCategories,
   labReportResources,
-  plannedLabReportResources,
-  publishedLabReportResources,
 } from "../registry";
 
 describe("lab report resource registry", () => {
@@ -49,8 +47,11 @@ describe("lab report resource registry", () => {
     }
   });
 
-  it("separates published and planned resources", () => {
-    expect(publishedLabReportResources).toHaveLength(10);
-    expect(plannedLabReportResources).toHaveLength(0);
+  it("contains only available resources", () => {
+    expect(labReportResources).toHaveLength(10);
+
+    for (const resource of labReportResources) {
+      expect(resource.href).toBeTruthy();
+    }
   });
 });

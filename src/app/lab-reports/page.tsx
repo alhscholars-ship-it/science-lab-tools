@@ -99,26 +99,16 @@ export default function LabReportsPage() {
                     >
                       <div className="directory-card__topline">
                         <span>{resource.category}</span>
-                        <span>
-                          {resource.status === "published"
-                            ? "Available"
-                            : "Coming soon"}
-                        </span>
+                        <span>Available</span>
                       </div>
 
                       <h3>{resource.title}</h3>
                       <p>{resource.shortDescription}</p>
 
-                      {resource.status === "published" ? (
-                        <Link href={resource.href}>
-                          Read the guide
-                          <span aria-hidden="true"> →</span>
-                        </Link>
-                      ) : (
-                        <span className="directory-card__disabled">
-                          Guide in development
-                        </span>
-                      )}
+                      <Link href={resource.href}>
+                        Read the guide
+                        <span aria-hidden="true"> →</span>
+                      </Link>
                     </article>
                   ))}
                 </div>
