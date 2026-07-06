@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
-import {
-  plannedCalculators,
-  publishedCalculators,
-} from "@/content/calculators/registry";
+import { calculators } from "@/content/calculators/registry";
 
 const pageTitle = "Science Calculators";
 const pageDescription =
@@ -63,7 +60,7 @@ export default function CalculatorsPage() {
           </div>
 
           <div className="calculator-directory-grid">
-            {publishedCalculators.map((calculator) => (
+            {calculators.map((calculator) => (
               <article
                 className="calculator-directory-card"
                 key={calculator.slug}
@@ -92,31 +89,6 @@ export default function CalculatorsPage() {
         </Container>
       </section>
 
-      <section
-        className="directory-section directory-section--muted"
-        aria-labelledby="planned-heading"
-      >
-        <Container>
-          <div className="section-heading">
-            <p className="eyebrow">Development roadmap</p>
-            <h2 id="planned-heading">More calculators are being prepared</h2>
-            <p>
-              Planned tools remain unavailable until their formulas, input
-              validation, examples, and automated tests are complete.
-            </p>
-          </div>
-
-          <div className="planned-tools-grid">
-            {plannedCalculators.map((calculator) => (
-              <article className="planned-tool-card" key={calculator.slug}>
-                <span>{calculator.category}</span>
-                <h3>{calculator.name}</h3>
-                <p>{calculator.shortDescription}</p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
     </main>
   );
 }

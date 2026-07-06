@@ -1,11 +1,8 @@
-export type CalculatorStatus = "published" | "planned";
-
 export type CalculatorDefinition = {
   slug: string;
   name: string;
   shortDescription: string;
   category: "Laboratory" | "Chemistry" | "Physics";
-  status: CalculatorStatus;
   href: string;
   keywords: readonly string[];
 };
@@ -17,7 +14,6 @@ export const calculators: readonly CalculatorDefinition[] = [
     shortDescription:
       "Calculate percent error from experimental and accepted values with clear working steps.",
     category: "Laboratory",
-    status: "published",
     href: "/calculators/percent-error-calculator",
     keywords: [
       "percent error calculator",
@@ -31,7 +27,6 @@ export const calculators: readonly CalculatorDefinition[] = [
     shortDescription:
       "Compare two experimental measurements without using an accepted reference value.",
     category: "Laboratory",
-    status: "published",
     href: "/calculators/percent-difference-calculator",
     keywords: ["percent difference calculator"],
   },
@@ -41,7 +36,6 @@ export const calculators: readonly CalculatorDefinition[] = [
     shortDescription:
       "Calculate solution molarity from moles of solute and solution volume.",
     category: "Chemistry",
-    status: "published",
     href: "/calculators/molarity-calculator",
     keywords: ["molarity calculator", "moles and volume calculator"],
   },
@@ -51,7 +45,6 @@ export const calculators: readonly CalculatorDefinition[] = [
     shortDescription:
       "Solve dilution problems using initial and final concentration and volume.",
     category: "Chemistry",
-    status: "published",
     href: "/calculators/dilution-calculator",
     keywords: ["dilution calculator chemistry"],
   },
@@ -61,7 +54,6 @@ export const calculators: readonly CalculatorDefinition[] = [
     shortDescription:
       "Calculate density, mass, or volume using laboratory measurements.",
     category: "Physics",
-    status: "published",
     href: "/calculators/density-calculator",
     keywords: ["density calculator for students"],
   },
@@ -71,16 +63,7 @@ export const calculators: readonly CalculatorDefinition[] = [
     shortDescription:
       "Calculate heat energy, mass, temperature change, or specific heat capacity.",
     category: "Physics",
-    status: "published",
     href: "/calculators/specific-heat-calculator",
     keywords: ["specific heat calculator"],
   },
 ];
-
-export const publishedCalculators = calculators.filter(
-  (calculator) => calculator.status === "published",
-);
-
-export const plannedCalculators = calculators.filter(
-  (calculator) => calculator.status === "planned",
-);
