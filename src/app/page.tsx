@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
+import { calculators } from "@/content/calculators/registry";
 
 const trustPoints = [
   {
@@ -21,14 +22,6 @@ const trustPoints = [
   },
 ] as const;
 
-const plannedTools = [
-  "Percent error calculator",
-  "Molarity calculator",
-  "Dilution calculator",
-  "Density calculator",
-  "Specific heat calculator",
-  "Physics graph slope calculator",
-] as const;
 
 export default function HomePage() {
   return (
@@ -67,17 +60,19 @@ export default function HomePage() {
             </ul>
           </div>
 
-          <aside className="hero-tool-card" aria-label="Planned science tools">
+          <aside className="hero-tool-card" aria-label="Available science calculators">
             <div className="hero-tool-card__header">
               <span>Popular laboratory tools</span>
-              <span className="status-badge">In development</span>
+              <span className="status-badge">Available now</span>
             </div>
 
             <ul>
-              {plannedTools.map((tool, index) => (
-                <li key={tool}>
+              {calculators.map((calculator, index) => (
+                <li key={calculator.slug}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
-                  {tool}
+                  <Link href={calculator.href}>
+                    {calculator.name}
+                  </Link>
                 </li>
               ))}
             </ul>
