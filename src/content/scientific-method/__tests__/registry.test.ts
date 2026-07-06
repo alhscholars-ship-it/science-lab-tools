@@ -1,14 +1,12 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  plannedScientificMethodResources,
-  publishedScientificMethodResources,
   scientificMethodCategories,
   scientificMethodResources,
 } from "../registry";
 
 describe("scientific method resource registry", () => {
-  it("contains the planned scientific method cluster", () => {
+  it("contains the complete scientific method cluster", () => {
     expect(scientificMethodResources).toHaveLength(8);
   });
 
@@ -46,9 +44,10 @@ describe("scientific method resource registry", () => {
     }
   });
 
-  it("tracks published and planned resources", () => {
-    expect(publishedScientificMethodResources).toHaveLength(8);
-    expect(plannedScientificMethodResources).toHaveLength(0);
+  it("contains only available resources", () => {
+    for (const resource of scientificMethodResources) {
+      expect(resource.href).toBeTruthy();
+    }
   });
 
   it("contains the expected content categories", () => {

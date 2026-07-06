@@ -4,8 +4,6 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
-  plannedScientificMethodResources,
-  publishedScientificMethodResources,
   scientificMethodCategories,
   scientificMethodResources,
 } from "@/content/scientific-method/registry";
@@ -96,16 +94,8 @@ export default function ScientificMethodPage() {
               <span>Total guides</span>
             </div>
             <div>
-              <strong>
-                {publishedScientificMethodResources.length}
-              </strong>
-              <span>Published</span>
-            </div>
-            <div>
-              <strong>
-                {plannedScientificMethodResources.length}
-              </strong>
-              <span>In development</span>
+              <strong>{scientificMethodResources.length}</strong>
+              <span>Available</span>
             </div>
             <div>
               <strong>{scientificMethodCategories.length}</strong>
@@ -129,9 +119,8 @@ export default function ScientificMethodPage() {
             </p>
           </div>
 
-          {publishedScientificMethodResources.length > 0 ? (
-            <div className="resource-grid">
-              {publishedScientificMethodResources.map((resource) => (
+          <div className="resource-grid">
+            {scientificMethodResources.map((resource) => (
                 <article
                   className="resource-card"
                   key={resource.slug}
@@ -159,55 +148,6 @@ export default function ScientificMethodPage() {
                     <span aria-hidden="true">→</span>
                   </Link>
                 </article>
-              ))}
-            </div>
-          ) : (
-            <div className="empty-state-card">
-              <p className="eyebrow">Publishing in progress</p>
-              <h2>The first scientific method guide is coming next</h2>
-              <p>
-                The resource architecture is complete. Guides will be
-                published individually after content, SEO, structured
-                data, and quality checks are finished.
-              </p>
-            </div>
-          )}
-        </Container>
-      </section>
-
-      <section className="directory-section directory-section--muted">
-        <Container>
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Content roadmap</p>
-              <h2>Guides currently in development</h2>
-            </div>
-            <p>
-              Each planned resource targets a specific investigation
-              skill and will become available after review.
-            </p>
-          </div>
-
-          <div className="resource-grid">
-            {plannedScientificMethodResources.map((resource) => (
-              <article
-                className="resource-card resource-card--planned"
-                key={resource.slug}
-              >
-                <div className="resource-card__topline">
-                  <span>{resource.category}</span>
-                  <span className="resource-status">
-                    In development
-                  </span>
-                </div>
-
-                <h3>{resource.title}</h3>
-                <p>{resource.shortDescription}</p>
-
-                <span className="resource-card__link resource-card__link--disabled">
-                  Guide planned
-                </span>
-              </article>
             ))}
           </div>
         </Container>

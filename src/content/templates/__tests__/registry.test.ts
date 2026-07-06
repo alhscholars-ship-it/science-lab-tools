@@ -1,14 +1,12 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  plannedTemplateResources,
-  publishedTemplateResources,
   templateCategories,
   templateResources,
 } from "../registry";
 
 describe("template resource registry", () => {
-  it("contains the planned template library", () => {
+  it("contains the complete template library", () => {
     expect(templateResources).toHaveLength(6);
   });
 
@@ -46,9 +44,10 @@ describe("template resource registry", () => {
     }
   });
 
-  it("tracks published and planned resources", () => {
-    expect(publishedTemplateResources).toHaveLength(6);
-    expect(plannedTemplateResources).toHaveLength(0);
+  it("contains only available resources", () => {
+    for (const resource of templateResources) {
+      expect(resource.href).toBeTruthy();
+    }
   });
 
   it("contains the expected template categories", () => {

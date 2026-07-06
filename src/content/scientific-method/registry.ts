@@ -1,7 +1,3 @@
-export type ScientificMethodResourceStatus =
-  | "published"
-  | "planned";
-
 export type ScientificMethodResourceCategory =
   | "Core Guide"
   | "Experiment Design"
@@ -13,7 +9,6 @@ export type ScientificMethodResource = {
   title: string;
   shortDescription: string;
   category: ScientificMethodResourceCategory;
-  status: ScientificMethodResourceStatus;
   href: string;
   keywords: readonly string[];
 };
@@ -26,8 +21,7 @@ export const scientificMethodResources: readonly ScientificMethodResource[] =
       shortDescription:
         "Follow the scientific method from observation and research question through experimentation, analysis, and conclusion.",
       category: "Core Guide",
-      status: "published",
-      href: "/scientific-method/steps-of-the-scientific-method",
+        href: "/scientific-method/steps-of-the-scientific-method",
       keywords: [
         "scientific method steps",
         "steps in scientific method",
@@ -40,8 +34,7 @@ export const scientificMethodResources: readonly ScientificMethodResource[] =
       shortDescription:
         "Turn an observation into a focused, measurable, and testable scientific research question.",
       category: "Writing Skill",
-      status: "published",
-      href: "/scientific-method/scientific-question",
+        href: "/scientific-method/scientific-question",
       keywords: [
         "scientific question",
         "testable question",
@@ -54,8 +47,7 @@ export const scientificMethodResources: readonly ScientificMethodResource[] =
       shortDescription:
         "Develop a testable prediction that connects the independent and dependent variables using scientific reasoning.",
       category: "Writing Skill",
-      status: "published",
-      href: "/scientific-method/how-to-write-a-hypothesis",
+        href: "/scientific-method/how-to-write-a-hypothesis",
       keywords: [
         "how to write a hypothesis",
         "scientific hypothesis",
@@ -68,8 +60,7 @@ export const scientificMethodResources: readonly ScientificMethodResource[] =
       shortDescription:
         "Identify what is changed, measured, and kept constant in a controlled scientific investigation.",
       category: "Experiment Design",
-      status: "published",
-      href:
+        href:
         "/scientific-method/independent-dependent-controlled-variables",
       keywords: [
         "independent variable",
@@ -83,8 +74,7 @@ export const scientificMethodResources: readonly ScientificMethodResource[] =
       shortDescription:
         "Understand how comparison groups strengthen experimental design and help isolate the effect of a treatment.",
       category: "Experiment Design",
-      status: "published",
-      href:
+        href:
         "/scientific-method/control-group-and-experimental-group",
       keywords: [
         "control group",
@@ -98,8 +88,7 @@ export const scientificMethodResources: readonly ScientificMethodResource[] =
       shortDescription:
         "Plan a fair, repeatable investigation using variables, controls, trials, measurements, and safety precautions.",
       category: "Experiment Design",
-      status: "published",
-      href: "/scientific-method/experimental-design",
+        href: "/scientific-method/experimental-design",
       keywords: [
         "experimental design",
         "design a science experiment",
@@ -112,8 +101,7 @@ export const scientificMethodResources: readonly ScientificMethodResource[] =
       shortDescription:
         "Record accurate quantitative and qualitative evidence using organized tables, units, observations, and repeated trials.",
       category: "Data Analysis",
-      status: "published",
-      href: "/scientific-method/collect-and-record-data",
+        href: "/scientific-method/collect-and-record-data",
       keywords: [
         "collect scientific data",
         "record experimental data",
@@ -126,8 +114,7 @@ export const scientificMethodResources: readonly ScientificMethodResource[] =
       shortDescription:
         "Evaluate trends, averages, variation, anomalies, uncertainty, and evidence before drawing a conclusion.",
       category: "Data Analysis",
-      status: "published",
-      href: "/scientific-method/analyze-experimental-results",
+        href: "/scientific-method/analyze-experimental-results",
       keywords: [
         "analyze experimental results",
         "scientific data analysis",
@@ -135,16 +122,6 @@ export const scientificMethodResources: readonly ScientificMethodResource[] =
       ],
     },
   ] as const;
-
-export const publishedScientificMethodResources =
-  scientificMethodResources.filter(
-    (resource) => resource.status === "published",
-  );
-
-export const plannedScientificMethodResources =
-  scientificMethodResources.filter(
-    (resource) => resource.status === "planned",
-  );
 
 export const scientificMethodCategories = [
   ...new Set(

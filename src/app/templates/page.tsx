@@ -4,8 +4,6 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
-  plannedTemplateResources,
-  publishedTemplateResources,
   templateCategories,
   templateResources,
 } from "@/content/templates/registry";
@@ -98,13 +96,8 @@ export default function TemplatesPage() {
             </div>
 
             <div>
-              <strong>{publishedTemplateResources.length}</strong>
-              <span>Published</span>
-            </div>
-
-            <div>
-              <strong>{plannedTemplateResources.length}</strong>
-              <span>In development</span>
+              <strong>{templateResources.length}</strong>
+              <span>Available</span>
             </div>
 
             <div>
@@ -130,9 +123,8 @@ export default function TemplatesPage() {
             </p>
           </div>
 
-          {publishedTemplateResources.length > 0 ? (
-            <div className="resource-grid">
-              {publishedTemplateResources.map((resource) => (
+          <div className="resource-grid">
+            {templateResources.map((resource) => (
                 <article
                   className="resource-card"
                   key={resource.slug}
@@ -160,60 +152,6 @@ export default function TemplatesPage() {
                     <span aria-hidden="true">→</span>
                   </Link>
                 </article>
-              ))}
-            </div>
-          ) : (
-            <div className="empty-state-card">
-              <p className="eyebrow">Publishing in progress</p>
-              <h2>
-                The first printable template is being prepared
-              </h2>
-              <p>
-                The resource architecture and publishing roadmap are
-                complete. Templates will be released individually
-                after content, print layout, SEO, and quality checks
-                pass.
-              </p>
-            </div>
-          )}
-        </Container>
-      </section>
-
-      <section className="directory-section directory-section--muted">
-        <Container>
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Publishing roadmap</p>
-              <h2>Templates currently in development</h2>
-            </div>
-
-            <p>
-              Planned resources cover complete investigations,
-              classroom practice, scientific data recording, and
-              visual analysis.
-            </p>
-          </div>
-
-          <div className="resource-grid">
-            {plannedTemplateResources.map((resource) => (
-              <article
-                className="resource-card resource-card--planned"
-                key={resource.slug}
-              >
-                <div className="resource-card__topline">
-                  <span>{resource.category}</span>
-                  <span className="resource-status">
-                    In development
-                  </span>
-                </div>
-
-                <h3>{resource.title}</h3>
-                <p>{resource.shortDescription}</p>
-
-                <span className="resource-card__link resource-card__link--disabled">
-                  Resource planned
-                </span>
-              </article>
             ))}
           </div>
         </Container>
