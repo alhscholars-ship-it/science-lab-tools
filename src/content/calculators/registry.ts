@@ -87,6 +87,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "linear-regression-calculator",
+    name: "Linear Regression Calculator",
+    shortDescription:
+      "Calculate slope, intercept, best-fit equation, correlation coefficient, and R squared.",
+    category: "Laboratory",
+    href: "/calculators/linear-regression-calculator",
+    keywords: [
+      "linear regression calculator",
+      "line of best fit calculator",
+      "correlation coefficient calculator",
+      "r squared calculator",
+    ],
+  },
+  {
     slug: "molarity-calculator",
     name: "Molarity Calculator",
     shortDescription:

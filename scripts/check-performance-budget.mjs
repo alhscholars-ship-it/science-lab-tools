@@ -11,6 +11,8 @@ const routes = {
     ".next/server/app/calculators/percent-error-calculator/page_client-reference-manifest.js",
   "Percent difference":
     ".next/server/app/calculators/percent-difference-calculator/page_client-reference-manifest.js",
+  "Linear regression":
+    ".next/server/app/calculators/linear-regression-calculator/page_client-reference-manifest.js",
   "Coefficient variation":
     ".next/server/app/calculators/coefficient-variation-calculator/page_client-reference-manifest.js",
   "Mean median mode":
@@ -156,6 +158,7 @@ for (const [label, chunks] of routeChunks) {
     "Standard deviation",
     "Mean median mode",
     "Coefficient variation",
+    "Linear regression",
     "Dilution",
     "Mass to moles",
     "Density",

@@ -96,6 +96,10 @@ const requiredRoutes = [
     "Standard deviation calculator",
   ],
   [
+    ".next/server/app/calculators/linear-regression-calculator.html",
+    "Linear regression calculator",
+  ],
+  [
     ".next/server/app/calculators/molarity-calculator.html",
     "Molarity calculator",
   ],
@@ -463,6 +467,71 @@ if (
   failed = true;
 } else {
   console.log("OK: Specific heat calculator is indexable");
+}
+
+const linearRegressionCalculatorFile =
+  ".next/server/app/calculators/linear-regression-calculator.html";
+
+const linearRegressionCalculatorHtml = fs.readFileSync(
+  linearRegressionCalculatorFile,
+  "utf8",
+);
+
+const linearRegressionCalculatorChecks = [
+  [
+    "Linear Regression Calculator",
+    "Linear regression title and heading",
+  ],
+  [
+    `href="${siteUrl}/calculators/linear-regression-calculator"`,
+    "Linear regression canonical",
+  ],
+  [
+    "EducationalApplication",
+    "Linear regression application structured data",
+  ],
+  [
+    "FAQPage",
+    "Linear regression FAQ structured data",
+  ],
+  [
+    'href="/lab-reports/tables-and-graphs"',
+    "Linear regression tables and graphs internal link",
+  ],
+  [
+    'href="/templates/graphing-scientific-data-worksheet"',
+    "Linear regression graphing worksheet internal link",
+  ],
+  [
+    'href="/scientific-method/analyze-experimental-results"',
+    "Linear regression analysis guide internal link",
+  ],
+];
+
+for (
+  const [needle, label] of linearRegressionCalculatorChecks
+) {
+  if (!linearRegressionCalculatorHtml.includes(needle)) {
+    console.error(`MISSING: ${label}`);
+    failed = true;
+  } else {
+    console.log(`OK: ${label}`);
+  }
+}
+
+if (
+  linearRegressionCalculatorHtml.includes(
+    'name="robots" content="noindex',
+  )
+) {
+  console.error(
+    "INVALID: Linear regression calculator is noindex",
+  );
+  failed = true;
+} else {
+  console.log(
+    "OK: Linear regression calculator is indexable",
+  );
 }
 
 const coefficientVariationCalculatorFile =

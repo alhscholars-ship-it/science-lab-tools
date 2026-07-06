@@ -53,6 +53,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: absoluteUrl(
+        "/calculators/linear-regression-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: absoluteUrl("/calculators/molarity-calculator"),
       changeFrequency: "monthly",
       priority: 0.9,
