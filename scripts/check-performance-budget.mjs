@@ -13,6 +13,8 @@ const routes = {
     ".next/server/app/calculators/percent-difference-calculator/page_client-reference-manifest.js",
   Molarity:
     ".next/server/app/calculators/molarity-calculator/page_client-reference-manifest.js",
+  "Mass to moles":
+    ".next/server/app/calculators/mass-moles-calculator/page_client-reference-manifest.js",
   Dilution:
     ".next/server/app/calculators/dilution-calculator/page_client-reference-manifest.js",
   Density:
@@ -143,6 +145,7 @@ for (const [label, chunks] of routeChunks) {
     "Percent difference",
     "Molarity",
     "Dilution",
+    "Mass to moles",
     "Density",
     "Specific heat",
   ].includes(label);

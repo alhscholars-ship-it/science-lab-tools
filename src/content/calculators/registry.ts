@@ -40,6 +40,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["molarity calculator", "moles and volume calculator"],
   },
   {
+    slug: "mass-moles-calculator",
+    name: "Mass to Moles Calculator",
+    shortDescription:
+      "Calculate mass, moles, or molar mass from two known chemistry values.",
+    category: "Chemistry",
+    href: "/calculators/mass-moles-calculator",
+    keywords: [
+      "mass to moles calculator",
+      "grams to moles calculator",
+      "moles to grams calculator",
+      "molar mass calculator",
+    ],
+  },
+  {
     slug: "dilution-calculator",
     name: "Dilution Calculator",
     shortDescription:

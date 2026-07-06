@@ -84,6 +84,10 @@ const requiredRoutes = [
     "Molarity calculator",
   ],
   [
+    ".next/server/app/calculators/mass-moles-calculator.html",
+    "Mass to moles calculator",
+  ],
+  [
     ".next/server/app/calculators/dilution-calculator.html",
     "Dilution calculator",
   ],
@@ -443,6 +447,61 @@ if (
   failed = true;
 } else {
   console.log("OK: Specific heat calculator is indexable");
+}
+
+const massMolesFile =
+  ".next/server/app/calculators/mass-moles-calculator.html";
+
+const massMolesHtml = fs.readFileSync(
+  massMolesFile,
+  "utf8",
+);
+
+const massMolesChecks = [
+  [
+    "Mass to Moles Calculator",
+    "Mass to moles title and heading",
+  ],
+  [
+    `href="${siteUrl}/calculators/mass-moles-calculator"`,
+    "Mass to moles canonical",
+  ],
+  [
+    "EducationalApplication",
+    "Mass to moles application structured data",
+  ],
+  [
+    "FAQPage",
+    "Mass to moles FAQ structured data",
+  ],
+  [
+    'href="/calculators/molarity-calculator"',
+    "Mass to moles molarity internal link",
+  ],
+];
+
+for (const [needle, label] of massMolesChecks) {
+  if (!massMolesHtml.includes(needle)) {
+    console.error(`MISSING: ${label}`);
+    failed = true;
+  } else {
+    console.log(`OK: ${label}`);
+  }
+}
+
+if (
+  massMolesHtml.includes(
+    'name="robots" content="noindex',
+  )
+) {
+  console.error(
+    "INVALID: Mass to moles calculator is noindex",
+  );
+  failed = true;
+} else {
+  console.log(
+    "OK: Mass to moles calculator is indexable",
+  );
 }
 
 const labReportsHubHtml = fs.readFileSync(
