@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "impulse-calculator",
+    name: "Impulse Calculator",
+    shortDescription:
+      "Calculate impulse, force, or time interval using J = FΔt.",
+    category: "Physics",
+    href: "/calculators/impulse-calculator",
+    keywords: [
+      "impulse calculator",
+      "force time impulse calculator",
+      "impulse momentum calculator",
+      "newton second calculator",
+    ],
+  },
+  {
     slug: "pressure-calculator",
     name: "Pressure Calculator",
     shortDescription:
