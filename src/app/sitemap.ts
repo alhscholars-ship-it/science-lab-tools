@@ -101,6 +101,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: absoluteUrl("/calculators/momentum-calculator"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: absoluteUrl("/calculators/acceleration-calculator"),
       changeFrequency: "monthly",
       priority: 0.9,

@@ -189,6 +189,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "momentum-calculator",
+    name: "Momentum Calculator",
+    shortDescription:
+      "Calculate momentum, mass, or velocity using the linear momentum formula.",
+    category: "Physics",
+    href: "/calculators/momentum-calculator",
+    keywords: [
+      "momentum calculator",
+      "linear momentum calculator",
+      "mass velocity momentum calculator",
+      "p equals mv calculator",
+    ],
+  },
+  {
     slug: "acceleration-calculator",
     name: "Acceleration Calculator",
     shortDescription:
