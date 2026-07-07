@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "gravitational-potential-energy-calculator",
+    name: "Gravitational Potential Energy Calculator",
+    shortDescription:
+      "Calculate gravitational potential energy, mass, gravity, or height using PE = mgh.",
+    category: "Physics",
+    href: "/calculators/gravitational-potential-energy-calculator",
+    keywords: [
+      "gravitational potential energy calculator",
+      "potential energy calculator",
+      "PE mgh calculator",
+      "mass gravity height calculator",
+    ],
+  },
+  {
     slug: "kinetic-energy-calculator",
     name: "Kinetic Energy Calculator",
     shortDescription:
