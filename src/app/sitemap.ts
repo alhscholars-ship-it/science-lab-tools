@@ -101,6 +101,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: absoluteUrl(
+        "/calculators/kinetic-energy-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: absoluteUrl("/calculators/momentum-calculator"),
       changeFrequency: "monthly",
       priority: 0.9,

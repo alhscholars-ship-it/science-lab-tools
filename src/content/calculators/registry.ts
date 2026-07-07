@@ -189,6 +189,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "kinetic-energy-calculator",
+    name: "Kinetic Energy Calculator",
+    shortDescription:
+      "Calculate kinetic energy, mass, or speed using the classical motion-energy formula.",
+    category: "Physics",
+    href: "/calculators/kinetic-energy-calculator",
+    keywords: [
+      "kinetic energy calculator",
+      "ke calculator",
+      "mass speed energy calculator",
+      "kinetic energy formula calculator",
+    ],
+  },
+  {
     slug: "momentum-calculator",
     name: "Momentum Calculator",
     shortDescription:
