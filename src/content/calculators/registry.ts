@@ -189,6 +189,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "work-calculator",
+    name: "Work Calculator",
+    shortDescription:
+      "Calculate work, force, or distance using the mechanical work formula.",
+    category: "Physics",
+    href: "/calculators/work-calculator",
+    keywords: [
+      "work calculator",
+      "physics work calculator",
+      "force distance work calculator",
+      "work formula calculator",
+    ],
+  },
+  {
     slug: "kinetic-energy-calculator",
     name: "Kinetic Energy Calculator",
     shortDescription:
