@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "torque-calculator",
+    name: "Torque Calculator",
+    shortDescription:
+      "Calculate torque, force, or lever-arm distance using τ = Fr.",
+    category: "Physics",
+    href: "/calculators/torque-calculator",
+    keywords: [
+      "torque calculator",
+      "force lever arm calculator",
+      "newton meter calculator",
+      "rotational force calculator",
+    ],
+  },
+  {
     slug: "impulse-calculator",
     name: "Impulse Calculator",
     shortDescription:

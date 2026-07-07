@@ -112,6 +112,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: absoluteUrl(
+        "/calculators/torque-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl(
         "/calculators/impulse-calculator",
       ),
       changeFrequency: "monthly",
