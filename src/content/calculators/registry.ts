@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "elastic-potential-energy-calculator",
+    name: "Elastic Potential Energy Calculator",
+    shortDescription:
+      "Calculate elastic potential energy, spring constant, or extension using E = ½kx².",
+    category: "Physics",
+    href: "/calculators/elastic-potential-energy-calculator",
+    keywords: [
+      "elastic potential energy calculator",
+      "spring energy calculator",
+      "spring constant calculator",
+      "extension calculator",
+    ],
+  },
+  {
     slug: "gravitational-potential-energy-calculator",
     name: "Gravitational Potential Energy Calculator",
     shortDescription:
