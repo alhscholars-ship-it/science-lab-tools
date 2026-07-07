@@ -175,6 +175,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["dilution calculator chemistry"],
   },
   {
+    slug: "force-calculator",
+    name: "Force Calculator",
+    shortDescription:
+      "Calculate force, mass, or acceleration using Newton's second law.",
+    category: "Physics",
+    href: "/calculators/force-calculator",
+    keywords: [
+      "force calculator",
+      "newtons second law calculator",
+      "force mass acceleration calculator",
+      "f equals ma calculator",
+    ],
+  },
+  {
     slug: "acceleration-calculator",
     name: "Acceleration Calculator",
     shortDescription:

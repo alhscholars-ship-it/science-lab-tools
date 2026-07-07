@@ -124,6 +124,10 @@ const requiredRoutes = [
     "Dilution calculator",
   ],
   [
+    ".next/server/app/calculators/force-calculator.html",
+    "Force calculator",
+  ],
+  [
     ".next/server/app/calculators/acceleration-calculator.html",
     "Acceleration calculator",
   ],
@@ -443,6 +447,69 @@ if (densityHtml.includes('name="robots" content="noindex')) {
   failed = true;
 } else {
   console.log("OK: Density calculator is indexable");
+}
+
+const forceCalculatorFile =
+  ".next/server/app/calculators/force-calculator.html";
+
+const forceCalculatorHtml = fs.readFileSync(
+  forceCalculatorFile,
+  "utf8",
+);
+
+const forceCalculatorChecks = [
+  [
+    "Force Calculator",
+    "Force title and heading",
+  ],
+  [
+    `href="${siteUrl}/calculators/force-calculator"`,
+    "Force canonical",
+  ],
+  [
+    "EducationalApplication",
+    "Force application structured data",
+  ],
+  [
+    "FAQPage",
+    "Force FAQ structured data",
+  ],
+  [
+    'href="/calculators/acceleration-calculator"',
+    "Force acceleration internal link",
+  ],
+  [
+    'href="/calculators/rate-of-change-calculator"',
+    "Force rate of change internal link",
+  ],
+  [
+    'href="/lab-reports/tables-and-graphs"',
+    "Force tables and graphs internal link",
+  ],
+];
+
+for (const [needle, label] of forceCalculatorChecks) {
+  if (!forceCalculatorHtml.includes(needle)) {
+    console.error(`MISSING: ${label}`);
+    failed = true;
+  } else {
+    console.log(`OK: ${label}`);
+  }
+}
+
+if (
+  forceCalculatorHtml.includes(
+    'name="robots" content="noindex',
+  )
+) {
+  console.error(
+    "INVALID: Force calculator is noindex",
+  );
+  failed = true;
+} else {
+  console.log(
+    "OK: Force calculator is indexable",
+  );
 }
 
 const accelerationCalculatorFile =
