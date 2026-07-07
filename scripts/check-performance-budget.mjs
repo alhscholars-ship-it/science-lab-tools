@@ -33,6 +33,8 @@ const routes = {
     ".next/server/app/calculators/mass-moles-calculator/page_client-reference-manifest.js",
   Dilution:
     ".next/server/app/calculators/dilution-calculator/page_client-reference-manifest.js",
+  Acceleration:
+    ".next/server/app/calculators/acceleration-calculator/page_client-reference-manifest.js",
   Density:
     ".next/server/app/calculators/density-calculator/page_client-reference-manifest.js",
   "Specific heat":
@@ -170,6 +172,7 @@ for (const [label, chunks] of routeChunks) {
     "Uncertainty propagation",
     "Dilution",
     "Mass to moles",
+    "Acceleration",
     "Density",
     "Specific heat",
   ].includes(label);

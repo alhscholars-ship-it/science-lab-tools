@@ -175,6 +175,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["dilution calculator chemistry"],
   },
   {
+    slug: "acceleration-calculator",
+    name: "Acceleration Calculator",
+    shortDescription:
+      "Calculate acceleration, initial velocity, final velocity, or time from three known values.",
+    category: "Physics",
+    href: "/calculators/acceleration-calculator",
+    keywords: [
+      "acceleration calculator",
+      "initial velocity calculator",
+      "final velocity calculator",
+      "velocity and time calculator",
+    ],
+  },
+  {
     slug: "density-calculator",
     name: "Density Calculator",
     shortDescription:

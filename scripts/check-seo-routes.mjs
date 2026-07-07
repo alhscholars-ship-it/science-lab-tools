@@ -124,6 +124,10 @@ const requiredRoutes = [
     "Dilution calculator",
   ],
   [
+    ".next/server/app/calculators/acceleration-calculator.html",
+    "Acceleration calculator",
+  ],
+  [
     ".next/server/app/calculators/density-calculator.html",
     "Density calculator",
   ],
@@ -439,6 +443,71 @@ if (densityHtml.includes('name="robots" content="noindex')) {
   failed = true;
 } else {
   console.log("OK: Density calculator is indexable");
+}
+
+const accelerationCalculatorFile =
+  ".next/server/app/calculators/acceleration-calculator.html";
+
+const accelerationCalculatorHtml = fs.readFileSync(
+  accelerationCalculatorFile,
+  "utf8",
+);
+
+const accelerationCalculatorChecks = [
+  [
+    "Acceleration Calculator",
+    "Acceleration title and heading",
+  ],
+  [
+    `href="${siteUrl}/calculators/acceleration-calculator"`,
+    "Acceleration canonical",
+  ],
+  [
+    "EducationalApplication",
+    "Acceleration application structured data",
+  ],
+  [
+    "FAQPage",
+    "Acceleration FAQ structured data",
+  ],
+  [
+    'href="/calculators/rate-of-change-calculator"',
+    "Acceleration rate of change internal link",
+  ],
+  [
+    'href="/calculators/linear-regression-calculator"',
+    "Acceleration linear regression internal link",
+  ],
+  [
+    'href="/lab-reports/tables-and-graphs"',
+    "Acceleration tables and graphs internal link",
+  ],
+];
+
+for (
+  const [needle, label] of accelerationCalculatorChecks
+) {
+  if (!accelerationCalculatorHtml.includes(needle)) {
+    console.error(`MISSING: ${label}`);
+    failed = true;
+  } else {
+    console.log(`OK: ${label}`);
+  }
+}
+
+if (
+  accelerationCalculatorHtml.includes(
+    'name="robots" content="noindex',
+  )
+) {
+  console.error(
+    "INVALID: Acceleration calculator is noindex",
+  );
+  failed = true;
+} else {
+  console.log(
+    "OK: Acceleration calculator is indexable",
+  );
 }
 
 const specificHeatFile =
