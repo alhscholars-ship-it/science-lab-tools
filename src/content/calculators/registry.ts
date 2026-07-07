@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "hookes-law-calculator",
+    name: "Hooke’s Law Calculator",
+    shortDescription:
+      "Calculate force, spring constant, or extension using Hooke’s law F = kx.",
+    category: "Physics",
+    href: "/calculators/hookes-law-calculator",
+    keywords: [
+      "hookes law calculator",
+      "hooke law calculator",
+      "spring force calculator",
+      "force spring constant extension calculator",
+    ],
+  },
+  {
     slug: "elastic-potential-energy-calculator",
     name: "Elastic Potential Energy Calculator",
     shortDescription:
