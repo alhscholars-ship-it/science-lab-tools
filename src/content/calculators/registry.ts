@@ -189,6 +189,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "power-calculator",
+    name: "Power Calculator",
+    shortDescription:
+      "Calculate power, work, or time using the mechanical power formula.",
+    category: "Physics",
+    href: "/calculators/power-calculator",
+    keywords: [
+      "power calculator",
+      "physics power calculator",
+      "work time power calculator",
+      "power formula calculator",
+    ],
+  },
+  {
     slug: "work-calculator",
     name: "Work Calculator",
     shortDescription:
