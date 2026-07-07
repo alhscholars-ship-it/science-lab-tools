@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "pressure-calculator",
+    name: "Pressure Calculator",
+    shortDescription:
+      "Calculate pressure, force, or area using P = F ÷ A.",
+    category: "Physics",
+    href: "/calculators/pressure-calculator",
+    keywords: [
+      "pressure calculator",
+      "force area pressure calculator",
+      "p equals f over a calculator",
+      "pascal calculator",
+    ],
+  },
+  {
     slug: "hookes-law-calculator",
     name: "Hooke’s Law Calculator",
     shortDescription:
