@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "tangential-acceleration-calculator",
+    name: "Tangential Acceleration Calculator",
+    shortDescription:
+      "Calculate tangential acceleration, radius, or angular acceleration using aₜ = rα.",
+    category: "Physics",
+    href: "/calculators/tangential-acceleration-calculator",
+    keywords: [
+      "tangential acceleration calculator",
+      "radius angular acceleration calculator",
+      "linear acceleration circular motion calculator",
+      "a t equals r alpha calculator",
+    ],
+  },
+  {
     slug: "tangential-velocity-calculator",
     name: "Tangential Velocity Calculator",
     shortDescription:
