@@ -245,6 +245,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "rpm-calculator",
+    name: "RPM Calculator",
+    shortDescription:
+      "Convert RPM, rotational frequency, and angular velocity using RPM = 60f.",
+    category: "Physics",
+    href: "/calculators/rpm-calculator",
+    keywords: [
+      "rpm calculator",
+      "rpm to hertz calculator",
+      "hertz to rpm calculator",
+      "rpm to angular velocity calculator",
+    ],
+  },
+  {
     slug: "rotational-frequency-calculator",
     name: "Rotational Frequency Calculator",
     shortDescription:
