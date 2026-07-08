@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "centripetal-acceleration-calculator",
+    name: "Centripetal Acceleration Calculator",
+    shortDescription:
+      "Calculate centripetal acceleration, velocity, or radius using ac = v² ÷ r.",
+    category: "Physics",
+    href: "/calculators/centripetal-acceleration-calculator",
+    keywords: [
+      "centripetal acceleration calculator",
+      "circular acceleration calculator",
+      "velocity radius acceleration calculator",
+      "ac equals v squared over r",
+    ],
+  },
+  {
     slug: "circular-velocity-calculator",
     name: "Circular Velocity Calculator",
     shortDescription:
