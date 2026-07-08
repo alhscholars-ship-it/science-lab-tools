@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "rotational-kinetic-energy-calculator",
+    name: "Rotational Kinetic Energy Calculator",
+    shortDescription:
+      "Calculate rotational kinetic energy, moment of inertia, or angular velocity using KErot = ½Iω².",
+    category: "Physics",
+    href: "/calculators/rotational-kinetic-energy-calculator",
+    keywords: [
+      "rotational kinetic energy calculator",
+      "moment of inertia calculator",
+      "angular velocity energy calculator",
+      "one half i omega squared",
+    ],
+  },
+  {
     slug: "angular-acceleration-calculator",
     name: "Angular Acceleration Calculator",
     shortDescription:
