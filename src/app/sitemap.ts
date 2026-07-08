@@ -112,6 +112,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: absoluteUrl(
+        "/calculators/circular-velocity-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl(
         "/calculators/centripetal-force-calculator",
       ),
       changeFrequency: "monthly",

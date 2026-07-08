@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "circular-velocity-calculator",
+    name: "Circular Velocity Calculator",
+    shortDescription:
+      "Calculate circular velocity, radius, or period using v = 2πr ÷ T.",
+    category: "Physics",
+    href: "/calculators/circular-velocity-calculator",
+    keywords: [
+      "circular velocity calculator",
+      "tangential velocity calculator",
+      "radius period velocity calculator",
+      "v equals 2 pi r over t",
+    ],
+  },
+  {
     slug: "centripetal-force-calculator",
     name: "Centripetal Force Calculator",
     shortDescription:
