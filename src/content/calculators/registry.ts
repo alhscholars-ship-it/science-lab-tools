@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "moment-of-inertia-calculator",
+    name: "Moment of Inertia Calculator",
+    shortDescription:
+      "Calculate moment of inertia for point masses, disks, hoops, spheres, shells, and rods.",
+    category: "Physics",
+    href: "/calculators/moment-of-inertia-calculator",
+    keywords: [
+      "moment of inertia calculator",
+      "rotational inertia calculator",
+      "disk sphere rod inertia calculator",
+      "moment of inertia formulas",
+    ],
+  },
+  {
     slug: "rotational-kinetic-energy-calculator",
     name: "Rotational Kinetic Energy Calculator",
     shortDescription:
