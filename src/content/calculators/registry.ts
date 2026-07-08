@@ -398,6 +398,21 @@ export const calculators: readonly CalculatorDefinition[] = [
       "alpha equals delta omega over time",
     ],
   },
+
+  {
+    slug: "angular-displacement-calculator",
+    name: "Angular Displacement Calculator",
+    shortDescription:
+      "Calculate angular displacement, angular velocity, or time using θ = ω × t.",
+    category: "Physics",
+    href: "/calculators/angular-displacement-calculator",
+    keywords: [
+      "angular displacement calculator",
+      "angular displacement formula",
+      "theta omega time calculator",
+      "rotational motion calculator",
+    ],
+  },
   {
     slug: "angular-velocity-calculator",
     name: "Angular Velocity Calculator",

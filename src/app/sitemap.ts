@@ -201,6 +201,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+
+    {
+      url: absoluteUrl(
+        "/calculators/angular-displacement-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     {
       url: absoluteUrl(
         "/calculators/angular-velocity-calculator",
