@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "angular-acceleration-calculator",
+    name: "Angular Acceleration Calculator",
+    shortDescription:
+      "Calculate angular acceleration, angular velocity change, or time using α = Δω ÷ t.",
+    category: "Physics",
+    href: "/calculators/angular-acceleration-calculator",
+    keywords: [
+      "angular acceleration calculator",
+      "angular velocity change calculator",
+      "rotational acceleration calculator",
+      "alpha equals delta omega over time",
+    ],
+  },
+  {
     slug: "angular-velocity-calculator",
     name: "Angular Velocity Calculator",
     shortDescription:
