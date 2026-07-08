@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "tangential-velocity-calculator",
+    name: "Tangential Velocity Calculator",
+    shortDescription:
+      "Calculate tangential velocity, radius, or angular velocity using v = rω.",
+    category: "Physics",
+    href: "/calculators/tangential-velocity-calculator",
+    keywords: [
+      "tangential velocity calculator",
+      "radius angular velocity calculator",
+      "linear velocity circular motion calculator",
+      "v equals r omega calculator",
+    ],
+  },
+  {
     slug: "rotational-work-calculator",
     name: "Rotational Work Calculator",
     shortDescription:
