@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "rotational-work-calculator",
+    name: "Rotational Work Calculator",
+    shortDescription:
+      "Calculate rotational work, torque, or angular displacement using W = τθ.",
+    category: "Physics",
+    href: "/calculators/rotational-work-calculator",
+    keywords: [
+      "rotational work calculator",
+      "torque angular displacement calculator",
+      "work equals torque times angle",
+      "rotational energy calculator",
+    ],
+  },
+  {
     slug: "rotational-dynamics-calculator",
     name: "Rotational Dynamics Calculator",
     shortDescription:
