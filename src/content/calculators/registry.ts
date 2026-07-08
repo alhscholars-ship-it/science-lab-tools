@@ -259,6 +259,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "revolutions-calculator",
+    name: "Revolutions Calculator",
+    shortDescription:
+      "Calculate revolutions, rotational frequency, time, or angular displacement using N = ft and N = θ / 2π.",
+    category: "Physics",
+    href: "/calculators/revolutions-calculator",
+    keywords: [
+      "revolutions calculator",
+      "number of revolutions",
+      "revolutions from frequency and time",
+      "angular displacement to revolutions",
+    ],
+  },
+  {
     slug: "rotational-frequency-calculator",
     name: "Rotational Frequency Calculator",
     shortDescription:
