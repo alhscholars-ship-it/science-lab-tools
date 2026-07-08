@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "centripetal-force-calculator",
+    name: "Centripetal Force Calculator",
+    shortDescription:
+      "Calculate centripetal force, mass, velocity, or radius using Fc = mv² ÷ r.",
+    category: "Physics",
+    href: "/calculators/centripetal-force-calculator",
+    keywords: [
+      "centripetal force calculator",
+      "circular motion calculator",
+      "mass velocity radius calculator",
+      "fc equals mv squared over r",
+    ],
+  },
+  {
     slug: "torque-calculator",
     name: "Torque Calculator",
     shortDescription:
