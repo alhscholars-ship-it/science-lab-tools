@@ -497,6 +497,21 @@ export const calculators: readonly CalculatorDefinition[] = [
       "newton second calculator",
     ],
   },
+
+  {
+    slug: "projectile-motion-calculator",
+    name: "Projectile Motion Calculator",
+    shortDescription:
+      "Calculate projectile range, maximum height, and flight time using velocity, angle, and gravity.",
+    category: "Physics",
+    href: "/calculators/projectile-motion-calculator",
+    keywords: [
+      "projectile motion calculator",
+      "projectile range calculator",
+      "maximum height calculator",
+      "flight time calculator",
+    ],
+  },
   {
     slug: "pressure-calculator",
     name: "Pressure Calculator",
