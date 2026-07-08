@@ -498,6 +498,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
 
+
+  {
+    slug: "free-fall-calculator",
+    name: "Free Fall Calculator",
+    shortDescription:
+      "Calculate free fall distance, final velocity, or fall time using gravity equations.",
+    category: "Physics",
+    href: "/calculators/free-fall-calculator",
+    keywords: [
+      "free fall calculator",
+      "fall time calculator",
+      "free fall velocity calculator",
+      "gravity calculator",
+    ],
+  },
   {
     slug: "projectile-motion-calculator",
     name: "Projectile Motion Calculator",
