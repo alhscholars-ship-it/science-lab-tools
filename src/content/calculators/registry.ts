@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "rotational-dynamics-calculator",
+    name: "Rotational Dynamics Calculator",
+    shortDescription:
+      "Calculate torque, moment of inertia, or angular acceleration using τ = Iα.",
+    category: "Physics",
+    href: "/calculators/rotational-dynamics-calculator",
+    keywords: [
+      "rotational dynamics calculator",
+      "torque moment of inertia calculator",
+      "torque angular acceleration calculator",
+      "tau equals I alpha calculator",
+    ],
+  },
+  {
     slug: "angular-impulse-calculator",
     name: "Angular Impulse Calculator",
     shortDescription:
