@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "angular-impulse-calculator",
+    name: "Angular Impulse Calculator",
+    shortDescription:
+      "Calculate angular impulse, torque, or time using J = τt = ΔL.",
+    category: "Physics",
+    href: "/calculators/angular-impulse-calculator",
+    keywords: [
+      "angular impulse calculator",
+      "torque time calculator",
+      "change in angular momentum calculator",
+      "rotational impulse calculator",
+    ],
+  },
+  {
     slug: "angular-momentum-calculator",
     name: "Angular Momentum Calculator",
     shortDescription:
