@@ -112,6 +112,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: absoluteUrl(
+        "/calculators/angular-momentum-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl(
         "/calculators/rotational-power-calculator",
       ),
       changeFrequency: "monthly",

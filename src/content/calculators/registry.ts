@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "angular-momentum-calculator",
+    name: "Angular Momentum Calculator",
+    shortDescription:
+      "Calculate angular momentum, moment of inertia, or angular velocity using L = Iω.",
+    category: "Physics",
+    href: "/calculators/angular-momentum-calculator",
+    keywords: [
+      "angular momentum calculator",
+      "moment of inertia angular velocity calculator",
+      "L equals I omega calculator",
+      "rotational momentum calculator",
+    ],
+  },
+  {
     slug: "rotational-power-calculator",
     name: "Rotational Power Calculator",
     shortDescription:
