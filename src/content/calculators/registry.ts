@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "angular-velocity-calculator",
+    name: "Angular Velocity Calculator",
+    shortDescription:
+      "Calculate angular velocity, angular displacement, or time using ω = θ ÷ t.",
+    category: "Physics",
+    href: "/calculators/angular-velocity-calculator",
+    keywords: [
+      "angular velocity calculator",
+      "angular displacement calculator",
+      "rotational motion calculator",
+      "omega equals theta over time",
+    ],
+  },
+  {
     slug: "centripetal-acceleration-calculator",
     name: "Centripetal Acceleration Calculator",
     shortDescription:
