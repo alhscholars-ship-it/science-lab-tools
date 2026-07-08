@@ -245,6 +245,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "rotational-frequency-calculator",
+    name: "Rotational Frequency Calculator",
+    shortDescription:
+      "Calculate rotational frequency, angular velocity, or rotation period using f = ω / 2π.",
+    category: "Physics",
+    href: "/calculators/rotational-frequency-calculator",
+    keywords: [
+      "rotational frequency calculator",
+      "angular velocity to frequency calculator",
+      "rotation period calculator",
+      "revolutions per second calculator",
+    ],
+  },
+  {
     slug: "rotational-work-calculator",
     name: "Rotational Work Calculator",
     shortDescription:
