@@ -149,9 +149,8 @@ export default function CentripetalAccelerationCalculatorPage() {
             </h1>
 
             <p>
-              Solve centripetal acceleration, mass,
-              velocity, or radius using
-              ac = v² ÷ r.
+              Solve centripetal acceleration, velocity,
+              or radius using ac = v² ÷ r.
             </p>
           </div>
         </Container>
