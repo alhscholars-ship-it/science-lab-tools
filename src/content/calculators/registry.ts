@@ -217,6 +217,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "rotational-power-calculator",
+    name: "Rotational Power Calculator",
+    shortDescription:
+      "Calculate rotational power, torque, or angular velocity using P = τω.",
+    category: "Physics",
+    href: "/calculators/rotational-power-calculator",
+    keywords: [
+      "rotational power calculator",
+      "torque angular velocity calculator",
+      "power equals torque times angular velocity",
+      "rotational mechanics calculator",
+    ],
+  },
+  {
     slug: "moment-of-inertia-calculator",
     name: "Moment of Inertia Calculator",
     shortDescription:
