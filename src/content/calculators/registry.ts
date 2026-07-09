@@ -626,6 +626,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "distance-calculator",
+    name: "Distance Calculator",
+    shortDescription:
+      "Calculate distance, speed, or time using the motion formula d = v × t.",
+    category: "Physics",
+    href: "/calculators/distance-calculator",
+    keywords: [
+      "distance calculator",
+      "speed distance time calculator",
+      "distance formula calculator",
+      "calculate distance from speed and time",
+    ],
+  },
+  {
     slug: "displacement-calculator",
     name: "Displacement Calculator",
     shortDescription:
