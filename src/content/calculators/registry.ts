@@ -175,6 +175,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["dilution calculator chemistry"],
   },
   {
+    slug: "inclined-plane-calculator",
+    name: "Inclined Plane Calculator",
+    shortDescription:
+      "Calculate parallel force, normal force, friction force, net force, and acceleration on an inclined plane.",
+    category: "Physics",
+    href: "/calculators/inclined-plane-calculator",
+    keywords: [
+      "inclined plane calculator",
+      "incline force calculator",
+      "inclined plane acceleration calculator",
+      "inclined plane friction calculator",
+      "force on an incline calculator",
+    ],
+  },
+  {
     slug: "friction-calculator",
     name: "Friction Calculator",
     shortDescription:
