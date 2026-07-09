@@ -682,6 +682,22 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "kinematic-equations-calculator",
+    name: "Kinematic Equations Calculator",
+    shortDescription:
+      "Solve initial velocity, final velocity, acceleration, time, or displacement using four SUVAT equations.",
+    category: "Physics",
+    href: "/calculators/kinematic-equations-calculator",
+    keywords: [
+      "kinematic equations calculator",
+      "SUVAT calculator",
+      "motion equations calculator",
+      "constant acceleration calculator",
+      "final velocity calculator",
+      "kinematics calculator",
+    ],
+  },
+  {
     slug: "acceleration-calculator",
     name: "Acceleration Calculator",
     shortDescription:
