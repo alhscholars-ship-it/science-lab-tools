@@ -255,6 +255,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     {
       url: absoluteUrl(
+        "/calculators/acceleration-due-to-gravity-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl(
         "/calculators/free-fall-calculator",
       ),
       changeFrequency: "monthly",

@@ -500,6 +500,20 @@ export const calculators: readonly CalculatorDefinition[] = [
 
 
   {
+    slug: "acceleration-due-to-gravity-calculator",
+    name: "Acceleration Due to Gravity Calculator",
+    shortDescription:
+      "Calculate gravitational acceleration from the mass and radius of a planet or celestial body using g = GM / r².",
+    category: "Physics",
+    href: "/calculators/acceleration-due-to-gravity-calculator",
+    keywords: [
+      "acceleration due to gravity calculator",
+      "gravitational acceleration calculator",
+      "gravity calculator",
+      "surface gravity calculator",
+    ],
+  },
+  {
     slug: "free-fall-calculator",
     name: "Free Fall Calculator",
     shortDescription:
