@@ -626,6 +626,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "displacement-calculator",
+    name: "Displacement Calculator",
+    shortDescription:
+      "Calculate displacement, initial position, or final position using Δx = x₂ − x₁.",
+    category: "Physics",
+    href: "/calculators/displacement-calculator",
+    keywords: [
+      "displacement calculator",
+      "initial final position calculator",
+      "change in position calculator",
+      "displacement formula calculator",
+    ],
+  },
+  {
     slug: "average-speed-calculator",
     name: "Average Speed Calculator",
     shortDescription:
