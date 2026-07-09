@@ -175,6 +175,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["dilution calculator chemistry"],
   },
   {
+    slug: "normal-force-calculator",
+    name: "Normal Force Calculator",
+    shortDescription:
+      "Calculate normal force, mass, or gravity on horizontal and inclined surfaces with optional external forces.",
+    category: "Physics",
+    href: "/calculators/normal-force-calculator",
+    keywords: [
+      "normal force calculator",
+      "inclined plane normal force calculator",
+      "normal force formula calculator",
+      "N equals mg calculator",
+      "surface force calculator",
+    ],
+  },
+  {
     slug: "weight-calculator",
     name: "Weight Calculator",
     shortDescription:
