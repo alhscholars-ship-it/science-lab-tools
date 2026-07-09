@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Control Group and Experimental Group";
 const pageDescription =
-  "Learn the difference between control and experimental groups, why comparison groups matter, and how they strengthen scientific experiments.";
+  "Understand control groups and experimental groups, how they differ, why fair comparisons matter, and how to identify each group in an investigation.";
 
 export const metadata: Metadata = {
   title: pageTitle,

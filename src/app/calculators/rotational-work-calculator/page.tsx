@@ -12,7 +12,7 @@ const pageTitle =
   "Rotational Work Calculator";
 
 const pageDescription =
-  "Calculate rotational work, torque, or angular displacement using W = τθ.";
+  "Calculate rotational work, torque, or angular displacement using W = τθ, with SI units, formula explanations, and clear step-by-step results.";
 
 const pagePath =
   "/calculators/rotational-work-calculator";

@@ -11,7 +11,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 const pageTitle = "Pressure Calculator";
 
 const pageDescription =
-  "Calculate pressure, force, or area using the pressure formula P = F ÷ A.";
+  "Calculate pressure, force, or area using P = F ÷ A, with pascal and area-unit guidance, formula explanations, and clear step-by-step results.";
 
 const pagePath =
   "/calculators/pressure-calculator";

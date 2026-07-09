@@ -12,7 +12,7 @@ const pageTitle =
   "RPM Calculator";
 
 const pageDescription =
-  "Convert RPM, rotational frequency, and angular velocity using RPM = 60f.";
+  "Convert RPM, rotational frequency, angular velocity, or rotation period with standard formulas, supported units, and clear conversion steps.";
 
 const pagePath =
   "/calculators/rpm-calculator";

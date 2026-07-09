@@ -12,7 +12,7 @@ const pageTitle =
   "Tangential Velocity Calculator";
 
 const pageDescription =
-  "Calculate tangential velocity, radius, or angular velocity using v = rω.";
+  "Calculate tangential velocity, radius, or angular velocity using v = rω, with supported rotational units and clear step-by-step results.";
 
 const pagePath =
   "/calculators/tangential-velocity-calculator";

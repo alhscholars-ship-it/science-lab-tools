@@ -9,7 +9,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 const pageTitle = "Average Velocity Calculator";
 
 const pageDescription =
-  "Calculate average velocity, displacement, or elapsed time using v̄ = Δx ÷ Δt.";
+  "Calculate average velocity, displacement, or elapsed time using v̄ = Δx ÷ Δt, with signed motion values, unit guidance, and clear working steps.";
 
 const pagePath =
   "/calculators/average-velocity-calculator";

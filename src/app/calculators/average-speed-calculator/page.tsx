@@ -9,7 +9,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 const pageTitle = "Average Speed Calculator";
 
 const pageDescription =
-  "Calculate average speed, total distance, or elapsed time using s̄ = d ÷ t.";
+  "Calculate average speed, total distance, or elapsed time using average speed = distance ÷ time, with unit conversions and step-by-step results.";
 
 const pagePath =
   "/calculators/average-speed-calculator";

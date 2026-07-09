@@ -12,7 +12,7 @@ const pageTitle =
   "Rotational Frequency Calculator";
 
 const pageDescription =
-  "Calculate rotational frequency, rotation period, or angular velocity using f = ω / 2π.";
+  "Calculate rotational frequency, period, or angular velocity using f = ω ÷ 2π, with hertz, seconds, radians, and clear calculation steps.";
 
 const pagePath =
   "/calculators/rotational-frequency-calculator";

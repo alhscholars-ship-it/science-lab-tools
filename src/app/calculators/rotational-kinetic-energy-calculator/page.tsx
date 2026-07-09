@@ -12,7 +12,7 @@ const pageTitle =
   "Rotational Kinetic Energy Calculator";
 
 const pageDescription =
-  "Calculate rotational kinetic energy, moment of inertia, or angular velocity using KErot = ½Iω².";
+  "Calculate rotational kinetic energy, moment of inertia, or angular velocity using KE = ½Iω², with SI units and step-by-step results.";
 
 const pagePath =
   "/calculators/rotational-kinetic-energy-calculator";

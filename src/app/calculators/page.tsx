@@ -7,7 +7,7 @@ import { calculators } from "@/content/calculators/registry";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle =
-  "Free Science Calculators for Physics, Chemistry and Labs";
+  "Free Science Calculators";
 
 const pageDescription =
   "Use free physics, chemistry, statistics, and laboratory calculators with tested formulas, unit guidance, worked examples, and step-by-step solutions.";

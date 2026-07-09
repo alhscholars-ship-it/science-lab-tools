@@ -12,7 +12,7 @@ const pageTitle =
   "Angular Displacement Calculator";
 
 const pageDescription =
-  "Calculate angular displacement, angular velocity, or time using θ = ω × t.";
+  "Calculate angular displacement, angular velocity, or elapsed time using θ = ωt, with unit guidance, formula explanations, and worked calculation steps.";
 
 const pagePath =
   "/calculators/angular-displacement-calculator";

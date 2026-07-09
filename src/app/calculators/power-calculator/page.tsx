@@ -8,7 +8,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Power Calculator";
 const pageDescription =
-  "Calculate power, work, or time using the formula P = W ÷ t.";
+  "Calculate power, work, or elapsed time using P = W ÷ t, with watt, joule, and time-unit guidance plus clear step-by-step calculation results.";
 
 const pagePath = "/calculators/power-calculator";
 

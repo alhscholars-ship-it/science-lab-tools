@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "How to Write a Hypothesis";
 const pageDescription =
-  "Learn how to write a clear, testable scientific hypothesis using independent and dependent variables, scientific reasoning, and practical examples.";
+  "Learn how to write a clear, testable scientific hypothesis using independent and dependent variables, evidence-based reasoning, and practical examples.";
 
 export const metadata: Metadata = {
   title: pageTitle,

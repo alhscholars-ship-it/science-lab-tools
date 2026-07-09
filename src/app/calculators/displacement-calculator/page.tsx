@@ -9,7 +9,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 const pageTitle = "Displacement Calculator";
 
 const pageDescription =
-  "Calculate displacement, initial position, or final position using Δx = x₂ − x₁.";
+  "Calculate displacement, initial position, or final position using Δx = x₂ − x₁, with signed direction, unit guidance, and step-by-step results.";
 
 const pagePath =
   "/calculators/displacement-calculator";

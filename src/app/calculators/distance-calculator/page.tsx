@@ -9,7 +9,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 const pageTitle = "Distance Calculator";
 
 const pageDescription =
-  "Calculate distance, speed, or time using the motion formula d = v × t.";
+  "Calculate distance, speed, or travel time using d = vt, with common motion units, automatic rearrangement, formula guidance, and clear working steps.";
 
 const pagePath =
   "/calculators/distance-calculator";

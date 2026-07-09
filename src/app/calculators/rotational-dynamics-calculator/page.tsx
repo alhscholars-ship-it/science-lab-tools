@@ -12,7 +12,7 @@ const pageTitle =
   "Rotational Dynamics Calculator";
 
 const pageDescription =
-  "Calculate torque, moment of inertia, or angular acceleration using τ = Iα.";
+  "Calculate torque, moment of inertia, or angular acceleration using τ = Iα, with SI units, formula guidance, and step-by-step rotational results.";
 
 const pagePath =
   "/calculators/rotational-dynamics-calculator";

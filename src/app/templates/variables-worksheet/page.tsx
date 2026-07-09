@@ -7,24 +7,28 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle =
   "Independent and Dependent Variables Worksheet";
+
+const seoTitle =
+  "Science Variables Worksheet";
+
 const pageDescription =
   "Use this printable variables worksheet to identify independent, dependent, and controlled variables in scientific investigations and experimental scenarios.";
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: seoTitle,
   description: pageDescription,
   alternates: {
     canonical: "/templates/variables-worksheet",
   },
   openGraph: {
-    title: `${pageTitle} | ${siteConfig.name}`,
+    title: `${seoTitle} | ${siteConfig.name}`,
     description: pageDescription,
     type: "article",
     url: absoluteUrl("/templates/variables-worksheet"),
   },
   twitter: {
     card: "summary_large_image",
-    title: `${pageTitle} | ${siteConfig.name}`,
+    title: `${seoTitle} | ${siteConfig.name}`,
     description: pageDescription,
   },
   robots: {

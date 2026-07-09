@@ -8,7 +8,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 const pageTitle =
   "How to Collect and Record Scientific Data";
 const pageDescription =
-  "Learn how to collect and record accurate scientific data using measurements, observations, tables, units, repeated trials, and consistent procedures.";
+  "Learn how to collect and record scientific data accurately using clear units, consistent intervals, organized tables, observations, and repeatable methods.";
 
 export const metadata: Metadata = {
   title: pageTitle,

@@ -12,7 +12,7 @@ const pageTitle =
   "Elastic Potential Energy Calculator";
 
 const pageDescription =
-  "Calculate elastic potential energy, spring constant, or extension using E = ½kx².";
+  "Calculate elastic potential energy, spring constant, or extension using E = ½kx², with SI units, formula explanations, and step-by-step results.";
 
 const pagePath =
   "/calculators/elastic-potential-energy-calculator";

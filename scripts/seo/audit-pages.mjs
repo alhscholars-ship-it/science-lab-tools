@@ -4,6 +4,10 @@ import path from "node:path";
 const root = process.cwd();
 const appDirectory = path.join(root, "src/app");
 const layoutPath = path.join(appDirectory, "layout.tsx");
+const siteConfigPath = path.join(
+  root,
+  "src/config/site.ts",
+);
 const reportDirectory = path.join(root, "reports");
 const reportPath = path.join(
   reportDirectory,
@@ -98,17 +102,6 @@ function resolveMetadataValue(
     "\\$&",
   );
 
-  const directValue = firstMatch(
-    text,
-    new RegExp(
-      `${escapedProperty}:\\s*["'\`]([^"'\\\`]+)["'\`]`,
-    ),
-  );
-
-  if (directValue) {
-    return directValue;
-  }
-
   const variableName = firstMatch(
     text,
     new RegExp(
@@ -116,9 +109,20 @@ function resolveMetadataValue(
     ),
   );
 
-  return resolveStringConstant(
+  const resolvedVariable = resolveStringConstant(
     text,
     variableName,
+  );
+
+  if (resolvedVariable) {
+    return resolvedVariable;
+  }
+
+  return firstMatch(
+    text,
+    new RegExp(
+      `${escapedProperty}:\\s*["']([^"']+)["']`,
+    ),
   );
 }
 
@@ -182,15 +186,35 @@ const layoutText = fs.existsSync(layoutPath)
   ? fs.readFileSync(layoutPath, "utf8")
   : "";
 
+const siteConfigText = fs.existsSync(
+  siteConfigPath,
+)
+  ? fs.readFileSync(siteConfigPath, "utf8")
+  : "";
+
+const siteConfigDescriptionMatch =
+  siteConfigText.match(
+    /description:\s*\n?\s*"([^"]+)"/,
+  );
+
+const siteConfigDescription =
+  siteConfigDescriptionMatch?.[1]?.trim() ?? "";
+
 const inherited = {
   hasMetadata: hasMetadataExport(layoutText),
   title:
     resolveMetadataValue(layoutText, "default") ||
     resolveMetadataValue(layoutText, "title"),
-  description: resolveMetadataValue(
-    layoutText,
-    "description",
-  ),
+  description:
+    resolveMetadataValue(
+      layoutText,
+      "description",
+    ) ||
+    (layoutText.includes(
+      "description: siteConfig.description",
+    )
+      ? siteConfigDescription
+      : ""),
   canonical: resolveCanonical(layoutText),
   hasRobots: hasRobotsMetadata(layoutText),
   hasJsonLd: hasJsonLd(layoutText),
@@ -206,30 +230,32 @@ const pages = walk(appDirectory)
     const route = routeFromFile(filePath);
     const isHomepage = route === "/";
 
-    const ownTitle = getRenderedTitle(text);
-    const ownDescription =
-      resolveMetadataValue(
-        text,
-        "description",
-      );
-    const ownCanonical =
-      resolveCanonical(text);
+    const ownTitle = isHomepage
+      ? ""
+      : getRenderedTitle(text);
 
-    const title =
-      ownTitle ||
-      (isHomepage ? inherited.title : "");
+    const ownDescription = isHomepage
+      ? ""
+      : resolveMetadataValue(
+          text,
+          "description",
+        );
 
-    const description =
-      ownDescription ||
-      (isHomepage
-        ? inherited.description
-        : "");
+    const ownCanonical = isHomepage
+      ? ""
+      : resolveCanonical(text);
 
-    const canonical =
-      ownCanonical ||
-      (isHomepage
-        ? inherited.canonical
-        : "");
+    const title = isHomepage
+      ? inherited.title
+      : ownTitle;
+
+    const description = isHomepage
+      ? inherited.description
+      : ownDescription;
+
+    const canonical = isHomepage
+      ? inherited.canonical
+      : ownCanonical;
 
     const ownMetadata =
       hasMetadataExport(text);
@@ -254,10 +280,19 @@ const pages = walk(appDirectory)
       /<h1(?:\s[^>]*)?>/g,
     );
 
-    const internalLinks = countMatches(
+    const staticInternalLinks = countMatches(
       text,
       /href=["'`]\/(?!\/|#)[^"'`]+["'`]/g,
     );
+
+    const dynamicInternalLinks = countMatches(
+      text,
+      /href=\{(?:calculator|resource|category)\.href\}/g,
+    );
+
+    const internalLinks =
+      staticInternalLinks +
+      dynamicInternalLinks * 2;
 
     const hasFaqSchema =
       /"@type":\s*"FAQPage"/.test(

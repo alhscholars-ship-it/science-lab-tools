@@ -12,7 +12,7 @@ const pageTitle =
   "Rotational Power Calculator";
 
 const pageDescription =
-  "Calculate rotational power, torque, or angular velocity using P = τω.";
+  "Calculate rotational power, torque, or angular velocity using P = τω, with watt, newton-meter, and radian-per-second unit guidance.";
 
 const pagePath =
   "/calculators/rotational-power-calculator";

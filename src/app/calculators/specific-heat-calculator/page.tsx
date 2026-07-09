@@ -230,6 +230,37 @@ export default function SpecificHeatCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="related-heading">
+              <p className="eyebrow">Related energy tools</p>
+              <h2 id="related-heading">
+                Continue with heat and energy calculations
+              </h2>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/power-calculator"
+                >
+                  Power Calculator
+                </Link>{" "}
+                to calculate the rate at which heat or other forms
+                of energy are transferred.
+              </p>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/work-calculator"
+                >
+                  Work Calculator
+                </Link>{" "}
+                to compare thermal energy calculations with
+                mechanical energy transfer.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>
               <h2 id="faq-heading">Specific heat FAQ</h2>

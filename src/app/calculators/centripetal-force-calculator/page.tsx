@@ -12,7 +12,7 @@ const pageTitle =
   "Centripetal Force Calculator";
 
 const pageDescription =
-  "Calculate centripetal force, mass, velocity, or radius using Fc = mv² ÷ r.";
+  "Calculate centripetal force, mass, velocity, or radius using Fc = mv² ÷ r, with validated inputs, unit guidance, and clear calculation steps.";
 
 const pagePath =
   "/calculators/centripetal-force-calculator";

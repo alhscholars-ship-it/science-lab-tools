@@ -212,6 +212,37 @@ export default function MolarityCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="related-heading">
+              <p className="eyebrow">Related chemistry tools</p>
+              <h2 id="related-heading">
+                Continue with solution calculations
+              </h2>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/dilution-calculator"
+                >
+                  Dilution Calculator
+                </Link>{" "}
+                to calculate concentration and volume changes when
+                preparing a diluted solution.
+              </p>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/mass-moles-calculator"
+                >
+                  Mass to Moles Calculator
+                </Link>{" "}
+                when the solute amount is provided as mass instead
+                of moles.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>
               <h2 id="faq-heading">Molarity FAQ</h2>

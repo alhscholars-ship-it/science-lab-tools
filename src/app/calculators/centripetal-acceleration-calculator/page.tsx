@@ -12,7 +12,7 @@ const pageTitle =
   "Centripetal Acceleration Calculator";
 
 const pageDescription =
-  "Calculate centripetal acceleration, velocity, or radius using ac = v² ÷ r.";
+  "Calculate centripetal acceleration, tangential velocity, or radius using ac = v² ÷ r, with physics explanations, units, and step-by-step results.";
 
 const pagePath =
   "/calculators/centripetal-acceleration-calculator";

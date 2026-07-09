@@ -7,18 +7,22 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle =
   "Independent, Dependent & Controlled Variables";
+
+const seoTitle =
+  "Experiment Variables Guide";
+
 const pageDescription =
-  "Learn how to identify independent, dependent, and controlled variables in scientific experiments using clear definitions, examples, and practical checks.";
+  "Identify independent, dependent, and controlled variables in scientific experiments with clear definitions, examples, and guidance for fair testing.";
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: seoTitle,
   description: pageDescription,
   alternates: {
     canonical:
       "/scientific-method/independent-dependent-controlled-variables",
   },
   openGraph: {
-    title: `${pageTitle} | ${siteConfig.name}`,
+    title: `${seoTitle} | ${siteConfig.name}`,
     description: pageDescription,
     type: "article",
     url: absoluteUrl(
@@ -27,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${pageTitle} | ${siteConfig.name}`,
+    title: `${seoTitle} | ${siteConfig.name}`,
     description: pageDescription,
   },
   robots: {

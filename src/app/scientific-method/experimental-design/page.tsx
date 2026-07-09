@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "How to Design a Scientific Experiment";
 const pageDescription =
-  "Learn how to design a fair, repeatable scientific experiment using variables, controls, trials, measurements, safety precautions, and clear procedures.";
+  "Learn how to design a reliable scientific experiment with a focused question, testable variables, controls, repeat trials, measurements, and safety planning.";
 
 export const metadata: Metadata = {
   title: pageTitle,

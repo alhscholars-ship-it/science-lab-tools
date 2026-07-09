@@ -218,6 +218,37 @@ export default function DensityCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="related-heading">
+              <p className="eyebrow">Related calculations</p>
+              <h2 id="related-heading">
+                Continue with related laboratory calculators
+              </h2>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/mass-moles-calculator"
+                >
+                  Mass to Moles Calculator
+                </Link>{" "}
+                when converting a measured sample mass into an
+                amount of substance for chemistry calculations.
+              </p>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/measurement-uncertainty-calculator"
+                >
+                  Measurement Uncertainty Calculator
+                </Link>{" "}
+                to evaluate uncertainty in experimental mass,
+                volume, and density measurements.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>
               <h2 id="faq-heading">Density FAQ</h2>

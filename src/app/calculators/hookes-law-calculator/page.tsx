@@ -11,7 +11,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 const pageTitle = "Hooke’s Law Calculator";
 
 const pageDescription =
-  "Calculate force, spring constant, or extension using Hooke’s law F = kx.";
+  "Calculate spring force, spring constant, or extension using Hooke’s law F = kx, with SI units, formula guidance, and clear step-by-step results.";
 
 const pagePath =
   "/calculators/hookes-law-calculator";

@@ -12,7 +12,7 @@ const pageTitle =
   "Tangential Acceleration Calculator";
 
 const pageDescription =
-  "Calculate tangential acceleration, radius, or angular acceleration using aₜ = rα.";
+  "Calculate tangential acceleration, radius, or angular acceleration using aₜ = rα, with SI units, formula guidance, and step-by-step results.";
 
 const pagePath =
   "/calculators/tangential-acceleration-calculator";

@@ -11,7 +11,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 const pageTitle = "Impulse Calculator";
 
 const pageDescription =
-  "Calculate impulse, force, or time interval using the impulse formula J = FΔt.";
+  "Calculate impulse, force, or time interval using J = FΔt, with momentum-change guidance, supported units, and clear step-by-step results.";
 
 const pagePath =
   "/calculators/impulse-calculator";

@@ -8,7 +8,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Momentum Calculator";
 const pageDescription =
-  "Calculate momentum, mass, or velocity using the linear momentum formula, p = m × v.";
+  "Calculate linear momentum, mass, or velocity using p = mv, with signed motion values, supported SI units, and clear step-by-step calculation results.";
 
 const pagePath =
   "/calculators/momentum-calculator";

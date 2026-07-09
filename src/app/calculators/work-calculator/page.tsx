@@ -8,7 +8,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Work Calculator";
 const pageDescription =
-  "Calculate work, force, or distance using the formula W = F × d.";
+  "Calculate mechanical work, force, or distance using W = Fd, with joule, newton, and meter units plus clear step-by-step calculation results.";
 
 const pagePath = "/calculators/work-calculator";
 

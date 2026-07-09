@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "How to Analyze Experimental Results";
 const pageDescription =
-  "Learn how to analyze experimental results using tables, graphs, averages, trends, anomalies, uncertainty, comparisons, and evidence-based conclusions.";
+  "Learn how to analyze experimental results by checking trends, units, anomalies, uncertainty, calculations, and whether the evidence supports the hypothesis.";
 
 export const metadata: Metadata = {
   title: pageTitle,

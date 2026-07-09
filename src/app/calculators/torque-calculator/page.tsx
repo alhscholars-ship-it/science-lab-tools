@@ -11,7 +11,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 const pageTitle = "Torque Calculator";
 
 const pageDescription =
-  "Calculate torque, force, or lever-arm distance using the perpendicular-force formula τ = Fr.";
+  "Calculate torque, perpendicular force, or lever-arm distance using τ = Fr, with SI units, formula explanations, and clear calculation steps.";
 
 const pagePath =
   "/calculators/torque-calculator";

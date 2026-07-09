@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Steps of the Scientific Method";
 const pageDescription =
-  "Learn the steps of the scientific method, from observation and research questions through hypothesis, experiment, data analysis, conclusion, and communication.";
+  "Explore the steps of the scientific method, from observation and hypothesis to experimentation, data analysis, conclusions, and communicating results.";
 
 export const metadata: Metadata = {
   title: pageTitle,

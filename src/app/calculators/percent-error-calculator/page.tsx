@@ -202,6 +202,37 @@ export default function PercentErrorCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="related-heading">
+              <p className="eyebrow">Related data analysis</p>
+              <h2 id="related-heading">
+                Compare and evaluate experimental results
+              </h2>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/percent-difference-calculator"
+                >
+                  Percent Difference Calculator
+                </Link>{" "}
+                when comparing two experimental values without a
+                single accepted reference value.
+              </p>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/measurement-uncertainty-calculator"
+                >
+                  Measurement Uncertainty Calculator
+                </Link>{" "}
+                to assess the precision and reliability of measured
+                laboratory values.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>
               <h2 id="faq-heading">Percent error FAQ</h2>

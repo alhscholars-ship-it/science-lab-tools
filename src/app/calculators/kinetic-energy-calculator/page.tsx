@@ -8,7 +8,7 @@ import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Kinetic Energy Calculator";
 const pageDescription =
-  "Calculate kinetic energy, mass, or speed using the formula KE = ½mv².";
+  "Calculate kinetic energy, mass, or velocity using KE = ½mv², with SI units, formula explanations, input validation, and worked calculation steps.";
 
 const pagePath =
   "/calculators/kinetic-energy-calculator";
