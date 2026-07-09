@@ -52,3 +52,5 @@ pasword.file.save
 # deployment artifacts
 deploy/
 science-lab-tools-hostinger.zip
+# Generated SEO audit reports
+reports/

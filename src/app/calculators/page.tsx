@@ -2,17 +2,34 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/config/site";
 import { calculators } from "@/content/calculators/registry";
+import { absoluteUrl } from "@/lib/seo/url";
 
-const pageTitle = "Science Calculators";
+const pageTitle =
+  "Free Science Calculators for Physics, Chemistry and Labs";
+
 const pageDescription =
-  "Free laboratory, chemistry, and physics calculators with formulas, worked examples, units, and step-by-step explanations.";
+  "Use free physics, chemistry, statistics, and laboratory calculators with tested formulas, unit guidance, worked examples, and step-by-step solutions.";
+
+const pagePath = "/calculators";
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/calculators",
+    canonical: pagePath,
+  },
+  openGraph: {
+    title: `${pageTitle} | ${siteConfig.name}`,
+    description: pageDescription,
+    type: "website",
+    url: absoluteUrl(pagePath),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${pageTitle} | ${siteConfig.name}`,
+    description: pageDescription,
   },
   robots: {
     index: true,
@@ -20,9 +37,87 @@ export const metadata: Metadata = {
   },
 };
 
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: pageTitle,
+  description: pageDescription,
+  url: absoluteUrl(pagePath),
+  isPartOf: {
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: absoluteUrl("/"),
+  },
+  about: [
+    {
+      "@type": "Thing",
+      name: "Physics calculators",
+    },
+    {
+      "@type": "Thing",
+      name: "Chemistry calculators",
+    },
+    {
+      "@type": "Thing",
+      name: "Laboratory calculators",
+    },
+  ],
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: calculators.length,
+    itemListElement: calculators.map(
+      (calculator, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: calculator.name,
+        url: absoluteUrl(calculator.href),
+      }),
+    ),
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: absoluteUrl("/"),
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Science Calculators",
+      item: absoluteUrl(pagePath),
+    },
+  ],
+};
+
 export default function CalculatorsPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(collectionSchema).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
+
       <section className="directory-hero">
         <Container>
           <nav className="breadcrumbs" aria-label="Breadcrumb">

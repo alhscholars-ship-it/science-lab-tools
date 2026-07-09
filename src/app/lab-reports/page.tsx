@@ -36,9 +36,77 @@ export const metadata: Metadata = {
   },
 };
 
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: pageTitle,
+  description: pageDescription,
+  url: absoluteUrl("/lab-reports"),
+  isPartOf: {
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: absoluteUrl("/"),
+  },
+  about: {
+    "@type": "Thing",
+    name: "Scientific laboratory report writing",
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: labReportResources.length,
+    itemListElement: labReportResources.map(
+      (resource, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: resource.title,
+        url: absoluteUrl(resource.href),
+      }),
+    ),
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: absoluteUrl("/"),
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Lab Report Guides",
+      item: absoluteUrl("/lab-reports"),
+    },
+  ],
+};
+
 export default function LabReportsPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(collectionSchema).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
+
       <section className="tool-page-hero">
         <Container>
           <nav className="breadcrumbs" aria-label="Breadcrumb">
