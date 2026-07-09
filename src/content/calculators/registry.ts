@@ -175,6 +175,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["dilution calculator chemistry"],
   },
   {
+    slug: "weight-calculator",
+    name: "Weight Calculator",
+    shortDescription:
+      "Calculate weight, mass, or gravitational acceleration using W = m × g.",
+    category: "Physics",
+    href: "/calculators/weight-calculator",
+    keywords: [
+      "weight calculator",
+      "mass to weight calculator",
+      "weight force calculator",
+      "W equals mg calculator",
+      "gravity weight calculator",
+    ],
+  },
+  {
     slug: "force-calculator",
     name: "Force Calculator",
     shortDescription:

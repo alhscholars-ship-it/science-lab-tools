@@ -96,6 +96,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: absoluteUrl(
+        "/calculators/weight-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: absoluteUrl("/calculators/force-calculator"),
       changeFrequency: "monthly",
       priority: 0.9,
