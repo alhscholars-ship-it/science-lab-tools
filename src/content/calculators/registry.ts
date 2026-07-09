@@ -175,6 +175,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["dilution calculator chemistry"],
   },
   {
+    slug: "friction-calculator",
+    name: "Friction Calculator",
+    shortDescription:
+      "Calculate static or kinetic friction force, coefficient of friction, or normal force using F = μN.",
+    category: "Physics",
+    href: "/calculators/friction-calculator",
+    keywords: [
+      "friction calculator",
+      "coefficient of friction calculator",
+      "kinetic friction calculator",
+      "static friction calculator",
+      "friction force calculator",
+    ],
+  },
+  {
     slug: "normal-force-calculator",
     name: "Normal Force Calculator",
     shortDescription:
