@@ -626,6 +626,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "average-velocity-calculator",
+    name: "Average Velocity Calculator",
+    shortDescription:
+      "Calculate average velocity, displacement, or elapsed time using v̄ = Δx ÷ Δt.",
+    category: "Physics",
+    href: "/calculators/average-velocity-calculator",
+    keywords: [
+      "average velocity calculator",
+      "displacement time calculator",
+      "velocity displacement time calculator",
+      "average velocity formula calculator",
+    ],
+  },
+  {
     slug: "acceleration-calculator",
     name: "Acceleration Calculator",
     shortDescription:
