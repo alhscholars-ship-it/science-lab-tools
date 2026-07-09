@@ -626,6 +626,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "average-speed-calculator",
+    name: "Average Speed Calculator",
+    shortDescription:
+      "Calculate average speed, total distance, or elapsed time using s̄ = d ÷ t.",
+    category: "Physics",
+    href: "/calculators/average-speed-calculator",
+    keywords: [
+      "average speed calculator",
+      "distance time calculator",
+      "speed distance time calculator",
+      "average speed formula calculator",
+    ],
+  },
+  {
     slug: "average-velocity-calculator",
     name: "Average Velocity Calculator",
     shortDescription:
