@@ -175,6 +175,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["dilution calculator chemistry"],
   },
   {
+    slug: "pulley-calculator",
+    name: "Pulley Calculator",
+    shortDescription:
+      "Calculate load force, ideal mechanical advantage, effort force, and rope distance for an ideal pulley system.",
+    category: "Physics",
+    href: "/calculators/pulley-calculator",
+    keywords: [
+      "pulley calculator",
+      "pulley mechanical advantage calculator",
+      "pulley force calculator",
+      "ideal pulley calculator",
+      "rope distance calculator",
+    ],
+  },
+  {
     slug: "inclined-plane-calculator",
     name: "Inclined Plane Calculator",
     shortDescription:
