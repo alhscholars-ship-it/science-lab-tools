@@ -13,7 +13,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "check:performance": "node scripts/check-performance-budget.mjs",
-    "check:a11y": "node scripts/check-accessibility.mjs"
+    "check:a11y": "node scripts/check-accessibility.mjs",
+    "seo:audit": "node scripts/seo/audit-pages.mjs",
+    "seo:audit:live": "node scripts/seo/audit-live-site.mjs"
   },
   "dependencies": {
     "next": "16.2.9",
