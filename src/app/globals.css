@@ -1217,6 +1217,16 @@ svg {
 }
 
 
+
+.directory-category-list {
+  display: grid;
+  gap: clamp(4rem, 8vw, 7rem);
+}
+
+.directory-category {
+  scroll-margin-top: 7rem;
+}
+
 .calculator-category-list {
   display: grid;
   gap: clamp(4rem, 8vw, 7rem);

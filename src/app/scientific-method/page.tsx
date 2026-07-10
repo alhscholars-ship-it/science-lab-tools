@@ -51,6 +51,37 @@ const collectionSchema = {
     "@type": "Thing",
     name: "Scientific method",
   },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: scientificMethodResources.length,
+    itemListElement: scientificMethodResources.map(
+      (resource, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: resource.title,
+        url: absoluteUrl(resource.href),
+      }),
+    ),
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: absoluteUrl("/"),
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Scientific Method Guides",
+      item: absoluteUrl("/scientific-method"),
+    },
+  ],
 };
 
 export default function ScientificMethodPage() {
@@ -60,6 +91,16 @@ export default function ScientificMethodPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(collectionSchema).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(
             /</g,
             "\\u003c",
           ),
@@ -119,36 +160,78 @@ export default function ScientificMethodPage() {
             </p>
           </div>
 
-          <div className="resource-grid">
-            {scientificMethodResources.map((resource) => (
-                <article
-                  className="resource-card"
-                  key={resource.slug}
+          <div className="directory-category-list">
+            {scientificMethodCategories.map((category) => {
+              const resources =
+                scientificMethodResources.filter(
+                  (resource) =>
+                    resource.category === category,
+                );
+
+              const categoryId = category
+                .toLowerCase()
+                .replaceAll(" ", "-");
+
+              return (
+                <section
+                  className="directory-category"
+                  key={category}
+                  aria-labelledby={`scientific-${categoryId}`}
                 >
-                  <div className="resource-card__topline">
-                    <span>{resource.category}</span>
-                    <span className="resource-status resource-status--published">
-                      Published
+                  <div className="directory-category__heading">
+                    <div>
+                      <p className="eyebrow">
+                        Scientific method resources
+                      </p>
+                      <h2
+                        id={`scientific-${categoryId}`}
+                      >
+                        {category}
+                      </h2>
+                    </div>
+
+                    <span>
+                      {resources.length}{" "}
+                      {resources.length === 1
+                        ? "guide"
+                        : "guides"}
                     </span>
                   </div>
 
-                  <h3>
-                    <Link href={resource.href}>
-                      {resource.title}
-                    </Link>
-                  </h3>
+                  <div className="resource-grid">
+                    {resources.map((resource) => (
+                      <article
+                        className="resource-card"
+                        key={resource.slug}
+                      >
+                        <div className="resource-card__topline">
+                          <span>{resource.category}</span>
+                          <span className="resource-status resource-status--published">
+                            Published
+                          </span>
+                        </div>
 
-                  <p>{resource.shortDescription}</p>
+                        <h3>
+                          <Link href={resource.href}>
+                            {resource.title}
+                          </Link>
+                        </h3>
 
-                  <Link
-                    className="resource-card__link"
-                    href={resource.href}
-                  >
-                    Read guide
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </article>
-            ))}
+                        <p>{resource.shortDescription}</p>
+
+                        <Link
+                          className="resource-card__link"
+                          href={resource.href}
+                        >
+                          Read guide
+                          <span aria-hidden="true">→</span>
+                        </Link>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
           </div>
         </Container>
       </section>
