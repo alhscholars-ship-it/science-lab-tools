@@ -2,45 +2,11 @@ import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
 
-const routes = {
+const fixedRoutes = {
   Homepage:
     ".next/server/app/page_client-reference-manifest.js",
   "Calculators hub":
     ".next/server/app/calculators/page_client-reference-manifest.js",
-  "Percent error":
-    ".next/server/app/calculators/percent-error-calculator/page_client-reference-manifest.js",
-  "Percent difference":
-    ".next/server/app/calculators/percent-difference-calculator/page_client-reference-manifest.js",
-  "Uncertainty propagation":
-    ".next/server/app/calculators/uncertainty-propagation-calculator/page_client-reference-manifest.js",
-  "Measurement uncertainty":
-    ".next/server/app/calculators/measurement-uncertainty-calculator/page_client-reference-manifest.js",
-  "Rate of change":
-    ".next/server/app/calculators/rate-of-change-calculator/page_client-reference-manifest.js",
-  "Linear regression":
-    ".next/server/app/calculators/linear-regression-calculator/page_client-reference-manifest.js",
-  "Coefficient variation":
-    ".next/server/app/calculators/coefficient-variation-calculator/page_client-reference-manifest.js",
-  "Mean median mode":
-    ".next/server/app/calculators/mean-median-mode-calculator/page_client-reference-manifest.js",
-  "Standard deviation":
-    ".next/server/app/calculators/standard-deviation-calculator/page_client-reference-manifest.js",
-  "Significant figures":
-    ".next/server/app/calculators/significant-figures-calculator/page_client-reference-manifest.js",
-  Molarity:
-    ".next/server/app/calculators/molarity-calculator/page_client-reference-manifest.js",
-  "Mass to moles":
-    ".next/server/app/calculators/mass-moles-calculator/page_client-reference-manifest.js",
-  Dilution:
-    ".next/server/app/calculators/dilution-calculator/page_client-reference-manifest.js",
-  Force:
-    ".next/server/app/calculators/force-calculator/page_client-reference-manifest.js",
-  Acceleration:
-    ".next/server/app/calculators/acceleration-calculator/page_client-reference-manifest.js",
-  Density:
-    ".next/server/app/calculators/density-calculator/page_client-reference-manifest.js",
-  "Specific heat":
-    ".next/server/app/calculators/specific-heat-calculator/page_client-reference-manifest.js",
   "Templates hub":
     ".next/server/app/templates/page_client-reference-manifest.js",
   "Lab Reports hub":
@@ -48,6 +14,43 @@ const routes = {
   "Scientific Method hub":
     ".next/server/app/scientific-method/page_client-reference-manifest.js",
 };
+
+const calculatorManifestDirectory =
+  ".next/server/app/calculators";
+
+const calculatorRoutes = Object.fromEntries(
+  fs
+    .readdirSync(calculatorManifestDirectory, {
+      withFileTypes: true,
+    })
+    .filter(
+      (entry) =>
+        entry.isDirectory() &&
+        entry.name.endsWith("-calculator"),
+    )
+    .map((entry) => [
+      entry.name
+        .replace(/-calculator$/, "")
+        .split("-")
+        .map(
+          (word) =>
+            word.charAt(0).toUpperCase() +
+            word.slice(1),
+        )
+        .join(" "),
+      path.join(
+        calculatorManifestDirectory,
+        entry.name,
+        "page_client-reference-manifest.js",
+      ),
+    ]),
+);
+
+const routes = {
+  ...fixedRoutes,
+  ...calculatorRoutes,
+};
+
 
 const sharedGzipBudget = 25 * 1024;
 const calculatorUniqueGzipBudget = 8 * 1024;
@@ -160,25 +163,8 @@ for (const [label, chunks] of routeChunks) {
     0,
   );
 
-  const isCalculator = [
-    "Percent error",
-    "Percent difference",
-    "Molarity",
-    "Significant figures",
-    "Standard deviation",
-    "Mean median mode",
-    "Coefficient variation",
-    "Linear regression",
-    "Rate of change",
-    "Measurement uncertainty",
-    "Uncertainty propagation",
-    "Dilution",
-    "Mass to moles",
-    "Force",
-    "Acceleration",
-    "Density",
-    "Specific heat",
-  ].includes(label);
+  const isCalculator =
+    Object.hasOwn(calculatorRoutes, label);
 
   const budget = isCalculator
     ? calculatorUniqueGzipBudget
