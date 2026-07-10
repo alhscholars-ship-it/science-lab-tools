@@ -10,6 +10,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: absoluteUrl("/about"),
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
+    {
+      url: absoluteUrl("/editorial-policy"),
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: absoluteUrl("/disclaimer"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: absoluteUrl("/privacy-policy"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: absoluteUrl("/terms-of-use"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
       url: absoluteUrl("/calculators"),
       changeFrequency: "weekly",
       priority: 0.9,

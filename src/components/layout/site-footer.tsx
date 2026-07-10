@@ -32,13 +32,23 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="site-footer__heading">Our standards</h2>
-            <ul className="site-footer__standards">
-              <li>Formula-checked calculations</li>
-              <li>Student-friendly explanations</li>
-              <li>Printable classroom resources</li>
-              <li>Transparent review dates</li>
-            </ul>
+            <h2 className="site-footer__heading">Company</h2>
+            <nav
+              className="site-footer__links"
+              aria-label="Footer company links"
+            >
+              <Link href="/about">About</Link>
+              <Link href="/editorial-policy">
+                Editorial Policy
+              </Link>
+              <Link href="/disclaimer">Disclaimer</Link>
+              <Link href="/privacy-policy">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-of-use">
+                Terms of Use
+              </Link>
+            </nav>
           </div>
         </div>
 
