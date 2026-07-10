@@ -37,6 +37,35 @@ export const metadata: Metadata = {
   },
 };
 
+
+const calculatorCategories = [
+  {
+    name: "Laboratory",
+    description:
+      "Tools for measurement, uncertainty, statistics, experimental error, and data analysis.",
+  },
+  {
+    name: "Chemistry",
+    description:
+      "Calculators for concentration, dilution, moles, mass, and solution preparation.",
+  },
+  {
+    name: "Physics",
+    description:
+      "Mechanics, motion, forces, energy, rotation, momentum, and circular-motion calculators.",
+  },
+] as const;
+
+const calculatorsByCategory = calculatorCategories.map(
+  (category) => ({
+    ...category,
+    calculators: calculators.filter(
+      (calculator) =>
+        calculator.category === category.name,
+    ),
+  }),
+);
+
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -154,31 +183,61 @@ export default function CalculatorsPage() {
             </p>
           </div>
 
-          <div className="calculator-directory-grid">
-            {calculators.map((calculator) => (
-              <article
-                className="calculator-directory-card"
-                key={calculator.slug}
+          <div className="calculator-category-list">
+            {calculatorsByCategory.map((category) => (
+              <section
+                className="calculator-category-section"
+                id={category.name.toLowerCase()}
+                key={category.name}
+                aria-labelledby={`${category.name.toLowerCase()}-heading`}
               >
-                <div className="calculator-directory-card__top">
-                  <span>{calculator.category}</span>
-                  <span className="published-badge">Published</span>
+                <div className="calculator-category-section__heading">
+                  <div>
+                    <p className="eyebrow">
+                      {category.calculators.length} published tools
+                    </p>
+                    <h2
+                      id={`${category.name.toLowerCase()}-heading`}
+                    >
+                      {category.name} calculators
+                    </h2>
+                  </div>
+
+                  <p>{category.description}</p>
                 </div>
 
-                <h2>
-                  <Link href={calculator.href}>{calculator.name}</Link>
-                </h2>
+                <div className="calculator-directory-grid">
+                  {category.calculators.map((calculator) => (
+                    <article
+                      className="calculator-directory-card"
+                      key={calculator.slug}
+                    >
+                      <div className="calculator-directory-card__top">
+                        <span>{calculator.category}</span>
+                        <span className="published-badge">
+                          Published
+                        </span>
+                      </div>
 
-                <p>{calculator.shortDescription}</p>
+                      <h3>
+                        <Link href={calculator.href}>
+                          {calculator.name}
+                        </Link>
+                      </h3>
 
-                <Link
-                  className="calculator-directory-card__link"
-                  href={calculator.href}
-                >
-                  Open calculator
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </article>
+                      <p>{calculator.shortDescription}</p>
+
+                      <Link
+                        className="calculator-directory-card__link"
+                        href={calculator.href}
+                      >
+                        Open calculator
+                        <span aria-hidden="true">→</span>
+                      </Link>
+                    </article>
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
         </Container>

@@ -4,6 +4,31 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { calculators } from "@/content/calculators/registry";
 
+const popularCalculatorSlugs = [
+  "percent-error-calculator",
+  "significant-figures-calculator",
+  "molarity-calculator",
+  "force-calculator",
+  "density-calculator",
+  "kinetic-energy-calculator",
+  "momentum-calculator",
+  "projectile-motion-calculator",
+] as const;
+
+const popularCalculators = popularCalculatorSlugs.map((slug) => {
+  const calculator = calculators.find(
+    (item) => item.slug === slug,
+  );
+
+  if (!calculator) {
+    throw new Error(
+      `Popular calculator not found: ${slug}`,
+    );
+  }
+
+  return calculator;
+});
+
 const trustPoints = [
   {
     title: "Formula checked",
@@ -67,7 +92,7 @@ export default function HomePage() {
             </div>
 
             <ul>
-              {calculators.map((calculator, index) => (
+              {popularCalculators.map((calculator, index) => (
                 <li key={calculator.slug}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <Link href={calculator.href}>
@@ -76,6 +101,13 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+
+            <div className="hero-tool-card__footer">
+              <Link href="/calculators">
+                View all {calculators.length} calculators
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </aside>
         </Container>
       </section>
