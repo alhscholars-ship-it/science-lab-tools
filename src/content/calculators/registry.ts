@@ -175,6 +175,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["dilution calculator chemistry"],
   },
   {
+    slug: "ph-calculator",
+    name: "pH Calculator",
+    shortDescription:
+      "Calculate pH, pOH, hydrogen-ion concentration, hydroxide-ion concentration, and acid-base classification.",
+    category: "Chemistry",
+    href: "/calculators/ph-calculator",
+    keywords: [
+      "ph calculator",
+      "poh calculator",
+      "hydrogen ion concentration calculator",
+      "hydroxide ion concentration calculator",
+      "acid base calculator",
+    ],
+  },
+  {
     slug: "pulley-calculator",
     name: "Pulley Calculator",
     shortDescription:
