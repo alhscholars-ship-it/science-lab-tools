@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { DilutionCalculator } from "@/components/calculators/dilution-calculator";
+import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
@@ -272,6 +273,9 @@ export default function DilutionCalculatorPage() {
               </ul>
             </div>
           </aside>
+        </Container>
+        <Container>
+          <CalculatorTrustPanel subject="chemistry" />
         </Container>
       </section>
     </main>

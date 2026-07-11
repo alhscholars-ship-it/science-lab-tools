@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { SpecificHeatCalculator } from "@/components/calculators/specific-heat-calculator";
+import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
@@ -291,6 +292,9 @@ export default function SpecificHeatCalculatorPage() {
               </ul>
             </div>
           </aside>
+        </Container>
+        <Container>
+          <CalculatorTrustPanel subject="physics" />
         </Container>
       </section>
     </main>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   MomentOfInertiaCalculator,
 } from "@/components/calculators/moment-of-inertia-calculator";
+import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
@@ -516,6 +517,9 @@ export default function MomentOfInertiaCalculatorPage() {
               </Link>
             </div>
           </aside>
+        </Container>
+        <Container>
+          <CalculatorTrustPanel subject="physics" />
         </Container>
       </section>
     </main>

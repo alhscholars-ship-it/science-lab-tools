@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { InclinedPlaneCalculator } from "@/components/calculators/inclined-plane-calculator";
+import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
@@ -546,6 +547,9 @@ export default function InclinedPlaneCalculatorPage() {
               </Link>
             </div>
           </aside>
+        </Container>
+        <Container>
+          <CalculatorTrustPanel subject="physics" />
         </Container>
       </section>
     </main>

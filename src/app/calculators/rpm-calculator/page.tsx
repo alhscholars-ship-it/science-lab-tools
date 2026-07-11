@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   RpmCalculator,
 } from "@/components/calculators/rpm-calculator";
+import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
@@ -437,6 +438,9 @@ export default function RpmCalculatorPage() {
               </Link>
             </div>
           </aside>
+        </Container>
+        <Container>
+          <CalculatorTrustPanel subject="physics" />
         </Container>
       </section>
     </main>

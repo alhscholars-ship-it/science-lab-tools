@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   AngularDisplacementCalculator,
 } from "@/components/calculators/angular-displacement-calculator";
+import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
@@ -469,6 +470,9 @@ export default function AngularDisplacementCalculatorPage() {
               </Link>
             </div>
           </aside>
+        </Container>
+        <Container>
+          <CalculatorTrustPanel subject="physics" />
         </Container>
       </section>
     </main>

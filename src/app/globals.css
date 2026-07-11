@@ -2135,3 +2135,54 @@ summary {
     width: 100%;
   }
 }
+
+/* Calculator editorial trust panel */
+.calculator-trust-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(15rem, 0.8fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  background: var(--surface-color);
+}
+
+.calculator-trust-panel__content {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.calculator-trust-panel__content h2,
+.calculator-trust-panel__content p {
+  margin: 0;
+}
+
+.calculator-trust-panel__checks {
+  display: grid;
+  align-content: start;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.calculator-trust-panel__checks li {
+  position: relative;
+  padding-left: 1.65rem;
+  font-weight: 700;
+}
+
+.calculator-trust-panel__checks li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "✓";
+  font-weight: 900;
+}
+
+@media (max-width: 760px) {
+  .calculator-trust-panel {
+    grid-template-columns: 1fr;
+  }
+}

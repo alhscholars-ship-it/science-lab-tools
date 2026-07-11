@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   GravitationalPotentialEnergyCalculator,
 } from "@/components/calculators/gravitational-potential-energy-calculator";
+import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
@@ -462,6 +463,9 @@ export default function GravitationalPotentialEnergyCalculatorPage() {
               </Link>
             </div>
           </aside>
+        </Container>
+        <Container>
+          <CalculatorTrustPanel subject="physics" />
         </Container>
       </section>
     </main>
