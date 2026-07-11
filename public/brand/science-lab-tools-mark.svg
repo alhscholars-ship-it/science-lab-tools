@@ -1,0 +1,33 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  role="img"
+  aria-labelledby="title description"
+>
+  <title id="title">Science Lab Tools</title>
+  <desc id="description">
+    Laboratory flask symbol representing practical science tools.
+  </desc>
+
+  <rect width="512" height="512" rx="112" fill="#0f766e"/>
+
+  <path
+    d="M190 96h132M222 96v112L125 377c-12 21 3 47 27 47h208c24 0 39-26 27-47l-97-169V96"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="32"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <path
+    d="M166 330h180"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="30"
+    stroke-linecap="round"
+  />
+
+  <circle cx="218" cy="277" r="20" fill="#f59e0b"/>
+  <circle cx="297" cy="366" r="20" fill="#f59e0b"/>
+</svg>
