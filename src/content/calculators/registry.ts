@@ -175,6 +175,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["dilution calculator chemistry"],
   },
   {
+    slug: "molecular-weight-calculator",
+    name: "Molecular Weight Calculator",
+    shortDescription:
+      "Calculate molecular weight and molar mass from chemical formulas with element-by-element mass breakdowns.",
+    category: "Chemistry",
+    href: "/calculators/molecular-weight-calculator",
+    keywords: [
+      "molecular weight calculator",
+      "molar mass calculator",
+      "chemical formula mass calculator",
+      "molecular mass calculator",
+      "formula weight calculator",
+    ],
+  },
+  {
     slug: "ph-calculator",
     name: "pH Calculator",
     shortDescription:
