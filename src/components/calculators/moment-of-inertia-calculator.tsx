@@ -394,7 +394,9 @@ export function MomentOfInertiaCalculator() {
       </div>
 
       <aside
-        className="calculator-result"
+        className={`calculator-result ${
+          result ? "calculator-result--complete" : ""
+        }`}
         aria-live="polite"
       >
         {result ? (
