@@ -351,48 +351,9 @@ export function AverageVelocityCalculator() {
         >
           Calculate {variableLabels[solveFor]}
         </button>
-      </form>
 
-      <aside className="calculator-result-panel">
-        <div>
-          <p className="eyebrow">Result</p>
-
-          <h2>
-            {result
-              ? `${result.formattedValue} ${variableUnits[solveFor]}`
-              : "Enter values to calculate"}
-          </h2>
-
-          <p>
-            Formula: <strong>v̄ = Δx ÷ Δt</strong>
-          </p>
-        </div>
-
-        {result ? (
-          <dl className="calculator-result-list">
-            <div>
-              <dt>Average velocity</dt>
-              <dd>
-                {result.details.averageVelocity} m/s
-              </dd>
-            </div>
-
-            <div>
-              <dt>Displacement</dt>
-              <dd>
-                {result.details.displacement} m
-              </dd>
-            </div>
-
-            <div>
-              <dt>Time</dt>
-              <dd>{result.details.time} s</dd>
-            </div>
-          </dl>
-        ) : null}
-
-        <div className="calculator-example-list">
-          <p>Try an example</p>
+        <div className="calculator-examples">
+          <span>Try an example:</span>
 
           {examples.map((example) => (
             <button
@@ -404,6 +365,64 @@ export function AverageVelocityCalculator() {
             </button>
           ))}
         </div>
+      </form>
+
+      <aside
+        className={`calculator-result ${
+          result ? "calculator-result--complete" : ""
+        }`}
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {result ? (
+          <>
+            <p className="calculator-result__label">
+              {variableLabels[solveFor]}
+            </p>
+
+            <p className="calculator-result__value">
+              {result.formattedValue}{" "}
+              <span>{variableUnits[solveFor]}</span>
+            </p>
+
+            <dl className="calculator-result__details">
+              <div>
+                <dt>Average velocity</dt>
+                <dd>
+                  {result.details.averageVelocity} m/s
+                </dd>
+              </div>
+
+              <div>
+                <dt>Displacement</dt>
+                <dd>
+                  {result.details.displacement} m
+                </dd>
+              </div>
+
+              <div>
+                <dt>Time</dt>
+                <dd>{result.details.time} s</dd>
+              </div>
+            </dl>
+
+            <div className="calculator-result__working">
+              <h3>Calculation</h3>
+              <p>{result.details.formula}</p>
+            </div>
+          </>
+        ) : (
+          <div className="calculator-result__empty">
+            <span aria-hidden="true">v̄</span>
+
+            <h2>Your result will appear here</h2>
+
+            <p>
+              Select the variable to calculate, enter the
+              remaining values, then select calculate.
+            </p>
+          </div>
+        )}
       </aside>
     </div>
   );
