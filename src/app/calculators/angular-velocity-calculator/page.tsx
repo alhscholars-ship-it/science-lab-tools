@@ -7,6 +7,12 @@ import {
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
+import {
+  createBreadcrumbSchema,
+  createFaqSchema,
+  createWebApplicationSchema,
+  serializeJsonLd,
+} from "@/lib/seo/schema";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle =
@@ -68,56 +74,36 @@ const faqItems = [
   },
 ] as const;
 
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: pageTitle,
-  description: pageDescription,
-  url: absoluteUrl(pagePath),
-  applicationCategory:
-    "EducationalApplication",
-  operatingSystem: "Any",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-};
+const webApplicationSchema =
+  createWebApplicationSchema({
+    name: pageTitle,
+    description: pageDescription,
+    path: pagePath,
+  });
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
+const faqSchema = createFaqSchema(faqItems);
+
+const breadcrumbSchema = createBreadcrumbSchema({
+  pageName: pageTitle,
+  pagePath,
+});
 
 export default function AngularVelocityCalculatorPage() {
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            webApplicationSchema,
-          ).replace(/</g, "\\u003c"),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema).replace(
-            /</g,
-            "\\u003c",
-          ),
-        }}
-      />
+      {[
+        webApplicationSchema,
+        faqSchema,
+        breadcrumbSchema,
+      ].map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: serializeJsonLd(schema),
+          }}
+        />
+      ))}
 
       <section className="tool-page-hero">
         <Container>
