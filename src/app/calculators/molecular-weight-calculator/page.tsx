@@ -5,6 +5,12 @@ import { MolecularWeightCalculator } from "@/components/calculators/molecular-we
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
+import {
+  createBreadcrumbSchema,
+  createFaqSchema,
+  createWebApplicationSchema,
+  serializeJsonLd,
+} from "@/lib/seo/schema";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Molecular Weight Calculator";
@@ -59,76 +65,36 @@ const faqItems = [
   },
 ] as const;
 
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: pageTitle,
-  description: pageDescription,
-  url: absoluteUrl(pagePath),
-  applicationCategory: "EducationalApplication",
-  operatingSystem: "Any",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-};
+const webApplicationSchema =
+  createWebApplicationSchema({
+    name: pageTitle,
+    description: pageDescription,
+    path: pagePath,
+  });
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
+const faqSchema = createFaqSchema(faqItems);
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: absoluteUrl("/"),
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Calculators",
-      item: absoluteUrl("/calculators"),
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: pageTitle,
-      item: absoluteUrl(pagePath),
-    },
-  ],
-};
+const breadcrumbSchema = createBreadcrumbSchema({
+  pageName: pageTitle,
+  pagePath,
+});
 
 export default function MolecularWeightCalculatorPage() {
   return (
     <main>
-      {[webApplicationSchema, faqSchema, breadcrumbSchema].map(
-        (schema, index) => (
-          <script
-            key={index}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(schema).replace(
-                /</g,
-                "\\u003c",
-              ),
-            }}
-          />
-        ),
-      )}
+      {[
+        webApplicationSchema,
+        faqSchema,
+        breadcrumbSchema,
+      ].map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: serializeJsonLd(schema),
+          }}
+        />
+      ))}
 
       <section className="tool-page-hero">
         <Container>
