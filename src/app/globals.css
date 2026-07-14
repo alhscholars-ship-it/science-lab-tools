@@ -2186,3 +2186,193 @@ summary {
     grid-template-columns: 1fr;
   }
 }
+
+/* Shared calculator mobile polish */
+.calculator-panel,
+.calculator-form,
+.calculator-result,
+.article-layout,
+.article-content,
+.article-sidebar {
+  min-width: 0;
+}
+
+.calculator-result__value,
+.calculator-result__details dd,
+.formula-card,
+.formula-card p,
+.formula-card span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.calculator-result__details dd {
+  max-width: 65%;
+  text-align: right;
+}
+
+.calculator-actions .button,
+.calculator-actions button,
+.calculator-examples button {
+  min-height: 2.75rem;
+}
+
+.form-field input,
+.form-field select,
+.calculator-textarea,
+.dilution-solve-field select,
+.input-with-unit select {
+  font-size: max(1rem, 16px);
+}
+
+@media (max-width: 620px) {
+  .tool-page-hero h1 {
+    font-size: clamp(2.15rem, 12vw, 3.25rem);
+    line-height: 1.05;
+  }
+
+  .tool-page-hero__content > p:last-child {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .breadcrumbs li {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .calculator-form,
+  .calculator-result {
+    padding: 1.25rem;
+  }
+
+  .calculator-form__heading {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .calculator-form__status {
+    width: fit-content;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .calculator-result {
+    min-height: auto;
+  }
+
+  .calculator-result__empty {
+    max-width: none;
+  }
+
+  .calculator-result__value {
+    margin-bottom: 1.25rem;
+    font-size: clamp(2.25rem, 14vw, 3.75rem);
+    line-height: 1.05;
+  }
+
+  .calculator-result__details div {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .calculator-result__details dd {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .calculator-result__working {
+    padding: 0.85rem;
+  }
+
+  .calculator-actions {
+    gap: 0.65rem;
+  }
+
+  .calculator-actions .button,
+  .calculator-actions button {
+    width: 100%;
+    min-height: 3rem;
+    justify-content: center;
+  }
+
+  .calculator-examples {
+    align-items: stretch;
+  }
+
+  .calculator-examples > span,
+  .calculator-examples > strong {
+    width: 100%;
+  }
+
+  .calculator-examples button {
+    flex: 1 1 9rem;
+  }
+
+  .input-with-unit {
+    grid-template-columns: minmax(0, 1fr) minmax(5.25rem, auto);
+  }
+
+  .input-with-suffix {
+    grid-template-columns: minmax(0, 1fr) minmax(4.5rem, auto);
+  }
+
+  .input-with-unit select,
+  .input-with-suffix > span {
+    padding-inline: 0.55rem;
+  }
+
+  .formula-card {
+    padding: 1rem;
+  }
+
+  .article-content section + section {
+    margin-top: 3.25rem;
+  }
+
+  .article-content h2 {
+    font-size: clamp(1.65rem, 8vw, 2.2rem);
+  }
+
+  .faq-list details {
+    padding: 0.85rem 0.95rem;
+  }
+
+  .calculator-directory-card {
+    min-height: 15rem;
+    padding: 1.35rem;
+  }
+
+  .calculator-directory-card__link {
+    right: 1.35rem;
+    bottom: 1.25rem;
+    left: 1.35rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .calculator-form,
+  .calculator-result {
+    padding: 1rem;
+  }
+
+  .calculator-result__value {
+    font-size: clamp(2rem, 13vw, 3rem);
+  }
+
+  .calculator-directory-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .input-with-unit {
+    grid-template-columns: minmax(0, 1fr) 5.25rem;
+  }
+}
