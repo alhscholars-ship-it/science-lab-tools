@@ -5,25 +5,32 @@ import { PercentDifferenceCalculator } from "@/components/calculators/percent-di
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
+import {
+  createBreadcrumbSchema,
+  createFaqSchema,
+  createWebApplicationSchema,
+  serializeJsonLd,
+} from "@/lib/seo/schema";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Percent Difference Calculator";
 const pageDescription =
   "Calculate percent difference between two measurements with the formula, worked example, calculation steps, and a clear comparison with percent error.";
 
+const pagePath =
+  "/calculators/percent-difference-calculator";
+
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/calculators/percent-difference-calculator",
+    canonical: pagePath,
   },
   openGraph: {
     title: `${pageTitle} | ${siteConfig.name}`,
     description: pageDescription,
     type: "website",
-    url: absoluteUrl(
-      "/calculators/percent-difference-calculator",
-    ),
+    url: absoluteUrl(pagePath),
   },
   twitter: {
     card: "summary_large_image",
@@ -56,55 +63,36 @@ const faqItems = [
   },
 ] as const;
 
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: pageTitle,
-  description: pageDescription,
-  url: absoluteUrl(
-    "/calculators/percent-difference-calculator",
-  ),
-  applicationCategory: "EducationalApplication",
-  operatingSystem: "Any",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-};
+const webApplicationSchema =
+  createWebApplicationSchema({
+    name: pageTitle,
+    description: pageDescription,
+    path: pagePath,
+  });
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
+const faqSchema = createFaqSchema(faqItems);
+
+const breadcrumbSchema = createBreadcrumbSchema({
+  pageName: pageTitle,
+  pagePath,
+});
 
 export default function PercentDifferenceCalculatorPage() {
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(webApplicationSchema).replace(
-            /</g,
-            "\\u003c",
-          ),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
-        }}
-      />
+      {[
+        webApplicationSchema,
+        faqSchema,
+        breadcrumbSchema,
+      ].map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: serializeJsonLd(schema),
+          }}
+        />
+      ))}
 
       <section className="tool-page-hero">
         <Container>

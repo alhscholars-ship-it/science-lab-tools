@@ -5,6 +5,11 @@ import { ProjectileMotionCalculator } from "@/components/calculators/projectile-
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
+import {
+  createBreadcrumbSchema,
+  createWebApplicationSchema,
+  serializeJsonLd,
+} from "@/lib/seo/schema";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Projectile Motion Calculator";
@@ -38,68 +43,33 @@ export const metadata: Metadata = {
   },
 };
 
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: pageTitle,
-  description: pageDescription,
-  url: absoluteUrl(pagePath),
-  applicationCategory: "EducationalApplication",
-  operatingSystem: "Any",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-};
+const webApplicationSchema =
+  createWebApplicationSchema({
+    name: pageTitle,
+    description: pageDescription,
+    path: pagePath,
+  });
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: absoluteUrl("/"),
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Calculators",
-      item: absoluteUrl("/calculators"),
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: pageTitle,
-      item: absoluteUrl(pagePath),
-    },
-  ],
-};
+const breadcrumbSchema = createBreadcrumbSchema({
+  pageName: pageTitle,
+  pagePath,
+});
 
 export default function ProjectileMotionCalculatorPage() {
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(webApplicationSchema).replace(
-            /</g,
-            "\\u003c",
-          ),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema).replace(
-            /</g,
-            "\\u003c",
-          ),
-        }}
-      />
+      {[
+        webApplicationSchema,
+        breadcrumbSchema,
+      ].map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: serializeJsonLd(schema),
+          }}
+        />
+      ))}
 
       <section className="tool-page-hero">
         <Container>
