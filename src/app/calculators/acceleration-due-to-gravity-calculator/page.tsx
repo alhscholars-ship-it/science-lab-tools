@@ -304,6 +304,25 @@ export default function AccelerationDueToGravityCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Model limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                The calculation assumes a spherical gravitating body
+                and uses distance from its center. It also treats the
+                body mass as fixed and ignores local variations caused
+                by rotation, altitude, terrain, and density differences.
+              </p>
+              <p>
+                The result is an ideal gravitational-field estimate.
+                It may differ from locally measured acceleration and
+                is not suitable for relativistic conditions or
+                locations inside a nonuniform body.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers

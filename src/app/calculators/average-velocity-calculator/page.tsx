@@ -315,6 +315,25 @@ export default function AverageVelocityCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Interpretation limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                Average velocity is based on net displacement divided
+                by elapsed time. It does not describe the complete
+                path, instantaneous velocity, acceleration, or
+                variations that occur during the interval.
+              </p>
+              <p>
+                Direction must be represented consistently with signs
+                or coordinates. A round trip can have zero average
+                velocity even when the object travelled a substantial
+                total distance.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers

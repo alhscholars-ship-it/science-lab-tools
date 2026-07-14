@@ -293,6 +293,24 @@ export default function AverageSpeedCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Interpretation limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                Average speed uses total distance divided by total
+                elapsed time. It does not describe changes in speed,
+                direction, acceleration, stops, or the fastest and
+                slowest parts of a journey.
+              </p>
+              <p>
+                Distance and time values must represent the same trip
+                and use compatible units. Using moving time instead
+                of total elapsed time can produce a different result.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers

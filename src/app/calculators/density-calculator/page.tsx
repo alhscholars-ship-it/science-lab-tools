@@ -241,6 +241,25 @@ export default function DensityCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Measurement limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                Density calculations assume that mass and volume refer
+                to the same homogeneous sample and that their units
+                are compatible. Temperature and pressure should be
+                controlled when they meaningfully affect volume.
+              </p>
+              <p>
+                Results may be misleading for porous materials,
+                mixtures, trapped air, irregular samples, phase
+                changes, or measurements with substantial experimental
+                uncertainty.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>
               <h2 id="faq-heading">Density FAQ</h2>
