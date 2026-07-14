@@ -276,6 +276,55 @@ export default function SignificantFiguresCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Rounding limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                Significant-figure rules communicate measurement
+                precision, but they cannot determine the true
+                uncertainty of an instrument or experiment. The
+                entered value must already use a meaningful decimal
+                representation.
+              </p>
+              <p>
+                Exact counted quantities and defined conversion
+                factors are not normally limited by significant
+                figures. Intermediate calculations should retain
+                guard digits so repeated rounding does not distort
+                the final result.
+              </p>
+            </section>
+
+            <section aria-labelledby="related-calculators-heading">
+              <p className="eyebrow">Related tools</p>
+              <h2 id="related-calculators-heading">
+                Related measurement calculators
+              </h2>
+              <p>
+                Compare a measured result with an accepted reference
+                using the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/percent-error-calculator"
+                >
+                  Percent Error Calculator
+                </Link>
+                .
+              </p>
+              <p>
+                Express and combine measurement precision with the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/measurement-uncertainty-calculator"
+                >
+                  Measurement Uncertainty Calculator
+                </Link>
+                .
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers

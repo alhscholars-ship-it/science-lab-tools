@@ -277,6 +277,54 @@ export default function MassMolesCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Calculation limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                Mass-to-moles calculations assume that the entered
+                molar mass correctly represents the substance and
+                that the sample mass refers to that substance alone.
+                Mass and molar-mass units must be compatible.
+              </p>
+              <p>
+                Experimental samples may produce different effective
+                results when they contain impurities, water of
+                hydration, mixtures, uncertain composition, or an
+                incorrectly specified chemical formula.
+              </p>
+            </section>
+
+            <section aria-labelledby="related-calculators-heading">
+              <p className="eyebrow">Related tools</p>
+              <h2 id="related-calculators-heading">
+                Related chemistry calculators
+              </h2>
+              <p>
+                Determine the molar mass of a chemical formula with
+                the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/molecular-weight-calculator"
+                >
+                  Molecular Weight Calculator
+                </Link>
+                .
+              </p>
+              <p>
+                Use moles and solution volume to calculate
+                concentration with the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/molarity-calculator"
+                >
+                  Molarity Calculator
+                </Link>
+                .
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers

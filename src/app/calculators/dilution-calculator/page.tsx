@@ -234,6 +234,54 @@ export default function DilutionCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Calculation limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                The dilution equation assumes that the amount of
+                dissolved solute remains unchanged while solvent is
+                added. Concentration and volume units must also be
+                compatible before values are entered.
+              </p>
+              <p>
+                The result may not represent real laboratory behavior
+                when a reaction occurs, the solution volume is not
+                additive, evaporation changes the concentration, or
+                the solute is not distributed uniformly.
+              </p>
+            </section>
+
+            <section aria-labelledby="related-calculators-heading">
+              <p className="eyebrow">Related tools</p>
+              <h2 id="related-calculators-heading">
+                Related chemistry calculators
+              </h2>
+              <p>
+                Calculate solution concentration from solute amount
+                and volume with the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/molarity-calculator"
+                >
+                  Molarity Calculator
+                </Link>
+                .
+              </p>
+              <p>
+                Convert between sample mass and chemical amount with
+                the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/mass-moles-calculator"
+                >
+                  Mass to Moles Calculator
+                </Link>
+                .
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>
               <h2 id="faq-heading">Dilution FAQ</h2>

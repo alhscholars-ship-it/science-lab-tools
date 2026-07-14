@@ -215,6 +215,54 @@ export default function PercentDifferenceCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Interpretation limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                Percent difference is intended for comparing two
+                experimental values when neither value is treated as
+                the accepted reference. Both measurements should
+                represent the same quantity and use compatible units.
+              </p>
+              <p>
+                The percentage can become unstable when the average
+                magnitude is close to zero, and it does not explain
+                whether a difference was caused by random variation,
+                systematic error, or an unsuitable measurement method.
+              </p>
+            </section>
+
+            <section aria-labelledby="related-calculators-heading">
+              <p className="eyebrow">Related tools</p>
+              <h2 id="related-calculators-heading">
+                Related measurement calculators
+              </h2>
+              <p>
+                Compare an experimental result with an accepted value
+                using the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/percent-error-calculator"
+                >
+                  Percent Error Calculator
+                </Link>
+                .
+              </p>
+              <p>
+                Evaluate uncertainty across calculated quantities
+                with the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/uncertainty-propagation-calculator"
+                >
+                  Uncertainty Propagation Calculator
+                </Link>
+                .
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>
               <h2 id="faq-heading">

@@ -346,6 +346,54 @@ export default function MeanMedianModeCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Interpretation limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                Mean, median, and mode summarize a dataset but do not
+                fully describe its spread, shape, uncertainty, or
+                measurement quality. Each statistic can emphasize a
+                different feature of the same data.
+              </p>
+              <p>
+                The mean is sensitive to extreme values, the median
+                does not show variability, and a dataset may have no
+                mode or more than one mode. Conclusions should
+                therefore consider the data distribution and context.
+              </p>
+            </section>
+
+            <section aria-labelledby="related-calculators-heading">
+              <p className="eyebrow">Related tools</p>
+              <h2 id="related-calculators-heading">
+                Related statistics calculators
+              </h2>
+              <p>
+                Measure how widely observations vary around their
+                mean with the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/standard-deviation-calculator"
+                >
+                  Standard Deviation Calculator
+                </Link>
+                .
+              </p>
+              <p>
+                Fit a straight-line relationship to paired
+                observations with the{" "}
+                <Link
+                  className="article-inline-link"
+                  href="/calculators/linear-regression-calculator"
+                >
+                  Linear Regression Calculator
+                </Link>
+                .
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
