@@ -274,6 +274,30 @@ export default function PhCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Model limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+
+              <p>
+                The standard pH equations assume that the entered
+                hydrogen-ion or hydroxide-ion concentration represents
+                the effective concentration used by the model. Units
+                must be mol/L, and the logarithm requires a positive,
+                non-zero concentration.
+              </p>
+
+              <p>
+                Real solutions may differ because of activity effects,
+                temperature, incomplete dissociation, buffering,
+                concentrated-solution behavior, or interactions between
+                dissolved species. Laboratory measurements may therefore
+                require calibrated instrumentation and a more advanced
+                equilibrium model.
+              </p>
+            </section>
+
             <section aria-labelledby="related-heading">
               <p className="eyebrow">Related chemistry tools</p>
               <h2 id="related-heading">

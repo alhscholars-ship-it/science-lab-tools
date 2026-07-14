@@ -222,6 +222,28 @@ export default function SpecificHeatCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Model limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+
+              <p>
+                The calculation assumes that the material has a constant
+                specific heat over the selected temperature interval and
+                that the entered heat energy is transferred entirely to
+                or from the stated sample.
+              </p>
+
+              <p>
+                Real experiments may lose energy to the container,
+                surroundings, evaporation, or phase changes. Specific
+                heat can also vary with temperature, pressure, purity,
+                and material composition, so measured results may differ
+                from the ideal calculation.
+              </p>
+            </section>
+
             <section aria-labelledby="related-heading">
               <p className="eyebrow">Related energy tools</p>
               <h2 id="related-heading">

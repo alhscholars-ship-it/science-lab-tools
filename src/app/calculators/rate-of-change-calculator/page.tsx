@@ -418,6 +418,10 @@ export default function RateOfChangeCalculatorPage() {
               <Link href="/calculators/linear-regression-calculator">
                 Open Linear Regression Calculator
               </Link>
+
+              <Link href="/calculators/average-velocity-calculator">
+                Open Average Velocity Calculator
+              </Link>
             </div>
           </aside>
         </Container>

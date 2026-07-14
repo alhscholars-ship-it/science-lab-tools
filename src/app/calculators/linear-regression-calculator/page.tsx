@@ -419,6 +419,10 @@ export default function LinearRegressionCalculatorPage() {
               <Link href="/calculators/mean-median-mode-calculator">
                 Open Mean, Median and Mode Calculator
               </Link>
+
+              <Link href="/calculators/standard-deviation-calculator">
+                Open Standard Deviation Calculator
+              </Link>
             </div>
           </aside>
         </Container>

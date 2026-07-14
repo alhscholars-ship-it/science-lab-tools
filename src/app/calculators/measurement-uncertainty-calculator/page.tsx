@@ -411,6 +411,10 @@ export default function MeasurementUncertaintyCalculatorPage() {
               <Link href="/calculators/percent-error-calculator">
                 Open Percent Error Calculator
               </Link>
+
+              <Link href="/calculators/uncertainty-propagation-calculator">
+                Open Uncertainty Propagation Calculator
+              </Link>
             </div>
           </aside>
         </Container>
