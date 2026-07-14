@@ -361,6 +361,25 @@ export default function DistanceCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Interpretation limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                Distance is a scalar measure of the total path length.
+                The selected equation must match the available motion
+                information, and all entered values must use compatible
+                units.
+              </p>
+              <p>
+                A simple distance calculation may not represent curved
+                paths, changing acceleration, pauses, reversals, or
+                multi-stage motion unless those parts are calculated
+                separately and combined.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers

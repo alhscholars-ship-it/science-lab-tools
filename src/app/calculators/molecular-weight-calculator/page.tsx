@@ -289,6 +289,25 @@ export default function MolecularWeightCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Formula limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                The calculation assumes that the entered chemical
+                formula is valid and unambiguous. Element symbols,
+                subscripts, parentheses, and hydrate notation must be
+                entered in a supported format.
+              </p>
+              <p>
+                The reported molecular or formula weight is based on
+                standard atomic weights. Isotopically enriched samples,
+                unspecified mixtures, variable-composition solids, and
+                unsupported notation may require a specialized method.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers

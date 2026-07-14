@@ -226,6 +226,25 @@ export default function PercentErrorCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Interpretation limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                Percent error assumes that a meaningful accepted or
+                reference value is available. The experimental and
+                accepted values must represent the same quantity and
+                use compatible units.
+              </p>
+              <p>
+                A small percent error does not prove that a method is
+                precise, and a large value does not identify the source
+                of error. The calculation also becomes undefined when
+                the accepted value equals zero.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>
               <h2 id="faq-heading">Percent error FAQ</h2>

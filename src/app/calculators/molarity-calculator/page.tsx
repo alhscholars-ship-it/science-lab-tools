@@ -236,6 +236,25 @@ export default function MolarityCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Calculation limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                Molarity calculations assume that the number of moles
+                and the final solution volume are known accurately.
+                Volume must describe the completed solution rather than
+                only the solvent added.
+              </p>
+              <p>
+                Temperature changes, volume contraction or expansion,
+                incomplete dissolution, chemical reactions, impurities,
+                and uncertain solute composition can cause the real
+                concentration to differ from the calculated value.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>
               <h2 id="faq-heading">Molarity FAQ</h2>

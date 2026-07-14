@@ -310,6 +310,25 @@ export default function DisplacementCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Interpretation limits</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                Displacement represents the straight-line change from
+                an initial position to a final position. It does not
+                describe the full path travelled or the total distance
+                covered during the motion.
+              </p>
+              <p>
+                Position values must use the same reference frame,
+                coordinate direction, and compatible units. A positive
+                or negative result indicates direction according to
+                the selected sign convention.
+              </p>
+            </section>
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
