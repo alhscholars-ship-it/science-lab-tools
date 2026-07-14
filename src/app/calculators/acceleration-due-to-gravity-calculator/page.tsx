@@ -5,6 +5,12 @@ import { AccelerationDueToGravityCalculator } from "@/components/calculators/acc
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
+import {
+  createBreadcrumbSchema,
+  createFaqSchema,
+  createWebApplicationSchema,
+  serializeJsonLd,
+} from "@/lib/seo/schema";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle =
@@ -13,19 +19,19 @@ const pageTitle =
 const pageDescription =
   "Calculate gravitational acceleration from the mass and radius of a planet or celestial body using g = GM / r².";
 
-const canonicalPath =
+const pagePath =
   "/calculators/acceleration-due-to-gravity-calculator";
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: canonicalPath,
+    canonical: pagePath,
   },
   openGraph: {
     title: `${pageTitle} | ${siteConfig.name}`,
     description: pageDescription,
-    url: absoluteUrl(canonicalPath),
+    url: absoluteUrl(pagePath),
     type: "website",
   },
   robots: {
@@ -66,50 +72,36 @@ const faqItems = [
   },
 ];
 
-export default function AccelerationDueToGravityCalculatorPage() {
-  const applicationSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
+const webApplicationSchema =
+  createWebApplicationSchema({
     name: pageTitle,
     description: pageDescription,
-    url: absoluteUrl(canonicalPath),
-    applicationCategory: "EducationalApplication",
-    operatingSystem: "Any",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-    },
-  };
+    path: pagePath,
+  });
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqItems.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
+const faqSchema = createFaqSchema(faqItems);
 
+const breadcrumbSchema = createBreadcrumbSchema({
+  pageName: pageTitle,
+  pagePath,
+});
+
+export default function AccelerationDueToGravityCalculatorPage() {
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(applicationSchema),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
-        }}
-      />
+      {[
+        webApplicationSchema,
+        faqSchema,
+        breadcrumbSchema,
+      ].map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: serializeJsonLd(schema),
+          }}
+        />
+      ))}
 
       <section className="tool-page-hero">
         <Container>
