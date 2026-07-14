@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
   createBreadcrumbSchema,
+  createFaqSchema,
   createWebApplicationSchema,
   serializeJsonLd,
 } from "@/lib/seo/schema";
@@ -43,12 +44,37 @@ export const metadata: Metadata = {
   },
 };
 
+const faqItems = [
+  {
+    question: "What is free fall?",
+    answer:
+      "Free fall is vertical motion in which gravity is the only significant force acting on an object.",
+  },
+  {
+    question: "What value of gravity should I use near Earth?",
+    answer:
+      "A standard value of 9.81 metres per second squared is commonly used for calculations near Earth’s surface.",
+  },
+  {
+    question: "Does the free fall calculator include air resistance?",
+    answer:
+      "No. It uses an idealized model that ignores air resistance and assumes constant gravitational acceleration.",
+  },
+  {
+    question: "Can I solve for falling time or final velocity?",
+    answer:
+      "Yes. The calculator can solve for time, falling distance, final velocity, or gravitational acceleration when enough values are provided.",
+  },
+] as const;
+
 const webApplicationSchema =
   createWebApplicationSchema({
     name: pageTitle,
     description: pageDescription,
     path: pagePath,
   });
+
+const faqSchema = createFaqSchema(faqItems);
 
 const breadcrumbSchema = createBreadcrumbSchema({
   pageName: pageTitle,
@@ -60,6 +86,7 @@ export default function FreeFallCalculatorPage() {
     <main>
       {[
         webApplicationSchema,
+        faqSchema,
         breadcrumbSchema,
       ].map((schema, index) => (
         <script
@@ -128,6 +155,48 @@ export default function FreeFallCalculatorPage() {
               </p>
             </section>
 
+            <section aria-labelledby="example-heading">
+              <p className="eyebrow">Worked example</p>
+              <h2 id="example-heading">
+                Free-fall distance after three seconds
+              </h2>
+              <p>
+                Suppose an object is released from rest and falls
+                for 3 seconds near Earth, where gravitational
+                acceleration is 9.81 m/s².
+              </p>
+              <div className="formula-card">
+                <p>h = ½gt²</p>
+                <p>
+                  h = ½ × 9.81 × 3² = 44.145 m
+                </p>
+              </div>
+              <p>
+                The object falls approximately 44.1 metres. Its
+                final velocity is v = gt = 9.81 × 3, or about
+                29.4 m/s downward.
+              </p>
+            </section>
+
+            <section aria-labelledby="assumptions-heading">
+              <p className="eyebrow">Model limitations</p>
+              <h2 id="assumptions-heading">
+                Assumptions and limitations
+              </h2>
+              <p>
+                The calculator assumes constant gravitational
+                acceleration, negligible air resistance, and
+                straight vertical motion. These assumptions work
+                well for short falls near Earth’s surface.
+              </p>
+              <p>
+                Results may differ for objects with substantial
+                drag, very high-altitude falls, changing gravity,
+                powered motion, or situations where another force
+                is significant.
+              </p>
+            </section>
+
             <section aria-labelledby="related-heading">
               <h2 id="related-heading">
                 Related gravity calculators
@@ -153,6 +222,22 @@ export default function FreeFallCalculatorPage() {
                 .
               </p>
             </section>
+
+            <section aria-labelledby="faq-heading">
+              <p className="eyebrow">Common questions</p>
+              <h2 id="faq-heading">
+                Free fall calculator FAQs
+              </h2>
+              <div className="faq-list">
+                {faqItems.map((item) => (
+                  <details key={item.question}>
+                    <summary>{item.question}</summary>
+                    <p>{item.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+
           </article>
         </Container>
         <Container>
