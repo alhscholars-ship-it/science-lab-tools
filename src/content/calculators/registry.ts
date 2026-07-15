@@ -338,6 +338,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "electric-field-calculator",
+    name: "Electric Field Calculator",
+    shortDescription:
+      "Calculate electric field strength, force, charge, or distance using electrostatic field formulas.",
+    category: "Physics",
+    href: "/calculators/electric-field-calculator",
+    keywords: [
+      "electric field calculator",
+      "electric field strength calculator",
+      "electric force calculator",
+      "point charge electric field calculator",
+      "newtons per coulomb calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
