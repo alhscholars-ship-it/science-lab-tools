@@ -323,6 +323,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "wave-speed-calculator",
+    name: "Wave Speed Calculator",
+    shortDescription:
+      "Calculate wave speed, frequency, or wavelength using the wave equation.",
+    category: "Physics",
+    href: "/calculators/wave-speed-calculator",
+    keywords: [
+      "wave speed calculator",
+      "wave equation calculator",
+      "frequency wavelength calculator",
+      "calculate wavelength",
+      "v equals f lambda calculator",
+    ],
+  },
+  {
     slug: "work-calculator",
     name: "Work Calculator",
     shortDescription:
