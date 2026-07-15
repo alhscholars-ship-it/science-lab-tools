@@ -323,6 +323,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "coulombs-law-calculator",
+    name: "Coulomb's Law Calculator",
+    shortDescription:
+      "Calculate electrostatic force, charge, or separation distance using Coulomb's law.",
+    category: "Physics",
+    href: "/calculators/coulombs-law-calculator",
+    keywords: [
+      "coulombs law calculator",
+      "coulomb law calculator",
+      "electrostatic force calculator",
+      "electric charge force calculator",
+      "electric force calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
