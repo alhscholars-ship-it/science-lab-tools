@@ -178,6 +178,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: absoluteUrl(
+        "/calculators/ohms-law-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: absoluteUrl("/calculators/work-calculator"),
       changeFrequency: "monthly",
       priority: 0.9,

@@ -308,6 +308,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "ohms-law-calculator",
+    name: "Ohm's Law Calculator",
+    shortDescription:
+      "Calculate voltage, current, resistance, or electrical power using Ohm's law.",
+    category: "Physics",
+    href: "/calculators/ohms-law-calculator",
+    keywords: [
+      "ohms law calculator",
+      "ohm law calculator",
+      "voltage current resistance calculator",
+      "electrical power calculator",
+      "v equals i r calculator",
+    ],
+  },
+  {
     slug: "work-calculator",
     name: "Work Calculator",
     shortDescription:
