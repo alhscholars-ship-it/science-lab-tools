@@ -353,6 +353,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "electric-potential-calculator",
+    name: "Electric Potential Calculator",
+    shortDescription:
+      "Calculate electric potential, source charge, or distance using the point-charge potential formula.",
+    category: "Physics",
+    href: "/calculators/electric-potential-calculator",
+    keywords: [
+      "electric potential calculator",
+      "voltage due to point charge calculator",
+      "electric potential formula calculator",
+      "point charge potential calculator",
+      "v equals kq over r calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
