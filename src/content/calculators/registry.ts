@@ -458,6 +458,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "rl-time-constant-calculator",
+    name: "RL Time Constant Calculator",
+    shortDescription:
+      "Calculate RL time constant, inductance, resistance, current rise, current decay, or elapsed time.",
+    category: "Physics",
+    href: "/calculators/rl-time-constant-calculator",
+    keywords: [
+      "rl time constant calculator",
+      "inductor time constant calculator",
+      "resistor inductor circuit calculator",
+      "inductor current rise calculator",
+      "tau equals l over r calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
