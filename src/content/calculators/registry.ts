@@ -398,6 +398,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "capacitor-energy-calculator",
+    name: "Capacitor Energy Calculator",
+    shortDescription:
+      "Calculate stored capacitor energy, capacitance, charge, or voltage using equivalent energy formulas.",
+    category: "Physics",
+    href: "/calculators/capacitor-energy-calculator",
+    keywords: [
+      "capacitor energy calculator",
+      "energy stored in capacitor calculator",
+      "capacitive energy calculator",
+      "capacitor joules calculator",
+      "one half cv squared calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
