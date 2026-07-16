@@ -413,6 +413,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "rc-time-constant-calculator",
+    name: "RC Time Constant Calculator",
+    shortDescription:
+      "Calculate RC time constant, resistance, capacitance, charging voltage, discharging voltage, or elapsed time.",
+    category: "Physics",
+    href: "/calculators/rc-time-constant-calculator",
+    keywords: [
+      "rc time constant calculator",
+      "time constant calculator",
+      "capacitor charging time calculator",
+      "capacitor discharging calculator",
+      "tau equals rc calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
