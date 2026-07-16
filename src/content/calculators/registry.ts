@@ -368,6 +368,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "magnetic-field-calculator",
+    name: "Magnetic Field Calculator",
+    shortDescription:
+      "Calculate magnetic field strength, force, charge, velocity, angle, current, or distance.",
+    category: "Physics",
+    href: "/calculators/magnetic-field-calculator",
+    keywords: [
+      "magnetic field calculator",
+      "magnetic field strength calculator",
+      "magnetic force calculator",
+      "magnetic field around wire calculator",
+      "tesla calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
