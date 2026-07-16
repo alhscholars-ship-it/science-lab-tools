@@ -383,6 +383,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "capacitance-calculator",
+    name: "Capacitance Calculator",
+    shortDescription:
+      "Calculate capacitance, stored charge, or voltage using the capacitor relationship C = Q/V.",
+    category: "Physics",
+    href: "/calculators/capacitance-calculator",
+    keywords: [
+      "capacitance calculator",
+      "capacitor calculator",
+      "capacitance formula calculator",
+      "farad calculator",
+      "charge voltage capacitance calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
