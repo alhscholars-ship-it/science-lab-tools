@@ -443,6 +443,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "inductor-energy-calculator",
+    name: "Inductor Energy Calculator",
+    shortDescription:
+      "Calculate stored inductor energy, inductance, or electric current using E = 1/2 LI².",
+    category: "Physics",
+    href: "/calculators/inductor-energy-calculator",
+    keywords: [
+      "inductor energy calculator",
+      "energy stored in inductor calculator",
+      "inductive energy calculator",
+      "magnetic energy calculator",
+      "one half li squared calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
