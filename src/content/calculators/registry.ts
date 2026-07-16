@@ -428,6 +428,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "inductance-calculator",
+    name: "Inductance Calculator",
+    shortDescription:
+      "Calculate inductance, coil turns, magnetic flux, current, solenoid area, or coil length.",
+    category: "Physics",
+    href: "/calculators/inductance-calculator",
+    keywords: [
+      "inductance calculator",
+      "coil inductance calculator",
+      "solenoid inductance calculator",
+      "henry calculator",
+      "flux linkage calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
