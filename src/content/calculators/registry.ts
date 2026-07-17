@@ -550,6 +550,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "rlc-phase-angle-calculator",
+    name: "RLC Phase Angle Calculator",
+    shortDescription:
+      "Calculate phase angle, resistance, inductive reactance, or capacitive reactance for a series RLC circuit.",
+    category: "Physics",
+    href: "/calculators/rlc-phase-angle-calculator",
+    keywords: [
+      "rlc phase angle calculator",
+      "series rlc phase calculator",
+      "voltage current phase angle calculator",
+      "current lead lag calculator",
+      "rlc circuit power factor calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
