@@ -488,6 +488,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "capacitive-reactance-calculator",
+    name: "Capacitive Reactance Calculator",
+    shortDescription:
+      "Calculate capacitive reactance, AC frequency, or capacitance using Xc = 1/(2πfC).",
+    category: "Physics",
+    href: "/calculators/capacitive-reactance-calculator",
+    keywords: [
+      "capacitive reactance calculator",
+      "capacitor reactance calculator",
+      "ac capacitor calculator",
+      "xc equals 1 over 2 pi f c calculator",
+      "capacitor impedance calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
