@@ -519,6 +519,22 @@ export const calculators: readonly CalculatorDefinition[] = [
   },
 
   {
+    slug: "rlc-quality-factor-calculator",
+    name: "RLC Quality Factor Calculator",
+    shortDescription:
+      "Calculate quality factor, resistance, inductance, capacitance, damping ratio, or bandwidth for a series RLC circuit.",
+    category: "Physics",
+    href: "/calculators/rlc-quality-factor-calculator",
+    keywords: [
+      "rlc quality factor calculator",
+      "q factor calculator",
+      "series rlc circuit calculator",
+      "resonance bandwidth calculator",
+      "circuit damping calculator",
+    ],
+  },
+
+  {
     slug: "ac-impedance-calculator",
     name: "AC Impedance Calculator",
     shortDescription:
