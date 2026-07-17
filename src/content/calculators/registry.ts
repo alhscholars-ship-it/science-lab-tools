@@ -473,6 +473,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "inductive-reactance-calculator",
+    name: "Inductive Reactance Calculator",
+    shortDescription:
+      "Calculate inductive reactance, AC frequency, or inductance using Xₗ = 2πfL.",
+    category: "Physics",
+    href: "/calculators/inductive-reactance-calculator",
+    keywords: [
+      "inductive reactance calculator",
+      "inductor reactance calculator",
+      "ac inductor calculator",
+      "xl equals 2 pi f l calculator",
+      "inductor impedance calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:

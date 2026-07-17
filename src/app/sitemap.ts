@@ -256,6 +256,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: absoluteUrl(
+        "/calculators/inductive-reactance-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl(
         "/calculators/wave-speed-calculator",
       ),
       changeFrequency: "monthly",
