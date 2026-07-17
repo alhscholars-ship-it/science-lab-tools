@@ -503,6 +503,22 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "resonant-frequency-calculator",
+    name: "Resonant Frequency Calculator",
+    shortDescription:
+      "Calculate resonant frequency, inductance, or capacitance for ideal LC and RLC circuits.",
+    category: "Physics",
+    href: "/calculators/resonant-frequency-calculator",
+    keywords: [
+      "resonant frequency calculator",
+      "lc resonance calculator",
+      "rlc resonance calculator",
+      "tank circuit calculator",
+      "resonance frequency formula",
+    ],
+  },
+
+  {
     slug: "ac-impedance-calculator",
     name: "AC Impedance Calculator",
     shortDescription:

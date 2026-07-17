@@ -270,6 +270,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: absoluteUrl(
+        "/calculators/resonant-frequency-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+
+    {
+      url: absoluteUrl(
         "/calculators/ac-impedance-calculator",
       ),
       changeFrequency: "monthly",
