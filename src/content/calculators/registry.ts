@@ -503,6 +503,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "ac-impedance-calculator",
+    name: "AC Impedance Calculator",
+    shortDescription:
+      "Calculate impedance, resistance, inductive reactance, or capacitive reactance for a series RLC circuit.",
+    category: "Physics",
+    href: "/calculators/ac-impedance-calculator",
+    keywords: [
+      "ac impedance calculator",
+      "series rlc impedance calculator",
+      "electrical impedance calculator",
+      "rlc circuit calculator",
+      "z equals square root r squared calculator",
+    ],
+  },
+  {
     slug: "wave-speed-calculator",
     name: "Wave Speed Calculator",
     shortDescription:
