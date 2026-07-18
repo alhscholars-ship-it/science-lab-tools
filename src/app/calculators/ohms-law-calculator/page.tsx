@@ -425,6 +425,18 @@ export default function OhmsLawCalculatorPage() {
                 Use the{" "}
                 <Link
                   className="article-inline-link"
+                  href="/calculators/kirchhoffs-law-calculator"
+                >
+                  Kirchhoff&apos;s Law Calculator
+                </Link>{" "}
+                when a circuit contains multiple loops or junctions
+                that cannot be solved using Ohm&apos;s law alone.
+              </p>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
                   href="/calculators/work-calculator"
                 >
                   Work Calculator

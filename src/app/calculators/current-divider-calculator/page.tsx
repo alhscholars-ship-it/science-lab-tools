@@ -592,6 +592,19 @@ export default function CurrentDividerCalculatorPage() {
                 Use the{" "}
                 <Link
                   className="article-inline-link"
+                  href="/calculators/kirchhoffs-law-calculator"
+                >
+                  Kirchhoff&apos;s Law Calculator
+                </Link>{" "}
+                to solve complete multi-loop and multi-branch
+                circuit equations using Kirchhoff&apos;s Current
+                Law (KCL) and Kirchhoff&apos;s Voltage Law (KVL).
+              </p>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
                   href="/calculators/series-parallel-resistance-calculator"
                 >
                   Series and Parallel Resistance

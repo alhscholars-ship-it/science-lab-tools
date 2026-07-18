@@ -200,6 +200,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: absoluteUrl(
+        "/calculators/kirchhoffs-law-calculator",
+      ),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+
+    {
+      url: absoluteUrl(
         "/calculators/series-parallel-resistance-calculator",
       ),
       changeFrequency: "monthly",

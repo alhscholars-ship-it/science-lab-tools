@@ -481,6 +481,18 @@ export default function VoltageDividerCalculatorPage() {
                 Use the{" "}
                 <Link
                   className="article-inline-link"
+                  href="/calculators/kirchhoffs-law-calculator"
+                >
+                  Kirchhoff&apos;s Law Calculator
+                </Link>{" "}
+                to solve complete electrical networks containing
+                multiple loops and junctions.
+              </p>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
                   href="/calculators/series-parallel-resistance-calculator"
                 >
                   Series and Parallel Resistance

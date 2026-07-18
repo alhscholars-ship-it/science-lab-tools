@@ -354,6 +354,24 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "kirchhoffs-law-calculator",
+    name: "Kirchhoff's Law Calculator",
+    shortDescription:
+      "Calculate an unknown branch current with KCL or an unknown loop voltage with KVL using signed circuit values.",
+    category: "Physics",
+    href: "/calculators/kirchhoffs-law-calculator",
+    keywords: [
+      "kirchhoffs law calculator",
+      "kirchhoff law calculator",
+      "KCL calculator",
+      "KVL calculator",
+      "kirchhoffs current law calculator",
+      "kirchhoffs voltage law calculator",
+      "circuit loop calculator",
+      "junction current calculator",
+    ],
+  },
+  {
     slug: "series-parallel-resistance-calculator",
     name: "Series and Parallel Resistance Calculator",
     shortDescription:
