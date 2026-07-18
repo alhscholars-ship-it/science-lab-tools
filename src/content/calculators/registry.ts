@@ -323,6 +323,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "voltage-divider-calculator",
+    name: "Voltage Divider Calculator",
+    shortDescription:
+      "Calculate output voltage, input voltage, or resistor values for an ideal two-resistor voltage divider.",
+    category: "Physics",
+    href: "/calculators/voltage-divider-calculator",
+    keywords: [
+      "voltage divider calculator",
+      "potential divider calculator",
+      "resistor divider calculator",
+      "output voltage calculator",
+      "voltage divider formula calculator",
+    ],
+  },
+  {
     slug: "coulombs-law-calculator",
     name: "Coulomb's Law Calculator",
     shortDescription:
