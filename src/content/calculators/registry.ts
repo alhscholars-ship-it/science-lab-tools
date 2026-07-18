@@ -338,6 +338,22 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "voltage-drop-calculator",
+    name: "Voltage Drop Calculator",
+    shortDescription:
+      "Calculate conductor voltage drop, current, cable length, cross-sectional area, or electrical resistivity.",
+    category: "Physics",
+    href: "/calculators/voltage-drop-calculator",
+    keywords: [
+      "voltage drop calculator",
+      "wire voltage drop calculator",
+      "cable voltage drop calculator",
+      "conductor voltage loss calculator",
+      "electrical voltage drop formula",
+      "copper wire voltage drop calculator",
+    ],
+  },
+  {
     slug: "coulombs-law-calculator",
     name: "Coulomb's Law Calculator",
     shortDescription:
