@@ -519,6 +519,22 @@ export const calculators: readonly CalculatorDefinition[] = [
   },
 
   {
+    slug: "rlc-bandwidth-calculator",
+    name: "RLC Bandwidth Calculator",
+    shortDescription:
+      "Calculate RLC circuit bandwidth, resonant frequency, quality factor, and estimated half-power frequencies.",
+    category: "Physics",
+    href: "/calculators/rlc-bandwidth-calculator",
+    keywords: [
+      "rlc bandwidth calculator",
+      "resonance bandwidth calculator",
+      "quality factor bandwidth calculator",
+      "half power frequency calculator",
+      "bandpass circuit bandwidth calculator",
+    ],
+  },
+
+  {
     slug: "rlc-quality-factor-calculator",
     name: "RLC Quality Factor Calculator",
     shortDescription:
