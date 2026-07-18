@@ -338,6 +338,22 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "current-divider-calculator",
+    name: "Current Divider Calculator",
+    shortDescription:
+      "Calculate branch current, total current, or either resistance in an ideal two-resistor parallel circuit.",
+    category: "Physics",
+    href: "/calculators/current-divider-calculator",
+    keywords: [
+      "current divider calculator",
+      "current division calculator",
+      "parallel current calculator",
+      "branch current calculator",
+      "current divider formula calculator",
+      "resistor current divider calculator",
+    ],
+  },
+  {
     slug: "series-parallel-resistance-calculator",
     name: "Series and Parallel Resistance Calculator",
     shortDescription:
