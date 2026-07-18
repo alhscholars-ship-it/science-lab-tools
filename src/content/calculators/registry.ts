@@ -338,6 +338,23 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "series-parallel-resistance-calculator",
+    name: "Series and Parallel Resistance Calculator",
+    shortDescription:
+      "Calculate equivalent resistance for two or more resistors connected in series or parallel.",
+    category: "Physics",
+    href: "/calculators/series-parallel-resistance-calculator",
+    keywords: [
+      "series parallel resistance calculator",
+      "equivalent resistance calculator",
+      "resistors in series calculator",
+      "resistors in parallel calculator",
+      "parallel resistor calculator",
+      "series resistor calculator",
+      "total resistance calculator",
+    ],
+  },
+  {
     slug: "voltage-drop-calculator",
     name: "Voltage Drop Calculator",
     shortDescription:

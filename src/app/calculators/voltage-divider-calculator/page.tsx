@@ -481,6 +481,20 @@ export default function VoltageDividerCalculatorPage() {
                 Use the{" "}
                 <Link
                   className="article-inline-link"
+                  href="/calculators/series-parallel-resistance-calculator"
+                >
+                  Series and Parallel Resistance
+                  Calculator
+                </Link>{" "}
+                to find the effective resistance of a
+                load connected in parallel with the lower
+                divider resistor.
+              </p>
+
+              <p>
+                Use the{" "}
+                <Link
+                  className="article-inline-link"
                   href="/calculators/rc-time-constant-calculator"
                 >
                   RC Time Constant Calculator
