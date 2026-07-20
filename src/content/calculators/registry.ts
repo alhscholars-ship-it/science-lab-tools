@@ -354,6 +354,22 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "wheatstone-bridge-calculator",
+    name: "Wheatstone Bridge Calculator",
+    shortDescription:
+      "Calculate unknown resistance, bridge output voltage, or test whether a four-resistor Wheatstone bridge is balanced.",
+    category: "Physics",
+    href: "/calculators/wheatstone-bridge-calculator",
+    keywords: [
+      "wheatstone bridge calculator",
+      "wheatstone bridge resistance calculator",
+      "bridge circuit calculator",
+      "unknown resistance calculator",
+      "wheatstone bridge output voltage calculator",
+      "balanced bridge calculator",
+    ],
+  },
+  {
     slug: "kirchhoffs-law-calculator",
     name: "Kirchhoff's Law Calculator",
     shortDescription:
