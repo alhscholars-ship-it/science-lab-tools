@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { OhmsLawCalculator } from "@/components/calculators/ohms-law-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -399,53 +400,6 @@ export default function OhmsLawCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue analyzing electricity and
-                energy
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/power-calculator"
-                >
-                  Power Calculator
-                </Link>{" "}
-                to analyze mechanical work and energy
-                transfer rates.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/kirchhoffs-law-calculator"
-                >
-                  Kirchhoff&apos;s Law Calculator
-                </Link>{" "}
-                when a circuit contains multiple loops or junctions
-                that cannot be solved using Ohm&apos;s law alone.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/work-calculator"
-                >
-                  Work Calculator
-                </Link>{" "}
-                to explore the relationship between
-                force, displacement, and energy.
-              </p>
-            </section>
-
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -488,27 +442,15 @@ export default function OhmsLawCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate power</h2>
-
-              <p>
-                Calculate power, work, or elapsed
-                time using the mechanical power
-                formula.
-              </p>
-
-              <Link href="/calculators/power-calculator">
-                Open Power Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
 
         <Container>
+          <RelatedCalculators
+            currentSlug="ohms-law-calculator"
+            heading="Continue exploring electrical circuits"
+          />
+
           <CalculatorTrustPanel subject="physics" />
         </Container>
       </section>
