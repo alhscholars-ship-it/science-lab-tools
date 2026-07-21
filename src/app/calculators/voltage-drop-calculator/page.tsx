@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { VoltageDropCalculator } from "@/components/calculators/voltage-drop-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -456,6 +457,11 @@ export default function VoltageDropCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="voltage-drop-calculator"
+              heading="Continue your circuit analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Common questions
@@ -502,39 +508,7 @@ export default function VoltageDropCalculatorPage() {
               </ul>
             </div>
 
-            <div className="article-sidebar__card">
-              <p className="eyebrow">
-                Related calculators
-              </p>
 
-              <h2>Continue your circuit analysis</h2>
-
-              <ul className="article-list">
-                <li>
-                  <Link href="/calculators/ohms-law-calculator">
-                    Ohm&apos;s Law Calculator
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href="/calculators/power-calculator">
-                    Power Calculator
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href="/calculators/series-parallel-resistance-calculator">
-                    Series and Parallel Resistance Calculator
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href="/calculators/ac-impedance-calculator">
-                    AC Impedance Calculator
-                  </Link>
-                </li>
-              </ul>
-            </div>
           </aside>
         </Container>
 

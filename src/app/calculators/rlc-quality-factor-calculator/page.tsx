@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { RlcQualityFactorCalculator } from "@/components/calculators/rlc-quality-factor-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -532,6 +533,11 @@ export default function RlcQualityFactorCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="rlc-quality-factor-calculator"
+              heading="Continue your RLC analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Common questions
@@ -556,39 +562,7 @@ export default function RlcQualityFactorCalculatorPage() {
           </article>
 
           <aside className="article-sidebar">
-            <div className="article-card">
-              <p className="eyebrow">
-                Related calculators
-              </p>
 
-              <h2>Continue your analysis</h2>
-
-              <ul>
-                <li>
-                  <Link href="/calculators/resonant-frequency-calculator">
-                    Resonant Frequency Calculator
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href="/calculators/ac-impedance-calculator">
-                    AC Impedance Calculator
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href="/calculators/inductive-reactance-calculator">
-                    Inductive Reactance Calculator
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href="/calculators/capacitive-reactance-calculator">
-                    Capacitive Reactance Calculator
-                  </Link>
-                </li>
-              </ul>
-            </div>
           </aside>
         </Container>
 

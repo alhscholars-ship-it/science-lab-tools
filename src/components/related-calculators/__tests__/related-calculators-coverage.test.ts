@@ -13,7 +13,11 @@ const integratedPages = [
   "magnetic-field-calculator",
   "ohms-law-calculator",
   "rc-time-constant-calculator",
+  "resonant-frequency-calculator",
   "rl-time-constant-calculator",
+  "rlc-bandwidth-calculator",
+  "rlc-quality-factor-calculator",
+  "voltage-drop-calculator",
 ] as const;
 
 function readCalculatorPage(slug: string): string {
@@ -25,7 +29,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(11);
+    expect(integratedPages).toHaveLength(15);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );
