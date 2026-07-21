@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { InductanceCalculator } from "@/components/calculators/inductance-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -364,33 +365,10 @@ export default function InductanceCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue studying coils and circuits
-              </h2>
-
-              <div className="related-links">
-                <Link href="/calculators/magnetic-field-calculator">
-                  Magnetic Field Calculator
-                </Link>
-
-                <Link href="/calculators/ohms-law-calculator">
-                  Ohm&apos;s Law Calculator
-                </Link>
-
-                <Link href="/calculators/rc-time-constant-calculator">
-                  RC Time Constant Calculator
-                </Link>
-
-                <Link href="/calculators/capacitance-calculator">
-                  Capacitance Calculator
-                </Link>
-              </div>
-            </section>
+            <RelatedCalculators
+              currentSlug="inductance-calculator"
+              heading="Continue studying coils and circuits"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

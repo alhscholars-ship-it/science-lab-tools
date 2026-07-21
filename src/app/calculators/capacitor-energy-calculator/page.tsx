@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { CapacitorEnergyCalculator } from "@/components/calculators/capacitor-energy-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -379,34 +380,10 @@ export default function CapacitorEnergyCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue studying capacitors and
-                circuits
-              </h2>
-
-              <div className="related-links">
-                <Link href="/calculators/capacitance-calculator">
-                  Capacitance Calculator
-                </Link>
-
-                <Link href="/calculators/ohms-law-calculator">
-                  Ohm&apos;s Law Calculator
-                </Link>
-
-                <Link href="/calculators/electric-potential-calculator">
-                  Electric Potential Calculator
-                </Link>
-
-                <Link href="/calculators/power-calculator">
-                  Power Calculator
-                </Link>
-              </div>
-            </section>
+            <RelatedCalculators
+              currentSlug="capacitor-energy-calculator"
+              heading="Continue studying capacitors and circuits"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

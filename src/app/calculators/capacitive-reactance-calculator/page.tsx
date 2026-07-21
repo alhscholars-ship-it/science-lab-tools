@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { CapacitiveReactanceCalculator } from "@/components/calculators/capacitive-reactance-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -387,33 +388,10 @@ export default function CapacitiveReactanceCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue studying AC capacitors
-              </h2>
-
-              <div className="related-links">
-                <Link href="/calculators/capacitance-calculator">
-                  Capacitance Calculator
-                </Link>
-
-                <Link href="/calculators/capacitor-energy-calculator">
-                  Capacitor Energy Calculator
-                </Link>
-
-                <Link href="/calculators/rc-time-constant-calculator">
-                  RC Time Constant Calculator
-                </Link>
-
-                <Link href="/calculators/inductive-reactance-calculator">
-                  Inductive Reactance Calculator
-                </Link>
-              </div>
-            </section>
+            <RelatedCalculators
+              currentSlug="capacitive-reactance-calculator"
+              heading="Continue studying AC capacitors"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

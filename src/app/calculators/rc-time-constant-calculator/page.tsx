@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { RcTimeConstantCalculator } from "@/components/calculators/rc-time-constant-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -382,33 +383,10 @@ export default function RcTimeConstantCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue studying capacitor circuits
-              </h2>
-
-              <div className="related-links">
-                <Link href="/calculators/capacitance-calculator">
-                  Capacitance Calculator
-                </Link>
-
-                <Link href="/calculators/capacitor-energy-calculator">
-                  Capacitor Energy Calculator
-                </Link>
-
-                <Link href="/calculators/ohms-law-calculator">
-                  Ohm&apos;s Law Calculator
-                </Link>
-
-                <Link href="/calculators/power-calculator">
-                  Power Calculator
-                </Link>
-              </div>
-            </section>
+            <RelatedCalculators
+              currentSlug="rc-time-constant-calculator"
+              heading="Continue studying capacitor circuits"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

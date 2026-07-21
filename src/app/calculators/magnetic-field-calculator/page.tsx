@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { MagneticFieldCalculator } from "@/components/calculators/magnetic-field-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -395,34 +396,10 @@ export default function MagneticFieldCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related physics tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue studying electric and
-                magnetic fields
-              </h2>
-
-              <div className="related-links">
-                <Link href="/calculators/electric-field-calculator">
-                  Electric Field Calculator
-                </Link>
-
-                <Link href="/calculators/coulombs-law-calculator">
-                  Coulomb&apos;s Law Calculator
-                </Link>
-
-                <Link href="/calculators/electric-potential-calculator">
-                  Electric Potential Calculator
-                </Link>
-
-                <Link href="/calculators/ohms-law-calculator">
-                  Ohm&apos;s Law Calculator
-                </Link>
-              </div>
-            </section>
+            <RelatedCalculators
+              currentSlug="magnetic-field-calculator"
+              heading="Continue studying electric and magnetic fields"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

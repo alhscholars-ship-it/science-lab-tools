@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { InductorEnergyCalculator } from "@/components/calculators/inductor-energy-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -374,33 +375,10 @@ export default function InductorEnergyCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue studying inductors and energy
-              </h2>
-
-              <div className="related-links">
-                <Link href="/calculators/inductance-calculator">
-                  Inductance Calculator
-                </Link>
-
-                <Link href="/calculators/capacitor-energy-calculator">
-                  Capacitor Energy Calculator
-                </Link>
-
-                <Link href="/calculators/magnetic-field-calculator">
-                  Magnetic Field Calculator
-                </Link>
-
-                <Link href="/calculators/power-calculator">
-                  Power Calculator
-                </Link>
-              </div>
-            </section>
+            <RelatedCalculators
+              currentSlug="inductor-energy-calculator"
+              heading="Continue studying inductors and energy"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

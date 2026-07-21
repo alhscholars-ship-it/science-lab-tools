@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { AcImpedanceCalculator } from "@/components/calculators/ac-impedance-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -415,33 +416,10 @@ export default function AcImpedanceCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue studying AC circuits
-              </h2>
-
-              <div className="related-links">
-                <Link href="/calculators/inductive-reactance-calculator">
-                  Inductive Reactance Calculator
-                </Link>
-
-                <Link href="/calculators/capacitive-reactance-calculator">
-                  Capacitive Reactance Calculator
-                </Link>
-
-                <Link href="/calculators/ohms-law-calculator">
-                  Ohm&apos;s Law Calculator
-                </Link>
-
-                <Link href="/calculators/power-calculator">
-                  Power Calculator
-                </Link>
-              </div>
-            </section>
+            <RelatedCalculators
+              currentSlug="ac-impedance-calculator"
+              heading="Continue studying AC circuits"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

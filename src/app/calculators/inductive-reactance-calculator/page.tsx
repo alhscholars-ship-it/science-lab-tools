@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { InductiveReactanceCalculator } from "@/components/calculators/inductive-reactance-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -359,33 +360,10 @@ export default function InductiveReactanceCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue studying AC inductors
-              </h2>
-
-              <div className="related-links">
-                <Link href="/calculators/inductance-calculator">
-                  Inductance Calculator
-                </Link>
-
-                <Link href="/calculators/inductor-energy-calculator">
-                  Inductor Energy Calculator
-                </Link>
-
-                <Link href="/calculators/rl-time-constant-calculator">
-                  RL Time Constant Calculator
-                </Link>
-
-                <Link href="/calculators/ohms-law-calculator">
-                  Ohm&apos;s Law Calculator
-                </Link>
-              </div>
-            </section>
+            <RelatedCalculators
+              currentSlug="inductive-reactance-calculator"
+              heading="Continue studying AC inductors"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
