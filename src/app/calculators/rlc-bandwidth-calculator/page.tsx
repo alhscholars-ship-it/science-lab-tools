@@ -372,6 +372,40 @@ export default function RlcBandwidthCalculatorPage() {
           </article>
 
           <aside className="article-sidebar">
+            <div className="article-card">
+              <p className="eyebrow">
+                Related calculators
+              </p>
+
+              <h2>Continue your RLC analysis</h2>
+
+              <ul>
+                <li>
+                  <Link href="/calculators/rlc-quality-factor-calculator">
+                    RLC Quality Factor Calculator
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="/calculators/resonant-frequency-calculator">
+                    Resonant Frequency Calculator
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="/calculators/rlc-phase-angle-calculator">
+                    RLC Phase Angle Calculator
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="/calculators/ac-impedance-calculator">
+                    AC Impedance Calculator
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
             <CalculatorTrustPanel subject="physics" />
           </aside>
         </Container>

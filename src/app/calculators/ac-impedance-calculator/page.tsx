@@ -437,8 +437,8 @@ export default function AcImpedanceCalculatorPage() {
                   Ohm&apos;s Law Calculator
                 </Link>
 
-                <Link href="/calculators/ac-power-calculator">
-                  AC Power Calculator
+                <Link href="/calculators/power-calculator">
+                  Power Calculator
                 </Link>
               </div>
             </section>
