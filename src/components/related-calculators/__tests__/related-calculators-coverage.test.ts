@@ -10,6 +10,7 @@ const integratedPages = [
   "inductance-calculator",
   "inductive-reactance-calculator",
   "inductor-energy-calculator",
+  "linear-regression-calculator",
   "magnetic-field-calculator",
   "ohms-law-calculator",
   "rc-time-constant-calculator",
@@ -29,7 +30,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(15);
+    expect(integratedPages).toHaveLength(16);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );

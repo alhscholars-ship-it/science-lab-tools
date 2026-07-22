@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { LinearRegressionCalculator } from "@/components/calculators/linear-regression-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -367,6 +368,11 @@ export default function LinearRegressionCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="linear-regression-calculator"
+              heading="Continue your statistical analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -404,26 +410,7 @@ export default function LinearRegressionCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related statistics
-              </p>
 
-              <h2>Summarize each dataset</h2>
-
-              <p>
-                Calculate averages and spread before
-                interpreting the relationship.
-              </p>
-
-              <Link href="/calculators/mean-median-mode-calculator">
-                Open Mean, Median and Mode Calculator
-              </Link>
-
-              <Link href="/calculators/standard-deviation-calculator">
-                Open Standard Deviation Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>
