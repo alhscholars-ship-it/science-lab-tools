@@ -5,6 +5,7 @@ import {
   RotationalPowerCalculator,
 } from "@/components/calculators/rotational-power-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -392,6 +393,11 @@ export default function RotationalPowerCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="rotational-power-calculator"
+              heading="Continue your rotational power analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -433,26 +439,7 @@ export default function RotationalPowerCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>
-                Calculate rotational energy
-              </h2>
-
-              <p>
-                Solve rotational kinetic energy,
-                moment of inertia, or angular velocity
-                using KErot = ½Iω².
-              </p>
-
-              <Link href="/calculators/rotational-kinetic-energy-calculator">
-                Open Rotational Energy Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

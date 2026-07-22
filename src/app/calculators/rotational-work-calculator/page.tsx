@@ -5,6 +5,7 @@ import {
   RotationalWorkCalculator,
 } from "@/components/calculators/rotational-work-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -388,6 +389,11 @@ export default function RotationalWorkCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="rotational-work-calculator"
+              heading="Continue your rotational work analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -429,25 +435,7 @@ export default function RotationalWorkCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>
-                Calculate rotational power
-              </h2>
-
-              <p>
-                Solve rotational power, torque, or
-                angular velocity using P = τω.
-              </p>
-
-              <Link href="/calculators/rotational-power-calculator">
-                Open Rotational Power Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

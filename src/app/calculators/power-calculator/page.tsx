@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { PowerCalculator } from "@/components/calculators/power-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -361,6 +362,11 @@ export default function PowerCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="power-calculator"
+              heading="Continue your work and power analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -398,23 +404,7 @@ export default function PowerCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate mechanical work</h2>
-
-              <p>
-                Solve work, force, or distance using
-                W = F × d.
-              </p>
-
-              <Link href="/calculators/work-calculator">
-                Open Work Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

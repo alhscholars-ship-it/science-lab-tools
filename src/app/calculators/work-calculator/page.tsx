@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { WorkCalculator } from "@/components/calculators/work-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -364,6 +365,11 @@ export default function WorkCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="work-calculator"
+              heading="Continue your work and energy analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -401,23 +407,7 @@ export default function WorkCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate kinetic energy</h2>
-
-              <p>
-                Solve kinetic energy, mass, or speed
-                using KE = ½mv².
-              </p>
-
-              <Link href="/calculators/kinetic-energy-calculator">
-                Open Kinetic Energy Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />
