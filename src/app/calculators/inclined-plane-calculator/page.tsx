@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { InclinedPlaneCalculator } from "@/components/calculators/inclined-plane-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -477,6 +478,11 @@ export default function InclinedPlaneCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="inclined-plane-calculator"
+              heading="Continue your inclined plane analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -517,23 +523,7 @@ export default function InclinedPlaneCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate friction separately</h2>
-
-              <p>
-                Solve friction force, coefficient, or
-                normal force using F = μN.
-              </p>
-
-              <Link href="/calculators/friction-calculator">
-                Open Friction Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { ForceCalculator } from "@/components/calculators/force-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -385,6 +386,11 @@ export default function ForceCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="force-calculator"
+              heading="Continue your force and mechanics analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -422,23 +428,7 @@ export default function ForceCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Find acceleration first</h2>
-
-              <p>
-                Calculate acceleration from velocity
-                change and elapsed time.
-              </p>
-
-              <Link href="/calculators/acceleration-calculator">
-                Open Acceleration Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
 
         <Container>

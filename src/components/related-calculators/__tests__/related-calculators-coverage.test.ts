@@ -20,6 +20,10 @@ const integratedPages = [
   "gravitational-potential-energy-calculator",
   "hookes-law-calculator",
   "kinetic-energy-calculator",
+  "force-calculator",
+  "friction-calculator",
+  "inclined-plane-calculator",
+  "normal-force-calculator",
   "capacitance-calculator",
   "capacitive-reactance-calculator",
   "capacitor-energy-calculator",
@@ -46,7 +50,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(32);
+    expect(integratedPages).toHaveLength(36);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { NormalForceCalculator } from "@/components/calculators/normal-force-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -515,6 +516,11 @@ export default function NormalForceCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="normal-force-calculator"
+              heading="Continue your contact force analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -555,23 +561,7 @@ export default function NormalForceCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate weight first</h2>
-
-              <p>
-                Find gravitational force from mass and
-                local gravity.
-              </p>
-
-              <Link href="/calculators/weight-calculator">
-                Open Weight Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { FrictionCalculator } from "@/components/calculators/friction-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -459,6 +460,11 @@ export default function FrictionCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="friction-calculator"
+              heading="Continue your friction and force analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -499,23 +505,7 @@ export default function FrictionCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Find normal force first</h2>
-
-              <p>
-                Calculate normal force on horizontal or
-                inclined surfaces.
-              </p>
-
-              <Link href="/calculators/normal-force-calculator">
-                Open Normal Force Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />
