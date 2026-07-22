@@ -5,6 +5,7 @@ import {
   AngularImpulseCalculator,
 } from "@/components/calculators/angular-impulse-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -394,6 +395,11 @@ export default function AngularImpulseCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="angular-impulse-calculator"
+              heading="Continue your rotational dynamics analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -435,26 +441,7 @@ export default function AngularImpulseCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>
-                Calculate angular momentum
-              </h2>
-
-              <p>
-                Solve angular momentum, moment of
-                inertia, or angular velocity using
-                L = Iω.
-              </p>
-
-              <Link href="/calculators/angular-momentum-calculator">
-                Open Angular Momentum Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

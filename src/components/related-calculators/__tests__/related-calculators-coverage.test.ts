@@ -8,6 +8,10 @@ const integratedPages = [
   "acceleration-due-to-gravity-calculator",
   "angular-acceleration-calculator",
   "angular-displacement-calculator",
+  "angular-impulse-calculator",
+  "angular-momentum-calculator",
+  "angular-velocity-calculator",
+  "average-speed-calculator",
   "capacitance-calculator",
   "capacitive-reactance-calculator",
   "capacitor-energy-calculator",
@@ -34,7 +38,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(20);
+    expect(integratedPages).toHaveLength(24);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );
