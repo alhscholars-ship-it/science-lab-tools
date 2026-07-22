@@ -59,6 +59,10 @@ const integratedPages = [
   "displacement-calculator",
   "distance-calculator",
   "electric-field-calculator",
+  "electric-potential-calculator",
+  "kinematic-equations-calculator",
+  "measurement-uncertainty-calculator",
+  "revolutions-calculator",
 ] as const;
 
 function readCalculatorPage(slug: string): string {
@@ -70,7 +74,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(56);
+    expect(integratedPages).toHaveLength(60);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );

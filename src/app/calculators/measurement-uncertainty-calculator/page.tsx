@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { MeasurementUncertaintyCalculator } from "@/components/calculators/measurement-uncertainty-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -319,45 +320,10 @@ export default function MeasurementUncertaintyCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related resources
-              </p>
-
-              <h2 id="related-heading">
-                Analyze and report measurement quality
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/lab-reports/significant-figures-in-lab-reports"
-                >
-                  Significant Figures Guide
-                </Link>{" "}
-                for measurement precision and the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/lab-reports/lab-report-discussion"
-                >
-                  Lab Report Discussion Guide
-                </Link>{" "}
-                to evaluate uncertainty and limitations.
-              </p>
-
-              <p>
-                Review the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/lab-reports/tables-and-graphs"
-                >
-                  Tables and Graphs Guide
-                </Link>{" "}
-                before adding uncertainty or error bars to
-                scientific graphs.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="measurement-uncertainty-calculator"
+              heading="Continue your measurement-quality analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -396,26 +362,6 @@ export default function MeasurementUncertaintyCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Check measurement accuracy</h2>
-
-              <p>
-                Compare an experimental result with an
-                accepted value.
-              </p>
-
-              <Link href="/calculators/percent-error-calculator">
-                Open Percent Error Calculator
-              </Link>
-
-              <Link href="/calculators/uncertainty-propagation-calculator">
-                Open Uncertainty Propagation Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

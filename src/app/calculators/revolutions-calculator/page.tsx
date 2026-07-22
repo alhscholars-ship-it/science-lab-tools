@@ -5,6 +5,7 @@ import {
   RevolutionsCalculator,
 } from "@/components/calculators/revolutions-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -372,39 +373,10 @@ export default function RevolutionsCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your rotational analysis
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/rotational-frequency-calculator"
-                >
-                  Rotational Frequency Calculator
-                </Link>{" "}
-                to calculate frequency, angular
-                velocity, or rotation period.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/rpm-calculator"
-                >
-                  RPM Calculator
-                </Link>{" "}
-                to convert RPM, hertz, and angular
-                velocity.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="revolutions-calculator"
+              heading="Continue your rotational analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -443,22 +415,6 @@ export default function RevolutionsCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Convert rotational speed</h2>
-
-              <p>
-                Convert RPM, rotational frequency,
-                and angular velocity.
-              </p>
-
-              <Link href="/calculators/rpm-calculator">
-                Open RPM Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

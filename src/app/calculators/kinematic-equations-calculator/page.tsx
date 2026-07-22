@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { KinematicEquationsCalculator } from "@/components/calculators/kinematic-equations-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -408,59 +409,10 @@ export default function KinematicEquationsCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your motion analysis
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/acceleration-calculator"
-                >
-                  Acceleration Calculator
-                </Link>{" "}
-                for direct velocity-change calculations.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/displacement-calculator"
-                >
-                  Displacement Calculator
-                </Link>{" "}
-                to compare initial and final positions.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/average-velocity-calculator"
-                >
-                  Average Velocity Calculator
-                </Link>{" "}
-                to calculate displacement per unit time.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/free-fall-calculator"
-                >
-                  Free Fall Calculator
-                </Link>{" "}
-                for vertical motion under gravity.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="kinematic-equations-calculator"
+              heading="Continue your motion analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -499,22 +451,6 @@ export default function KinematicEquationsCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate acceleration</h2>
-
-              <p>
-                Calculate acceleration, velocity, or time
-                from constant-acceleration motion.
-              </p>
-
-              <Link href="/calculators/acceleration-calculator">
-                Open Acceleration Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

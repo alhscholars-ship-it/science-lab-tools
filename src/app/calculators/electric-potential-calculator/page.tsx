@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { ElectricPotentialCalculator } from "@/components/calculators/electric-potential-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -406,39 +407,10 @@ export default function ElectricPotentialCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your electrostatics analysis
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/electric-field-calculator"
-                >
-                  Electric Field Calculator
-                </Link>{" "}
-                to calculate field strength, force,
-                charge, or distance.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/coulombs-law-calculator"
-                >
-                  Coulomb&apos;s Law Calculator
-                </Link>{" "}
-                to calculate electrostatic force
-                between two point charges.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="electric-potential-calculator"
+              heading="Continue your electrostatics analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -480,22 +452,6 @@ export default function ElectricPotentialCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate electric field</h2>
-
-              <p>
-                Calculate electric field strength
-                from force, charge, or distance.
-              </p>
-
-              <Link href="/calculators/electric-field-calculator">
-                Open Electric Field Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
 
