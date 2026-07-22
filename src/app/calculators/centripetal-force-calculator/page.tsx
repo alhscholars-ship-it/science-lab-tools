@@ -5,6 +5,7 @@ import {
   CentripetalForceCalculator,
 } from "@/components/calculators/centripetal-force-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -416,6 +417,11 @@ export default function CentripetalForceCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="centripetal-force-calculator"
+              heading="Continue your circular motion analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -457,23 +463,7 @@ export default function CentripetalForceCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate force</h2>
-
-              <p>
-                Solve force, mass, or acceleration
-                using F = ma.
-              </p>
-
-              <Link href="/calculators/force-calculator">
-                Open Force Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

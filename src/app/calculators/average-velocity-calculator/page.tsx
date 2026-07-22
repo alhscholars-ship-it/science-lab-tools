@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { AverageVelocityCalculator } from "@/components/calculators/average-velocity-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -334,6 +335,11 @@ export default function AverageVelocityCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="average-velocity-calculator"
+              heading="Continue your linear motion analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -371,23 +377,7 @@ export default function AverageVelocityCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate acceleration</h2>
-
-              <p>
-                Analyze how velocity changes during a
-                motion interval.
-              </p>
-
-              <Link href="/calculators/acceleration-calculator">
-                Open Acceleration Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

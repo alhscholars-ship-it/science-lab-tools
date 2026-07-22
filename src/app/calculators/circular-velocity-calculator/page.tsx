@@ -5,6 +5,7 @@ import {
   CircularVelocityCalculator,
 } from "@/components/calculators/circular-velocity-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -398,6 +399,11 @@ export default function CircularVelocityCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="circular-velocity-calculator"
+              heading="Continue your circular motion analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -439,26 +445,7 @@ export default function CircularVelocityCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>
-                Calculate centripetal force
-              </h2>
-
-              <p>
-                Solve centripetal force, mass,
-                velocity, or radius using
-                Fc = mv² ÷ r.
-              </p>
-
-              <Link href="/calculators/centripetal-force-calculator">
-                Open Centripetal Force Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />
