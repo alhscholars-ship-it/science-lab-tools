@@ -5,6 +5,7 @@ import {
   RpmCalculator,
 } from "@/components/calculators/rpm-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -336,39 +337,10 @@ export default function RpmCalculatorPage() {
             </ul>
           </section>
 
-          <section aria-labelledby="related-heading">
-            <p className="eyebrow">
-              Related tools
-            </p>
-
-            <h2 id="related-heading">
-              Continue your rotational analysis
-            </h2>
-
-            <p>
-              Use the{" "}
-              <Link
-                className="article-inline-link"
-                href="/calculators/rotational-frequency-calculator"
-              >
-                Rotational Frequency Calculator
-              </Link>{" "}
-              to calculate frequency, angular
-              velocity, or rotation period.
-            </p>
-
-            <p>
-              Use the{" "}
-              <Link
-                className="article-inline-link"
-                href="/calculators/angular-velocity-calculator"
-              >
-                Angular Velocity Calculator
-              </Link>{" "}
-              to calculate angular velocity,
-              displacement, or time.
-            </p>
-          </section>
+            <RelatedCalculators
+              currentSlug="rpm-calculator"
+              heading="Continue your rotational analysis"
+            />
 
           <section aria-labelledby="faq-heading">
             <p className="eyebrow">
@@ -407,22 +379,6 @@ export default function RpmCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate rotational frequency</h2>
-
-              <p>
-                Solve rotational frequency, angular
-                velocity, or rotation period.
-              </p>
-
-              <Link href="/calculators/rotational-frequency-calculator">
-                Open Rotational Frequency Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

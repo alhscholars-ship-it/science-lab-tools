@@ -326,44 +326,6 @@ export default function WorkCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue analyzing mechanics
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/force-calculator"
-                >
-                  Force Calculator
-                </Link>{" "}
-                to solve force, mass, or acceleration.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/kinetic-energy-calculator"
-                >
-                  Kinetic Energy Calculator
-                </Link>{" "}
-                to calculate motion energy, or use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/momentum-calculator"
-                >
-                  Momentum Calculator
-                </Link>{" "}
-                for mass and velocity problems.
-              </p>
-            </section>
 
             <RelatedCalculators
               currentSlug="work-calculator"

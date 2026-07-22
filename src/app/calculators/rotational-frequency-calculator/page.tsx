@@ -5,6 +5,7 @@ import {
   RotationalFrequencyCalculator,
 } from "@/components/calculators/rotational-frequency-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -354,39 +355,10 @@ export default function RotationalFrequencyCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your circular motion analysis
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/angular-velocity-calculator"
-                >
-                  Angular Velocity Calculator
-                </Link>{" "}
-                to calculate angular velocity,
-                displacement, or time.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/centripetal-acceleration-calculator"
-                >
-                  Centripetal Acceleration Calculator
-                </Link>{" "}
-                to calculate inward acceleration in
-                circular motion.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="rotational-frequency-calculator"
+              heading="Continue your circular motion analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -431,24 +403,6 @@ export default function RotationalFrequencyCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>
-                Calculate angular velocity
-              </h2>
-
-              <p>
-                Solve angular velocity, angular
-                displacement, or time.
-              </p>
-
-              <Link href="/calculators/angular-velocity-calculator">
-                Open Angular Velocity Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

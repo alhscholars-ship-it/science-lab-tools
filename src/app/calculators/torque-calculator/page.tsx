@@ -355,37 +355,6 @@ export default function TorqueCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your mechanics calculations
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/force-calculator"
-                >
-                  Force Calculator
-                </Link>{" "}
-                to solve force, mass, or acceleration.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/work-calculator"
-                >
-                  Work Calculator
-                </Link>{" "}
-                to calculate work, force, or distance.
-              </p>
-            </section>
 
             <RelatedCalculators
               currentSlug="torque-calculator"
