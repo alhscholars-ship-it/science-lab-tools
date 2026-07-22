@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { ElectricFieldCalculator } from "@/components/calculators/electric-field-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -420,40 +421,10 @@ export default function ElectricFieldCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your electrostatics analysis
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/coulombs-law-calculator"
-                >
-                  Coulomb&apos;s Law Calculator
-                </Link>{" "}
-                to calculate the electric force
-                between two point charges.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/force-calculator"
-                >
-                  Force Calculator
-                </Link>{" "}
-                to calculate force, mass, or
-                acceleration using Newton&apos;s
-                second law.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="electric-field-calculator"
+              heading="Continue your electric field analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -495,22 +466,6 @@ export default function ElectricFieldCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate electrostatic force</h2>
-
-              <p>
-                Calculate force, charge, or separation
-                distance between point charges.
-              </p>
-
-              <Link href="/calculators/coulombs-law-calculator">
-                Open Coulomb&apos;s Law Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
 

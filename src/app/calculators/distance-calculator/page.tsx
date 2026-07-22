@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { DistanceCalculator } from "@/components/calculators/distance-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -316,50 +317,10 @@ export default function DistanceCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your motion calculations
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/average-speed-calculator"
-                >
-                  Average Speed Calculator
-                </Link>{" "}
-                for journeys where total distance and total
-                elapsed time are known.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/displacement-calculator"
-                >
-                  Displacement Calculator
-                </Link>{" "}
-                when direction and change in position are
-                important.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/average-velocity-calculator"
-                >
-                  Average Velocity Calculator
-                </Link>{" "}
-                to calculate displacement per unit time.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="distance-calculator"
+              heading="Continue your motion calculations"
+            />
 
             <section aria-labelledby="assumptions-heading">
               <p className="eyebrow">Interpretation limits</p>
@@ -417,22 +378,6 @@ export default function DistanceCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Compare with displacement</h2>
-
-              <p>
-                Use displacement when the change in
-                position and direction matter.
-              </p>
-
-              <Link href="/calculators/displacement-calculator">
-                Open Displacement Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

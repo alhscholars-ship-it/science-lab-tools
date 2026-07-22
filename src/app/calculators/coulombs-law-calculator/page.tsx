@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { CoulombsLawCalculator } from "@/components/calculators/coulombs-law-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -380,40 +381,10 @@ export default function CoulombsLawCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your force analysis
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/force-calculator"
-                >
-                  Force Calculator
-                </Link>{" "}
-                to calculate force, mass, or
-                acceleration using Newton&apos;s
-                second law.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/ohms-law-calculator"
-                >
-                  Ohm&apos;s Law Calculator
-                </Link>{" "}
-                to analyze voltage, current,
-                resistance, and electrical power.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="coulombs-law-calculator"
+              heading="Continue your electrostatics analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -455,22 +426,6 @@ export default function CoulombsLawCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate mechanical force</h2>
-
-              <p>
-                Calculate force, mass, or
-                acceleration using F = ma.
-              </p>
-
-              <Link href="/calculators/force-calculator">
-                Open Force Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
 

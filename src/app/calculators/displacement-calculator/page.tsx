@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { DisplacementCalculator } from "@/components/calculators/displacement-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -277,38 +278,10 @@ export default function DisplacementCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your motion analysis
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/average-velocity-calculator"
-                >
-                  Average Velocity Calculator
-                </Link>{" "}
-                to calculate displacement per unit time.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/average-speed-calculator"
-                >
-                  Average Speed Calculator
-                </Link>{" "}
-                when total distance rather than displacement
-                is required.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="displacement-calculator"
+              heading="Continue your motion analysis"
+            />
 
             <section aria-labelledby="assumptions-heading">
               <p className="eyebrow">Interpretation limits</p>
@@ -366,22 +339,6 @@ export default function DisplacementCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate average velocity</h2>
-
-              <p>
-                Use displacement and elapsed time to
-                calculate average velocity.
-              </p>
-
-              <Link href="/calculators/average-velocity-calculator">
-                Open Average Velocity Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>
