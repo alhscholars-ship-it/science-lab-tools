@@ -51,6 +51,10 @@ const integratedPages = [
   "series-parallel-resistance-calculator",
   "voltage-divider-calculator",
   "wheatstone-bridge-calculator",
+  "impulse-calculator",
+  "momentum-calculator",
+  "pressure-calculator",
+  "rate-of-change-calculator",
 ] as const;
 
 function readCalculatorPage(slug: string): string {
@@ -62,7 +66,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(48);
+    expect(integratedPages).toHaveLength(52);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );

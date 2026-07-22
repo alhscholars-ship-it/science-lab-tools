@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { RateOfChangeCalculator } from "@/components/calculators/rate-of-change-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -326,45 +327,10 @@ export default function RateOfChangeCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related analysis
-              </p>
-
-              <h2 id="related-heading">
-                Compare two-point and multi-point trends
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/linear-regression-calculator"
-                >
-                  Linear Regression Calculator
-                </Link>{" "}
-                when analyzing a complete paired dataset
-                rather than only two observations.
-              </p>
-
-              <p>
-                Review the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/scientific-method/analyze-experimental-results"
-                >
-                  Experimental Results Analysis Guide
-                </Link>{" "}
-                and the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/lab-reports/tables-and-graphs"
-                >
-                  Tables and Graphs Guide
-                </Link>{" "}
-                for interpretation and presentation.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="rate-of-change-calculator"
+              heading="Continue your rate and trend analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -403,26 +369,6 @@ export default function RateOfChangeCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Analyze a full data series</h2>
-
-              <p>
-                Fit a best-fit line and calculate slope,
-                correlation, and R squared.
-              </p>
-
-              <Link href="/calculators/linear-regression-calculator">
-                Open Linear Regression Calculator
-              </Link>
-
-              <Link href="/calculators/average-velocity-calculator">
-                Open Average Velocity Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

@@ -5,6 +5,7 @@ import {
   PressureCalculator,
 } from "@/components/calculators/pressure-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -332,37 +333,10 @@ export default function PressureCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your physics calculations
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/force-calculator"
-                >
-                  Force Calculator
-                </Link>{" "}
-                to solve force, mass, or acceleration.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/work-calculator"
-                >
-                  Work Calculator
-                </Link>{" "}
-                to calculate work, force, or distance.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="pressure-calculator"
+              heading="Continue your force and pressure analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -401,22 +375,6 @@ export default function PressureCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate force</h2>
-
-              <p>
-                Solve force, mass, or acceleration
-                using F = ma.
-              </p>
-
-              <Link href="/calculators/force-calculator">
-                Open Force Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

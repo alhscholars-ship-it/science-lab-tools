@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { MomentumCalculator } from "@/components/calculators/momentum-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -346,47 +347,10 @@ export default function MomentumCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue analyzing motion
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/force-calculator"
-                >
-                  Force Calculator
-                </Link>{" "}
-                to solve Newton&apos;s second law
-                problems involving force, mass, and
-                acceleration.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/acceleration-calculator"
-                >
-                  Acceleration Calculator
-                </Link>{" "}
-                to calculate velocity change over time,
-                and review the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/lab-reports/tables-and-graphs"
-                >
-                  Tables and Graphs Guide
-                </Link>{" "}
-                when presenting motion data.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="momentum-calculator"
+              heading="Continue your momentum and motion analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -425,22 +389,6 @@ export default function MomentumCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate force</h2>
-
-              <p>
-                Solve force, mass, or acceleration using
-                Newton&apos;s second law.
-              </p>
-
-              <Link href="/calculators/force-calculator">
-                Open Force Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

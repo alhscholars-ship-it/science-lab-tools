@@ -5,6 +5,7 @@ import {
   ImpulseCalculator,
 } from "@/components/calculators/impulse-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -359,37 +360,10 @@ export default function ImpulseCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your momentum analysis
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/momentum-calculator"
-                >
-                  Momentum Calculator
-                </Link>{" "}
-                to solve momentum, mass, or velocity.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/force-calculator"
-                >
-                  Force Calculator
-                </Link>{" "}
-                to solve force, mass, or acceleration.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="impulse-calculator"
+              heading="Continue your impulse and momentum analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -428,22 +402,6 @@ export default function ImpulseCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate momentum</h2>
-
-              <p>
-                Solve momentum, mass, or velocity
-                using p = mv.
-              </p>
-
-              <Link href="/calculators/momentum-calculator">
-                Open Momentum Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>
