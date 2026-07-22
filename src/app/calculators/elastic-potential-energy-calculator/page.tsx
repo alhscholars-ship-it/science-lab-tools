@@ -5,6 +5,7 @@ import {
   ElasticPotentialEnergyCalculator,
 } from "@/components/calculators/elastic-potential-energy-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -378,6 +379,11 @@ export default function ElasticPotentialEnergyCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="elastic-potential-energy-calculator"
+              heading="Continue your energy and elasticity analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -415,23 +421,7 @@ export default function ElasticPotentialEnergyCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate gravitational energy</h2>
-
-              <p>
-                Solve potential energy, mass, gravity,
-                or height using PE = mgh.
-              </p>
-
-              <Link href="/calculators/gravitational-potential-energy-calculator">
-                Open Gravitational Energy Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

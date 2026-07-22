@@ -5,6 +5,7 @@ import {
   HookesLawCalculator,
 } from "@/components/calculators/hookes-law-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -358,6 +359,11 @@ export default function HookesLawCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="hookes-law-calculator"
+              heading="Continue your spring and elasticity analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -395,24 +401,7 @@ export default function HookesLawCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate elastic energy</h2>
-
-              <p>
-                Solve elastic potential energy,
-                spring constant, or extension using
-                E = ½kx².
-              </p>
-
-              <Link href="/calculators/elastic-potential-energy-calculator">
-                Open Elastic Energy Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

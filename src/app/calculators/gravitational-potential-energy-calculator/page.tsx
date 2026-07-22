@@ -5,6 +5,7 @@ import {
   GravitationalPotentialEnergyCalculator,
 } from "@/components/calculators/gravitational-potential-energy-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -396,6 +397,11 @@ export default function GravitationalPotentialEnergyCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="gravitational-potential-energy-calculator"
+              heading="Continue your mechanical energy analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -433,23 +439,7 @@ export default function GravitationalPotentialEnergyCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate kinetic energy</h2>
-
-              <p>
-                Solve kinetic energy, mass, or speed
-                using KE = ½mv².
-              </p>
-
-              <Link href="/calculators/kinetic-energy-calculator">
-                Open Kinetic Energy Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

@@ -16,6 +16,10 @@ const integratedPages = [
   "centripetal-acceleration-calculator",
   "centripetal-force-calculator",
   "circular-velocity-calculator",
+  "elastic-potential-energy-calculator",
+  "gravitational-potential-energy-calculator",
+  "hookes-law-calculator",
+  "kinetic-energy-calculator",
   "capacitance-calculator",
   "capacitive-reactance-calculator",
   "capacitor-energy-calculator",
@@ -42,7 +46,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(28);
+    expect(integratedPages).toHaveLength(32);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );

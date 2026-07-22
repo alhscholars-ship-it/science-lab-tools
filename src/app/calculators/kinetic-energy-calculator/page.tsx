@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { KineticEnergyCalculator } from "@/components/calculators/kinetic-energy-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -391,6 +392,11 @@ export default function KineticEnergyCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="kinetic-energy-calculator"
+              heading="Continue your mechanical energy analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -428,23 +434,7 @@ export default function KineticEnergyCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate momentum</h2>
-
-              <p>
-                Solve momentum, mass, or velocity using
-                the linear momentum formula.
-              </p>
-
-              <Link href="/calculators/momentum-calculator">
-                Open Momentum Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />
