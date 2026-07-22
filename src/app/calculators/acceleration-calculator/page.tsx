@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { AccelerationCalculator } from "@/components/calculators/acceleration-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -372,6 +373,11 @@ export default function AccelerationCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="acceleration-calculator"
+              heading="Continue your motion analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -409,22 +415,7 @@ export default function AccelerationCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
 
-              <h2>Measure general change</h2>
-
-              <p>
-                Calculate change between any two measured
-                observations and their interval.
-              </p>
-
-              <Link href="/calculators/rate-of-change-calculator">
-                Open Rate of Change Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

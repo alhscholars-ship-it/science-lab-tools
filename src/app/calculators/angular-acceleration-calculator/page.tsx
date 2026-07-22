@@ -5,6 +5,7 @@ import {
   AngularAccelerationCalculator,
 } from "@/components/calculators/angular-acceleration-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -398,6 +399,11 @@ export default function AngularAccelerationCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="angular-acceleration-calculator"
+              heading="Continue your rotational motion analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -439,25 +445,7 @@ export default function AngularAccelerationCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
 
-              <h2>
-                Calculate angular velocity
-              </h2>
-
-              <p>
-                Solve angular velocity, angular
-                displacement, or time using
-                ω = θ ÷ t.
-              </p>
-
-              <Link href="/calculators/angular-velocity-calculator">
-                Open Angular Velocity Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

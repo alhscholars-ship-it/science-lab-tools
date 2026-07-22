@@ -4,6 +4,10 @@ import { describe, expect, it } from "vitest";
 
 const integratedPages = [
   "ac-impedance-calculator",
+  "acceleration-calculator",
+  "acceleration-due-to-gravity-calculator",
+  "angular-acceleration-calculator",
+  "angular-displacement-calculator",
   "capacitance-calculator",
   "capacitive-reactance-calculator",
   "capacitor-energy-calculator",
@@ -30,7 +34,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(16);
+    expect(integratedPages).toHaveLength(20);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );
@@ -86,11 +90,30 @@ describe("related calculators rollout coverage", () => {
   );
 
   it.each(integratedPages)(
-    "%s removes the previous manual related section",
+    "%s removes the previous manual related sidebar card",
     (slug) => {
       const page = readCalculatorPage(slug);
 
-      expect(page).not.toContain(
+      const sidebarStart = page.indexOf(
+        '<aside className="article-sidebar">',
+      );
+      const sidebarEnd = page.indexOf(
+        "</aside>",
+        sidebarStart,
+      );
+
+      expect(sidebarStart).toBeGreaterThanOrEqual(0);
+      expect(sidebarEnd).toBeGreaterThan(sidebarStart);
+
+      const sidebar = page.slice(
+        sidebarStart,
+        sidebarEnd,
+      );
+
+      expect(sidebar).not.toMatch(
+        /Related calculator(?:s| statistics)?/,
+      );
+      expect(sidebar).not.toContain(
         'aria-labelledby="related-heading"',
       );
     },

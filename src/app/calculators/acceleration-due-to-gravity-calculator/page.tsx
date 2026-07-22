@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 import { AccelerationDueToGravityCalculator } from "@/components/calculators/acceleration-due-to-gravity-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -323,6 +324,11 @@ export default function AccelerationDueToGravityCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="acceleration-due-to-gravity-calculator"
+              heading="Continue your gravity analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -360,22 +366,7 @@ export default function AccelerationDueToGravityCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
 
-              <h2>Analyze free fall</h2>
-
-              <p>
-                Calculate falling time, distance, and
-                velocity under constant gravity.
-              </p>
-
-              <Link href="/calculators/free-fall-calculator">
-                Open Free Fall Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

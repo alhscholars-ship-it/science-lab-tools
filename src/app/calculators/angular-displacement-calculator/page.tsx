@@ -5,6 +5,7 @@ import {
   AngularDisplacementCalculator,
 } from "@/components/calculators/angular-displacement-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -398,6 +399,11 @@ export default function AngularDisplacementCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="angular-displacement-calculator"
+              heading="Continue your rotational motion analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -437,24 +443,7 @@ export default function AngularDisplacementCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
 
-              <h2>
-                Calculate circular velocity
-              </h2>
-
-              <p>
-                Solve tangential velocity, radius, or
-                period using v = 2πr ÷ T.
-              </p>
-
-              <Link href="/calculators/circular-velocity-calculator">
-                Open Circular Velocity Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>
