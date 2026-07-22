@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { CurrentDividerCalculator } from "@/components/calculators/current-divider-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -567,78 +568,10 @@ export default function CurrentDividerCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue analyzing the circuit
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/voltage-divider-calculator"
-                >
-                  Voltage Divider Calculator
-                </Link>{" "}
-                to analyze voltage distribution across
-                two series resistors.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/kirchhoffs-law-calculator"
-                >
-                  Kirchhoff&apos;s Law Calculator
-                </Link>{" "}
-                to solve complete multi-loop and multi-branch
-                circuit equations using Kirchhoff&apos;s Current
-                Law (KCL) and Kirchhoff&apos;s Voltage Law (KVL).
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/series-parallel-resistance-calculator"
-                >
-                  Series and Parallel Resistance
-                  Calculator
-                </Link>{" "}
-                to calculate the equivalent resistance
-                of a resistor network.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/ohms-law-calculator"
-                >
-                  Ohm&apos;s Law Calculator
-                </Link>{" "}
-                to calculate voltage, current,
-                resistance, and electrical power.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/ac-impedance-calculator"
-                >
-                  AC Impedance Calculator
-                </Link>{" "}
-                when a circuit includes resistance,
-                inductive reactance, or capacitive
-                reactance.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="current-divider-calculator"
+              heading="Continue your current-divider and circuit analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

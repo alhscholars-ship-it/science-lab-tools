@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { SeriesParallelResistanceCalculator } from "@/components/calculators/series-parallel-resistance-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -599,63 +600,10 @@ export default function SeriesParallelResistanceCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue analyzing the circuit
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/ohms-law-calculator"
-                >
-                  Ohm&apos;s Law Calculator
-                </Link>{" "}
-                to calculate voltage, current,
-                resistance, or electrical power.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/voltage-divider-calculator"
-                >
-                  Voltage Divider Calculator
-                </Link>{" "}
-                to calculate the output voltage across
-                two resistors connected in series.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/voltage-drop-calculator"
-                >
-                  Voltage Drop Calculator
-                </Link>{" "}
-                to estimate resistive conductor voltage
-                loss.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/ac-impedance-calculator"
-                >
-                  AC Impedance Calculator
-                </Link>{" "}
-                when resistance must be combined with
-                inductive and capacitive reactance.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="series-parallel-resistance-calculator"
+              heading="Continue your resistance-network analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

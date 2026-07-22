@@ -47,6 +47,10 @@ const integratedPages = [
   "rlc-bandwidth-calculator",
   "rlc-quality-factor-calculator",
   "voltage-drop-calculator",
+  "current-divider-calculator",
+  "series-parallel-resistance-calculator",
+  "voltage-divider-calculator",
+  "wheatstone-bridge-calculator",
 ] as const;
 
 function readCalculatorPage(slug: string): string {
@@ -58,7 +62,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(44);
+    expect(integratedPages).toHaveLength(48);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );

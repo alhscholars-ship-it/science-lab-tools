@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { WheatstoneBridgeCalculator } from "@/components/calculators/wheatstone-bridge-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -990,75 +991,10 @@ export default function WheatstoneBridgeCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue analyzing the circuit
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/voltage-divider-calculator"
-                >
-                  Voltage Divider Calculator
-                </Link>{" "}
-                to calculate the midpoint voltage of either
-                individual bridge arm.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/ohms-law-calculator"
-                >
-                  Ohm&apos;s Law Calculator
-                </Link>{" "}
-                to calculate voltage, current, resistance,
-                and electrical power.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/series-parallel-resistance-calculator"
-                >
-                  Series and Parallel Resistance Calculator
-                </Link>{" "}
-                to determine equivalent resistance in more
-                general resistor networks.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/kirchhoffs-law-calculator"
-                >
-                  Kirchhoff&apos;s Law Calculator
-                </Link>{" "}
-                to analyze circuits with multiple loops,
-                junctions, and independent sources.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/power-calculator"
-                >
-                  Electrical Power Calculator
-                </Link>{" "}
-                to verify resistor and source power
-                requirements.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="wheatstone-bridge-calculator"
+              heading="Continue your bridge-circuit analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

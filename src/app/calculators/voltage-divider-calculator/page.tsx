@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { VoltageDividerCalculator } from "@/components/calculators/voltage-divider-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -456,65 +457,10 @@ export default function VoltageDividerCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue analyzing circuits
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/ohms-law-calculator"
-                >
-                  Ohm&apos;s Law Calculator
-                </Link>{" "}
-                to calculate voltage, current,
-                resistance, and electrical power.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/kirchhoffs-law-calculator"
-                >
-                  Kirchhoff&apos;s Law Calculator
-                </Link>{" "}
-                to solve complete electrical networks containing
-                multiple loops and junctions.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/series-parallel-resistance-calculator"
-                >
-                  Series and Parallel Resistance
-                  Calculator
-                </Link>{" "}
-                to find the effective resistance of a
-                load connected in parallel with the lower
-                divider resistor.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/rc-time-constant-calculator"
-                >
-                  RC Time Constant Calculator
-                </Link>{" "}
-                to analyze resistor-capacitor charging
-                and discharging behavior.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="voltage-divider-calculator"
+              heading="Continue your voltage-divider and circuit analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
