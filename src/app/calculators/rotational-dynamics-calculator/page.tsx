@@ -5,6 +5,7 @@ import {
   RotationalDynamicsCalculator,
 } from "@/components/calculators/rotational-dynamics-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -393,6 +394,11 @@ export default function RotationalDynamicsCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="rotational-dynamics-calculator"
+              heading="Continue your rotational dynamics analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -436,26 +442,7 @@ export default function RotationalDynamicsCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>
-                Calculate moment of inertia
-              </h2>
-
-              <p>
-                Calculate rotational inertia for
-                point masses, disks, hoops, spheres,
-                shells, and rods.
-              </p>
-
-              <Link href="/calculators/moment-of-inertia-calculator">
-                Open Moment of Inertia Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />

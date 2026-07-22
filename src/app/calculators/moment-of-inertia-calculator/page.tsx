@@ -5,6 +5,7 @@ import {
   MomentOfInertiaCalculator,
 } from "@/components/calculators/moment-of-inertia-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -442,6 +443,11 @@ export default function MomentOfInertiaCalculatorPage() {
               </p>
             </section>
 
+            <RelatedCalculators
+              currentSlug="moment-of-inertia-calculator"
+              heading="Continue your moment of inertia analysis"
+            />
+
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
@@ -483,26 +489,7 @@ export default function MomentOfInertiaCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>
-                Calculate rotational energy
-              </h2>
-
-              <p>
-                Solve rotational kinetic energy,
-                moment of inertia, or angular velocity
-                using KErot = ½Iω².
-              </p>
-
-              <Link href="/calculators/rotational-kinetic-energy-calculator">
-                Open Rotational Energy Calculator
-              </Link>
-            </div>
-          </aside>
+</aside>
         </Container>
         <Container>
           <CalculatorTrustPanel subject="physics" />
