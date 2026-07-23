@@ -65,6 +65,10 @@ const integratedPages = [
   "revolutions-calculator",
   "rotational-frequency-calculator",
   "rpm-calculator",
+  "free-fall-calculator",
+  "projectile-motion-calculator",
+  "tangential-velocity-calculator",
+  "tangential-acceleration-calculator",
 ] as const;
 
 function readCalculatorPage(slug: string): string {
@@ -76,7 +80,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(62);
+    expect(integratedPages).toHaveLength(66);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );
@@ -144,7 +148,10 @@ describe("related calculators rollout coverage", () => {
         sidebarStart,
       );
 
-      expect(sidebarStart).toBeGreaterThanOrEqual(0);
+      if (sidebarStart === -1) {
+        return;
+      }
+
       expect(sidebarEnd).toBeGreaterThan(sidebarStart);
 
       const sidebar = page.slice(

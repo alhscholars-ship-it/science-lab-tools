@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { FreeFallCalculator } from "@/components/calculators/free-fall-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -197,31 +198,10 @@ export default function FreeFallCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <h2 id="related-heading">
-                Related gravity calculators
-              </h2>
-              <p>
-                Calculate the local gravitational field with the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/acceleration-due-to-gravity-calculator"
-                >
-                  Acceleration Due to Gravity Calculator
-                </Link>
-                .
-              </p>
-              <p>
-                Analyze launched objects with the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/projectile-motion-calculator"
-                >
-                  Projectile Motion Calculator
-                </Link>
-                .
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="free-fall-calculator"
+              heading="Continue your gravity and vertical-motion analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Common questions</p>

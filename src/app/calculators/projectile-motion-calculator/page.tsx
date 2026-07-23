@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { ProjectileMotionCalculator } from "@/components/calculators/projectile-motion-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -202,31 +203,10 @@ export default function ProjectileMotionCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <h2 id="related-heading">
-                Related motion calculators
-              </h2>
-              <p>
-                Study vertical motion independently with the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/free-fall-calculator"
-                >
-                  Free Fall Calculator
-                </Link>
-                .
-              </p>
-              <p>
-                Calculate changes in velocity with the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/acceleration-calculator"
-                >
-                  Acceleration Calculator
-                </Link>
-                .
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="projectile-motion-calculator"
+              heading="Continue your projectile and kinematics analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Common questions</p>
