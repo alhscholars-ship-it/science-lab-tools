@@ -370,22 +370,6 @@ export default function MassMolesCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate solution molarity</h2>
-
-              <p>
-                Use the calculated number of moles with
-                solution volume to determine molarity.
-              </p>
-
-              <Link href="/calculators/molarity-calculator">
-                Open Molarity Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

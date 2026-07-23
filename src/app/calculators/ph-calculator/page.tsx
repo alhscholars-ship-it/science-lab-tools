@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { PhCalculator } from "@/components/calculators/ph-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -298,46 +299,10 @@ export default function PhCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">Related chemistry tools</p>
-              <h2 id="related-heading">
-                Continue with solution calculations
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/molarity-calculator"
-                >
-                  Molarity Calculator
-                </Link>{" "}
-                to calculate the molar concentration of a solution.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/dilution-calculator"
-                >
-                  Dilution Calculator
-                </Link>{" "}
-                when preparing a lower-concentration solution from
-                a stock solution.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/mass-moles-calculator"
-                >
-                  Mass to Moles Calculator
-                </Link>{" "}
-                to convert between solute mass and amount in moles.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="ph-calculator"
+              heading="Continue with solution calculations"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>

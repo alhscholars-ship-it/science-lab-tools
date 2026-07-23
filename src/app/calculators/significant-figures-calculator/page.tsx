@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { SignificantFiguresCalculator } from "@/components/calculators/significant-figures-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -324,6 +325,11 @@ export default function SignificantFiguresCalculatorPage() {
                 .
               </p>
             </section>
+
+            <RelatedCalculators
+              currentSlug="significant-figures-calculator"
+              heading="Continue your measurement analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

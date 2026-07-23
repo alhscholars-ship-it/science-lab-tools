@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { PercentErrorCalculator } from "@/components/calculators/percent-error-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -195,36 +196,10 @@ export default function PercentErrorCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">Related data analysis</p>
-              <h2 id="related-heading">
-                Compare and evaluate experimental results
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/percent-difference-calculator"
-                >
-                  Percent Difference Calculator
-                </Link>{" "}
-                when comparing two experimental values without a
-                single accepted reference value.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/measurement-uncertainty-calculator"
-                >
-                  Measurement Uncertainty Calculator
-                </Link>{" "}
-                to assess the precision and reliability of measured
-                laboratory values.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="percent-error-calculator"
+              heading="Compare and evaluate experimental results"
+            />
 
             <section aria-labelledby="assumptions-heading">
               <p className="eyebrow">Interpretation limits</p>

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { PulleyCalculator } from "@/components/calculators/pulley-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -377,61 +378,10 @@ export default function PulleyCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your mechanics calculations
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/weight-calculator"
-                >
-                  Weight Calculator
-                </Link>{" "}
-                to calculate the load force separately.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/force-calculator"
-                >
-                  Force Calculator
-                </Link>{" "}
-                for force, mass, and acceleration
-                problems.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/work-calculator"
-                >
-                  Work Calculator
-                </Link>{" "}
-                to compare force and distance in a
-                mechanical system.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/inclined-plane-calculator"
-                >
-                  Inclined Plane Calculator
-                </Link>{" "}
-                for another simple-machine force model.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="pulley-calculator"
+              heading="Continue your mechanics calculations"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

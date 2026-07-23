@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { RlcPhaseAngleCalculator } from "@/components/calculators/rlc-phase-angle-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -487,46 +488,11 @@ export default function RlcPhaseAngleCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Continue circuit analysis
-              </p>
+            <RelatedCalculators
+              currentSlug="rlc-phase-angle-calculator"
+              heading="Continue circuit analysis"
+            />
 
-              <h2 id="related-heading">
-                Related electrical calculators
-              </h2>
-
-              <ul className="article-list">
-                <li>
-                  <Link href="/calculators/ac-impedance-calculator">
-                    AC Impedance Calculator
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/calculators/inductive-reactance-calculator">
-                    Inductive Reactance
-                    Calculator
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/calculators/capacitive-reactance-calculator">
-                    Capacitive Reactance
-                    Calculator
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/calculators/resonant-frequency-calculator">
-                    Resonant Frequency
-                    Calculator
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/calculators/rlc-quality-factor-calculator">
-                    RLC Quality Factor Calculator
-                  </Link>
-                </li>
-              </ul>
-            </section>
           </article>
 
           <aside className="article-sidebar">

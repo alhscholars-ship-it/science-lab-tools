@@ -78,6 +78,11 @@ const integratedPages = [
   "mass-moles-calculator",
   "mean-median-mode-calculator",
   "percent-difference-calculator",
+  "percent-error-calculator",
+  "ph-calculator",
+  "pulley-calculator",
+  "rlc-phase-angle-calculator",
+  "significant-figures-calculator",
 
 ] as const;
 
@@ -90,7 +95,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(75);
+    expect(integratedPages).toHaveLength(80);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );
