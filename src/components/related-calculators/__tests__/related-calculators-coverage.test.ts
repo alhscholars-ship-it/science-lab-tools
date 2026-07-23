@@ -83,6 +83,11 @@ const integratedPages = [
   "pulley-calculator",
   "rlc-phase-angle-calculator",
   "significant-figures-calculator",
+  "specific-heat-calculator",
+  "standard-deviation-calculator",
+  "uncertainty-propagation-calculator",
+  "wave-speed-calculator",
+  "weight-calculator",
 
 ] as const;
 
@@ -95,7 +100,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(80);
+    expect(integratedPages).toHaveLength(85);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );

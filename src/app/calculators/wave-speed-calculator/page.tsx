@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { WaveSpeedCalculator } from "@/components/calculators/wave-speed-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -409,39 +410,10 @@ export default function WaveSpeedCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your wave and motion analysis
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/average-speed-calculator"
-                >
-                  Average Speed Calculator
-                </Link>{" "}
-                for distance and elapsed-time
-                calculations.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/rotational-frequency-calculator"
-                >
-                  Rotational Frequency Calculator
-                </Link>{" "}
-                to calculate frequency from
-                revolutions and elapsed time.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="wave-speed-calculator"
+              heading="Continue your wave and motion analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -483,22 +455,6 @@ export default function WaveSpeedCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate rotational frequency</h2>
-
-              <p>
-                Calculate frequency, revolutions, or
-                elapsed time for repeated rotation.
-              </p>
-
-              <Link href="/calculators/rotational-frequency-calculator">
-                Open Rotational Frequency Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
 

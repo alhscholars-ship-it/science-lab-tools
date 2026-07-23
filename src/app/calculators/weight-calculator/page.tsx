@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { WeightCalculator } from "@/components/calculators/weight-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -477,53 +478,10 @@ export default function WeightCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related tools
-              </p>
-
-              <h2 id="related-heading">
-                Continue your gravity calculations
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/force-calculator"
-                >
-                  Force Calculator
-                </Link>{" "}
-                to calculate general force, mass, or
-                acceleration using Newton&apos;s second
-                law.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/acceleration-due-to-gravity-calculator"
-                >
-                  Acceleration Due to Gravity Calculator
-                </Link>{" "}
-                to estimate gravity from a celestial
-                body&apos;s mass and radius.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/gravitational-potential-energy-calculator"
-                >
-                  Gravitational Potential Energy
-                  Calculator
-                </Link>{" "}
-                to calculate energy from mass, gravity,
-                and height.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="weight-calculator"
+              heading="Continue your gravity calculations"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -565,22 +523,6 @@ export default function WeightCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate local gravity</h2>
-
-              <p>
-                Estimate gravitational acceleration from
-                a planet&apos;s mass and radius.
-              </p>
-
-              <Link href="/calculators/acceleration-due-to-gravity-calculator">
-                Open Gravity Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>

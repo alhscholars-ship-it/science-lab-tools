@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { StandardDeviationCalculator } from "@/components/calculators/standard-deviation-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -346,33 +347,10 @@ export default function StandardDeviationCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-calculators-heading">
-              <p className="eyebrow">Related tools</p>
-              <h2 id="related-calculators-heading">
-                Related statistics calculators
-              </h2>
-              <p>
-                Calculate the central values of a dataset with the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/mean-median-mode-calculator"
-                >
-                  Mean, Median, and Mode Calculator
-                </Link>
-                .
-              </p>
-              <p>
-                Report measurements with appropriate precision using
-                the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/significant-figures-calculator"
-                >
-                  Significant Figures Calculator
-                </Link>
-                .
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="standard-deviation-calculator"
+              heading="Continue your statistical analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

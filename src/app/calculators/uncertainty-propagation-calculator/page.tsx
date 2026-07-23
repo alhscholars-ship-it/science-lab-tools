@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { UncertaintyPropagationCalculator } from "@/components/calculators/uncertainty-propagation-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -308,45 +309,10 @@ export default function UncertaintyPropagationCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related resources
-              </p>
-
-              <h2 id="related-heading">
-                Build a complete uncertainty workflow
-              </h2>
-
-              <p>
-                Start with the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/measurement-uncertainty-calculator"
-                >
-                  Measurement Uncertainty Calculator
-                </Link>{" "}
-                to convert a single measurement into
-                relative and percentage uncertainty.
-              </p>
-
-              <p>
-                Then review the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/lab-reports/significant-figures-in-lab-reports"
-                >
-                  Significant Figures Guide
-                </Link>{" "}
-                and the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/lab-reports/lab-report-discussion"
-                >
-                  Lab Report Discussion Guide
-                </Link>{" "}
-                for reporting and interpretation.
-              </p>
-            </section>
+            <RelatedCalculators
+              currentSlug="uncertainty-propagation-calculator"
+              heading="Build a complete uncertainty workflow"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">
@@ -385,26 +351,6 @@ export default function UncertaintyPropagationCalculatorPage() {
               </ul>
             </div>
 
-            <div className="sidebar-card">
-              <p className="sidebar-card__label">
-                Related calculator
-              </p>
-
-              <h2>Calculate single-value uncertainty</h2>
-
-              <p>
-                Convert an absolute uncertainty into relative
-                and percentage form.
-              </p>
-
-              <Link href="/calculators/measurement-uncertainty-calculator">
-                Open Measurement Uncertainty Calculator
-              </Link>
-
-              <Link href="/calculators/percent-error-calculator">
-                Open Percent Error Calculator
-              </Link>
-            </div>
           </aside>
         </Container>
         <Container>
