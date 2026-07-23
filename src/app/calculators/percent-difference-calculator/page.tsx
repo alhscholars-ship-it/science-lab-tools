@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { PercentDifferenceCalculator } from "@/components/calculators/percent-difference-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -262,6 +263,11 @@ export default function PercentDifferenceCalculatorPage() {
                 .
               </p>
             </section>
+
+            <RelatedCalculators
+              currentSlug="percent-difference-calculator"
+              heading="Continue your measurement analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>

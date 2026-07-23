@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { MassMolesCalculator } from "@/components/calculators/mass-moles-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -324,6 +325,11 @@ export default function MassMolesCalculatorPage() {
                 .
               </p>
             </section>
+
+            <RelatedCalculators
+              currentSlug="mass-moles-calculator"
+              heading="Continue your chemistry calculations"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

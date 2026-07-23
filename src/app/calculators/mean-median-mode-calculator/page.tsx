@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { MeanMedianModeCalculator } from "@/components/calculators/mean-median-mode-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -393,6 +394,11 @@ export default function MeanMedianModeCalculatorPage() {
                 .
               </p>
             </section>
+
+            <RelatedCalculators
+              currentSlug="mean-median-mode-calculator"
+              heading="Continue your statistical analysis"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { DilutionCalculator } from "@/components/calculators/dilution-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -281,6 +282,11 @@ export default function DilutionCalculatorPage() {
                 .
               </p>
             </section>
+
+            <RelatedCalculators
+              currentSlug="dilution-calculator"
+              heading="Continue your chemistry calculations"
+            />
 
             <section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>

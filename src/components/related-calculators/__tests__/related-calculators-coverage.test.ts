@@ -74,6 +74,10 @@ const integratedPages = [
   "kirchhoffs-law-calculator",
   "molarity-calculator",
   "molecular-weight-calculator",
+  "dilution-calculator",
+  "mass-moles-calculator",
+  "mean-median-mode-calculator",
+  "percent-difference-calculator",
 
 ] as const;
 
@@ -86,7 +90,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(71);
+    expect(integratedPages).toHaveLength(75);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );
