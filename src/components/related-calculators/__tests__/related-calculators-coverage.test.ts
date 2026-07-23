@@ -69,6 +69,12 @@ const integratedPages = [
   "projectile-motion-calculator",
   "tangential-velocity-calculator",
   "tangential-acceleration-calculator",
+  "coefficient-variation-calculator",
+  "density-calculator",
+  "kirchhoffs-law-calculator",
+  "molarity-calculator",
+  "molecular-weight-calculator",
+
 ] as const;
 
 function readCalculatorPage(slug: string): string {
@@ -80,7 +86,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(66);
+    expect(integratedPages).toHaveLength(71);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );

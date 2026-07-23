@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { DensityCalculator } from "@/components/calculators/density-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -210,57 +211,12 @@ export default function DensityCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">Related calculations</p>
-              <h2 id="related-heading">
-                Continue with related laboratory calculators
-              </h2>
+            <RelatedCalculators
+              currentSlug="density-calculator"
+              heading="Continue your measurement analysis"
+            />
 
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/mass-moles-calculator"
-                >
-                  Mass to Moles Calculator
-                </Link>{" "}
-                when converting a measured sample mass into an
-                amount of substance for chemistry calculations.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/measurement-uncertainty-calculator"
-                >
-                  Measurement Uncertainty Calculator
-                </Link>{" "}
-                to evaluate uncertainty in experimental mass,
-                volume, and density measurements.
-              </p>
-            </section>
-
-            <section aria-labelledby="assumptions-heading">
-              <p className="eyebrow">Measurement limits</p>
-              <h2 id="assumptions-heading">
-                Assumptions and limitations
-              </h2>
-              <p>
-                Density calculations assume that mass and volume refer
-                to the same homogeneous sample and that their units
-                are compatible. Temperature and pressure should be
-                controlled when they meaningfully affect volume.
-              </p>
-              <p>
-                Results may be misleading for porous materials,
-                mixtures, trapped air, irregular samples, phase
-                changes, or measurements with substantial experimental
-                uncertainty.
-              </p>
-            </section>
-
-            <section aria-labelledby="faq-heading">
+<section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>
               <h2 id="faq-heading">Density FAQ</h2>
 

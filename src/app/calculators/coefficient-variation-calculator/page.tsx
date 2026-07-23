@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { CoefficientVariationCalculator } from "@/components/calculators/coefficient-variation-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -310,35 +311,12 @@ export default function CoefficientVariationCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related analysis
-              </p>
+            <RelatedCalculators
+              currentSlug="coefficient-variation-calculator"
+              heading="Continue your statistical analysis"
+            />
 
-              <h2 id="related-heading">
-                Review absolute and relative spread
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/standard-deviation-calculator"
-                >
-                  Standard Deviation Calculator
-                </Link>{" "}
-                to inspect absolute spread, and the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/mean-median-mode-calculator"
-                >
-                  Mean, Median and Mode Calculator
-                </Link>{" "}
-                to summarize central tendency.
-              </p>
-            </section>
-
-            <section aria-labelledby="faq-heading">
+<section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
               </p>

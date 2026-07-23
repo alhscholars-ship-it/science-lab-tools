@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { KirchhoffsLawCalculator } from "@/components/calculators/kirchhoffs-law-calculator";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
@@ -634,79 +635,12 @@ export default function KirchhoffsLawCalculatorPage() {
               </p>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related electrical tools
-              </p>
+            <RelatedCalculators
+              currentSlug="kirchhoffs-law-calculator"
+              heading="Continue your circuit analysis"
+            />
 
-              <h2 id="related-heading">
-                Continue analyzing the circuit
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/ohms-law-calculator"
-                >
-                  Ohm&apos;s Law Calculator
-                </Link>{" "}
-                to calculate voltage, current, resistance,
-                or electrical power.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/current-divider-calculator"
-                >
-                  Current Divider Calculator
-                </Link>{" "}
-                to calculate current distribution between
-                two parallel resistor branches.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/voltage-divider-calculator"
-                >
-                  Voltage Divider Calculator
-                </Link>{" "}
-                to calculate voltage distribution across
-                two series resistors.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/series-parallel-resistance-calculator"
-                >
-                  Series and Parallel Resistance
-                  Calculator
-                </Link>{" "}
-                to calculate equivalent resistance in
-                resistor networks.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/ac-impedance-calculator"
-                >
-                  AC Impedance Calculator
-                </Link>{" "}
-                for circuits containing resistance,
-                inductive reactance, or capacitive
-                reactance.
-              </p>
-            </section>
-
-            <section aria-labelledby="faq-heading">
+<section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Common questions
               </p>

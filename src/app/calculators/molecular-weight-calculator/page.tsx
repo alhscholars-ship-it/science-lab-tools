@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { MolecularWeightCalculator } from "@/components/calculators/molecular-weight-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -256,59 +257,12 @@ export default function MolecularWeightCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">
-                Related chemistry tools
-              </p>
+            <RelatedCalculators
+              currentSlug="molecular-weight-calculator"
+              heading="Continue your chemistry calculations"
+            />
 
-              <h2 id="related-heading">
-                Continue with mole calculations
-              </h2>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/mass-moles-calculator"
-                >
-                  Mass to Moles Calculator
-                </Link>{" "}
-                to convert between grams and moles using
-                the calculated molar mass.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/molarity-calculator"
-                >
-                  Molarity Calculator
-                </Link>{" "}
-                to calculate solution concentration.
-              </p>
-            </section>
-
-            <section aria-labelledby="assumptions-heading">
-              <p className="eyebrow">Formula limits</p>
-              <h2 id="assumptions-heading">
-                Assumptions and limitations
-              </h2>
-              <p>
-                The calculation assumes that the entered chemical
-                formula is valid and unambiguous. Element symbols,
-                subscripts, parentheses, and hydrate notation must be
-                entered in a supported format.
-              </p>
-              <p>
-                The reported molecular or formula weight is based on
-                standard atomic weights. Isotopically enriched samples,
-                unspecified mixtures, variable-composition solids, and
-                unsupported notation may require a specialized method.
-              </p>
-            </section>
-
-            <section aria-labelledby="faq-heading">
+<section aria-labelledby="faq-heading">
               <p className="eyebrow">
                 Questions and answers
               </p>

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { MolarityCalculator } from "@/components/calculators/molarity-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import {
@@ -205,57 +206,12 @@ export default function MolarityCalculatorPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="related-heading">
-              <p className="eyebrow">Related chemistry tools</p>
-              <h2 id="related-heading">
-                Continue with solution calculations
-              </h2>
+            <RelatedCalculators
+              currentSlug="molarity-calculator"
+              heading="Continue your chemistry calculations"
+            />
 
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/dilution-calculator"
-                >
-                  Dilution Calculator
-                </Link>{" "}
-                to calculate concentration and volume changes when
-                preparing a diluted solution.
-              </p>
-
-              <p>
-                Use the{" "}
-                <Link
-                  className="article-inline-link"
-                  href="/calculators/mass-moles-calculator"
-                >
-                  Mass to Moles Calculator
-                </Link>{" "}
-                when the solute amount is provided as mass instead
-                of moles.
-              </p>
-            </section>
-
-            <section aria-labelledby="assumptions-heading">
-              <p className="eyebrow">Calculation limits</p>
-              <h2 id="assumptions-heading">
-                Assumptions and limitations
-              </h2>
-              <p>
-                Molarity calculations assume that the number of moles
-                and the final solution volume are known accurately.
-                Volume must describe the completed solution rather than
-                only the solvent added.
-              </p>
-              <p>
-                Temperature changes, volume contraction or expansion,
-                incomplete dissolution, chemical reactions, impurities,
-                and uncertain solute composition can cause the real
-                concentration to differ from the calculated value.
-              </p>
-            </section>
-
-            <section aria-labelledby="faq-heading">
+<section aria-labelledby="faq-heading">
               <p className="eyebrow">Questions and answers</p>
               <h2 id="faq-heading">Molarity FAQ</h2>
 
