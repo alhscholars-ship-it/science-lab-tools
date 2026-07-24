@@ -493,6 +493,25 @@ export default function RlcPhaseAngleCalculatorPage() {
               heading="Continue circuit analysis"
             />
 
+            <section aria-labelledby="faq-heading">
+              <p className="eyebrow">
+                Common questions
+              </p>
+
+              <h2 id="faq-heading">
+                RLC phase angle calculator FAQ
+              </h2>
+
+              {faqItems.map((item) => (
+                <div
+                  key={item.question}
+                  className="faq-item"
+                >
+                  <h3>{item.question}</h3>
+                  <p>{item.answer}</p>
+                </div>
+              ))}
+            </section>
           </article>
 
           <aside className="article-sidebar">
