@@ -257,6 +257,24 @@ export default function MolecularWeightCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="limitations-heading">
+              <p className="eyebrow">
+                Model assumptions
+              </p>
+
+              <h2 id="limitations-heading">
+                Calculator assumptions and limitations
+              </h2>
+
+              <ul className="article-list">
+                <li>The chemical formula must use valid element symbols and correct capitalization.</li>
+                <li>Subscripts, grouped compounds, and hydrate coefficients must be entered accurately.</li>
+                <li>The calculation uses standard tabulated atomic masses.</li>
+                <li>Isotopic composition and sample-specific abundance differences are not modeled.</li>
+                <li>The result represents molar mass and does not verify the compound&apos;s identity or purity.</li>
+              </ul>
+            </section>
+
             <RelatedCalculators
               currentSlug="molecular-weight-calculator"
               heading="Continue your chemistry calculations"

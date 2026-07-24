@@ -378,6 +378,24 @@ export default function PulleyCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="limitations-heading">
+              <p className="eyebrow">
+                Model assumptions
+              </p>
+
+              <h2 id="limitations-heading">
+                Calculator assumptions and limitations
+              </h2>
+
+              <ul className="article-list">
+                <li>The calculation models an ideal pulley system with equal rope tension throughout.</li>
+                <li>Mechanical advantage is determined by the number of supporting rope segments.</li>
+                <li>Pulley mass, rope mass, friction, stretching, and bearing losses are ignored.</li>
+                <li>The supporting segments must be counted from the moving load assembly correctly.</li>
+                <li>Actual effort force will normally be greater than the ideal calculated value.</li>
+              </ul>
+            </section>
+
             <RelatedCalculators
               currentSlug="pulley-calculator"
               heading="Continue your mechanics calculations"

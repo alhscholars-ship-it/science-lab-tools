@@ -351,6 +351,24 @@ export default function RlcBandwidthCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="limitations-heading">
+              <p className="eyebrow">
+                Model assumptions
+              </p>
+
+              <h2 id="limitations-heading">
+                Calculator assumptions and limitations
+              </h2>
+
+              <ul className="article-list">
+                <li>The calculation assumes a resonant RLC circuit with a defined center frequency and quality factor.</li>
+                <li>The bandwidth equation BW = f₀ ÷ Q is treated as the applicable circuit model.</li>
+                <li>The lower and upper half-power frequencies are approximate centered estimates.</li>
+                <li>Component tolerances, parasitic effects, and frequency-dependent losses are not modeled.</li>
+                <li>Real measured bandwidth may differ from the ideal calculated result.</li>
+              </ul>
+            </section>
+
             <RelatedCalculators
               currentSlug="rlc-bandwidth-calculator"
               heading="Continue your RLC analysis"

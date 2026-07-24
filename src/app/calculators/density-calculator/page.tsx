@@ -211,6 +211,24 @@ export default function DensityCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="limitations-heading">
+              <p className="eyebrow">
+                Model assumptions
+              </p>
+
+              <h2 id="limitations-heading">
+                Calculator assumptions and limitations
+              </h2>
+
+              <ul className="article-list">
+                <li>The calculation assumes consistent mass and volume units.</li>
+                <li>The sample is treated as having uniform density throughout.</li>
+                <li>Measured values should come from calibrated laboratory equipment.</li>
+                <li>Experimental temperature effects on density are not included.</li>
+                <li>Results are only as accurate as the values entered.</li>
+              </ul>
+            </section>
+
             <RelatedCalculators
               currentSlug="density-calculator"
               heading="Continue your measurement analysis"

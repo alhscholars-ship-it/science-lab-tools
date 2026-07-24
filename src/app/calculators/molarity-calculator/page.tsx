@@ -206,6 +206,24 @@ export default function MolarityCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="limitations-heading">
+              <p className="eyebrow">
+                Model assumptions
+              </p>
+
+              <h2 id="limitations-heading">
+                Calculator assumptions and limitations
+              </h2>
+
+              <ul className="article-list">
+                <li>The calculation uses the final total solution volume, not solvent volume alone.</li>
+                <li>The amount of solute must be entered in moles rather than grams.</li>
+                <li>The calculator assumes the solution is sufficiently uniform after mixing.</li>
+                <li>Temperature-dependent volume changes and non-ideal solution behavior are not modeled.</li>
+                <li>Results depend on the accuracy of the entered amount and volume.</li>
+              </ul>
+            </section>
+
             <RelatedCalculators
               currentSlug="molarity-calculator"
               heading="Continue your chemistry calculations"

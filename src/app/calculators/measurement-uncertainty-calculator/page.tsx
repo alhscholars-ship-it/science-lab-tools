@@ -320,6 +320,24 @@ export default function MeasurementUncertaintyCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="limitations-heading">
+              <p className="eyebrow">
+                Model assumptions
+              </p>
+
+              <h2 id="limitations-heading">
+                Calculator assumptions and limitations
+              </h2>
+
+              <ul className="article-list">
+                <li>The calculation assumes measured values and uncertainty use the same unit.</li>
+                <li>Reported uncertainty should come from appropriate experimental methods.</li>
+                <li>The calculator does not identify systematic measurement errors.</li>
+                <li>Instrument calibration and sampling quality are not evaluated.</li>
+                <li>Results depend entirely on the accuracy of the entered values.</li>
+              </ul>
+            </section>
+
             <RelatedCalculators
               currentSlug="measurement-uncertainty-calculator"
               heading="Continue your measurement-quality analysis"
