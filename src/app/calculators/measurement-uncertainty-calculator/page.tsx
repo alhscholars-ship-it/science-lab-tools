@@ -338,6 +338,43 @@ export default function MeasurementUncertaintyCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="further-analysis-heading">
+              <p className="eyebrow">
+                Continue your analysis
+              </p>
+
+              <h2 id="further-analysis-heading">
+                Report and interpret measurement uncertainty
+              </h2>
+
+              <p>
+                Round measured results appropriately
+                with the{" "}
+                <Link href="/lab-reports/significant-figures-in-lab-reports">
+                  significant figures guide
+                </Link>
+                , and explain uncertainty with the{" "}
+                <Link href="/lab-reports/lab-report-discussion">
+                  lab report discussion guide
+                </Link>
+                .
+              </p>
+
+              <p>
+                Present repeated measurements using
+                the{" "}
+                <Link href="/lab-reports/tables-and-graphs">
+                  scientific tables and graphs guide
+                </Link>
+                , or compare a measured result with
+                an accepted value using the{" "}
+                <Link href="/calculators/percent-error-calculator">
+                  percent error calculator
+                </Link>
+                .
+              </p>
+            </section>
+
             <RelatedCalculators
               currentSlug="measurement-uncertainty-calculator"
               heading="Continue your measurement-quality analysis"

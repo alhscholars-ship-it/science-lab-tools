@@ -327,6 +327,33 @@ export default function RateOfChangeCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="further-analysis-heading">
+              <p className="eyebrow">
+                Continue your analysis
+              </p>
+
+              <h2 id="further-analysis-heading">
+                Interpret rates and experimental trends
+              </h2>
+
+              <p>
+                Estimate a trend line with the{" "}
+                <Link href="/calculators/linear-regression-calculator">
+                  linear regression calculator
+                </Link>
+                , evaluate the scientific meaning
+                with the{" "}
+                <Link href="/scientific-method/analyze-experimental-results">
+                  experimental results analysis guide
+                </Link>
+                , and present the trend using the{" "}
+                <Link href="/lab-reports/tables-and-graphs">
+                  scientific tables and graphs guide
+                </Link>
+                .
+              </p>
+            </section>
+
             <RelatedCalculators
               currentSlug="rate-of-change-calculator"
               heading="Continue your rate and trend analysis"

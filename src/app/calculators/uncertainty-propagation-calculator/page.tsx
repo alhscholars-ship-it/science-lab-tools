@@ -309,6 +309,30 @@ export default function UncertaintyPropagationCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="further-analysis-heading">
+              <p className="eyebrow">
+                Continue your analysis
+              </p>
+
+              <h2 id="further-analysis-heading">
+                Report propagated uncertainty clearly
+              </h2>
+
+              <p>
+                Apply the correct rounding rules with
+                our{" "}
+                <Link href="/lab-reports/significant-figures-in-lab-reports">
+                  significant figures guide
+                </Link>
+                , then explain the result and its
+                limitations using the{" "}
+                <Link href="/lab-reports/lab-report-discussion">
+                  lab report discussion guide
+                </Link>
+                .
+              </p>
+            </section>
+
             <RelatedCalculators
               currentSlug="uncertainty-propagation-calculator"
               heading="Build a complete uncertainty workflow"

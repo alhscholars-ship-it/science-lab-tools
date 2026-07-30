@@ -311,6 +311,26 @@ export default function CoefficientVariationCalculatorPage() {
               </ul>
             </section>
 
+            <section aria-labelledby="further-analysis-heading">
+              <p className="eyebrow">
+                Continue your analysis
+              </p>
+
+              <h2 id="further-analysis-heading">
+                Compare variability with descriptive statistics
+              </h2>
+
+              <p>
+                Review the centre of each dataset
+                alongside its relative variability
+                using the{" "}
+                <Link href="/calculators/mean-median-mode-calculator">
+                  mean, median, and mode calculator
+                </Link>
+                .
+              </p>
+            </section>
+
             <RelatedCalculators
               currentSlug="coefficient-variation-calculator"
               heading="Continue your statistical analysis"
