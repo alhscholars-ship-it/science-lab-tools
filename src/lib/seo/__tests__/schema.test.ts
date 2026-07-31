@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   createBreadcrumbSchema,
+  createCollectionPageSchema,
   createFaqSchema,
   createWebApplicationSchema,
   serializeJsonLd,
@@ -112,4 +113,33 @@ describe("SEO schema builders", () => {
     expect(serialized).not.toContain("</script>");
     expect(serialized).toContain("\\u003c/script>");
   });
+
+  it("creates a CollectionPage schema with calculator items", () => {
+    const schema = createCollectionPageSchema({
+      name: "Physics Calculators",
+      description: "Physics calculation tools.",
+      path: "/physics-calculators",
+      items: [
+        {
+          name: "Force Calculator",
+          href: "/calculators/force-calculator",
+        },
+        {
+          name: "Energy Calculator",
+          href: "/calculators/energy-calculator",
+        },
+      ],
+    });
+
+    expect(schema["@type"]).toBe("CollectionPage");
+    expect(schema.mainEntity["@type"]).toBe("ItemList");
+
+    expect(schema.mainEntity.itemListElement).toHaveLength(2);
+
+    expect(schema.mainEntity.itemListElement[0]).toMatchObject({
+      position: 1,
+      name: "Force Calculator",
+    });
+  });
+
 });

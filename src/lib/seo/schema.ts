@@ -88,6 +88,41 @@ export function createBreadcrumbSchema({
   };
 }
 
+
+type CollectionPageSchemaInput = {
+  name: string;
+  description: string;
+  path: string;
+  items: readonly {
+    name: string;
+    href: string;
+  }[];
+};
+
+export function createCollectionPageSchema({
+  name,
+  description,
+  path,
+  items,
+}: CollectionPageSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url: absoluteUrl(path),
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: absoluteUrl(item.href),
+        name: item.name,
+      })),
+    },
+  };
+}
+
 export function serializeJsonLd(
   schema: unknown,
 ): string {
