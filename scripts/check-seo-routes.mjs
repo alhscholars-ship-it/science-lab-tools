@@ -1,5 +1,12 @@
 import fs from "node:fs";
 
+if (
+  !process.env.NEXT_PUBLIC_SITE_URL &&
+  fs.existsSync(".env.local")
+) {
+  process.loadEnvFile(".env.local");
+}
+
 const fallbackSiteUrl = "http://localhost:3000";
 
 function normalizeSiteUrl(value) {
