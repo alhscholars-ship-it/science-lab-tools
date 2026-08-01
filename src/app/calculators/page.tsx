@@ -142,6 +142,72 @@ export default function CalculatorsPage() {
         </Container>
       </section>
 
+      <section
+        className="directory-section"
+        aria-labelledby="category-heading"
+      >
+        <Container>
+          <div className="section-heading section-heading--split">
+            <div>
+              <p className="eyebrow">Explore by subject</p>
+              <h2 id="category-heading">
+                Science Calculator Categories
+              </h2>
+            </div>
+
+            <p>
+              Browse specialized calculator collections for physics,
+              chemistry, and laboratory science topics.
+            </p>
+          </div>
+
+          <div className="directory-category-list">
+            <section className="directory-category">
+              <div className="calculator-category-section__heading">
+                <h2>
+                  <Link href="/physics-calculators">
+                    Physics Calculators
+                  </Link>
+                </h2>
+                <p>
+                  Motion, force, energy, electricity, and mechanics tools
+                  with formulas and explanations.
+                </p>
+              </div>
+            </section>
+
+            <section className="directory-category">
+              <div className="calculator-category-section__heading">
+                <h2>
+                  <Link href="/chemistry-calculators">
+                    Chemistry Calculators
+                  </Link>
+                </h2>
+                <p>
+                  Molarity, dilution, molecular weight, pH, and chemistry
+                  calculation tools.
+                </p>
+              </div>
+            </section>
+
+            <section className="directory-category">
+              <div className="calculator-category-section__heading">
+                <h2>
+                  <Link href="/laboratory-calculators">
+                    Laboratory Calculators
+                  </Link>
+                </h2>
+                <p>
+                  Experimental analysis, uncertainty, statistics, and
+                  scientific data tools.
+                </p>
+              </div>
+            </section>
+          </div>
+        </Container>
+      </section>
+
+
       <section className="directory-section" aria-labelledby="available-heading">
         <Container>
           <div className="section-heading section-heading--split">
