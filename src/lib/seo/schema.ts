@@ -16,6 +16,8 @@ type BreadcrumbSchemaInput = {
   pagePath: string;
   parentName?: string;
   parentPath?: string;
+  sectionName?: string;
+  sectionPath?: string;
 };
 
 export function createWebApplicationSchema({
@@ -61,30 +63,44 @@ export function createBreadcrumbSchema({
   pagePath,
   parentName = "Calculators",
   parentPath = "/calculators",
+  sectionName,
+  sectionPath,
 }: BreadcrumbSchemaInput) {
+  const itemListElement = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: absoluteUrl("/"),
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: parentName,
+      item: absoluteUrl(parentPath),
+    },
+  ];
+
+  if (sectionName && sectionPath) {
+    itemListElement.push({
+      "@type": "ListItem",
+      position: 3,
+      name: sectionName,
+      item: absoluteUrl(sectionPath),
+    });
+  }
+
+  itemListElement.push({
+    "@type": "ListItem",
+    position: itemListElement.length + 1,
+    name: pageName,
+    item: absoluteUrl(pagePath),
+  });
+
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: absoluteUrl("/"),
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: parentName,
-        item: absoluteUrl(parentPath),
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: pageName,
-        item: absoluteUrl(pagePath),
-      },
-    ],
+    itemListElement,
   };
 }
 

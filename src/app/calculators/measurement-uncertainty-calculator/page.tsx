@@ -82,6 +82,8 @@ const faqSchema = createFaqSchema(faqItems);
 const breadcrumbSchema = createBreadcrumbSchema({
   pageName: pageTitle,
   pagePath,
+  sectionName: "Laboratory Calculators",
+  sectionPath: "/laboratory-calculators",
 });
 
 export default function MeasurementUncertaintyCalculatorPage() {

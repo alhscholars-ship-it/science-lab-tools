@@ -83,6 +83,8 @@ const faqSchema = createFaqSchema(faqItems);
 const breadcrumbSchema = createBreadcrumbSchema({
   pageName: pageTitle,
   pagePath,
+  sectionName: "Physics Calculators",
+  sectionPath: "/physics-calculators",
 });
 
 export default function MomentumCalculatorPage() {

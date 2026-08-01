@@ -91,6 +91,8 @@ const breadcrumbSchema =
   createBreadcrumbSchema({
     pageName: pageTitle,
     pagePath,
+    sectionName: "Physics Calculators",
+    sectionPath: "/physics-calculators",
   });
 
 export default function WaveSpeedCalculatorPage() {

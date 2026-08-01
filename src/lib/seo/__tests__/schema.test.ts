@@ -88,6 +88,43 @@ describe("SEO schema builders", () => {
     ]);
   });
 
+  it("creates a four-level category breadcrumb", () => {
+    const schema = createBreadcrumbSchema({
+      pageName: "Force Calculator",
+      pagePath: "/calculators/force-calculator",
+      sectionName: "Physics Calculators",
+      sectionPath: "/physics-calculators",
+    });
+
+    expect(schema.itemListElement).toHaveLength(4);
+
+    expect(schema.itemListElement.map((item) => ({
+      position: item.position,
+      name: item.name,
+    }))).toEqual([
+      {
+        position: 1,
+        name: "Home",
+      },
+      {
+        position: 2,
+        name: "Calculators",
+      },
+      {
+        position: 3,
+        name: "Physics Calculators",
+      },
+      {
+        position: 4,
+        name: "Force Calculator",
+      },
+    ]);
+
+    expect(schema.itemListElement[2].item).toContain(
+      "/physics-calculators",
+    );
+  });
+
   it("supports a custom parent breadcrumb", () => {
     const schema = createBreadcrumbSchema({
       pageName: "Lab Report Guide",
