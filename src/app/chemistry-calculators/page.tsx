@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { RelatedLearning } from "@/components/related-learning";
+
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { calculators } from "@/content/calculators/registry";
@@ -187,6 +189,7 @@ export default function ChemistryCalculatorsPage() {
           </section>
         </Container>
       </section>
+      <RelatedLearning />
     </main>
   );
 }
