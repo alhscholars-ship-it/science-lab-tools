@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { RelatedLearning } from "@/components/related-learning";
+
 import { Container } from "@/components/ui/container";
 import { calculators } from "@/content/calculators/registry";
 import { laboratoryHub } from "@/content/category-hubs/laboratory";
@@ -100,6 +102,7 @@ export default function LaboratoryCalculatorsPage() {
           </div>
         </Container>
       </section>
+      <RelatedLearning />
     </main>
   );
 }
