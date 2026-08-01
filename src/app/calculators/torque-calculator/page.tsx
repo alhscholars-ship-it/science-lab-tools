@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CalculatorBreadcrumb } from "@/components/calculator-breadcrumb";
+
 import {
   TorqueCalculator,
 } from "@/components/calculators/torque-calculator";
@@ -107,24 +109,10 @@ export default function TorqueCalculatorPage() {
 
       <section className="tool-page-hero">
         <Container>
-          <nav
-            className="breadcrumbs"
-            aria-label="Breadcrumb"
-          >
-            <ol>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/calculators">
-                  Calculators
-                </Link>
-              </li>
-              <li aria-current="page">
-                Torque Calculator
-              </li>
-            </ol>
-          </nav>
+          <CalculatorBreadcrumb
+            category="Physics"
+            title="Torque Calculator"
+          />
 
           <div className="tool-page-hero__content">
             <p className="eyebrow">

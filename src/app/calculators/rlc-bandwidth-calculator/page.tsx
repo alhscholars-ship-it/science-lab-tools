@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CalculatorBreadcrumb } from "@/components/calculator-breadcrumb";
+
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { RelatedCalculators } from "@/components/related-calculators";
 import { RlcBandwidthCalculator } from "@/components/calculators/rlc-bandwidth-calculator";
@@ -113,26 +115,10 @@ export default function RlcBandwidthCalculatorPage() {
 
       <section className="tool-page-hero">
         <Container>
-          <nav
-            className="breadcrumbs"
-            aria-label="Breadcrumb"
-          >
-            <ol>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-
-              <li>
-                <Link href="/calculators">
-                  Calculators
-                </Link>
-              </li>
-
-              <li aria-current="page">
-                RLC Bandwidth Calculator
-              </li>
-            </ol>
-          </nav>
+          <CalculatorBreadcrumb
+            category="Physics"
+            title="rlc-bandwidth-calculator"
+          />
 
           <div className="tool-page-hero__content">
             <p className="eyebrow">

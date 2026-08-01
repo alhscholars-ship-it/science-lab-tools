@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CalculatorBreadcrumb } from "@/components/calculator-breadcrumb";
+
 import {
   RotationalPowerCalculator,
 } from "@/components/calculators/rotational-power-calculator";
@@ -108,24 +110,10 @@ export default function RotationalPowerCalculatorPage() {
 
       <section className="tool-page-hero">
         <Container>
-          <nav
-            className="breadcrumbs"
-            aria-label="Breadcrumb"
-          >
-            <ol>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/calculators">
-                  Calculators
-                </Link>
-              </li>
-              <li aria-current="page">
-                Rotational Power Calculator
-              </li>
-            </ol>
-          </nav>
+          <CalculatorBreadcrumb
+            category="Physics"
+            title="rotational-power-calculator"
+          />
 
           <div className="tool-page-hero__content">
             <p className="eyebrow">

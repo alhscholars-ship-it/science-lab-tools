@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CalculatorBreadcrumb } from "@/components/calculator-breadcrumb";
+
 import { FreeFallCalculator } from "@/components/calculators/free-fall-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { RelatedCalculators } from "@/components/related-calculators";
@@ -101,17 +103,10 @@ export default function FreeFallCalculatorPage() {
 
       <section className="tool-page-hero">
         <Container>
-          <nav className="breadcrumbs" aria-label="Breadcrumb">
-            <ol>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/calculators">Calculators</Link>
-              </li>
-              <li aria-current="page">Free Fall Calculator</li>
-            </ol>
-          </nav>
+          <CalculatorBreadcrumb
+            category="Physics"
+            title="Free Fall Calculator"
+          />
 
           <div className="tool-page-hero__content">
             <p className="eyebrow">Gravity and motion tool</p>

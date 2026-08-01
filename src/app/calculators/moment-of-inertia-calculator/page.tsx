@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CalculatorBreadcrumb } from "@/components/calculator-breadcrumb";
+
 import {
   MomentOfInertiaCalculator,
 } from "@/components/calculators/moment-of-inertia-calculator";
@@ -108,24 +110,10 @@ export default function MomentOfInertiaCalculatorPage() {
 
       <section className="tool-page-hero">
         <Container>
-          <nav
-            className="breadcrumbs"
-            aria-label="Breadcrumb"
-          >
-            <ol>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/calculators">
-                  Calculators
-                </Link>
-              </li>
-              <li aria-current="page">
-                Moment of Inertia Calculator
-              </li>
-            </ol>
-          </nav>
+          <CalculatorBreadcrumb
+            category="Physics"
+            title="moment-of-inertia-calculator"
+          />
 
           <div className="tool-page-hero__content">
             <p className="eyebrow">

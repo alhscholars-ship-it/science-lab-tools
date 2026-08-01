@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CalculatorBreadcrumb } from "@/components/calculator-breadcrumb";
+
 import { PulleyCalculator } from "@/components/calculators/pulley-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { RelatedCalculators } from "@/components/related-calculators";
@@ -111,26 +113,10 @@ export default function PulleyCalculatorPage() {
 
       <section className="tool-page-hero">
         <Container>
-          <nav
-            className="breadcrumbs"
-            aria-label="Breadcrumb"
-          >
-            <ol>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-
-              <li>
-                <Link href="/calculators">
-                  Calculators
-                </Link>
-              </li>
-
-              <li aria-current="page">
-                Pulley Calculator
-              </li>
-            </ol>
-          </nav>
+          <CalculatorBreadcrumb
+            category="Physics"
+            title="Pulley Calculator"
+          />
 
           <div className="tool-page-hero__content">
             <p className="eyebrow">

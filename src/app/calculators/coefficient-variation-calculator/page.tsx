@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CalculatorBreadcrumb } from "@/components/calculator-breadcrumb";
+
 import { CoefficientVariationCalculator } from "@/components/calculators/coefficient-variation-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { RelatedCalculators } from "@/components/related-calculators";
@@ -105,24 +107,10 @@ export default function CoefficientVariationCalculatorPage() {
 
       <section className="tool-page-hero">
         <Container>
-          <nav
-            className="breadcrumbs"
-            aria-label="Breadcrumb"
-          >
-            <ol>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/calculators">
-                  Calculators
-                </Link>
-              </li>
-              <li aria-current="page">
-                Coefficient of Variation Calculator
-              </li>
-            </ol>
-          </nav>
+          <CalculatorBreadcrumb
+            category="Laboratory"
+            title="coefficient-variation-calculator"
+          />
 
           <div className="tool-page-hero__content">
             <p className="eyebrow">

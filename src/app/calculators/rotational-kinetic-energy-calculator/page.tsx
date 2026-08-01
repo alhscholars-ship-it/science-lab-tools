@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CalculatorBreadcrumb } from "@/components/calculator-breadcrumb";
+
 import {
   RotationalKineticEnergyCalculator,
 } from "@/components/calculators/rotational-kinetic-energy-calculator";
@@ -108,24 +110,10 @@ export default function RotationalKineticEnergyCalculatorPage() {
 
       <section className="tool-page-hero">
         <Container>
-          <nav
-            className="breadcrumbs"
-            aria-label="Breadcrumb"
-          >
-            <ol>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/calculators">
-                  Calculators
-                </Link>
-              </li>
-              <li aria-current="page">
-                Rotational Kinetic Energy Calculator
-              </li>
-            </ol>
-          </nav>
+          <CalculatorBreadcrumb
+            category="Physics"
+            title="rotational-kinetic-energy-calculator"
+          />
 
           <div className="tool-page-hero__content">
             <p className="eyebrow">

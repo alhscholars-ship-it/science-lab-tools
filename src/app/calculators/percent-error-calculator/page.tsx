@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CalculatorBreadcrumb } from "@/components/calculator-breadcrumb";
+
 import { PercentErrorCalculator } from "@/components/calculators/percent-error-calculator";
 import { CalculatorTrustPanel } from "@/components/calculator-trust";
 import { RelatedCalculators } from "@/components/related-calculators";
@@ -95,17 +97,10 @@ export default function PercentErrorCalculatorPage() {
 
       <section className="tool-page-hero">
         <Container>
-          <nav className="breadcrumbs" aria-label="Breadcrumb">
-            <ol>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/calculators">Calculators</Link>
-              </li>
-              <li aria-current="page">Percent Error Calculator</li>
-            </ol>
-          </nav>
+          <CalculatorBreadcrumb
+            category="Laboratory"
+            title="Percent Error Calculator"
+          />
 
           <div className="tool-page-hero__content">
             <p className="eyebrow">Laboratory calculation tool</p>
