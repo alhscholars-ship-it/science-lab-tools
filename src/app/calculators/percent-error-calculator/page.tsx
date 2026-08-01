@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-
 import { CalculatorBreadcrumb } from "@/components/calculator-breadcrumb";
 
 import { PercentErrorCalculator } from "@/components/calculators/percent-error-calculator";

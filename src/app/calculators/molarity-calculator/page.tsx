@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-
 import { CalculatorBreadcrumb } from "@/components/calculator-breadcrumb";
 
 import { MolarityCalculator } from "@/components/calculators/molarity-calculator";
