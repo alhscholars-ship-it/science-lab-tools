@@ -2,7 +2,7 @@ export const physicsHub = {
   slug: "physics-calculators",
 
   title:
-    "Physics Calculators - Formulas, Equations & Science Tools",
+    "Physics Calculators & Formula Tools",
 
   description:
     "Explore physics calculators for force, motion, energy, electricity, and mechanics with formulas, examples, and step-by-step explanations.",

@@ -2,7 +2,7 @@ export const laboratoryHub = {
   slug: "laboratory-calculators",
 
   title:
-    "Laboratory Calculators - Scientific Tools, Formulas & Analysis",
+    "Laboratory Calculators & Analysis Tools",
 
   description:
     "Use laboratory calculators for experimental analysis, uncertainty, statistics, significant figures, and scientific data calculations with formulas and explanations.",

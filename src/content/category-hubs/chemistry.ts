@@ -2,7 +2,7 @@ export const chemistryHub = {
   slug: "chemistry-calculators",
 
   title:
-    "Chemistry Calculators - Formulas, Equations & Science Tools",
+    "Chemistry Calculators & Formula Tools",
 
   description:
     "Use chemistry calculators for molarity, dilution, molecular weight, pH, and common laboratory calculations with formulas and step-by-step explanations.",

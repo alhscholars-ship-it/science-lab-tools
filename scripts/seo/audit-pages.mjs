@@ -70,9 +70,176 @@ function countMatches(text, pattern) {
   return [...text.matchAll(pattern)].length;
 }
 
+function readQuotedString(source) {
+  const value = source.trimStart();
+  const quote = value[0];
+
+  if (!["\"", "'", "`"].includes(quote)) {
+    return "";
+  }
+
+  let result = "";
+
+  for (let index = 1; index < value.length; index += 1) {
+    const character = value[index];
+
+    if (character === "\\") {
+      const nextCharacter = value[index + 1];
+
+      if (nextCharacter === undefined) {
+        return "";
+      }
+
+      const escapedCharacters = {
+        n: " ",
+        r: " ",
+        t: " ",
+        "\\": "\\",
+        "\"": "\"",
+        "'": "'",
+        "`": "`",
+      };
+
+      result +=
+        escapedCharacters[nextCharacter] ??
+        nextCharacter;
+
+      index += 1;
+      continue;
+    }
+
+    if (character === quote) {
+      return result.trim();
+    }
+
+    result += character;
+  }
+
+  return "";
+}
+
+function resolveModulePath(
+  importPath,
+  importerPath,
+) {
+  if (!importPath || !importerPath) {
+    return "";
+  }
+
+  const basePath = importPath.startsWith("@/")
+    ? path.join(
+        root,
+        "src",
+        importPath.slice(2),
+      )
+    : path.resolve(
+        path.dirname(importerPath),
+        importPath,
+      );
+
+  const candidates = [
+    basePath,
+    `${basePath}.ts`,
+    `${basePath}.tsx`,
+    path.join(basePath, "index.ts"),
+    path.join(basePath, "index.tsx"),
+  ];
+
+  return (
+    candidates.find((candidate) =>
+      fs.existsSync(candidate),
+    ) ?? ""
+  );
+}
+
+function resolveImportedObjectProperty(
+  text,
+  filePath,
+  objectName,
+  propertyName,
+) {
+  if (
+    !filePath ||
+    !objectName ||
+    !propertyName
+  ) {
+    return "";
+  }
+
+  const escapedObject = objectName.replace(
+    /[.*+?^${}()|[\]\\]/g,
+    "\\$&",
+  );
+
+  const importPath = firstMatch(
+    text,
+    new RegExp(
+      `import\\s*\\{[^}]*\\b${escapedObject}\\b` +
+        `[^}]*\\}\\s*from\\s*` +
+        `["']([^"']+)["']`,
+      "s",
+    ),
+  );
+
+  const modulePath = resolveModulePath(
+    importPath,
+    filePath,
+  );
+
+  if (!modulePath) {
+    return "";
+  }
+
+  const moduleText = fs.readFileSync(
+    modulePath,
+    "utf8",
+  );
+
+  const objectStartPattern = new RegExp(
+    `export\\s+const\\s+${escapedObject}\\b` +
+      `[\\s\\S]*?=\\s*\\{`,
+  );
+
+  const objectStart = moduleText.search(
+    objectStartPattern,
+  );
+
+  if (objectStart === -1) {
+    return "";
+  }
+
+  const objectText = moduleText.slice(objectStart);
+
+  const escapedProperty = propertyName.replace(
+    /[.*+?^${}()|[\]\\]/g,
+    "\\$&",
+  );
+
+  const propertyMatch = objectText.match(
+    new RegExp(
+      `\\b${escapedProperty}\\s*:\\s*`,
+    ),
+  );
+
+  if (
+    !propertyMatch ||
+    propertyMatch.index === undefined
+  ) {
+    return "";
+  }
+
+  return readQuotedString(
+    objectText.slice(
+      propertyMatch.index +
+        propertyMatch[0].length,
+    ),
+  );
+}
+
 function resolveStringConstant(
   text,
   variableName,
+  filePath = "",
 ) {
   if (!variableName) {
     return "";
@@ -83,53 +250,122 @@ function resolveStringConstant(
     "\\$&",
   );
 
-  return firstMatch(
+  const expression = firstMatch(
     text,
     new RegExp(
       `(?:export\\s+)?const\\s+${escapedName}` +
         `(?:\\s*:\\s*[^=]+)?\\s*=\\s*` +
-        `["'\`]([^"'\\\`]+)["'\`]`,
+        `([\\s\\S]*?);`,
     ),
+  );
+
+  if (!expression) {
+    return "";
+  }
+
+  const literalValue =
+    readQuotedString(expression);
+
+  if (literalValue) {
+    return literalValue;
+  }
+
+  const memberMatch = expression.match(
+    /^([A-Za-z_$][\w$]*)\.([A-Za-z_$][\w$]*)$/,
+  );
+
+  if (!memberMatch) {
+    return "";
+  }
+
+  return resolveImportedObjectProperty(
+    text,
+    filePath,
+    memberMatch[1],
+    memberMatch[2],
   );
 }
 
 function resolveMetadataValue(
   text,
   property,
+  filePath = "",
 ) {
   const escapedProperty = property.replace(
     /[.*+?^${}()|[\]\\]/g,
     "\\$&",
   );
 
-  const variableName = firstMatch(
-    text,
+  const memberMatch = text.match(
     new RegExp(
-      `${escapedProperty}:\\s*([A-Za-z_$][\\w$]*)`,
+      `${escapedProperty}:\\s*` +
+        `([A-Za-z_$][\\w$]*)\\.` +
+        `([A-Za-z_$][\\w$]*)`,
     ),
   );
 
-  const resolvedVariable = resolveStringConstant(
+  if (memberMatch) {
+    const resolvedMember =
+      resolveImportedObjectProperty(
+        text,
+        filePath,
+        memberMatch[1],
+        memberMatch[2],
+      );
+
+    if (resolvedMember) {
+      return resolvedMember;
+    }
+  }
+
+  const variableName = firstMatch(
     text,
-    variableName,
+    new RegExp(
+      `${escapedProperty}:\\s*` +
+        `([A-Za-z_$][\\w$]*)`,
+    ),
   );
+
+  const resolvedVariable =
+    resolveStringConstant(
+      text,
+      variableName,
+      filePath,
+    );
 
   if (resolvedVariable) {
     return resolvedVariable;
   }
 
-  return firstMatch(
-    text,
+  const propertyMatch = text.match(
     new RegExp(
-      `${escapedProperty}:\\s*["']([^"']+)["']`,
+      `${escapedProperty}:\\s*`,
+    ),
+  );
+
+  if (
+    !propertyMatch ||
+    propertyMatch.index === undefined
+  ) {
+    return "";
+  }
+
+  return readQuotedString(
+    text.slice(
+      propertyMatch.index +
+        propertyMatch[0].length,
     ),
   );
 }
 
-function resolveCanonical(text) {
+function resolveCanonical(
+  text,
+  filePath = "",
+) {
   return resolveMetadataValue(
     text,
     "canonical",
+    filePath,
   );
 }
 
@@ -152,33 +388,53 @@ function hasJsonLd(text) {
   return /application\/ld\+json/.test(text);
 }
 
-function getRenderedTitle(text) {
-  const template = firstMatch(
-    text,
-    /title:\s*`([^`]+)`/,
-  );
-
-  if (template) {
-    return template.replace(
-      /\$\{([A-Za-z_$][\w$]*)\}/g,
-      (_, variableName) => {
-        if (variableName === "siteConfig") {
-          return "Science Lab Tools";
-        }
-
-        return (
-          resolveStringConstant(
-            text,
-            variableName,
-          ) || `<${variableName}>`
-        );
-      },
-    );
-  }
-
-  return resolveMetadataValue(
+function getRenderedTitle(
+  text,
+  filePath = "",
+) {
+  const rawTitle = resolveMetadataValue(
     text,
     "title",
+    filePath,
+  );
+
+  if (!rawTitle) {
+    return "";
+  }
+
+  return rawTitle.replace(
+    /\$\{([^}]+)\}/g,
+    (_, rawExpression) => {
+      const expression =
+        rawExpression.trim();
+
+      if (expression === "siteConfig.name") {
+        return "Science Lab Tools";
+      }
+
+      const memberMatch = expression.match(
+        /^([A-Za-z_$][\w$]*)\.([A-Za-z_$][\w$]*)$/,
+      );
+
+      if (memberMatch) {
+        return (
+          resolveImportedObjectProperty(
+            text,
+            filePath,
+            memberMatch[1],
+            memberMatch[2],
+          ) || `<${expression}>`
+        );
+      }
+
+      return (
+        resolveStringConstant(
+          text,
+          expression,
+          filePath,
+        ) || `<${expression}>`
+      );
+    },
   );
 }
 
@@ -203,19 +459,28 @@ const siteConfigDescription =
 const inherited = {
   hasMetadata: hasMetadataExport(layoutText),
   title:
-    resolveMetadataValue(layoutText, "default") ||
-    resolveMetadataValue(layoutText, "title"),
+    resolveMetadataValue(layoutText, "default", layoutPath) ||
+    resolveMetadataValue(layoutText, "title", layoutPath),
+  titleTemplate: resolveMetadataValue(
+    layoutText,
+    "template",
+    layoutPath,
+  ).replace(
+    /\$\{siteConfig\.name\}/g,
+    "Science Lab Tools",
+  ),
   description:
     resolveMetadataValue(
-      layoutText,
-      "description",
-    ) ||
+        layoutText,
+        "description",
+        layoutPath,
+      ) ||
     (layoutText.includes(
       "description: siteConfig.description",
     )
       ? siteConfigDescription
       : ""),
-  canonical: resolveCanonical(layoutText),
+  canonical: resolveCanonical(layoutText, layoutPath),
   hasRobots: hasRobotsMetadata(layoutText),
   hasJsonLd: hasJsonLd(layoutText),
 };
@@ -232,22 +497,28 @@ const pages = walk(appDirectory)
 
     const ownTitle = isHomepage
       ? ""
-      : getRenderedTitle(text);
+      : getRenderedTitle(text, filePath);
 
     const ownDescription = isHomepage
       ? ""
       : resolveMetadataValue(
-          text,
-          "description",
-        );
+            text,
+            "description",
+            filePath,
+          );
 
     const ownCanonical = isHomepage
       ? ""
-      : resolveCanonical(text);
+      : resolveCanonical(text, filePath);
 
     const title = isHomepage
       ? inherited.title
-      : ownTitle;
+      : inherited.titleTemplate
+        ? inherited.titleTemplate.replace(
+            "%s",
+            ownTitle,
+          )
+        : ownTitle;
 
     const description = isHomepage
       ? inherited.description
@@ -267,8 +538,7 @@ const pages = walk(appDirectory)
 
     const hasRobots =
       hasRobotsMetadata(text) ||
-      (isHomepage &&
-        inherited.hasRobots);
+      inherited.hasRobots;
 
     const pageHasJsonLd =
       hasJsonLd(text) ||
@@ -287,12 +557,30 @@ const pages = walk(appDirectory)
 
     const dynamicInternalLinks = countMatches(
       text,
-      /href=\{(?:calculator|resource|category)\.href\}/g,
+      /href=\{(?:calculator|resource|category|link)\.href\}/g,
     );
+
+    const componentInternalLinks =
+      countMatches(
+        text,
+        /<CalculatorBreadcrumb\b/g,
+      ) *
+        3 +
+      countMatches(
+        text,
+        /<RelatedCalculators\b/g,
+      ) *
+        4 +
+      countMatches(
+        text,
+        /<RelatedLearning\b/g,
+      ) *
+        4;
 
     const internalLinks =
       staticInternalLinks +
-      dynamicInternalLinks * 2;
+      dynamicInternalLinks * 2 +
+      componentInternalLinks;
 
     const hasFaqSchema =
       /"@type":\s*"FAQPage"/.test(
