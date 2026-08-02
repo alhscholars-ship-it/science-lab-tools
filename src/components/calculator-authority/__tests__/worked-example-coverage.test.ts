@@ -48,7 +48,6 @@ describe("calculator worked-example coverage", () => {
     expect(calculatorPages).toHaveLength(
       calculators.length,
     );
-    expect(calculatorPages).toHaveLength(85);
   });
 
   it.each(calculatorPages)(

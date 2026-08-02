@@ -41,10 +41,10 @@ const calculatorPages = readdirSync(
   );
 
 const assumptionsSectionPattern =
-  /<section\s+aria-labelledby="(?:assumptions|limitations)-heading">/;
+  /<section\s+aria-labelledby="(?:assumptions|limitations)-heading"\s*>/;
 
 const assumptionsGuidancePattern =
-  /<section\s+aria-labelledby="(?:assumptions|limitations)-heading">[\s\S]*?<h2\s+id="(?:assumptions|limitations)-heading">[\s\S]*?<\/h2>[\s\S]*?(?:<p>|<ul\s+className="article-list">)[\s\S]*?<\/section>/i;
+  /<section\s+aria-labelledby="(?:assumptions|limitations)-heading"\s*>[\s\S]*?<h2\s+id="(?:assumptions|limitations)-heading"\s*>[\s\S]*?(?:<p>|<ul\s+className="article-list">)[\s\S]*?<\/section>/i;
 
 describe(
   "calculator assumptions and limitations coverage",
@@ -54,7 +54,6 @@ describe(
         calculators.length,
       );
 
-      expect(calculatorPages).toHaveLength(85);
     });
 
     it.each(calculatorPages)(

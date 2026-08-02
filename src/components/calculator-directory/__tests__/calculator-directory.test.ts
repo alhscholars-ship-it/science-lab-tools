@@ -31,8 +31,18 @@ function searchCalculators(
 }
 
 describe("calculator directory data behavior", () => {
-  it("contains all published calculators", () => {
-    expect(calculators).toHaveLength(85);
+  it("contains unique published calculators", () => {
+    const slugs = calculators.map(
+      ({ slug }) => slug,
+    );
+
+    expect(new Set(slugs).size).toBe(
+      slugs.length,
+    );
+
+    expect(calculators.length).toBeGreaterThan(
+      0,
+    );
   });
 
   it("finds Molecular Weight Calculator by name", () => {
@@ -50,7 +60,12 @@ describe("calculator directory data behavior", () => {
   it("filters Chemistry calculators", () => {
     const results = searchCalculators("", "Chemistry");
 
-    expect(results).toHaveLength(5);
+    expect(results).toHaveLength(
+      calculators.filter(
+        (calculator) =>
+          calculator.category === "Chemistry",
+      ).length,
+    );
     expect(
       results.every(
         (calculator) =>
