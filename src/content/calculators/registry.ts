@@ -235,6 +235,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "limiting-reactant-calculator",
+    name: "Limiting Reactant Calculator",
+    shortDescription:
+      "Identify limiting and excess reactants and calculate theoretical product yield from balanced reaction inputs.",
+    category: "Chemistry",
+    href: "/calculators/limiting-reactant-calculator",
+    keywords: [
+      "limiting reactant calculator",
+      "limiting reagent calculator",
+      "excess reactant calculator",
+      "theoretical yield calculator",
+      "stoichiometry limiting reactant",
+    ],
+  },
+  {
     slug: "pulley-calculator",
     name: "Pulley Calculator",
     shortDescription:
