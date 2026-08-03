@@ -250,6 +250,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "percent-yield-calculator",
+    name: "Percent Yield Calculator",
+    shortDescription:
+      "Calculate reaction efficiency from actual and theoretical product yields with clear working steps.",
+    category: "Chemistry",
+    href: "/calculators/percent-yield-calculator",
+    keywords: [
+      "percent yield calculator",
+      "percentage yield calculator",
+      "actual yield calculator",
+      "theoretical yield percentage",
+      "chemistry yield calculator",
+    ],
+  },
+  {
     slug: "pulley-calculator",
     name: "Pulley Calculator",
     shortDescription:
