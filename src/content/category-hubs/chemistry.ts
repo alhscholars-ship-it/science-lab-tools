@@ -5,12 +5,12 @@ export const chemistryHub = {
     "Chemistry Calculators & Formula Tools",
 
   description:
-    "Use chemistry calculators for molarity, dilution, molecular weight, pH, and common laboratory calculations with formulas and step-by-step explanations.",
+    "Use chemistry calculators for stoichiometry, molarity, dilution, molecular weight, pH, gas laws, and common laboratory calculations with formulas and examples.",
 
   category: "Chemistry",
 
   intro:
-    "Explore chemistry calculators designed for students, teachers, and laboratory work. Calculate chemical quantities accurately with formulas, explanations, and practical examples.",
+    "Explore chemistry calculators for stoichiometry, solutions, acids and bases, gas laws, and laboratory work. Calculate chemical quantities with formulas, explanations, and practical examples.",
 
   topics: [
     "Stoichiometry",
@@ -26,7 +26,7 @@ export const chemistryHub = {
         "What can chemistry calculators help calculate?",
 
       answer:
-        "Chemistry calculators can solve problems involving molarity, dilution, molecular weight, pH, moles, and other common laboratory calculations.",
+        "Chemistry calculators can solve problems involving stoichiometry, mole ratios, molarity, dilution, molecular weight, pH, gas laws, and other laboratory calculations.",
     },
     {
       question:

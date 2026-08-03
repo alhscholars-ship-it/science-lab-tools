@@ -220,6 +220,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "stoichiometry-calculator",
+    name: "Stoichiometry Calculator",
+    shortDescription:
+      "Convert reactant and product quantities using balanced-equation coefficients and chemical ratios.",
+    category: "Chemistry",
+    href: "/calculators/stoichiometry-calculator",
+    keywords: [
+      "stoichiometry calculator",
+      "balanced equation calculator",
+      "reactant product ratio",
+      "chemical mass conversion",
+      "reaction quantity calculator",
+    ],
+  },
+  {
     slug: "pulley-calculator",
     name: "Pulley Calculator",
     shortDescription:
