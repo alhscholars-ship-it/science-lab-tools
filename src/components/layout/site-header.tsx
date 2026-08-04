@@ -18,6 +18,34 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+
+        <details className="mobile-navigation">
+          <summary>
+            <span>Menu</span>
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeWidth="2"
+              />
+            </svg>
+          </summary>
+
+          <nav aria-label="Mobile navigation">
+            {siteConfig.categories.map((category) => (
+              <Link key={category.href} href={category.href}>
+                {category.name}
+              </Link>
+            ))}
+          </nav>
+        </details>
       </Container>
     </header>
   );
