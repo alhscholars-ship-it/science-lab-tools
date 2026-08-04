@@ -39,6 +39,19 @@ const routes = [
   ],
 ];
 
+const viewports = [
+  {
+    name: "desktop",
+    width: 1440,
+    height: 1000,
+  },
+  {
+    name: "mobile",
+    width: 390,
+    height: 844,
+  },
+];
+
 const browser = await chromium.launch({
   executablePath: chromiumPath,
   headless: true,
@@ -51,70 +64,76 @@ const browser = await chromium.launch({
 let failed = false;
 
 try {
-  const context = await browser.newContext({
-    viewport: {
-      width: 1440,
-      height: 1000,
-    },
-  });
-
-  const page = await context.newPage();
-
   console.log("===== AXE ACCESSIBILITY AUDIT =====");
 
-  for (const [route, label] of routes) {
-    const url = new URL(route, baseUrl).toString();
-
-    const response = await page.goto(url, {
-      waitUntil: "networkidle",
-      timeout: 30_000,
+  for (const viewport of viewports) {
+    const context = await browser.newContext({
+      viewport: {
+        width: viewport.width,
+        height: viewport.height,
+      },
     });
+    const page = await context.newPage();
 
-    if (!response || !response.ok()) {
-      console.error(
-        `FAIL: ${label} returned HTTP ${response?.status() ?? "unknown"}`,
-      );
-      failed = true;
-      continue;
-    }
-
-    const results = await new AxeBuilder({
-      page,
-    })
-      .withTags([
-        "wcag2a",
-        "wcag2aa",
-        "wcag21a",
-        "wcag21aa",
-      ])
-      .analyze();
-
-    if (results.violations.length === 0) {
-      console.log(`PASS: ${label}`);
-      continue;
-    }
-
-    failed = true;
-
-    console.error(
-      `FAIL: ${label} has ${results.violations.length} violation(s)`,
+    console.log(
+      `----- ${viewport.name} (${viewport.width}x${viewport.height}) -----`,
     );
 
-    for (const violation of results.violations) {
-      console.error(
-        `  ${violation.id} [${violation.impact ?? "unknown"}]`,
-      );
-      console.error(`  ${violation.help}`);
+    for (const [route, label] of routes) {
+      const url = new URL(route, baseUrl).toString();
 
-      for (const node of violation.nodes.slice(0, 5)) {
+      const response = await page.goto(url, {
+        waitUntil: "networkidle",
+        timeout: 30_000,
+      });
+
+      if (!response || !response.ok()) {
         console.error(
-          `    Target: ${node.target.join(" ")}`,
+          `FAIL: ${label} [${viewport.name}] returned HTTP ${response?.status() ?? "unknown"}`,
         );
+        failed = true;
+        continue;
+      }
+
+      const results = await new AxeBuilder({
+        page,
+      })
+        .withTags([
+          "wcag2a",
+          "wcag2aa",
+          "wcag21a",
+          "wcag21aa",
+        ])
+        .analyze();
+
+      if (results.violations.length === 0) {
+        console.log(`PASS: ${label} [${viewport.name}]`);
+        continue;
+      }
+
+      failed = true;
+      console.error(
+        `FAIL: ${label} [${viewport.name}] has ${results.violations.length} violation(s)`,
+      );
+
+      for (const violation of results.violations) {
         console.error(
-          `    ${node.failureSummary ?? "No failure summary"}`,
+          `  ${violation.id} [${violation.impact ?? "unknown"}]`,
         );
+        console.error(`  ${violation.help}`);
+
+        for (const node of violation.nodes.slice(0, 5)) {
+          console.error(
+            `    Target: ${node.target.join(" ")}`,
+          );
+          console.error(
+            `    ${node.failureSummary ?? "No failure summary"}`,
+          );
+        }
       }
     }
+
+    await context.close();
   }
 } finally {
   await browser.close();
