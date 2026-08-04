@@ -1762,6 +1762,11 @@ summary {
   -webkit-overflow-scrolling: touch;
 }
 
+.scientific-table-wrapper:focus-visible {
+  outline: 3px solid rgb(15 118 110 / 0.38);
+  outline-offset: 3px;
+}
+
 .scientific-table {
   width: 100%;
   min-width: 44rem;

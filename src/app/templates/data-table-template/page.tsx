@@ -218,7 +218,12 @@ export default function ScientificDataTableTemplatePage() {
                 Repeated-trials data table
               </h2>
 
-              <div className="scientific-table-wrapper">
+              <div
+                className="scientific-table-wrapper"
+                role="region"
+                aria-labelledby="primary-table-heading"
+                tabIndex={0}
+              >
                 <table className="scientific-table">
                   <thead>
                     <tr>
@@ -274,7 +279,12 @@ export default function ScientificDataTableTemplatePage() {
                 Observation record
               </h2>
 
-              <div className="scientific-table-wrapper">
+              <div
+                className="scientific-table-wrapper"
+                role="region"
+                aria-labelledby="observation-table-heading"
+                tabIndex={0}
+              >
                 <table className="scientific-table">
                   <thead>
                     <tr>
