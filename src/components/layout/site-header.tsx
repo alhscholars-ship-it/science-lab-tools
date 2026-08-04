@@ -17,6 +17,7 @@ export function SiteHeader() {
               {category.name}
             </Link>
           ))}
+          <Link href="/search">Search</Link>
         </nav>
 
         <details className="mobile-navigation">
@@ -44,6 +45,7 @@ export function SiteHeader() {
                 {category.name}
               </Link>
             ))}
+            <Link href="/search">Search</Link>
           </nav>
         </details>
       </Container>
