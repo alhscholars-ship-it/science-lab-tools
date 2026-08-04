@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import type { ReactNode } from "react";
 
+import { WebVitalsReporter } from "@/components/analytics/web-vitals-reporter";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { siteConfig } from "@/config/site";
@@ -113,6 +114,7 @@ export default function RootLayout({
                 });
               `}
             </Script>
+            <WebVitalsReporter />
           </>
         ) : null}
         <a className="skip-link" href="#main-content">
