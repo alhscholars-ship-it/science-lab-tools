@@ -40,6 +40,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: absoluteUrl("/formulas"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     ...calculators.map(({ href }) => ({
       url: absoluteUrl(href),
       changeFrequency: "monthly" as const,
