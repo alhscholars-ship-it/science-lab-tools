@@ -9,6 +9,21 @@ export type CalculatorDefinition = {
 
 export const calculators: readonly CalculatorDefinition[] = [
   {
+    slug: "scientific-unit-converter",
+    name: "Scientific Unit Converter",
+    shortDescription:
+      "Convert length, mass, temperature, volume, pressure, and energy units for science and laboratory work.",
+    category: "Laboratory",
+    href: "/calculators/scientific-unit-converter",
+    keywords: [
+      "scientific unit converter",
+      "metric unit converter",
+      "laboratory unit conversion",
+      "physics unit converter",
+      "chemistry unit converter",
+    ],
+  },
+  {
     slug: "percent-error-calculator",
     name: "Percent Error Calculator",
     shortDescription:
