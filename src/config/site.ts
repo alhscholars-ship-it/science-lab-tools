@@ -1,15 +1,15 @@
-const fallbackUrl = "http://localhost:3000";
-
-function normalizeUrl(value: string): string {
-  return value.replace(/\/+$/, "");
-}
+import { resolveSiteUrl } from "./site-url";
 
 export const siteConfig = {
   name: "Science Lab Tools",
   shortName: "Lab Tools",
   description:
     "Accurate science calculators, laboratory report templates, worksheets, and practical learning resources for students and teachers.",
-  url: normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL ?? fallbackUrl),
+  url: resolveSiteUrl({
+    configuredUrl: process.env.NEXT_PUBLIC_SITE_URL,
+    vercelProductionUrl:
+      process.env.VERCEL_PROJECT_PRODUCTION_URL,
+  }),
   locale: "en_US",
   language: "en",
   creator: "Science Lab Tools Editorial Team",
