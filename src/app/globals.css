@@ -2415,3 +2415,130 @@ summary {
     grid-template-columns: 1fr;
   }
 }
+
+.formula-jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.formula-jump-links a {
+  border: 1px solid rgb(255 255 255 / 0.45);
+  border-radius: 999px;
+  color: inherit;
+  padding: 0.65rem 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.formula-jump-links a:hover {
+  background: rgb(255 255 255 / 0.12);
+}
+
+.formula-guidance {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--brand-soft);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 4rem;
+}
+
+.formula-guidance h2,
+.formula-guidance p {
+  margin-block: 0;
+}
+
+.formula-guidance h2 {
+  color: var(--heading);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  letter-spacing: -0.035em;
+}
+
+.formula-guidance > p {
+  color: #475569;
+}
+
+.formula-guidance .formula-guidance__links {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.formula-guidance__links a {
+  color: var(--brand-dark);
+  font-weight: 800;
+}
+
+.formula-library-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.formula-library-card {
+  scroll-margin-top: 7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: white;
+  padding: 1.4rem;
+}
+
+.formula-library-card h3 {
+  margin: 0;
+  color: var(--heading);
+  font-size: 1.2rem;
+}
+
+.formula-library-card > p {
+  color: #475569;
+}
+
+.formula-library-card .formula-library-card__equation {
+  overflow-wrap: anywhere;
+  border-radius: 0.7rem;
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  padding: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.formula-library-card dl {
+  margin: 1rem 0;
+  color: #475569;
+  font-size: 0.92rem;
+}
+
+.formula-library-card dt {
+  color: var(--heading);
+  font-weight: 800;
+}
+
+.formula-library-card dd {
+  margin: 0.35rem 0 0;
+}
+
+.formula-library-card a {
+  color: var(--brand-dark);
+  font-weight: 800;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.formula-faq-section .container {
+  max-width: 52rem;
+}
+
+@media (max-width: 760px) {
+  .formula-guidance,
+  .formula-library-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
