@@ -19,7 +19,7 @@ function discoverPageRoutes(): string[] {
 
   return walk(appDirectory)
     .filter((file) => path.basename(file) === "page.tsx")
-    .filter((file) => !readFileSync(file, "utf8").match(/index:\\s*false/))
+    .filter((file) => !readFileSync(file, "utf8").match(/index:\s*false/))
     .map((file) => {
       const directory = path.relative(appDirectory, path.dirname(file));
       return directory ? `/${directory.split(path.sep).join("/")}` : "/";
