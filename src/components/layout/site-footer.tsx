@@ -23,6 +23,7 @@ export function SiteFooter() {
           <div>
             <h2 className="site-footer__heading">Resources</h2>
             <nav className="site-footer__links" aria-label="Footer resources">
+              <Link href="/search">Search all resources</Link>
               {siteConfig.categories.map((category) => (
                 <Link key={category.href} href={category.href}>
                   {category.name}
