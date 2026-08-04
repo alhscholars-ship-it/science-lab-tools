@@ -27,6 +27,7 @@ const ignoredTokens = new Set([
   "in",
   "into",
   "law",
+  "mole",
   "of",
   "or",
   "the",

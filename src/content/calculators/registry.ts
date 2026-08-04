@@ -265,6 +265,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     ],
   },
   {
+    slug: "mole-fraction-calculator",
+    name: "Mole Fraction Calculator",
+    shortDescription:
+      "Calculate mole fraction, component moles, total moles, and mole percent for chemical mixtures.",
+    category: "Chemistry",
+    href: "/calculators/mole-fraction-calculator",
+    keywords: [
+      "mole fraction calculator",
+      "mole percent calculator",
+      "component moles calculator",
+      "total moles calculator",
+      "mixture composition calculator",
+    ],
+  },
+  {
     slug: "pulley-calculator",
     name: "Pulley Calculator",
     shortDescription:
