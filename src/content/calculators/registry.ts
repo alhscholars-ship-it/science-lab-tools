@@ -9,6 +9,21 @@ export type CalculatorDefinition = {
 
 export const calculators: readonly CalculatorDefinition[] = [
   {
+    slug: "scientific-notation-calculator",
+    name: "Scientific Notation Calculator",
+    shortDescription:
+      "Convert decimals and calculate with normalized scientific notation using selectable significant figures.",
+    category: "Laboratory",
+    href: "/calculators/scientific-notation-calculator",
+    keywords: [
+      "scientific notation calculator",
+      "decimal to scientific notation",
+      "scientific notation converter",
+      "standard form calculator",
+      "scientific notation operations",
+    ],
+  },
+  {
     slug: "percent-error-calculator",
     name: "Percent Error Calculator",
     shortDescription:
