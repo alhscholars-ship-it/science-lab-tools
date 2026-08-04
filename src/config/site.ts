@@ -21,6 +21,12 @@ export const siteConfig = {
       href: "/calculators",
     },
     {
+      name: "Formula Library",
+      description:
+        "Essential physics, chemistry, and laboratory formulas with calculator links.",
+      href: "/formulas",
+    },
+    {
       name: "Lab Reports",
       description:
         "Templates and guidance for planning and writing laboratory reports.",
