@@ -2542,3 +2542,70 @@ summary {
   }
 }
 
+
+.site-search-form {
+  max-width: 54rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: white;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-search-form label {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: var(--heading);
+  font-weight: 800;
+}
+
+.site-search-form > div {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.site-search-form input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  padding: 0.85rem 1rem;
+  color: var(--heading);
+  font: inherit;
+}
+
+.site-search-form input:focus-visible {
+  outline: 3px solid rgb(15 118 110 / 0.25);
+  outline-offset: 2px;
+  border-color: var(--brand);
+}
+
+.site-search-results,
+.site-search-start {
+  margin-top: 3.5rem;
+}
+
+.site-search-start > h2 {
+  margin-top: 0;
+  color: var(--heading);
+}
+
+.site-search-empty {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  color: #475569;
+}
+
+.site-search-empty h3 {
+  margin-top: 0;
+  color: var(--heading);
+}
+
+@media (max-width: 600px) {
+  .site-search-form > div {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+

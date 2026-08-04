@@ -1,4 +1,4 @@
-import fs from "node:fs";
+import fs, { readFileSync } from "node:fs";
 import path from "node:path";
 
 import { describe, expect, it } from "vitest";
@@ -19,6 +19,7 @@ function discoverPageRoutes(): string[] {
 
   return walk(appDirectory)
     .filter((file) => path.basename(file) === "page.tsx")
+    .filter((file) => !readFileSync(file, "utf8").match(/index:\s*false/))
     .map((file) => {
       const directory = path.relative(appDirectory, path.dirname(file));
       return directory ? `/${directory.split(path.sep).join("/")}` : "/";
