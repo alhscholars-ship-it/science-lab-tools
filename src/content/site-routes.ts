@@ -12,6 +12,7 @@ export const sitemapRoutes: readonly SitemapRoute[] = [
   { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms-of-use", changeFrequency: "yearly", priority: 0.3 },
   { path: "/calculators", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/formulas", changeFrequency: "weekly", priority: 0.9 },
   { path: "/physics-calculators", changeFrequency: "weekly", priority: 0.9 },
   { path: "/chemistry-calculators", changeFrequency: "weekly", priority: 0.9 },
   { path: "/laboratory-calculators", changeFrequency: "weekly", priority: 0.9 },
