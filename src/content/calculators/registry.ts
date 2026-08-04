@@ -9,18 +9,18 @@ export type CalculatorDefinition = {
 
 export const calculators: readonly CalculatorDefinition[] = [
   {
-    slug: "scientific-notation-calculator",
-    name: "Scientific Notation Calculator",
+    slug: "scientific-unit-converter",
+    name: "Scientific Unit Converter",
     shortDescription:
-      "Convert decimals and calculate with normalized scientific notation using selectable significant figures.",
+      "Convert length, mass, temperature, volume, pressure, and energy units for science and laboratory work.",
     category: "Laboratory",
-    href: "/calculators/scientific-notation-calculator",
+    href: "/calculators/scientific-unit-converter",
     keywords: [
-      "scientific notation calculator",
-      "decimal to scientific notation",
-      "scientific notation converter",
-      "standard form calculator",
-      "scientific notation operations",
+      "scientific unit converter",
+      "metric unit converter",
+      "laboratory unit conversion",
+      "physics unit converter",
+      "chemistry unit converter",
     ],
   },
   {
@@ -1325,4 +1325,20 @@ export const calculators: readonly CalculatorDefinition[] = [
     href: "/calculators/specific-heat-calculator",
     keywords: ["specific heat calculator"],
   },
+  {
+    slug: "scientific-notation-calculator",
+    name: "Scientific Notation Calculator",
+    shortDescription:
+      "Convert decimals and calculate with normalized scientific notation using selectable significant figures.",
+    category: "Laboratory",
+    href: "/calculators/scientific-notation-calculator",
+    keywords: [
+      "scientific notation calculator",
+      "decimal to scientific notation",
+      "scientific notation converter",
+      "standard form calculator",
+      "scientific notation operations",
+    ],
+  },
+
 ];
