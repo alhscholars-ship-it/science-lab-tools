@@ -167,6 +167,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["molarity calculator", "moles and volume calculator"],
   },
   {
+    slug: "molality-calculator",
+    name: "Molality Calculator",
+    shortDescription:
+      "Calculate molality, solute moles, or solvent mass with automatic gram and kilogram conversion.",
+    category: "Chemistry",
+    href: "/calculators/molality-calculator",
+    keywords: [
+      "molality calculator",
+      "molal concentration calculator",
+      "moles per kilogram calculator",
+      "solute moles calculator",
+      "solvent mass calculator",
+    ],
+  },
+  {
     slug: "mass-moles-calculator",
     name: "Mass to Moles Calculator",
     shortDescription:

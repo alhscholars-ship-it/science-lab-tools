@@ -77,14 +77,14 @@ describe("related calculator selection", () => {
     ).toBe(true);
   });
 
-  it("connects molarity with chemistry calculation topics", () => {
+  it("connects molarity with solution-concentration topics", () => {
     const slugs = getRelatedCalculators(
       "molarity-calculator",
       4,
     ).map((calculator) => calculator.slug);
 
     expect(slugs).toContain(
-      "molecular-weight-calculator",
+      "molality-calculator",
     );
     expect(slugs).toContain("dilution-calculator");
   });
