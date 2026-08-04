@@ -5,6 +5,16 @@ import { calculators } from "../../content/calculators/registry";
 import { absoluteUrl } from "../../lib/seo/url";
 
 describe("sitemap calculator coverage", () => {
+  it("includes the formula library exactly once", () => {
+    const formulaLibraryUrl = absoluteUrl("/formulas");
+
+    expect(
+      sitemap().filter(
+        (entry) => entry.url === formulaLibraryUrl,
+      ),
+    ).toHaveLength(1);
+  });
+
   it("includes every calculator registry URL exactly once", () => {
     const sitemapUrls = sitemap().map((entry) => entry.url);
 
