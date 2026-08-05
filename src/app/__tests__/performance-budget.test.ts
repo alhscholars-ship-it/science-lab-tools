@@ -5,10 +5,6 @@ import { describe, expect, it } from "vitest";
 
 import { sitemapRoutes } from "../../content/site-routes";
 
-function isTopLevelRoute(routePath: string): boolean {
-  return routePath === "/" || routePath.slice(1).includes("/") === false;
-}
-
 function manifestPath(routePath: string): string {
   const appPath = routePath === "/" ? "" : routePath;
 
@@ -16,14 +12,16 @@ function manifestPath(routePath: string): string {
 }
 
 describe("performance budget route coverage", () => {
-  it("covers every high-priority top-level sitemap route", () => {
+  it("covers every high-priority non-calculator sitemap route", () => {
     const budgetScript = readFileSync(
       path.resolve("scripts/check-performance-budget.mjs"),
       "utf8",
     );
 
     const highPriorityRoutes = sitemapRoutes.filter(
-      (route) => route.priority >= 0.9 && isTopLevelRoute(route.path),
+      (route) =>
+        route.priority >= 0.9 &&
+        !route.path.startsWith("/calculators/"),
     );
 
     expect(highPriorityRoutes.length).toBeGreaterThan(0);
