@@ -16,14 +16,16 @@ function manifestPath(routePath: string): string {
   return `.next/server/app${appPath}/page_client-reference-manifest.js`;
 }
 
-function routePath(manifestPathValue: string): string {
+function routePath(manifestPathValue: string): `/${string}` {
   if (manifestPathValue === homepageManifest) {
     return "/";
   }
 
-  return manifestPathValue
+  const derivedPath = manifestPathValue
     .replace(".next/server/app", "")
     .replace("/page_client-reference-manifest.js", "");
+
+  return derivedPath as `/${string}`;
 }
 
 function configuredRoutes(): Record<string, string> {
