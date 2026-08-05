@@ -19,6 +19,8 @@ const fixedRoutes = {
     ".next/server/app/templates/page_client-reference-manifest.js",
   "Lab Reports hub":
     ".next/server/app/lab-reports/page_client-reference-manifest.js",
+  "How to write a lab report":
+    ".next/server/app/lab-reports/how-to-write-a-lab-report/page_client-reference-manifest.js",
   "Scientific Method hub":
     ".next/server/app/scientific-method/page_client-reference-manifest.js",
 };
