@@ -24,12 +24,14 @@ The previous Hostinger build used 63 workers while producing approximately 138
 routes. Four workers leave headroom below the account-wide 120-process limit
 for the existing Next.js and WordPress sites.
 
-The production `build` script runs one supported `next build --webpack`
-command. Next.js 16 defaults to the Rust-based Turbopack builder, whose native
-thread pools remained close to the Hostinger NPROC ceiling even after page
-workers were limited. Webpack mode avoids that uncontrolled native thread pool
-while producing the same standalone Next.js application. GitHub's route, SEO,
-performance, and accessibility checks protect output parity.
+The production `build` script runs one
+`UV_THREADPOOL_SIZE=1 next build --webpack` command. Next.js 16 defaults to the
+Rust-based Turbopack builder, whose native thread pools remained close to the
+Hostinger NPROC ceiling even after page workers were limited. Webpack mode
+avoids that uncontrolled native pool, while Node's documented
+`UV_THREADPOOL_SIZE` setting prevents each build worker from reserving the
+default four-thread libuv pool. GitHub's route, SEO, performance, and
+accessibility checks protect output parity.
 
 Run `pnpm verify:hostinger` before changing build scripts, the worker limit, or
 the package-manager version.
