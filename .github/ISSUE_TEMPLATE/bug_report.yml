@@ -1,0 +1,98 @@
+name: Bug report
+description: Report a reproducible calculator, content, accessibility, SEO, or application defect.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Science Lab Tools. Do not include vulnerabilities, credentials, personal data, or sensitive logs here. Follow the repository security policy for suspected security issues.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Select the area that best matches the problem.
+      options:
+        - Calculator or scientific result
+        - Formula library or educational content
+        - Search or navigation
+        - Accessibility
+        - SEO, metadata, sitemap, or structured data
+        - Layout or responsive design
+        - Build, deployment, or CI
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Affected URL or repository path
+      description: Provide the public route, file path, or workflow name where the problem occurs.
+      placeholder: "https://example.com/calculators/... or src/..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Problem summary
+      description: Describe the defect and its user impact clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include exact inputs, units, navigation steps, or commands.
+      placeholder: |
+        1. Open ...
+        2. Enter ...
+        3. Select ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior or result
+      description: For scientific defects, include the expected value, units, formula, assumptions, and a reliable reference when available.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior or result
+      description: Include the displayed value, error message, incorrect content, or observed accessibility behavior.
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Provide device, operating system, browser and version, or Node and pnpm versions where relevant.
+      placeholder: "Android 15 / Chrome 138, or Node 24 / pnpm 11.13.1"
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Additional evidence
+      description: Add screenshots, console output, reduced test cases, or source references. Remove secrets and personal data.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I searched existing issues and did not find the same problem.
+          required: true
+        - label: This report does not contain a security vulnerability or sensitive information.
+          required: true
+        - label: I included enough detail for another person to reproduce the issue.
+          required: true
