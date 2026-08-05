@@ -11,7 +11,7 @@ describe("validGa4MeasurementId", () => {
 
   it("disables analytics for missing or malformed IDs", () => {
     expect(validGa4MeasurementId(undefined)).toBeNull();
-    expect(validGa4MeasurementId("")) .toBeNull();
+    expect(validGa4MeasurementId("")).toBeNull();
     expect(validGa4MeasurementId("UA-12345-1")).toBeNull();
     expect(validGa4MeasurementId("G-ABC';alert(1)//")).toBeNull();
     expect(validGa4MeasurementId("G-ABC 123")).toBeNull();
