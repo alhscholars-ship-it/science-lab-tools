@@ -19,6 +19,7 @@ describe("security headers", () => {
       "Referrer-Policy": "strict-origin-when-cross-origin",
       "Cross-Origin-Opener-Policy": "same-origin",
       "Cross-Origin-Resource-Policy": "same-origin",
+      "Origin-Agent-Cluster": "?1",
       "X-DNS-Prefetch-Control": "off",
     });
   });
@@ -32,7 +33,24 @@ describe("security headers", () => {
     expect(csp).toContain("base-uri 'self'");
     expect(csp).toContain("form-action 'self'");
     expect(csp).toContain("frame-ancestors 'none'");
+    expect(csp).toContain("frame-src 'none'");
     expect(csp).toContain("object-src 'none'");
+    expect(csp).toContain("script-src-attr 'none'");
+    expect(csp).toContain("media-src 'self'");
     expect(csp).toContain("upgrade-insecure-requests");
+  });
+
+  it("disables browser capabilities the application does not use", () => {
+    const permissionsPolicy = createSecurityHeaders().find(
+      ({ key }) => key === "Permissions-Policy",
+    )?.value;
+
+    expect(permissionsPolicy).toContain("camera=()");
+    expect(permissionsPolicy).toContain("display-capture=()");
+    expect(permissionsPolicy).toContain("geolocation=()");
+    expect(permissionsPolicy).toContain("microphone=()");
+    expect(permissionsPolicy).toContain("payment=()");
+    expect(permissionsPolicy).toContain("publickey-credentials-get=()");
+    expect(permissionsPolicy).toContain("usb=()");
   });
 });
