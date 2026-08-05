@@ -74,6 +74,22 @@ describe("brand assets", () => {
     );
   });
 
+  it("defines a stable and scoped web app identity", () => {
+    expect(manifestSource).toContain('id: "/"');
+    expect(manifestSource).toContain('start_url: "/"');
+    expect(manifestSource).toContain('scope: "/"');
+    expect(manifestSource).toContain('display: "standalone"');
+    expect(manifestSource).toContain('orientation: "any"');
+  });
+
+  it("declares manifest language and categories", () => {
+    expect(manifestSource).toContain("lang: siteConfig.language");
+    expect(manifestSource).toContain('dir: "ltr"');
+    expect(manifestSource).toContain(
+      '["education", "science", "utilities"]',
+    );
+  });
+
   it("includes generated icons in the web manifest", () => {
     expect(manifestSource).toContain(
       'src: "/icon"',
