@@ -12,36 +12,78 @@ const fixedRoutes = JSON.parse(
 const calculatorManifestDirectory =
   ".next/server/app/calculators";
 
-const calculatorRoutes = Object.fromEntries(
-  fs
-    .readdirSync(calculatorManifestDirectory, {
-      withFileTypes: true,
-    })
-    .filter(
-      (entry) =>
-        entry.isDirectory() &&
-        entry.name.endsWith("-calculator"),
-    )
-    .map((entry) => [
-      entry.name
-        .replace(/-calculator$/, "")
-        .split("-")
-        .map(
-          (word) =>
-            word.charAt(0).toUpperCase() +
-            word.slice(1),
-        )
-        .join(" "),
-      {
-        manifest: path.join(
-          calculatorManifestDirectory,
-          entry.name,
-          "page_client-reference-manifest.js",
-        ),
-        budget: "calculator",
-      },
-    ]),
+if (!fs.existsSync(calculatorManifestDirectory)) {
+  throw new Error(
+    `Calculator manifest directory is missing: ${calculatorManifestDirectory}`,
+  );
+}
+
+const calculatorRouteEntries = fs
+  .readdirSync(calculatorManifestDirectory, {
+    withFileTypes: true,
+  })
+  .filter(
+    (entry) =>
+      entry.isDirectory() &&
+      entry.name.endsWith("-calculator"),
+  )
+  .map((entry) => [
+    entry.name
+      .replace(/-calculator$/, "")
+      .split("-")
+      .map(
+        (word) =>
+          word.charAt(0).toUpperCase() +
+          word.slice(1),
+      )
+      .join(" "),
+    {
+      manifest: path.join(
+        calculatorManifestDirectory,
+        entry.name,
+        "page_client-reference-manifest.js",
+      ),
+      budget: "calculator",
+    },
+  ]);
+
+if (calculatorRouteEntries.length === 0) {
+  throw new Error(
+    "No calculator routes were discovered for performance budgeting",
+  );
+}
+
+const fixedLabels = new Set(Object.keys(fixedRoutes));
+const fixedManifests = new Set(
+  Object.values(fixedRoutes).map((route) => route.manifest),
 );
+
+for (const [label, route] of calculatorRouteEntries) {
+  if (fixedLabels.has(label)) {
+    throw new Error(
+      `Calculator performance label conflicts with a configured route: ${label}`,
+    );
+  }
+
+  if (fixedManifests.has(route.manifest)) {
+    throw new Error(
+      `Calculator manifest conflicts with a configured route: ${route.manifest}`,
+    );
+  }
+}
+
+const calculatorRoutes = Object.fromEntries(
+  calculatorRouteEntries,
+);
+
+if (
+  Object.keys(calculatorRoutes).length !==
+  calculatorRouteEntries.length
+) {
+  throw new Error(
+    "Calculator performance labels are not unique",
+  );
+}
 
 const routes = {
   ...fixedRoutes,
