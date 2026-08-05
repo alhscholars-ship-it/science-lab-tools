@@ -10,7 +10,7 @@ const packageJson = JSON.parse(readFileSync(packagePath, "utf8"));
 const nextConfig = readFileSync(nextConfigPath, "utf8");
 const expectedPackageManager = "pnpm@11.12.0";
 const expectedWorkerLimit = 4;
-const expectedBuildScript = "RAYON_NUM_THREADS=4 next build";
+const expectedBuildScript = "next build --webpack";
 const failures = [];
 
 function walk(directory) {
