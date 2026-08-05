@@ -24,6 +24,12 @@ The previous Hostinger build used 63 workers while producing approximately 138
 routes. Four workers leave headroom below the account-wide 120-process limit
 for the existing Next.js and WordPress sites.
 
+The production `build` script also exports `RAYON_NUM_THREADS=4` for its one
+`next build` command. Turbopack is Rust-based and its Rayon worker pool otherwise
+sizes itself from the host's logical CPU count. The environment limit prevents
+the compiler from recreating high thread fan-out before Next.js reaches static
+generation. It does not suppress build errors or add another build command.
+
 Run `pnpm verify:hostinger` before changing build scripts, the worker limit, or
 the package-manager version.
 

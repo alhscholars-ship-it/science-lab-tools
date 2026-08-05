@@ -10,6 +10,7 @@ const packageJson = JSON.parse(readFileSync(packagePath, "utf8"));
 const nextConfig = readFileSync(nextConfigPath, "utf8");
 const expectedPackageManager = "pnpm@11.12.0";
 const expectedWorkerLimit = 4;
+const expectedBuildScript = "RAYON_NUM_THREADS=4 next build";
 const failures = [];
 
 function walk(directory) {
@@ -62,8 +63,10 @@ if (
   );
 }
 
-if (buildScript !== "next build") {
-  failures.push('The production build script must be exactly "next build".');
+if (buildScript !== expectedBuildScript) {
+  failures.push(
+    `The production build script must be exactly "${expectedBuildScript}".`,
+  );
 }
 
 if (startScript !== "node scripts/start-standalone.mjs") {
