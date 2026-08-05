@@ -58,10 +58,12 @@ describe("performance budget route configuration", () => {
     );
 
     for (const manifest of Object.values(configuredRoutes())) {
+      const configuredPath = routePath(manifest);
+
       expect(
-        sitemapPaths,
-        `${routePath(manifest)} is not a public sitemap route`,
-      ).toContain(routePath(manifest));
+        sitemapPaths.has(configuredPath),
+        `${configuredPath} is not a public sitemap route`,
+      ).toBe(true);
     }
   });
 
