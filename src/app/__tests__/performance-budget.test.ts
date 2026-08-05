@@ -9,6 +9,16 @@ const homepageManifest =
   ".next/server/app/page_client-reference-manifest.js";
 const manifestPattern =
   /^\.next\/server\/app(?:\/[a-z0-9-]+)*\/page_client-reference-manifest\.js$/;
+const budgetClasses = new Set([
+  "shared",
+  "directory",
+  "static",
+]);
+
+type ConfiguredRoute = {
+  manifest: string;
+  budget: string;
+};
 
 function manifestPath(routePath: string): string {
   const appPath = routePath === "/" ? "" : routePath;
@@ -28,30 +38,43 @@ function routePath(manifestPathValue: string): `/${string}` {
   return derivedPath as `/${string}`;
 }
 
-function configuredRoutes(): Record<string, string> {
+function configuredRoutes(): Record<string, ConfiguredRoute> {
   return JSON.parse(
     readFileSync(
       path.resolve("scripts/performance-budget-routes.json"),
       "utf8",
     ),
-  ) as Record<string, string>;
+  ) as Record<string, ConfiguredRoute>;
 }
 
 describe("performance budget route configuration", () => {
-  it("uses valid, unique labels and manifest paths", () => {
+  it("uses valid, unique labels, manifests, and budget classes", () => {
     const routes = configuredRoutes();
     const entries = Object.entries(routes);
-    const manifests = entries.map(([, manifest]) => manifest);
+    const manifests = entries.map(([, route]) => route.manifest);
 
     expect(entries.length).toBeGreaterThan(0);
-    expect(routes.Homepage).toBe(homepageManifest);
+    expect(routes.Homepage).toEqual({
+      manifest: homepageManifest,
+      budget: "shared",
+    });
     expect(new Set(manifests).size).toBe(manifests.length);
 
-    for (const [label, manifest] of entries) {
+    for (const [label, route] of entries) {
       expect(label.trim()).toBe(label);
       expect(label.length).toBeGreaterThan(0);
-      expect(manifest).toMatch(manifestPattern);
+      expect(route.manifest).toMatch(manifestPattern);
+      expect(budgetClasses.has(route.budget)).toBe(true);
     }
+  });
+
+  it("assigns exactly one shared and one directory budget", () => {
+    const budgets = Object.values(configuredRoutes()).map(
+      (route) => route.budget,
+    );
+
+    expect(budgets.filter((budget) => budget === "shared")).toHaveLength(1);
+    expect(budgets.filter((budget) => budget === "directory")).toHaveLength(1);
   });
 
   it("only references public sitemap routes", () => {
@@ -59,8 +82,8 @@ describe("performance budget route configuration", () => {
       sitemapRoutes.map((route) => route.path),
     );
 
-    for (const manifest of Object.values(configuredRoutes())) {
-      const configuredPath = routePath(manifest);
+    for (const route of Object.values(configuredRoutes())) {
+      const configuredPath = routePath(route.manifest);
 
       expect(
         sitemapPaths.has(configuredPath),
@@ -70,7 +93,9 @@ describe("performance budget route configuration", () => {
   });
 
   it("covers every high-priority non-calculator sitemap route", () => {
-    const manifests = Object.values(configuredRoutes());
+    const manifests = Object.values(configuredRoutes()).map(
+      (route) => route.manifest,
+    );
 
     const highPriorityRoutes = sitemapRoutes.filter(
       (route) =>
