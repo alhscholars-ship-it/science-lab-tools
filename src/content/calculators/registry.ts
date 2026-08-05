@@ -182,6 +182,21 @@ export const calculators: readonly CalculatorDefinition[] = [
     keywords: ["molarity calculator", "moles and volume calculator"],
   },
   {
+    slug: "normality-calculator",
+    name: "Normality Calculator",
+    shortDescription:
+      "Calculate normality, reactive equivalents, or solution volume with automatic liter and milliliter conversion.",
+    category: "Chemistry",
+    href: "/calculators/normality-calculator",
+    keywords: [
+      "normality calculator",
+      "equivalents per liter calculator",
+      "normal concentration calculator",
+      "solution normality calculator",
+      "equivalent concentration calculator",
+    ],
+  },
+  {
     slug: "molality-calculator",
     name: "Molality Calculator",
     shortDescription:

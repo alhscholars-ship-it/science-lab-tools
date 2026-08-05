@@ -39,6 +39,8 @@ const integratedPages = [
   "inductive-reactance-calculator",
   "inductor-energy-calculator",
   "linear-regression-calculator",
+  "scientific-notation-calculator",
+  "scientific-unit-converter",
   "magnetic-field-calculator",
   "ohms-law-calculator",
   "rc-time-constant-calculator",
@@ -73,6 +75,7 @@ const integratedPages = [
   "density-calculator",
   "kirchhoffs-law-calculator",
   "molarity-calculator",
+  "normality-calculator",
   "molality-calculator",
   "mole-fraction-calculator",
   "molecular-weight-calculator",
@@ -102,7 +105,7 @@ function readCalculatorPage(slug: string): string {
 
 describe("related calculators rollout coverage", () => {
   it("covers the expected integrated calculator pages", () => {
-    expect(integratedPages).toHaveLength(87);
+    expect(integratedPages).toHaveLength(90);
     expect(new Set(integratedPages).size).toBe(
       integratedPages.length,
     );
