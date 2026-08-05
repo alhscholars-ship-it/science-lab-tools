@@ -2,28 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
 
-const fixedRoutes = {
-  Homepage:
-    ".next/server/app/page_client-reference-manifest.js",
-  "Calculators hub":
-    ".next/server/app/calculators/page_client-reference-manifest.js",
-  "Physics calculators hub":
-    ".next/server/app/physics-calculators/page_client-reference-manifest.js",
-  "Chemistry calculators hub":
-    ".next/server/app/chemistry-calculators/page_client-reference-manifest.js",
-  "Laboratory calculators hub":
-    ".next/server/app/laboratory-calculators/page_client-reference-manifest.js",
-  "Formula library":
-    ".next/server/app/formulas/page_client-reference-manifest.js",
-  "Templates hub":
-    ".next/server/app/templates/page_client-reference-manifest.js",
-  "Lab Reports hub":
-    ".next/server/app/lab-reports/page_client-reference-manifest.js",
-  "How to write a lab report":
-    ".next/server/app/lab-reports/how-to-write-a-lab-report/page_client-reference-manifest.js",
-  "Scientific Method hub":
-    ".next/server/app/scientific-method/page_client-reference-manifest.js",
-};
+const fixedRoutes = JSON.parse(
+  fs.readFileSync(
+    new URL("./performance-budget-routes.json", import.meta.url),
+    "utf8",
+  ),
+);
 
 const calculatorManifestDirectory =
   ".next/server/app/calculators";
