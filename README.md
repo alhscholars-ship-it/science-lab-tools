@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Science Lab Tools
 
-## Getting Started
+Science Lab Tools is a fast, accessible collection of science calculators, laboratory report templates, worksheets, formula references, and practical learning resources for students, teachers, and homeschool families.
 
-First, run the development server:
+## What the project provides
+
+- Chemistry, physics, and laboratory calculators with formulas, units, worked steps, and explanations
+- Laboratory report guidance and reusable practical-work templates
+- Scientific-method resources for hypotheses, variables, observations, and experiments
+- Formula references connected to relevant calculators
+- Crawlable, server-rendered pages with page-level metadata and structured data
+- Responsive, keyboard-accessible interfaces designed for classroom and independent study
+
+## Quality and SEO foundations
+
+The application includes automated checks for:
+
+- TypeScript correctness and ESLint rules
+- Unit and regression tests
+- Internal links and route integrity
+- Metadata, canonical URLs, robots directives, sitemap coverage, and structured data
+- Performance budgets and production builds
+- Automated accessibility testing with axe and Playwright
+
+The site uses Next.js App Router, React, TypeScript, and Tailwind CSS. It includes XML sitemap and robots generation, Open Graph and Twitter metadata, JSON-LD, Web Vitals reporting, canonical URL handling, and production security headers.
+
+## Local development
+
+### Requirements
+
+- Node.js 24
+- pnpm 11
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install --frozen-lockfile
+cp .env.example .env.local
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Use `.env.example` as the source of truth. The production site must define `NEXT_PUBLIC_SITE_URL` with the canonical HTTPS origin. Optional verification and analytics variables can be added for Google Search Console, Bing Webmaster Tools, and Google Analytics.
 
-## Learn More
+## Validation commands
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm check:links
+pnpm build
+pnpm check:seo
+pnpm check:performance
+pnpm check:a11y
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run the complete non-browser quality pipeline with:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm check
+```
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+src/app/              Routes, metadata endpoints, and page composition
+src/components/       Shared layout, UI, calculator, and analytics components
+src/content/          Calculator registry, routes, and educational content
+src/lib/              Calculation, validation, formatting, and SEO utilities
+scripts/               SEO, link, accessibility, and performance checks
+public/                Static brand and public assets
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Content and product principles
+
+New calculators or resources should solve a clear user problem, provide accurate formulas and units, include explanatory content, link to related resources, and pass the existing quality checks. Avoid thin, duplicate, speculative, or keyword-stuffed pages. Remove code or content only after confirming it is unused and covered by tests or repository-wide references.
+
+## Contributing
+
+Before opening a pull request, run the relevant tests and `pnpm check`. For user-facing pages, verify mobile behavior, keyboard navigation, metadata, structured data, internal links, and scientific accuracy.
+
+## License
+
+This repository is currently marked `UNLICENSED`. No reuse rights are granted unless the repository owner adds an explicit license.
