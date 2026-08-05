@@ -1,0 +1,25 @@
+# Default owner for all repository changes.
+* @alhscholars-ship-it
+
+# Repository automation and security-sensitive configuration.
+/.github/ @alhscholars-ship-it
+/next.config.* @alhscholars-ship-it
+/package.json @alhscholars-ship-it
+/pnpm-lock.yaml @alhscholars-ship-it
+
+# Search, SEO, metadata, routing, and public indexing behavior.
+/src/app/ @alhscholars-ship-it
+/src/lib/seo* @alhscholars-ship-it
+/src/content/ @alhscholars-ship-it
+/scripts/ @alhscholars-ship-it
+
+# Calculator implementation and scientific behavior.
+/src/components/calculators/ @alhscholars-ship-it
+/src/lib/calculations/ @alhscholars-ship-it
+/src/lib/validation/ @alhscholars-ship-it
+
+# Public assets and project governance.
+/public/ @alhscholars-ship-it
+/README.md @alhscholars-ship-it
+/SECURITY.md @alhscholars-ship-it
+/docs/ @alhscholars-ship-it
