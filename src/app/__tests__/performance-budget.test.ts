@@ -13,9 +13,13 @@ function manifestPath(routePath: string): string {
 
 describe("performance budget route coverage", () => {
   it("covers every high-priority non-calculator sitemap route", () => {
-    const budgetScript = readFileSync(
-      path.resolve("scripts/check-performance-budget.mjs"),
-      "utf8",
+    const configuredRoutes = Object.values(
+      JSON.parse(
+        readFileSync(
+          path.resolve("scripts/performance-budget-routes.json"),
+          "utf8",
+        ),
+      ) as Record<string, string>,
     );
 
     const highPriorityRoutes = sitemapRoutes.filter(
@@ -28,7 +32,7 @@ describe("performance budget route coverage", () => {
 
     for (const route of highPriorityRoutes) {
       expect(
-        budgetScript,
+        configuredRoutes,
         `${route.path} is missing from the performance budget`,
       ).toContain(manifestPath(route.path));
     }
