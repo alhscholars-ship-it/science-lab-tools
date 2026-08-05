@@ -36,6 +36,7 @@ export const siteSearchIndex: readonly SearchResource[] = [
     type: "Formula" as const,
     category: item.category,
     keywords: [
+      item.slug,
       `${item.name} formula`,
       item.equation,
       ...item.variables,
