@@ -72,13 +72,35 @@ export const viewport: Viewport = {
 const gaMeasurementId =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
-const organizationSchema = {
+const organizationId = absoluteUrl("/#organization");
+const websiteId = absoluteUrl("/#website");
+
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: siteConfig.name,
-  url: siteConfig.url,
-  description: siteConfig.description,
-  logo: absoluteUrl("/favicon.ico"),
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": organizationId,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      description: siteConfig.description,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/brand/science-lab-tools-mark.svg"),
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: siteConfig.url,
+      name: siteConfig.name,
+      description: siteConfig.description,
+      inLanguage: siteConfig.language,
+      publisher: {
+        "@id": organizationId,
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -92,7 +114,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
         {gaMeasurementId ? (
