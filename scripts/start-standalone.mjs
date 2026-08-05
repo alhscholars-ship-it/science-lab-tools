@@ -41,9 +41,38 @@ const server = spawn(process.execPath, [serverFile], {
   stdio: "inherit",
 });
 
+let forwardedSignal;
+
+function forwardShutdownSignal(signal) {
+  if (forwardedSignal || server.exitCode !== null) {
+    return;
+  }
+
+  forwardedSignal = signal;
+  server.kill(signal);
+}
+
+process.once("SIGTERM", () => {
+  forwardShutdownSignal("SIGTERM");
+});
+
+process.once("SIGINT", () => {
+  forwardShutdownSignal("SIGINT");
+});
+
+server.on("error", (error) => {
+  console.error("Failed to start the standalone server.", error);
+  process.exitCode = 1;
+});
+
 server.on("exit", (code, signal) => {
+  if (forwardedSignal) {
+    process.exit(0);
+    return;
+  }
+
   if (signal) {
-    process.kill(process.pid, signal);
+    process.exitCode = 1;
     return;
   }
 

@@ -50,8 +50,14 @@ jobs:
       - name: Test
         run: pnpm test
 
+      - name: Verify Hostinger build safety
+        run: pnpm verify:hostinger
+
+      - name: Validate internal route graph
+        run: pnpm check:links
+
       - name: Build production application
-        run: pnpm build
+        run: pnpm build:measure
 
       - name: Validate rendered SEO output
         run: pnpm check:seo
