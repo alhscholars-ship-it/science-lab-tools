@@ -32,11 +32,14 @@ const calculatorRoutes = Object.fromEntries(
             word.slice(1),
         )
         .join(" "),
-      path.join(
-        calculatorManifestDirectory,
-        entry.name,
-        "page_client-reference-manifest.js",
-      ),
+      {
+        manifest: path.join(
+          calculatorManifestDirectory,
+          entry.name,
+          "page_client-reference-manifest.js",
+        ),
+        budget: "calculator",
+      },
     ]),
 );
 
@@ -45,10 +48,12 @@ const routes = {
   ...calculatorRoutes,
 };
 
-const sharedGzipBudget = 25 * 1024;
-const calculatorUniqueGzipBudget = 8 * 1024;
-const calculatorsHubUniqueGzipBudget = 2 * 1024;
-const staticUniqueGzipBudget = 512;
+const budgetLimits = {
+  shared: 25 * 1024,
+  calculator: 8 * 1024,
+  directory: 2 * 1024,
+  static: 512,
+};
 
 function parseManifest(manifestPath) {
   const source = fs.readFileSync(manifestPath, "utf8");
@@ -111,21 +116,30 @@ function gzipSize(chunk) {
 
 const routeChunks = new Map();
 
-for (const [label, manifestPath] of Object.entries(routes)) {
-  if (!fs.existsSync(manifestPath)) {
-    throw new Error(`Manifest missing: ${manifestPath}`);
+for (const [label, route] of Object.entries(routes)) {
+  if (!Object.hasOwn(budgetLimits, route.budget)) {
+    throw new Error(
+      `Unknown performance budget class for ${label}: ${route.budget}`,
+    );
   }
 
-  routeChunks.set(
-    label,
-    getChunks(parseManifest(manifestPath)),
-  );
+  if (!fs.existsSync(route.manifest)) {
+    throw new Error(`Manifest missing: ${route.manifest}`);
+  }
+
+  routeChunks.set(label, {
+    chunks: getChunks(parseManifest(route.manifest)),
+    budget: route.budget,
+  });
 }
 
-const homepageChunks = new Set(
-  routeChunks.get("Homepage"),
-);
+const homepage = routeChunks.get("Homepage");
 
+if (!homepage) {
+  throw new Error("Homepage performance route is missing");
+}
+
+const homepageChunks = new Set(homepage.chunks);
 const homepageGzip = [...homepageChunks].reduce(
   (total, chunk) => total + gzipSize(chunk),
   0,
@@ -138,17 +152,17 @@ console.log(
   `Shared homepage JavaScript: ${(homepageGzip / 1024).toFixed(1)} KB gzip`,
 );
 
-if (homepageGzip > sharedGzipBudget) {
+if (homepageGzip > budgetLimits.shared) {
   console.error(
-    `FAIL: shared JavaScript exceeds ${(sharedGzipBudget / 1024).toFixed(0)} KB gzip`,
+    `FAIL: shared JavaScript exceeds ${(budgetLimits.shared / 1024).toFixed(0)} KB gzip`,
   );
   failed = true;
 } else {
   console.log("PASS: shared JavaScript budget");
 }
 
-for (const [label, chunks] of routeChunks) {
-  const uniqueChunks = chunks.filter(
+for (const [label, route] of routeChunks) {
+  const uniqueChunks = route.chunks.filter(
     (chunk) => !homepageChunks.has(chunk),
   );
 
@@ -156,15 +170,7 @@ for (const [label, chunks] of routeChunks) {
     (total, chunk) => total + gzipSize(chunk),
     0,
   );
-
-  const isCalculator =
-    Object.hasOwn(calculatorRoutes, label);
-
-  const budget = isCalculator
-    ? calculatorUniqueGzipBudget
-    : label === "Calculators hub"
-      ? calculatorsHubUniqueGzipBudget
-      : staticUniqueGzipBudget;
+  const budget = budgetLimits[route.budget];
 
   console.log(
     `${label}: ${(uniqueGzip / 1024).toFixed(1)} KB unique gzip`,
