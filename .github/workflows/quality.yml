@@ -49,6 +49,9 @@ jobs:
       - name: Test
         run: pnpm test
 
+      - name: Validate internal links
+        run: pnpm check:links
+
       - name: Build production application
         run: pnpm build
 
