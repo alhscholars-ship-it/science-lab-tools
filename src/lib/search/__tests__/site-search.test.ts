@@ -18,7 +18,7 @@ describe("site search", () => {
     expect(new Set(siteSearchIndex.map(({ href }) => href)).size).toBe(expectedCount);
   });
 
-  it("ranks exact and title matches ahead of description-only matches", () => {
+  it("ranks calculator intent ahead of supporting formula entries", () => {
     const results = searchSite("molarity");
     expect(results[0].href).toBe("/calculators/molarity-calculator");
   });
@@ -37,6 +37,19 @@ describe("site search", () => {
     );
 
     expect(formula?.href).toBe("/formulas#ohms-law");
+  });
+
+  it("requires every meaningful query term to match", () => {
+    const results = searchSite("ohms law formula");
+
+    expect(
+      results.some(({ href }) => href === "/formulas#ideal-gas-law"),
+    ).toBe(false);
+  });
+
+  it("honors explicit resource-type intent", () => {
+    expect(searchSite("molarity formula")[0].type).toBe("Formula");
+    expect(searchSite("molarity calculator")[0].type).toBe("Calculator");
   });
 
   it("normalizes punctuation and enforces limits", () => {
