@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "UV_THREADPOOL_SIZE=1 next build --webpack",
+    "build:measure": "node scripts/measure-build-processes.mjs",
     "start": "node scripts/start-standalone.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -15,6 +16,7 @@
     "test:watch": "vitest",
     "check:performance": "node scripts/check-performance-budget.mjs",
     "check:a11y": "node scripts/check-accessibility.mjs",
+    "verify:hostinger": "node scripts/verify-hostinger-build-safety.mjs",
     "seo:audit": "node scripts/seo/audit-pages.mjs",
     "seo:audit:live": "node scripts/seo/audit-live-site.mjs"
   },
@@ -39,6 +41,13 @@
   "description": "Science laboratory calculators, report templates, worksheets, and practical learning tools for students and teachers.",
   "license": "UNLICENSED",
   "packageManager": "pnpm@11.12.0",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.12.0",
+      "onFail": "error"
+    }
+  },
   "engines": {
     "node": ">=24.0.0 <25",
     "pnpm": ">=11.9.0 <12"
