@@ -1,12 +1,42 @@
 {
-  "Homepage": ".next/server/app/page_client-reference-manifest.js",
-  "Calculators hub": ".next/server/app/calculators/page_client-reference-manifest.js",
-  "Physics calculators hub": ".next/server/app/physics-calculators/page_client-reference-manifest.js",
-  "Chemistry calculators hub": ".next/server/app/chemistry-calculators/page_client-reference-manifest.js",
-  "Laboratory calculators hub": ".next/server/app/laboratory-calculators/page_client-reference-manifest.js",
-  "Formula library": ".next/server/app/formulas/page_client-reference-manifest.js",
-  "Templates hub": ".next/server/app/templates/page_client-reference-manifest.js",
-  "Lab Reports hub": ".next/server/app/lab-reports/page_client-reference-manifest.js",
-  "How to write a lab report": ".next/server/app/lab-reports/how-to-write-a-lab-report/page_client-reference-manifest.js",
-  "Scientific Method hub": ".next/server/app/scientific-method/page_client-reference-manifest.js"
+  "Homepage": {
+    "manifest": ".next/server/app/page_client-reference-manifest.js",
+    "budget": "shared"
+  },
+  "Calculators hub": {
+    "manifest": ".next/server/app/calculators/page_client-reference-manifest.js",
+    "budget": "directory"
+  },
+  "Physics calculators hub": {
+    "manifest": ".next/server/app/physics-calculators/page_client-reference-manifest.js",
+    "budget": "static"
+  },
+  "Chemistry calculators hub": {
+    "manifest": ".next/server/app/chemistry-calculators/page_client-reference-manifest.js",
+    "budget": "static"
+  },
+  "Laboratory calculators hub": {
+    "manifest": ".next/server/app/laboratory-calculators/page_client-reference-manifest.js",
+    "budget": "static"
+  },
+  "Formula library": {
+    "manifest": ".next/server/app/formulas/page_client-reference-manifest.js",
+    "budget": "static"
+  },
+  "Templates hub": {
+    "manifest": ".next/server/app/templates/page_client-reference-manifest.js",
+    "budget": "static"
+  },
+  "Lab Reports hub": {
+    "manifest": ".next/server/app/lab-reports/page_client-reference-manifest.js",
+    "budget": "static"
+  },
+  "How to write a lab report": {
+    "manifest": ".next/server/app/lab-reports/how-to-write-a-lab-report/page_client-reference-manifest.js",
+    "budget": "static"
+  },
+  "Scientific Method hub": {
+    "manifest": ".next/server/app/scientific-method/page_client-reference-manifest.js",
+    "budget": "static"
+  }
 }
