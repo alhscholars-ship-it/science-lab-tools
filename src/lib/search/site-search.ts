@@ -1,10 +1,12 @@
 import { calculators } from "@/content/calculators/registry";
+import { scienceFormulas } from "@/content/formulas/registry";
 import { labReportResources } from "@/content/lab-reports/registry";
 import { scientificMethodResources } from "@/content/scientific-method/registry";
 import { templateResources } from "@/content/templates/registry";
 
 export type SearchResourceType =
   | "Calculator"
+  | "Formula"
   | "Lab Report Guide"
   | "Scientific Method Guide"
   | "Template";
@@ -26,6 +28,18 @@ export const siteSearchIndex: readonly SearchResource[] = [
     type: "Calculator" as const,
     category: item.category,
     keywords: item.keywords,
+  })),
+  ...scienceFormulas.map((item) => ({
+    title: item.name,
+    description: `${item.description} Formula: ${item.equation}`,
+    href: `/formulas#${item.slug}`,
+    type: "Formula" as const,
+    category: item.category,
+    keywords: [
+      `${item.name} formula`,
+      item.equation,
+      ...item.variables,
+    ],
   })),
   ...labReportResources.map((item) => ({
     title: item.title,
