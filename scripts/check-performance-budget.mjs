@@ -7,6 +7,8 @@ const fixedRoutes = {
     ".next/server/app/page_client-reference-manifest.js",
   "Calculators hub":
     ".next/server/app/calculators/page_client-reference-manifest.js",
+  "Formula library":
+    ".next/server/app/formulas/page_client-reference-manifest.js",
   "Templates hub":
     ".next/server/app/templates/page_client-reference-manifest.js",
   "Lab Reports hub":
@@ -50,7 +52,6 @@ const routes = {
   ...fixedRoutes,
   ...calculatorRoutes,
 };
-
 
 const sharedGzipBudget = 25 * 1024;
 const calculatorUniqueGzipBudget = 8 * 1024;
