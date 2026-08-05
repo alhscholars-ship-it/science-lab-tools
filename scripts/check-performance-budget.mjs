@@ -7,6 +7,10 @@ const fixedRoutes = {
     ".next/server/app/page_client-reference-manifest.js",
   "Calculators hub":
     ".next/server/app/calculators/page_client-reference-manifest.js",
+  "Chemistry calculators hub":
+    ".next/server/app/chemistry-calculators/page_client-reference-manifest.js",
+  "Laboratory calculators hub":
+    ".next/server/app/laboratory-calculators/page_client-reference-manifest.js",
   "Formula library":
     ".next/server/app/formulas/page_client-reference-manifest.js",
   "Templates hub":
