@@ -6,6 +6,7 @@ import { WebVitalsReporter } from "@/components/analytics/web-vitals-reporter";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { siteConfig } from "@/config/site";
+import { validGa4MeasurementId } from "@/lib/analytics/measurement-id";
 import { absoluteUrl } from "@/lib/seo/url";
 
 import "./globals.css";
@@ -69,16 +70,39 @@ export const viewport: Viewport = {
   themeColor: "#0f172a",
 };
 
-const gaMeasurementId =
-  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gaMeasurementId = validGa4MeasurementId(
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+);
 
-const organizationSchema = {
+const organizationId = absoluteUrl("/#organization");
+const websiteId = absoluteUrl("/#website");
+
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: siteConfig.name,
-  url: siteConfig.url,
-  description: siteConfig.description,
-  logo: absoluteUrl("/favicon.ico"),
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": organizationId,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      description: siteConfig.description,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/brand/science-lab-tools-mark.svg"),
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: siteConfig.url,
+      name: siteConfig.name,
+      description: siteConfig.description,
+      inLanguage: siteConfig.language,
+      publisher: {
+        "@id": organizationId,
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -92,7 +116,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
         {gaMeasurementId ? (
