@@ -21,6 +21,8 @@ updates:
         update-types:
           - minor
           - patch
+    commit-message:
+      prefix: deps
 
   - package-ecosystem: github-actions
     directory: /
@@ -31,3 +33,12 @@ updates:
       timezone: Asia/Karachi
     open-pull-requests-limit: 3
     rebase-strategy: auto
+    groups:
+      actions-minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
+    commit-message:
+      prefix: ci
