@@ -6,6 +6,7 @@ import { WebVitalsReporter } from "@/components/analytics/web-vitals-reporter";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { siteConfig } from "@/config/site";
+import { validGa4MeasurementId } from "@/lib/analytics/measurement-id";
 import { absoluteUrl } from "@/lib/seo/url";
 
 import "./globals.css";
@@ -69,8 +70,9 @@ export const viewport: Viewport = {
   themeColor: "#0f172a",
 };
 
-const gaMeasurementId =
-  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gaMeasurementId = validGa4MeasurementId(
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+);
 
 const organizationId = absoluteUrl("/#organization");
 const websiteId = absoluteUrl("/#website");
