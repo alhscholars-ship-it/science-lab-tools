@@ -5,43 +5,43 @@ function normalizeUrl(value: string): string {
 }
 
 export const siteConfig = {
-  name: "Science Lab Tools",
-  shortName: "Lab Tools",
+  name: "ALH Science Hub",
+  shortName: "ALH Science",
   description:
-    "Accurate science calculators, laboratory report templates, worksheets, and practical learning resources for students and teachers.",
+    "A focused learning platform for interactive science calculators, formula practice, experiment planning, and laboratory reporting.",
   url: normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL ?? fallbackUrl),
   locale: "en_US",
   language: "en",
-  creator: "Science Lab Tools Editorial Team",
+  creator: "ALH Scholars",
   categories: [
     {
-      name: "Lab Calculators",
+      name: "Calculate",
       description:
-        "Interactive chemistry, physics, and laboratory calculation tools.",
+        "Solve common chemistry, physics, and laboratory calculations with guided steps.",
       href: "/calculators",
     },
     {
-      name: "Formula Library",
+      name: "Study Formulas",
       description:
-        "Essential physics, chemistry, and laboratory formulas with calculator links.",
+        "Review essential equations, variables, units, and worked applications.",
       href: "/formulas",
     },
     {
-      name: "Lab Reports",
+      name: "Write Reports",
       description:
-        "Templates and guidance for planning and writing laboratory reports.",
+        "Structure observations, methods, results, analysis, and conclusions clearly.",
       href: "/lab-reports",
     },
     {
-      name: "Scientific Method",
+      name: "Plan Experiments",
       description:
-        "Resources for hypotheses, variables, observations, and experiments.",
+        "Build stronger hypotheses, variables, controls, and repeatable procedures.",
       href: "/scientific-method",
     },
     {
-      name: "Templates",
+      name: "Download Resources",
       description:
-        "Printable laboratory worksheets, data tables, and report templates.",
+        "Use classroom-ready worksheets, data tables, and practical templates.",
       href: "/templates",
     },
   ],
