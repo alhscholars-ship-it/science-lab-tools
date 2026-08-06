@@ -4,49 +4,40 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { calculators } from "@/content/calculators/registry";
 
-const popularCalculatorSlugs = [
-  "percent-error-calculator",
-  "significant-figures-calculator",
+const featuredCalculatorSlugs = [
   "molarity-calculator",
-  "force-calculator",
   "density-calculator",
-  "kinetic-energy-calculator",
-  "momentum-calculator",
+  "force-calculator",
   "projectile-motion-calculator",
 ] as const;
 
-const popularCalculators = popularCalculatorSlugs.map((slug) => {
-  const calculator = calculators.find(
-    (item) => item.slug === slug,
-  );
+const featuredCalculators = featuredCalculatorSlugs.map((slug) => {
+  const calculator = calculators.find((item) => item.slug === slug);
 
   if (!calculator) {
-    throw new Error(
-      `Popular calculator not found: ${slug}`,
-    );
+    throw new Error(`Featured calculator not found: ${slug}`);
   }
 
   return calculator;
 });
 
-const trustPoints = [
+const learningPath = [
   {
-    title: "Formula checked",
+    title: "Choose the problem",
     description:
-      "Calculations are tested against documented scientific formulas and representative examples.",
+      "Start with a calculation, formula, experiment plan, or report-writing task.",
   },
   {
-    title: "Made for learning",
+    title: "Understand the method",
     description:
-      "Every tool explains the formula, variables, units, and calculation steps.",
+      "Review variables, units, assumptions, and the scientific reasoning behind each step.",
   },
   {
-    title: "Teacher friendly",
+    title: "Apply with confidence",
     description:
-      "Resources are designed for lessons, homework, practical work, and independent study.",
+      "Use the result in homework, practical work, revision, or a structured lab report.",
   },
 ] as const;
-
 
 export default function HomePage() {
   return (
@@ -54,57 +45,53 @@ export default function HomePage() {
       <section className="hero" aria-labelledby="home-heading">
         <Container className="hero__grid">
           <div className="hero__content">
-            <p className="eyebrow">
-              Science tools for students, teachers, and homeschool families
-            </p>
+            <p className="eyebrow">A practical science workspace</p>
 
             <h1 id="home-heading">
-              Accurate laboratory calculations, explained step by step
+              Learn the method, not just the final answer
             </h1>
 
             <p className="hero__description">
-              Use practical science calculators, laboratory report templates,
-              worksheets, and learning guides built to make physics and
-              chemistry work clearer.
+              ALH Science Hub brings calculations, formulas, experiment planning,
+              and laboratory writing into one clear learning workflow for
+              students and educators.
             </p>
 
             <div className="hero__actions">
               <Link className="button button--primary" href="/calculators">
-                Explore calculators
+                Start a calculation
               </Link>
 
-              <Link className="button button--secondary" href="/templates">
-                Browse templates
+              <Link className="button button--secondary" href="/scientific-method">
+                Plan an experiment
               </Link>
             </div>
 
-            <ul className="hero__highlights" aria-label="Resource benefits">
-              <li>No sign-up required</li>
-              <li>Clear worked examples</li>
-              <li>Student-friendly units</li>
+            <ul className="hero__highlights" aria-label="Platform benefits">
+              <li>Guided scientific steps</li>
+              <li>Clear variables and units</li>
+              <li>Classroom-ready resources</li>
             </ul>
           </div>
 
-          <aside className="hero-tool-card" aria-label="Available science calculators">
+          <aside className="hero-tool-card" aria-label="Featured learning tools">
             <div className="hero-tool-card__header">
-              <span>Popular laboratory tools</span>
-              <span className="status-badge">Available now</span>
+              <span>Start here</span>
+              <span className="status-badge">Student workspace</span>
             </div>
 
             <ul>
-              {popularCalculators.map((calculator, index) => (
+              {featuredCalculators.map((calculator, index) => (
                 <li key={calculator.slug}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
-                  <Link href={calculator.href}>
-                    {calculator.name}
-                  </Link>
+                  <Link href={calculator.href}>{calculator.name}</Link>
                 </li>
               ))}
             </ul>
 
             <div className="hero-tool-card__footer">
               <Link href="/calculators">
-                View all {calculators.length} calculators
+                Browse all {calculators.length} tools
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
@@ -112,25 +99,25 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="trust-section" aria-labelledby="trust-heading">
+      <section className="trust-section" aria-labelledby="path-heading">
         <Container>
           <div className="section-heading">
-            <p className="eyebrow">Built for reliable learning</p>
-            <h2 id="trust-heading">More than an answer box</h2>
+            <p className="eyebrow">A clearer learning process</p>
+            <h2 id="path-heading">From question to scientific understanding</h2>
             <p>
-              Each resource is designed to help users understand the scientific
-              reasoning behind the result.
+              Each resource is organized to help learners connect a formula or
+              result with the underlying scientific method.
             </p>
           </div>
 
           <div className="trust-grid">
-            {trustPoints.map((point, index) => (
-              <article className="trust-card" key={point.title}>
+            {learningPath.map((step, index) => (
+              <article className="trust-card" key={step.title}>
                 <span className="trust-card__number" aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3>{point.title}</h3>
-                <p>{point.description}</p>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
               </article>
             ))}
           </div>
@@ -141,13 +128,13 @@ export default function HomePage() {
         <Container>
           <div className="section-heading section-heading--split">
             <div>
-              <p className="eyebrow">Explore by task</p>
-              <h2 id="resource-heading">Science resources for practical work</h2>
+              <p className="eyebrow">Build your science workflow</p>
+              <h2 id="resource-heading">Tools for every stage of practical learning</h2>
             </div>
 
             <p>
-              Find tools for calculations, experimental planning, laboratory
-              reporting, data analysis, and printable classroom activities.
+              Move from calculation and revision to experiment design, data
+              recording, analysis, and final report preparation.
             </p>
           </div>
 
@@ -165,7 +152,7 @@ export default function HomePage() {
                 <p>{category.description}</p>
 
                 <Link className="resource-card__link" href={category.href}>
-                  View resources
+                  Open section
                   <span aria-hidden="true">→</span>
                 </Link>
               </article>
@@ -177,22 +164,20 @@ export default function HomePage() {
       <section className="mission-section" aria-labelledby="mission-heading">
         <Container className="mission-section__inner">
           <div>
-            <p className="eyebrow">Clear science, practical results</p>
+            <p className="eyebrow">Designed for real learning</p>
             <h2 id="mission-heading">
-              Created to support laboratory confidence
+              A science platform students can actually work through
             </h2>
           </div>
 
           <div className="mission-section__content">
             <p>
-              Science calculations become difficult when formulas, units, and
-              experimental values are presented without context. Our resources
-              connect the calculation to the laboratory task.
+              Scientific work becomes easier when formulas, units, procedures,
+              observations, and conclusions are presented as one connected process.
             </p>
             <p>
-              Students can understand each step, teachers can use consistent
-              classroom materials, and homeschool families can approach
-              practical science with clearer guidance.
+              ALH Science Hub is structured to support independent study,
+              classroom instruction, homework, and practical laboratory preparation.
             </p>
           </div>
         </Container>
