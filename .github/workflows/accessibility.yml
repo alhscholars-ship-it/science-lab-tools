@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      NEXT_PUBLIC_SITE_URL: https://science-lab-tools.example
+      NEXT_PUBLIC_SITE_URL: https://alh-science-hub.example
       NEXT_TELEMETRY_DISABLED: "1"
       A11Y_BASE_URL: http://127.0.0.1:3000
 
@@ -51,7 +51,7 @@ jobs:
       - name: Audit representative pages
         shell: bash
         run: |
-          pnpm start > /tmp/science-lab-tools-server.log 2>&1 &
+          pnpm start > /tmp/alh-science-hub-server.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
 
@@ -61,12 +61,12 @@ jobs:
             fi
 
             if ! kill -0 "$server_pid" 2>/dev/null; then
-              cat /tmp/science-lab-tools-server.log
+              cat /tmp/alh-science-hub-server.log
               exit 1
             fi
 
             if [ "$attempt" -eq 30 ]; then
-              cat /tmp/science-lab-tools-server.log
+              cat /tmp/alh-science-hub-server.log
               exit 1
             fi
 
