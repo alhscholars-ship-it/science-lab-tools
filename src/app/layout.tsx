@@ -9,25 +9,20 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 import "./globals.css";
+import "./brand.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: "Science Lab Tools for Students and Teachers",
+    default: "Interactive Science Learning and Lab Support",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  authors: [
-    {
-      name: siteConfig.creator,
-    },
-  ],
+  authors: [{ name: siteConfig.creator }],
   creator: siteConfig.creator,
   publisher: siteConfig.name,
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
@@ -56,8 +51,7 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
     other: {
-      "msvalidate.01":
-        process.env.BING_SITE_VERIFICATION ?? "",
+      "msvalidate.01": process.env.BING_SITE_VERIFICATION ?? "",
     },
   },
 };
@@ -66,15 +60,14 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   colorScheme: "light",
-  themeColor: "#0f172a",
+  themeColor: "#312e81",
 };
 
-const gaMeasurementId =
-  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "EducationalOrganization",
   name: siteConfig.name,
   url: siteConfig.url,
   description: siteConfig.description,
@@ -101,17 +94,12 @@ export default function RootLayout({
               src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
               strategy="afterInteractive"
             />
-            <Script
-              id="google-analytics"
-              strategy="afterInteractive"
-            >
+            <Script id="google-analytics" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${gaMeasurementId}', {
-                  anonymize_ip: true
-                });
+                gtag('config', '${gaMeasurementId}', { anonymize_ip: true });
               `}
             </Script>
             <WebVitalsReporter />

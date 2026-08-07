@@ -1,0 +1,89 @@
+:root {
+  --background: #f7f7fb;
+  --surface: #ffffff;
+  --surface-muted: #f1f0f8;
+  --surface-dark: #171b2c;
+  --text: #2b3040;
+  --text-muted: #63697a;
+  --heading: #171b2c;
+  --border: #e0e2ec;
+  --border-strong: #c9ccda;
+  --brand: #6759e8;
+  --brand-dark: #4d41c9;
+  --brand-soft: #efedff;
+  --accent: #31b9ae;
+  --shadow-sm: 0 1px 2px rgb(25 27 54 / 0.06);
+  --shadow-md: 0 18px 44px rgb(25 27 54 / 0.1);
+}
+
+.site-header {
+  border-bottom-color: rgb(224 226 236 / 0.92);
+  background: rgb(250 250 253 / 0.94);
+}
+
+.site-logo__mark {
+  border-radius: 999px;
+  background: #6759e8;
+  box-shadow: 0 8px 22px rgb(79 67 202 / 0.2);
+}
+
+.site-navigation a:hover,
+.site-navigation a:focus-visible {
+  background: #efedff;
+  color: #4d41c9;
+}
+
+.button--primary {
+  background: #6759e8;
+  box-shadow: 0 12px 28px rgb(79 67 202 / 0.2);
+}
+
+.button--primary:hover {
+  background: #4d41c9;
+}
+
+.tool-page-hero {
+  background:
+    radial-gradient(circle at 85% 10%, rgb(226 222 255 / 0.82), transparent 34%),
+    white;
+}
+
+.calculator-result {
+  background: #171b2c;
+}
+
+.calculator-result__empty > span,
+.calculator-result__label,
+.mission-section .eyebrow {
+  color: #b9b4ff;
+}
+
+.formula-card {
+  border-color: rgb(103 89 232 / 0.25);
+  background: #efedff;
+}
+
+.formula-card p {
+  color: #4d41c9;
+}
+
+.site-footer {
+  border-top-color: #2a2e45;
+  background: #111425;
+}
+
+.site-footer__links a:hover,
+.site-footer__links a:focus-visible {
+  color: #b9b4ff;
+}
+
+@media (max-width: 960px) {
+  .mobile-navigation summary:hover,
+  .mobile-navigation summary:focus-visible,
+  .mobile-navigation[open] summary,
+  .mobile-navigation nav a:hover,
+  .mobile-navigation nav a:focus-visible {
+    background: #efedff;
+    color: #4d41c9;
+  }
+}

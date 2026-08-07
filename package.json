@@ -1,5 +1,5 @@
 {
-  "name": "science-lab-tools",
+  "name": "alh-science-hub",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -36,11 +36,11 @@
     "typescript": "5.9.3",
     "vitest": "^4.1.9"
   },
-  "description": "Science laboratory calculators, report templates, worksheets, and practical learning tools for students and teachers.",
+  "description": "Interactive science learning, laboratory calculations, experiment planning, and report support from ALH Science Hub.",
   "license": "UNLICENSED",
-  "packageManager": "pnpm@11.12.0",
+  "packageManager": "pnpm@11.13.1",
   "engines": {
     "node": ">=24.0.0 <25",
-    "pnpm": ">=11.9.0 <12"
+    "pnpm": ">=11.13.1 <12"
   }
 }

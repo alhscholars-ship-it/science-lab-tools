@@ -4,107 +4,92 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { calculators } from "@/content/calculators/registry";
 
-const popularCalculatorSlugs = [
-  "percent-error-calculator",
-  "significant-figures-calculator",
+import styles from "./homepage.module.css";
+
+const featuredCalculatorSlugs = [
   "molarity-calculator",
-  "force-calculator",
   "density-calculator",
-  "kinetic-energy-calculator",
-  "momentum-calculator",
+  "force-calculator",
   "projectile-motion-calculator",
 ] as const;
 
-const popularCalculators = popularCalculatorSlugs.map((slug) => {
-  const calculator = calculators.find(
-    (item) => item.slug === slug,
-  );
+const featuredCalculators = featuredCalculatorSlugs.map((slug) => {
+  const calculator = calculators.find((item) => item.slug === slug);
 
   if (!calculator) {
-    throw new Error(
-      `Popular calculator not found: ${slug}`,
-    );
+    throw new Error(`Featured calculator not found: ${slug}`);
   }
 
   return calculator;
 });
 
-const trustPoints = [
+const learningPath = [
   {
-    title: "Formula checked",
+    title: "Define the task",
     description:
-      "Calculations are tested against documented scientific formulas and representative examples.",
+      "Identify the quantity, formula, experiment, or report section you need to work on.",
   },
   {
-    title: "Made for learning",
+    title: "Check the science",
     description:
-      "Every tool explains the formula, variables, units, and calculation steps.",
+      "Review variables, units, assumptions, controls, and the method before applying numbers.",
   },
   {
-    title: "Teacher friendly",
+    title: "Work the problem",
     description:
-      "Resources are designed for lessons, homework, practical work, and independent study.",
+      "Use guided tools and examples to calculate, plan, record, or structure your response.",
+  },
+  {
+    title: "Explain the result",
+    description:
+      "Connect the outcome back to the scientific reasoning instead of stopping at an answer.",
   },
 ] as const;
 
-
 export default function HomePage() {
   return (
-    <main>
-      <section className="hero" aria-labelledby="home-heading">
-        <Container className="hero__grid">
-          <div className="hero__content">
-            <p className="eyebrow">
-              Science tools for students, teachers, and homeschool families
+    <main className={styles.page}>
+      <section className={styles.hero} aria-labelledby="home-heading">
+        <Container className={styles.heroGrid}>
+          <div>
+            <p className={styles.kicker}>ALH Science Workspace</p>
+            <h1 id="home-heading">Build the reasoning behind your science work.</h1>
+            <p className={styles.heroLead}>
+              Move from formula selection to experiment planning and report writing
+              in one structured learning environment designed for practical science.
             </p>
 
-            <h1 id="home-heading">
-              Accurate laboratory calculations, explained step by step
-            </h1>
-
-            <p className="hero__description">
-              Use practical science calculators, laboratory report templates,
-              worksheets, and learning guides built to make physics and
-              chemistry work clearer.
-            </p>
-
-            <div className="hero__actions">
-              <Link className="button button--primary" href="/calculators">
-                Explore calculators
+            <div className={styles.actions}>
+              <Link className={styles.primaryAction} href="/calculators">
+                Open calculator workspace
               </Link>
-
-              <Link className="button button--secondary" href="/templates">
-                Browse templates
+              <Link className={styles.secondaryAction} href="/scientific-method">
+                Build an experiment plan
               </Link>
             </div>
-
-            <ul className="hero__highlights" aria-label="Resource benefits">
-              <li>No sign-up required</li>
-              <li>Clear worked examples</li>
-              <li>Student-friendly units</li>
-            </ul>
           </div>
 
-          <aside className="hero-tool-card" aria-label="Available science calculators">
-            <div className="hero-tool-card__header">
-              <span>Popular laboratory tools</span>
-              <span className="status-badge">Available now</span>
+          <aside className={styles.workspaceCard} aria-label="Featured science tools">
+            <div className={styles.workspaceHeader}>
+              <span>Quick workspace</span>
+              <span className={styles.workspaceStatus}>Ready</span>
             </div>
 
-            <ul>
-              {popularCalculators.map((calculator, index) => (
+            <ul className={styles.toolList}>
+              {featuredCalculators.map((calculator, index) => (
                 <li key={calculator.slug}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <Link href={calculator.href}>
-                    {calculator.name}
-                  </Link>
+                  <span className={styles.toolIndex}>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <Link href={calculator.href}>{calculator.name}</Link>
+                  <span className={styles.arrow} aria-hidden="true">↗</span>
                 </li>
               ))}
             </ul>
 
-            <div className="hero-tool-card__footer">
+            <div className={styles.workspaceFooter}>
               <Link href="/calculators">
-                View all {calculators.length} calculators
+                <span>Explore all {calculators.length} calculators</span>
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
@@ -112,61 +97,61 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="trust-section" aria-labelledby="trust-heading">
+      <section className={styles.pathSection} aria-labelledby="path-heading">
         <Container>
-          <div className="section-heading">
-            <p className="eyebrow">Built for reliable learning</p>
-            <h2 id="trust-heading">More than an answer box</h2>
+          <div className={styles.sectionIntro}>
+            <div>
+              <p className={styles.sectionLabel}>Choose your workflow</p>
+              <h2 id="path-heading">Start with the task in front of you.</h2>
+            </div>
             <p>
-              Each resource is designed to help users understand the scientific
-              reasoning behind the result.
+              The platform is organized around what a learner needs to do next,
+              rather than forcing every problem into a calculator-first experience.
             </p>
           </div>
 
-          <div className="trust-grid">
-            {trustPoints.map((point, index) => (
-              <article className="trust-card" key={point.title}>
-                <span className="trust-card__number" aria-hidden="true">
+          <div className={styles.pathGrid}>
+            {siteConfig.categories.map((category, index) => (
+              <article className={styles.pathCard} key={category.href}>
+                <span className={styles.pathNumber} aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3>{point.title}</h3>
-                <p>{point.description}</p>
+                <h3>
+                  <Link href={category.href}>{category.name}</Link>
+                </h3>
+                <p>{category.description}</p>
               </article>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="resource-section" aria-labelledby="resource-heading">
+      <section className={styles.featuredSection} aria-labelledby="featured-heading">
         <Container>
-          <div className="section-heading section-heading--split">
+          <div className={styles.featuredHeader}>
             <div>
-              <p className="eyebrow">Explore by task</p>
-              <h2 id="resource-heading">Science resources for practical work</h2>
+              <p className={styles.sectionLabel}>Popular starting points</p>
+              <h2 id="featured-heading">Work a real problem now.</h2>
             </div>
-
             <p>
-              Find tools for calculations, experimental planning, laboratory
-              reporting, data analysis, and printable classroom activities.
+              Jump directly into high-use physics and chemistry tools, then use the
+              supporting formula and method resources to understand each result.
             </p>
           </div>
 
-          <div className="resource-grid">
-            {siteConfig.categories.map((category, index) => (
-              <article className="resource-card" key={category.href}>
-                <span className="resource-card__index" aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <h3>
-                  <Link href={category.href}>{category.name}</Link>
-                </h3>
-
-                <p>{category.description}</p>
-
-                <Link className="resource-card__link" href={category.href}>
-                  View resources
-                  <span aria-hidden="true">→</span>
+          <div className={styles.featuredGrid}>
+            {featuredCalculators.map((calculator) => (
+              <article className={styles.featuredCard} key={calculator.slug}>
+                <div>
+                  <strong>{calculator.name}</strong>
+                  <span>Guided calculation with scientific context</span>
+                </div>
+                <Link
+                  className={styles.featuredLink}
+                  href={calculator.href}
+                  aria-label={`Open ${calculator.name}`}
+                >
+                  →
                 </Link>
               </article>
             ))}
@@ -174,26 +159,43 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="mission-section" aria-labelledby="mission-heading">
-        <Container className="mission-section__inner">
-          <div>
-            <p className="eyebrow">Clear science, practical results</p>
-            <h2 id="mission-heading">
-              Created to support laboratory confidence
-            </h2>
+      <section className={styles.processSection} aria-labelledby="process-heading">
+        <Container className={styles.processLayout}>
+          <div className={styles.processIntro}>
+            <p className={styles.sectionLabel}>Learning process</p>
+            <h2 id="process-heading">From prompt to explanation.</h2>
+            <p>
+              Strong science work is a sequence of decisions. The workspace keeps
+              those decisions visible so students can understand what they are doing.
+            </p>
           </div>
 
-          <div className="mission-section__content">
-            <p>
-              Science calculations become difficult when formulas, units, and
-              experimental values are presented without context. Our resources
-              connect the calculation to the laboratory task.
-            </p>
-            <p>
-              Students can understand each step, teachers can use consistent
-              classroom materials, and homeschool families can approach
-              practical science with clearer guidance.
-            </p>
+          <ol className={styles.processList}>
+            {learningPath.map((step) => (
+              <li key={step.title}>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </Container>
+      </section>
+
+      <section className={styles.closingSection}>
+        <Container>
+          <div className={styles.closingCard}>
+            <div>
+              <h2>Turn the next science question into a clear workflow.</h2>
+              <p>
+                Start with a calculator, then move into formulas, experiment design,
+                templates, and reporting without losing the reasoning behind the work.
+              </p>
+            </div>
+            <Link className={styles.closingAction} href="/calculators">
+              Start working
+            </Link>
           </div>
         </Container>
       </section>

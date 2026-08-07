@@ -15,29 +15,47 @@ export function SiteLogo() {
           role="img"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M18 7h12M21 7v10L11.5 34.2A4.5 4.5 0 0 0 15.4 41h17.2a4.5 4.5 0 0 0 3.9-6.8L27 17V7"
+          <circle
+            cx="24"
+            cy="24"
+            r="4"
+            fill="currentColor"
+          />
+          <ellipse
+            cx="24"
+            cy="24"
+            rx="17"
+            ry="7.5"
             fill="none"
             stroke="currentColor"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            strokeWidth="2.6"
           />
-          <path
-            d="M16 31h16"
+          <ellipse
+            cx="24"
+            cy="24"
+            rx="17"
+            ry="7.5"
             fill="none"
             stroke="currentColor"
-            strokeWidth="3"
-            strokeLinecap="round"
+            strokeWidth="2.6"
+            transform="rotate(60 24 24)"
           />
-          <circle cx="21" cy="26" r="2" fill="currentColor" />
-          <circle cx="27" cy="35" r="2" fill="currentColor" />
+          <ellipse
+            cx="24"
+            cy="24"
+            rx="17"
+            ry="7.5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.6"
+            transform="rotate(120 24 24)"
+          />
         </svg>
       </span>
 
       <span className="site-logo__text">
         <strong>{siteConfig.name}</strong>
-        <small>Practical science made clear</small>
+        <small>Think · test · explain</small>
       </span>
     </Link>
   );
