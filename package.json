@@ -33,7 +33,7 @@
     "eslint-config-next": "16.2.9",
     "playwright-core": "^1.61.1",
     "tailwindcss": "4.3.1",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "vitest": "^4.1.9"
   },
   "description": "Interactive science learning, laboratory calculations, experiment planning, and report support from ALH Science Hub.",
