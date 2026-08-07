@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      NEXT_PUBLIC_SITE_URL: https://alh-science-hub.example
+      NEXT_PUBLIC_SITE_URL: https://alh.sciencecalchub.org
       NEXT_TELEMETRY_DISABLED: "1"
 
     steps:
