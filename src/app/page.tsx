@@ -4,6 +4,8 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { calculators } from "@/content/calculators/registry";
 
+import styles from "./homepage.module.css";
+
 const featuredCalculatorSlugs = [
   "molarity-calculator",
   "density-calculator",
@@ -23,75 +25,71 @@ const featuredCalculators = featuredCalculatorSlugs.map((slug) => {
 
 const learningPath = [
   {
-    title: "Choose the problem",
+    title: "Define the task",
     description:
-      "Start with a calculation, formula, experiment plan, or report-writing task.",
+      "Identify the quantity, formula, experiment, or report section you need to work on.",
   },
   {
-    title: "Understand the method",
+    title: "Check the science",
     description:
-      "Review variables, units, assumptions, and the scientific reasoning behind each step.",
+      "Review variables, units, assumptions, controls, and the method before applying numbers.",
   },
   {
-    title: "Apply with confidence",
+    title: "Work the problem",
     description:
-      "Use the result in homework, practical work, revision, or a structured lab report.",
+      "Use guided tools and examples to calculate, plan, record, or structure your response.",
+  },
+  {
+    title: "Explain the result",
+    description:
+      "Connect the outcome back to the scientific reasoning instead of stopping at an answer.",
   },
 ] as const;
 
 export default function HomePage() {
   return (
-    <main>
-      <section className="hero" aria-labelledby="home-heading">
-        <Container className="hero__grid">
-          <div className="hero__content">
-            <p className="eyebrow">A practical science workspace</p>
-
-            <h1 id="home-heading">
-              Learn the method, not just the final answer
-            </h1>
-
-            <p className="hero__description">
-              ALH Science Hub brings calculations, formulas, experiment planning,
-              and laboratory writing into one clear learning workflow for
-              students and educators.
+    <main className={styles.page}>
+      <section className={styles.hero} aria-labelledby="home-heading">
+        <Container className={styles.heroGrid}>
+          <div>
+            <p className={styles.kicker}>ALH Science Workspace</p>
+            <h1 id="home-heading">Build the reasoning behind your science work.</h1>
+            <p className={styles.heroLead}>
+              Move from formula selection to experiment planning and report writing
+              in one structured learning environment designed for practical science.
             </p>
 
-            <div className="hero__actions">
-              <Link className="button button--primary" href="/calculators">
-                Start a calculation
+            <div className={styles.actions}>
+              <Link className={styles.primaryAction} href="/calculators">
+                Open calculator workspace
               </Link>
-
-              <Link className="button button--secondary" href="/scientific-method">
-                Plan an experiment
+              <Link className={styles.secondaryAction} href="/scientific-method">
+                Build an experiment plan
               </Link>
             </div>
-
-            <ul className="hero__highlights" aria-label="Platform benefits">
-              <li>Guided scientific steps</li>
-              <li>Clear variables and units</li>
-              <li>Classroom-ready resources</li>
-            </ul>
           </div>
 
-          <aside className="hero-tool-card" aria-label="Featured learning tools">
-            <div className="hero-tool-card__header">
-              <span>Start here</span>
-              <span className="status-badge">Student workspace</span>
+          <aside className={styles.workspaceCard} aria-label="Featured science tools">
+            <div className={styles.workspaceHeader}>
+              <span>Quick workspace</span>
+              <span className={styles.workspaceStatus}>Ready</span>
             </div>
 
-            <ul>
+            <ul className={styles.toolList}>
               {featuredCalculators.map((calculator, index) => (
                 <li key={calculator.slug}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <span className={styles.toolIndex}>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                   <Link href={calculator.href}>{calculator.name}</Link>
+                  <span className={styles.arrow} aria-hidden="true">↗</span>
                 </li>
               ))}
             </ul>
 
-            <div className="hero-tool-card__footer">
+            <div className={styles.workspaceFooter}>
               <Link href="/calculators">
-                Browse all {calculators.length} tools
+                <span>Explore all {calculators.length} calculators</span>
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
@@ -99,61 +97,61 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="trust-section" aria-labelledby="path-heading">
+      <section className={styles.pathSection} aria-labelledby="path-heading">
         <Container>
-          <div className="section-heading">
-            <p className="eyebrow">A clearer learning process</p>
-            <h2 id="path-heading">From question to scientific understanding</h2>
+          <div className={styles.sectionIntro}>
+            <div>
+              <p className={styles.sectionLabel}>Choose your workflow</p>
+              <h2 id="path-heading">Start with the task in front of you.</h2>
+            </div>
             <p>
-              Each resource is organized to help learners connect a formula or
-              result with the underlying scientific method.
+              The platform is organized around what a learner needs to do next,
+              rather than forcing every problem into a calculator-first experience.
             </p>
           </div>
 
-          <div className="trust-grid">
-            {learningPath.map((step, index) => (
-              <article className="trust-card" key={step.title}>
-                <span className="trust-card__number" aria-hidden="true">
+          <div className={styles.pathGrid}>
+            {siteConfig.categories.map((category, index) => (
+              <article className={styles.pathCard} key={category.href}>
+                <span className={styles.pathNumber} aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
+                <h3>
+                  <Link href={category.href}>{category.name}</Link>
+                </h3>
+                <p>{category.description}</p>
               </article>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="resource-section" aria-labelledby="resource-heading">
+      <section className={styles.featuredSection} aria-labelledby="featured-heading">
         <Container>
-          <div className="section-heading section-heading--split">
+          <div className={styles.featuredHeader}>
             <div>
-              <p className="eyebrow">Build your science workflow</p>
-              <h2 id="resource-heading">Tools for every stage of practical learning</h2>
+              <p className={styles.sectionLabel}>Popular starting points</p>
+              <h2 id="featured-heading">Work a real problem now.</h2>
             </div>
-
             <p>
-              Move from calculation and revision to experiment design, data
-              recording, analysis, and final report preparation.
+              Jump directly into high-use physics and chemistry tools, then use the
+              supporting formula and method resources to understand each result.
             </p>
           </div>
 
-          <div className="resource-grid">
-            {siteConfig.categories.map((category, index) => (
-              <article className="resource-card" key={category.href}>
-                <span className="resource-card__index" aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <h3>
-                  <Link href={category.href}>{category.name}</Link>
-                </h3>
-
-                <p>{category.description}</p>
-
-                <Link className="resource-card__link" href={category.href}>
-                  Open section
-                  <span aria-hidden="true">→</span>
+          <div className={styles.featuredGrid}>
+            {featuredCalculators.map((calculator) => (
+              <article className={styles.featuredCard} key={calculator.slug}>
+                <div>
+                  <strong>{calculator.name}</strong>
+                  <span>Guided calculation with scientific context</span>
+                </div>
+                <Link
+                  className={styles.featuredLink}
+                  href={calculator.href}
+                  aria-label={`Open ${calculator.name}`}
+                >
+                  →
                 </Link>
               </article>
             ))}
@@ -161,24 +159,43 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="mission-section" aria-labelledby="mission-heading">
-        <Container className="mission-section__inner">
-          <div>
-            <p className="eyebrow">Designed for real learning</p>
-            <h2 id="mission-heading">
-              A science platform students can actually work through
-            </h2>
+      <section className={styles.processSection} aria-labelledby="process-heading">
+        <Container className={styles.processLayout}>
+          <div className={styles.processIntro}>
+            <p className={styles.sectionLabel}>Learning process</p>
+            <h2 id="process-heading">From prompt to explanation.</h2>
+            <p>
+              Strong science work is a sequence of decisions. The workspace keeps
+              those decisions visible so students can understand what they are doing.
+            </p>
           </div>
 
-          <div className="mission-section__content">
-            <p>
-              Scientific work becomes easier when formulas, units, procedures,
-              observations, and conclusions are presented as one connected process.
-            </p>
-            <p>
-              ALH Science Hub is structured to support independent study,
-              classroom instruction, homework, and practical laboratory preparation.
-            </p>
+          <ol className={styles.processList}>
+            {learningPath.map((step) => (
+              <li key={step.title}>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </Container>
+      </section>
+
+      <section className={styles.closingSection}>
+        <Container>
+          <div className={styles.closingCard}>
+            <div>
+              <h2>Turn the next science question into a clear workflow.</h2>
+              <p>
+                Start with a calculator, then move into formulas, experiment design,
+                templates, and reporting without losing the reasoning behind the work.
+              </p>
+            </div>
+            <Link className={styles.closingAction} href="/calculators">
+              Start working
+            </Link>
           </div>
         </Container>
       </section>
