@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ALH Science Hub
 
-## Getting Started
+ALH Science Hub is a Next.js learning platform for science calculations, formula review, experiment planning, laboratory reporting, and classroom-ready resources.
 
-First, run the development server:
+## Product direction
+
+The application is organized around a learner's workflow rather than a calculator-only experience. Students can move between guided calculations, formula references, scientific-method resources, report guidance, and downloadable templates while keeping the reasoning behind each task visible.
+
+## Technology
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Vitest
+- ESLint
+- GitHub Actions quality and accessibility checks
+
+## Local development
+
+Requirements:
+
+- Node.js 24.x
+- pnpm 11.x
+
+Install dependencies and start the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The local application is available at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and configure the deployment-specific values. `NEXT_PUBLIC_SITE_URL` must point to the canonical URL of this deployment so metadata, canonical URLs, sitemap output, and structured data reference the correct site.
 
-## Learn More
+## Quality gates
 
-To learn more about Next.js, take a look at the following resources:
+Run the full validation suite before production deployment:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm check
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The check command covers linting, TypeScript, tests, internal links, production build, rendered SEO validation, and JavaScript performance budgets. Accessibility has a dedicated check and GitHub Actions workflow.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy this repository as its own hosting project. Do not attach the production domain used by another student repository to this project. Configure the canonical domain through `NEXT_PUBLIC_SITE_URL` and keep analytics/search-verification variables deployment-specific.
