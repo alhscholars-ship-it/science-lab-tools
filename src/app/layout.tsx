@@ -9,6 +9,7 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 import "./globals.css";
+import "./brand.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
