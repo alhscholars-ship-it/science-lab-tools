@@ -1,10 +1,12 @@
 import { calculators } from "@/content/calculators/registry";
+import { scienceFormulas } from "@/content/formulas/registry";
 import { labReportResources } from "@/content/lab-reports/registry";
 import { scientificMethodResources } from "@/content/scientific-method/registry";
 import { templateResources } from "@/content/templates/registry";
 
 export type SearchResourceType =
   | "Calculator"
+  | "Formula"
   | "Lab Report Guide"
   | "Scientific Method Guide"
   | "Template";
@@ -26,6 +28,19 @@ export const siteSearchIndex: readonly SearchResource[] = [
     type: "Calculator" as const,
     category: item.category,
     keywords: item.keywords,
+  })),
+  ...scienceFormulas.map((item) => ({
+    title: item.name,
+    description: `${item.description} Formula: ${item.equation}`,
+    href: `/formulas#${item.slug}`,
+    type: "Formula" as const,
+    category: item.category,
+    keywords: [
+      item.slug,
+      `${item.name} formula`,
+      item.equation,
+      ...item.variables,
+    ],
   })),
   ...labReportResources.map((item) => ({
     title: item.title,
@@ -61,22 +76,81 @@ function normalize(value: string): string {
     .trim();
 }
 
-function scoreResource(resource: SearchResource, terms: readonly string[]): number {
+function intentBoost(
+  resource: SearchResource,
+  normalizedQuery: string,
+): number {
+  if (
+    resource.type === "Formula"
+    && normalizedQuery.includes("formula")
+  ) {
+    return 30;
+  }
+
+  if (
+    resource.type === "Calculator"
+    && normalizedQuery.includes("calculator")
+  ) {
+    return 30;
+  }
+
+  if (
+    resource.type === "Template"
+    && (normalizedQuery.includes("template")
+      || normalizedQuery.includes("worksheet"))
+  ) {
+    return 30;
+  }
+
+  if (
+    resource.type === "Lab Report Guide"
+    && normalizedQuery.includes("lab report")
+  ) {
+    return 20;
+  }
+
+  if (
+    resource.type === "Scientific Method Guide"
+    && normalizedQuery.includes("scientific method")
+  ) {
+    return 20;
+  }
+
+  return resource.type === "Calculator" ? 20 : 0;
+}
+
+function scoreResource(
+  resource: SearchResource,
+  normalizedQuery: string,
+  terms: readonly string[],
+): number {
   const title = normalize(resource.title);
   const keywords = normalize(resource.keywords.join(" "));
   const description = normalize(resource.description);
   const category = normalize(`${resource.type} ${resource.category}`);
+  const searchableText = `${title} ${keywords} ${description} ${category}`;
 
-  let score = 0;
+  if (!terms.every((term) => searchableText.includes(term))) {
+    return 0;
+  }
+
+  let score = intentBoost(resource, normalizedQuery);
+
+  if (title === normalizedQuery) score += 60;
+  else if (title.startsWith(normalizedQuery)) score += 45;
+  else if (title.includes(normalizedQuery)) score += 35;
+
+  if (keywords.includes(normalizedQuery)) score += 25;
+  if (description.includes(normalizedQuery)) score += 10;
+  if (category.includes(normalizedQuery)) score += 8;
+
   for (const term of terms) {
-    if (title === term) score += 20;
-    else if (title.startsWith(term)) score += 12;
-    else if (title.includes(term)) score += 8;
-
+    if (title.includes(term)) score += 10;
     if (keywords.includes(term)) score += 5;
-    if (category.includes(term)) score += 3;
+    if (category.includes(term)) score += 2;
     if (description.includes(term)) score += 1;
   }
+
   return score;
 }
 
@@ -87,10 +161,14 @@ export function searchSite(query: string, limit = 30): SearchResource[] {
   const terms = [...new Set(normalizedQuery.split(/\s+/).filter(Boolean))];
 
   return siteSearchIndex
-    .map((resource) => ({ resource, score: scoreResource(resource, terms) }))
+    .map((resource) => ({
+      resource,
+      score: scoreResource(resource, normalizedQuery, terms),
+    }))
     .filter(({ score }) => score > 0)
     .sort((first, second) =>
-      second.score - first.score || first.resource.title.localeCompare(second.resource.title),
+      second.score - first.score
+      || first.resource.title.localeCompare(second.resource.title),
     )
     .slice(0, limit)
     .map(({ resource }) => resource);

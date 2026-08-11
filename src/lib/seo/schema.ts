@@ -1,5 +1,8 @@
 import { absoluteUrl } from "./url";
 
+const organizationId = absoluteUrl("/#organization");
+const websiteId = absoluteUrl("/#website");
+
 export type FaqItem = {
   question: string;
   answer: string;
@@ -25,18 +28,29 @@ export function createWebApplicationSchema({
   description,
   path,
 }: WebApplicationSchemaInput) {
+  const url = absoluteUrl(path);
+
   return {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "@id": `${url}#application`,
     name,
     description,
-    url: absoluteUrl(path),
+    url,
+    isPartOf: {
+      "@id": websiteId,
+    },
+    publisher: {
+      "@id": organizationId,
+    },
     applicationCategory: "EducationalApplication",
     operatingSystem: "Any",
+    browserRequirements: "Requires JavaScript and a modern web browser.",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
     },
   };
 }
@@ -47,6 +61,9 @@ export function createFaqSchema(
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    isPartOf: {
+      "@id": websiteId,
+    },
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -100,6 +117,7 @@ export function createBreadcrumbSchema({
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${absoluteUrl(pagePath)}#breadcrumb`,
     itemListElement,
   };
 }
@@ -121,14 +139,24 @@ export function createCollectionPageSchema({
   path,
   items,
 }: CollectionPageSchemaInput) {
+  const url = absoluteUrl(path);
+
   return {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
+    "@id": `${url}#collection`,
     name,
     description,
-    url: absoluteUrl(path),
+    url,
+    isPartOf: {
+      "@id": websiteId,
+    },
+    publisher: {
+      "@id": organizationId,
+    },
     mainEntity: {
       "@type": "ItemList",
+      numberOfItems: items.length,
       itemListElement: items.map((item, index) => ({
         "@type": "ListItem",
         position: index + 1,

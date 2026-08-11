@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { calculators } from "@/content/calculators/registry";
+import { scienceFormulas } from "@/content/formulas/registry";
 import { labReportResources } from "@/content/lab-reports/registry";
 import { scientificMethodResources } from "@/content/scientific-method/registry";
 import { templateResources } from "@/content/templates/registry";
@@ -9,13 +10,15 @@ import { searchSite, siteSearchIndex } from "../site-search";
 
 describe("site search", () => {
   it("indexes every published searchable resource exactly once", () => {
-    const expectedCount = calculators.length + labReportResources.length
-      + scientificMethodResources.length + templateResources.length;
+    const expectedCount = calculators.length + scienceFormulas.length
+      + labReportResources.length + scientificMethodResources.length
+      + templateResources.length;
+
     expect(siteSearchIndex).toHaveLength(expectedCount);
     expect(new Set(siteSearchIndex.map(({ href }) => href)).size).toBe(expectedCount);
   });
 
-  it("ranks exact and title matches ahead of description-only matches", () => {
+  it("ranks calculator intent ahead of supporting formula entries", () => {
     const results = searchSite("molarity");
     expect(results[0].href).toBe("/calculators/molarity-calculator");
   });
@@ -25,6 +28,28 @@ describe("site search", () => {
     expect(searchSite("controlled variables").some(({ type }) => type === "Scientific Method Guide")).toBe(true);
     expect(searchSite("printable worksheet").some(({ type }) => type === "Template")).toBe(true);
     expect(searchSite("kinetic energy").some(({ type }) => type === "Calculator")).toBe(true);
+    expect(searchSite("newtons second law formula").some(({ type }) => type === "Formula")).toBe(true);
+  });
+
+  it("links formula results to their exact library entries", () => {
+    const formula = searchSite("ohms law formula").find(
+      ({ type }) => type === "Formula",
+    );
+
+    expect(formula?.href).toBe("/formulas#ohms-law");
+  });
+
+  it("requires every meaningful query term to match", () => {
+    const results = searchSite("ohms law formula");
+
+    expect(
+      results.some(({ href }) => href === "/formulas#ideal-gas-law"),
+    ).toBe(false);
+  });
+
+  it("honors explicit resource-type intent", () => {
+    expect(searchSite("molarity formula")[0].type).toBe("Formula");
+    expect(searchSite("molarity calculator")[0].type).toBe("Calculator");
   });
 
   it("normalizes punctuation and enforces limits", () => {

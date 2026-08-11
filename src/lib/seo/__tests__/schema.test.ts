@@ -9,7 +9,7 @@ import {
 } from "../schema";
 
 describe("SEO schema builders", () => {
-  it("creates educational WebApplication schema", () => {
+  it("creates a connected educational WebApplication schema", () => {
     const schema = createWebApplicationSchema({
       name: "Force Calculator",
       description: "Calculate force.",
@@ -22,16 +22,28 @@ describe("SEO schema builders", () => {
       name: "Force Calculator",
       applicationCategory: "EducationalApplication",
       operatingSystem: "Any",
+      browserRequirements:
+        "Requires JavaScript and a modern web browser.",
     });
 
+    expect(schema["@id"]).toContain(
+      "/calculators/force-calculator#application",
+    );
     expect(schema.url).toContain(
       "/calculators/force-calculator",
+    );
+    expect(schema.isPartOf["@id"]).toContain(
+      "/#website",
+    );
+    expect(schema.publisher["@id"]).toContain(
+      "/#organization",
     );
 
     expect(schema.offers).toEqual({
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
     });
   });
 
@@ -48,6 +60,9 @@ describe("SEO schema builders", () => {
     ]);
 
     expect(schema["@type"]).toBe("FAQPage");
+    expect(schema.isPartOf["@id"]).toContain(
+      "/#website",
+    );
     expect(schema.mainEntity).toHaveLength(2);
 
     expect(schema.mainEntity[0]).toEqual({
@@ -67,6 +82,9 @@ describe("SEO schema builders", () => {
     });
 
     expect(schema["@type"]).toBe("BreadcrumbList");
+    expect(schema["@id"]).toContain(
+      "/calculators/force-calculator#breadcrumb",
+    );
     expect(schema.itemListElement).toHaveLength(3);
 
     expect(schema.itemListElement.map((item) => ({
@@ -151,7 +169,7 @@ describe("SEO schema builders", () => {
     expect(serialized).toContain("\\u003c/script>");
   });
 
-  it("creates a CollectionPage schema with calculator items", () => {
+  it("creates a connected CollectionPage schema with calculator items", () => {
     const schema = createCollectionPageSchema({
       name: "Physics Calculators",
       description: "Physics calculation tools.",
@@ -169,7 +187,17 @@ describe("SEO schema builders", () => {
     });
 
     expect(schema["@type"]).toBe("CollectionPage");
+    expect(schema["@id"]).toContain(
+      "/physics-calculators#collection",
+    );
+    expect(schema.isPartOf["@id"]).toContain(
+      "/#website",
+    );
+    expect(schema.publisher["@id"]).toContain(
+      "/#organization",
+    );
     expect(schema.mainEntity["@type"]).toBe("ItemList");
+    expect(schema.mainEntity.numberOfItems).toBe(2);
 
     expect(schema.mainEntity.itemListElement).toHaveLength(2);
 
@@ -178,5 +206,4 @@ describe("SEO schema builders", () => {
       name: "Force Calculator",
     });
   });
-
 });

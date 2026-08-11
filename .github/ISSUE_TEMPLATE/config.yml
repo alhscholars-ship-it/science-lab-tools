@@ -1,6 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Security vulnerabilities
-    about: Please report suspected vulnerabilities using the repository SECURITY.md process.
-      
+  - name: Report a security vulnerability
     url: https://github.com/alhscholars-ship-it/science-lab-tools/security/policy
+    about: Please follow the private security reporting guidance instead of opening a public issue.

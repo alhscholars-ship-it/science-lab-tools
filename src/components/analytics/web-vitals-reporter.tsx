@@ -2,26 +2,33 @@
 
 import { useReportWebVitals } from "next/web-vitals";
 
-import { createWebVitalAnalyticsEvent } from "@/lib/analytics/web-vitals";
+import {
+  createWebVitalAnalyticsEvent,
+  reportAnalyticsEvent,
+  type GtagCommand,
+  type GtagParameters,
+} from "@/lib/analytics/web-vitals";
 
 declare global {
   interface Window {
+    dataLayer?: GtagCommand[];
     gtag?: (
       command: "event",
       eventName: string,
-      parameters: Record<string, string | number | boolean>,
+      parameters: GtagParameters,
     ) => void;
   }
 }
 
 export function WebVitalsReporter() {
   useReportWebVitals((metric) => {
-    if (!window.gtag) {
-      return;
-    }
-
     const event = createWebVitalAnalyticsEvent(metric);
-    window.gtag("event", event.eventName, event.parameters);
+
+    reportAnalyticsEvent(window, [
+      "event",
+      event.eventName,
+      event.parameters,
+    ]);
   });
 
   return null;

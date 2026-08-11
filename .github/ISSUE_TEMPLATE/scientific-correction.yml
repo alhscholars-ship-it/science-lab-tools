@@ -1,0 +1,107 @@
+name: Scientific correction
+description: Report an inaccurate formula, unit, worked example, scientific explanation, or calculator result.
+title: "[Scientific correction]: "
+labels:
+  - content
+  - scientific-review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for scientific accuracy corrections. Do not include vulnerabilities, credentials, personal data, or sensitive logs. Suspected security issues must follow the repository security policy.
+
+  - type: input
+    id: affected-resource
+    attributes:
+      label: Affected resource
+      description: Provide the public URL, calculator name, formula entry, or repository path.
+      placeholder: "https://example.com/calculators/... or src/content/..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: correction-type
+    attributes:
+      label: Correction type
+      options:
+        - Incorrect formula or equation
+        - Incorrect calculation result
+        - Incorrect unit or conversion
+        - Incorrect worked example
+        - Misleading assumption or limitation
+        - Inaccurate scientific explanation
+        - Significant figures or rounding issue
+        - Source or citation problem
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-content
+    attributes:
+      label: Current content or result
+      description: Quote the relevant formula, explanation, example, input, output, or unit exactly as it appears.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-correction
+    attributes:
+      label: Proposed correction
+      description: State the corrected formula, value, unit, explanation, assumption, or limitation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: derivation
+    attributes:
+      label: Verification or derivation
+      description: Show the calculation, dimensional analysis, algebra, or reasoning needed to verify the correction. Include exact inputs and units where relevant.
+      placeholder: |
+        Formula: ...
+        Inputs: ...
+        Substitution: ...
+        Result: ...
+        Unit check: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Reliable sources
+      description: Provide authoritative textbooks, standards, peer-reviewed sources, university materials, or recognized scientific references. Include edition, section, DOI, or stable URL when available.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and related pages
+      description: List other calculators, formula entries, examples, tests, or pages that may require the same correction.
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Estimated impact
+      options:
+        - Critical — can produce materially unsafe or fundamentally incorrect guidance
+        - High — produces incorrect results for common valid inputs
+        - Medium — limited to specific assumptions, units, or examples
+        - Low — wording, notation, citation, or presentation issue
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I searched existing issues and did not find the same correction.
+          required: true
+        - label: I verified the proposed correction using at least one reliable source.
+          required: true
+        - label: I included units, assumptions, and rounding rules where relevant.
+          required: true
+        - label: This report does not contain a security vulnerability or sensitive information.
+          required: true
