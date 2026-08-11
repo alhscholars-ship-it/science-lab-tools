@@ -16,7 +16,7 @@ export default function manifest(): MetadataRoute.Manifest {
     dir: "ltr",
     categories: ["education", "science", "utilities"],
     background_color: "#ffffff",
-    theme_color: "#0f172a",
+    theme_color: "#312e81",
     icons: [
       {
         src: "/icon",

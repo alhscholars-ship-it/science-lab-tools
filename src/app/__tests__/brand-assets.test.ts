@@ -27,11 +27,6 @@ const manifestSource = readFileSync(
   "utf8",
 );
 
-const svgSource = readFileSync(
-  "public/brand/science-lab-tools-mark.svg",
-  "utf8",
-);
-
 describe("brand assets", () => {
   it("defines the expected generated image dimensions", () => {
     expect(iconSource).toContain("width: 512");
@@ -65,13 +60,15 @@ describe("brand assets", () => {
   });
 
   it("provides descriptive Open Graph alt text", () => {
-    expect(openGraphSource).toContain(
-      "Science Lab Tools",
-    );
+    expect(openGraphSource).toContain("siteConfig.name");
+    expect(openGraphSource).toContain("siteConfig.description");
+  });
 
-    expect(openGraphSource).toContain(
-      "accurate calculators and practical science resources",
-    );
+  it("uses the ALH brand palette instead of the sister project's colors", () => {
+    expect(iconSource).not.toContain("#0f766e");
+    expect(appleIconSource).not.toContain("#0f766e");
+    expect(openGraphSource).not.toContain("#0f766e");
+    expect(openGraphSource).not.toContain("Science Lab Tools");
   });
 
   it("defines a stable and scoped web app identity", () => {
@@ -114,12 +111,5 @@ describe("brand assets", () => {
     expect(manifestSource).toContain(
       'src: "/favicon.ico"',
     );
-  });
-
-  it("keeps the reusable SVG brand mark", () => {
-    expect(svgSource).toContain("<svg");
-    expect(svgSource).toContain("Science Lab Tools");
-    expect(svgSource).toContain("#0f766e");
-    expect(svgSource).toContain("#f59e0b");
   });
 });

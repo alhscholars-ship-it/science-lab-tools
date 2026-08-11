@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Page Not Found",
-  description:
-    "The requested page could not be found on Science Lab Tools.",
+  description: `The requested page could not be found on ${siteConfig.name}.`,
   robots: {
     index: false,
     follow: true,

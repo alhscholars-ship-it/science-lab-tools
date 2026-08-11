@@ -5,9 +5,8 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
-const pageTitle = "About Science Lab Tools";
-const pageDescription =
-  "Learn how Science Lab Tools creates formula-checked calculators, laboratory guides, worksheets, and practical educational resources for science learning.";
+const pageTitle = `About ${siteConfig.name}`;
+const pageDescription = `Learn how ${siteConfig.name} creates formula-checked calculators, laboratory guides, worksheets, and practical educational resources for science learning.`;
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -71,7 +70,7 @@ export default function AboutPage() {
 
           <div className="tool-page-hero__content">
             <p className="eyebrow">Our purpose and standards</p>
-            <h1>About Science Lab Tools</h1>
+            <h1>About {siteConfig.name}</h1>
             <p>
               We create practical science calculators, laboratory
               resources, and learning guides that explain both the
@@ -90,7 +89,7 @@ export default function AboutPage() {
                 Make scientific work clearer and more useful
               </h2>
               <p>
-                Science Lab Tools is designed for students, teachers,
+                {siteConfig.name} is designed for students, teachers,
                 homeschool families, and independent learners who need
                 accurate calculations and clear educational guidance.
               </p>

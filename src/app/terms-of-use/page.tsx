@@ -6,8 +6,7 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Terms of Use";
-const pageDescription =
-  "Read the Science Lab Tools terms of use covering acceptable use, educational content, calculators, intellectual property, warranties, and liability limitations.";
+const pageDescription = `Read the ${siteConfig.name} terms of use covering acceptable use, educational content, calculators, intellectual property, warranties, and liability limitations.`;
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -67,7 +66,7 @@ export default function TermsOfUsePage() {
             <p className="eyebrow">Website terms</p>
             <h1>Terms of Use</h1>
             <p>
-              By using Science Lab Tools, visitors agree to use the
+              By using {siteConfig.name}, visitors agree to use the
               website lawfully, responsibly, and in accordance with
               these terms.
             </p>

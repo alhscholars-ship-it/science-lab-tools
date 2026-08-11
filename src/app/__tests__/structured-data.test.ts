@@ -15,17 +15,12 @@ describe("sitewide structured data", () => {
     expect(layoutSource).toContain(
       'absoluteUrl("/#website")',
     );
-    expect(layoutSource).toContain('"@type": "Organization"');
+    expect(layoutSource).toContain('"@type": "EducationalOrganization"');
     expect(layoutSource).toContain('"@type": "WebSite"');
   });
 
-  it("uses the reusable brand mark as the organization logo", () => {
-    expect(layoutSource).toContain(
-      'absoluteUrl("/brand/science-lab-tools-mark.svg")',
-    );
-    expect(layoutSource).not.toContain(
-      'logo: absoluteUrl("/favicon.ico")',
-    );
+  it("uses the generated app icon as the organization logo", () => {
+    expect(layoutSource).toContain('url: absoluteUrl("/icon")');
   });
 
   it("connects the website publisher to the organization entity", () => {

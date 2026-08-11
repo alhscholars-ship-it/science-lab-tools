@@ -409,7 +409,7 @@ function getRenderedTitle(
         rawExpression.trim();
 
       if (expression === "siteConfig.name") {
-        return "Science Lab Tools";
+        return siteConfigName;
       }
 
       const memberMatch = expression.match(
@@ -456,6 +456,13 @@ const siteConfigDescriptionMatch =
 const siteConfigDescription =
   siteConfigDescriptionMatch?.[1]?.trim() ?? "";
 
+const siteConfigNameMatch = siteConfigText.match(
+  /name:\s*\n?\s*"([^"]+)"/,
+);
+
+const siteConfigName =
+  siteConfigNameMatch?.[1]?.trim() ?? "";
+
 const inherited = {
   hasMetadata: hasMetadataExport(layoutText),
   title:
@@ -467,7 +474,7 @@ const inherited = {
     layoutPath,
   ).replace(
     /\$\{siteConfig\.name\}/g,
-    "Science Lab Tools",
+    siteConfigName,
   ),
   description:
     resolveMetadataValue(

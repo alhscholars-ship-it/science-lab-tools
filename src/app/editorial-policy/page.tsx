@@ -6,8 +6,7 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Editorial Policy";
-const pageDescription =
-  "Read the Science Lab Tools editorial policy covering research, formula validation, educational clarity, updates, corrections, and responsible content standards.";
+const pageDescription = `Read the ${siteConfig.name} editorial policy covering research, formula validation, educational clarity, updates, corrections, and responsible content standards.`;
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -143,7 +142,7 @@ export default function EditorialPolicyPage() {
               <p>
                 Read more{" "}
                 <Link href="/about">
-                  about Science Lab Tools
+                  about {siteConfig.name}
                 </Link>
                 , review the{" "}
                 <Link href="/disclaimer">

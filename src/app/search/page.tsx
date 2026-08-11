@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/config/site";
 import {
   createBreadcrumbSchema,
   serializeJsonLd,
 } from "@/lib/seo/schema";
 import { searchSite, siteSearchIndex } from "@/lib/search/site-search";
 
-const pageTitle = "Search Science Lab Tools";
+const pageTitle = `Search ${siteConfig.name}`;
 const pageDescription =
   "Search science calculators, laboratory report guides, scientific-method resources, and printable classroom templates.";
 

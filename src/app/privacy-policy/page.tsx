@@ -6,8 +6,7 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Privacy Policy";
-const pageDescription =
-  "Read the Science Lab Tools privacy policy covering analytics, technical data, cookies, third-party services, data retention, and user privacy choices.";
+const pageDescription = `Read the ${siteConfig.name} privacy policy covering analytics, technical data, cookies, third-party services, data retention, and user privacy choices.`;
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -68,7 +67,7 @@ export default function PrivacyPolicyPage() {
             <h1>Privacy Policy</h1>
             <p>
               This policy explains the limited technical information
-              that may be processed when visitors use Science Lab Tools.
+              that may be processed when visitors use {siteConfig.name}.
             </p>
           </div>
         </Container>
@@ -152,7 +151,7 @@ export default function PrivacyPolicyPage() {
                 </Link>
                 , or learn more{" "}
                 <Link href="/about">
-                  about Science Lab Tools
+                  about {siteConfig.name}
                 </Link>
                 .
               </p>
