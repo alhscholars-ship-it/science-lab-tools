@@ -1,19 +1,38 @@
-import { describe, expect, it } from "vitest";
-
-import { createCanonicalHostRedirect } from "../canonical-host";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 describe("canonical host redirect", () => {
-  it("permanently redirects every www path to the HTTPS canonical host", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    vi.resetModules();
+  });
+
+  it("derives the redirect from the configured production site URL", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://alh.sciencecalchub.org");
+    vi.resetModules();
+
+    const { createCanonicalHostRedirect } = await import("../canonical-host");
+
     expect(createCanonicalHostRedirect()).toEqual({
       source: "/:path*",
       has: [
         {
           type: "host",
-          value: "www.sciencecalchub.com",
+          value: "www.alh.sciencecalchub.org",
         },
       ],
-      destination: "https://sciencecalchub.com/:path*",
+      destination: "https://alh.sciencecalchub.org/:path*",
       permanent: true,
     });
+  });
+
+  it("never hardcodes another deployment's domain", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://sciencecalchub.com");
+    vi.resetModules();
+
+    const { createCanonicalHostRedirect } = await import("../canonical-host");
+
+    expect(createCanonicalHostRedirect().destination).toBe(
+      "https://sciencecalchub.com/:path*",
+    );
   });
 });

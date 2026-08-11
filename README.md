@@ -48,6 +48,8 @@ This value drives metadata, canonical URLs, sitemap output, and structured data,
 
 Keep `GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION`, and `NEXT_PUBLIC_GA_MEASUREMENT_ID` deployment-specific as well.
 
+Use the origin only: no path, query string, fragment, or credentials. Production builds fail fast (`NODE_ENV=production` with no usable origin) rather than silently publishing `localhost` canonical, sitemap, Open Graph, or structured-data URLs.
+
 ## Quality gates
 
 Run the full validation suite before production deployment:

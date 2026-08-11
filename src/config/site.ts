@@ -1,15 +1,13 @@
-const fallbackUrl = "http://localhost:3000";
-
-function normalizeUrl(value: string): string {
-  return value.replace(/\/+$/, "");
-}
+import { resolveSiteUrl } from "./site-url";
 
 export const siteConfig = {
   name: "ALH Science Hub",
   shortName: "ALH Science",
   description:
     "A focused learning platform for interactive science calculators, formula practice, experiment planning, and laboratory reporting.",
-  url: normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL ?? fallbackUrl),
+  url: resolveSiteUrl({
+    configuredUrl: process.env.NEXT_PUBLIC_SITE_URL,
+  }),
   locale: "en_US",
   language: "en",
   creator: "ALH Scholars",
