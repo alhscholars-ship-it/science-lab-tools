@@ -154,13 +154,46 @@ function scoreResource(
   return score;
 }
 
-export function searchSite(query: string, limit = 30): SearchResource[] {
+export const searchResourceTypes: readonly SearchResourceType[] = [
+  "Calculator",
+  "Formula",
+  "Lab Report Guide",
+  "Scientific Method Guide",
+  "Template",
+];
+
+export type SearchOptions = {
+  limit?: number;
+  type?: SearchResourceType;
+};
+
+export function searchSite(
+  query: string,
+  options: SearchOptions = {},
+): SearchResource[] {
+  const { limit = 30, type } = options;
+
+  if (limit < 1) {
+    return [];
+  }
+
+  const scopedIndex = type
+    ? siteSearchIndex.filter((resource) => resource.type === type)
+    : siteSearchIndex;
+
   const normalizedQuery = normalize(query);
-  if (!normalizedQuery || limit < 1) return [];
+
+  if (!normalizedQuery) {
+    return type
+      ? [...scopedIndex]
+          .sort((first, second) => first.title.localeCompare(second.title))
+          .slice(0, limit)
+      : [];
+  }
 
   const terms = [...new Set(normalizedQuery.split(/\s+/).filter(Boolean))];
 
-  return siteSearchIndex
+  return scopedIndex
     .map((resource) => ({
       resource,
       score: scoreResource(resource, normalizedQuery, terms),

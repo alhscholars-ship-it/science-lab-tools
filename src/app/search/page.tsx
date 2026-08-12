@@ -7,7 +7,12 @@ import {
   createBreadcrumbSchema,
   serializeJsonLd,
 } from "@/lib/seo/schema";
-import { searchSite, siteSearchIndex } from "@/lib/search/site-search";
+import {
+  searchResourceTypes,
+  searchSite,
+  siteSearchIndex,
+  type SearchResourceType,
+} from "@/lib/search/site-search";
 
 const pageTitle = `Search ${siteConfig.name}`;
 const pageDescription =
@@ -33,13 +38,21 @@ const breadcrumbSchema = createBreadcrumbSchema({
 });
 
 type SearchPageProps = {
-  searchParams: Promise<{ q?: string | string[] }>;
+  searchParams: Promise<{ q?: string | string[]; type?: string | string[] }>;
 };
+
+function parseType(value: string | string[] | undefined): SearchResourceType | undefined {
+  const candidate = typeof value === "string" ? value : "";
+
+  return searchResourceTypes.find((type) => type === candidate);
+}
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   const params = await searchParams;
   const query = typeof params.q === "string" ? params.q.trim().slice(0, 100) : "";
-  const results = query ? searchSite(query) : [];
+  const type = parseType(params.type);
+  const isFiltering = Boolean(query) || Boolean(type);
+  const results = isFiltering ? searchSite(query, { type }) : [];
 
   return (
     <main>
@@ -68,14 +81,30 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             <label htmlFor="site-search-query">What do you need help with?</label>
             <div>
               <input id="site-search-query" name="q" type="search" defaultValue={query} placeholder="Try molarity, hypothesis, graphing, or percent error" maxLength={100} autoFocus />
+              <label className="sr-only" htmlFor="site-search-type">Filter by resource type</label>
+              <select id="site-search-type" name="type" defaultValue={type ?? ""}>
+                <option value="">All resource types</option>
+                {searchResourceTypes.map((resourceType) => (
+                  <option key={resourceType} value={resourceType}>
+                    {resourceType}
+                  </option>
+                ))}
+              </select>
               <button className="button button--primary" type="submit">Search</button>
             </div>
           </form>
 
-          {query ? (
+          {isFiltering ? (
             <section className="site-search-results" aria-labelledby="search-results-heading">
               <div className="directory-category__heading">
-                <div><p className="eyebrow">Search results</p><h2 id="search-results-heading">Results for “{query}”</h2></div>
+                <div>
+                  <p className="eyebrow">Search results</p>
+                  <h2 id="search-results-heading">
+                    {query
+                      ? `Results for “${query}”${type ? ` in ${type}` : ""}`
+                      : `Browsing ${type}`}
+                  </h2>
+                </div>
                 <span>{results.length} {results.length === 1 ? "result" : "results"}</span>
               </div>
               {results.length ? (
@@ -91,7 +120,11 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               ) : (
                 <div className="site-search-empty">
                   <h3>No matching resources found</h3>
-                  <p>Try a shorter subject name, a formula, or a task such as “write a hypothesis.”</p>
+                  <p>
+                    {query
+                      ? "Try a shorter subject name, a formula, or a task such as “write a hypothesis.”"
+                      : "No published resources match that type yet."}
+                  </p>
                 </div>
               )}
             </section>
