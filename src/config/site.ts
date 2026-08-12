@@ -4,8 +4,13 @@ function normalizeUrl(value: string): string {
   return value.replace(/\/+$/, "");
 }
 
+// SEO-critical URLs must always resolve to the public canonical domain.
+// An incorrect/missing environment variable must never produce localhost or a staging hostname.
 const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-const siteUrl = configuredUrl ? normalizeUrl(configuredUrl) : productionUrl;
+const siteUrl =
+  configuredUrl && normalizeUrl(configuredUrl) === productionUrl
+    ? productionUrl
+    : productionUrl;
 
 export const siteConfig = {
   name: "ALH Science Hub",
