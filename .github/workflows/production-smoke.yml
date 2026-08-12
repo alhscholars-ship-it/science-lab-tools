@@ -6,7 +6,7 @@ on:
       live_site_url:
         description: Production URL to verify
         required: false
-        default: https://alh.sciencecalchub.org
+        default: https://sciencecalchub.com
 
 permissions:
   contents: read
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      LIVE_SITE_URL: ${{ inputs.live_site_url || 'https://alh.sciencecalchub.org' }}
+      LIVE_SITE_URL: ${{ inputs.live_site_url || 'https://sciencecalchub.com' }}
       NEXT_TELEMETRY_DISABLED: "1"
 
     steps:
