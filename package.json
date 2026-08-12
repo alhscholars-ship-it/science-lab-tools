@@ -27,16 +27,16 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.12.1",
-    "@tailwindcss/postcss": "4.3.1",
+    "@tailwindcss/postcss": "4.3.3",
     "@types/node": "24.13.3",
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.4",
     "eslint": "9.39.4",
     "eslint-config-next": "16.3.0",
-    "playwright-core": "^1.61.1",
-    "tailwindcss": "4.3.1",
+    "playwright-core": "^1.62.1",
+    "tailwindcss": "4.3.3",
     "typescript": "6.0.3",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.10"
   },
   "description": "Interactive science learning, laboratory calculations, experiment planning, and report support from ALH Science Hub.",
   "license": "UNLICENSED",
