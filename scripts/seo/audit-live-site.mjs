@@ -1,10 +1,14 @@
 const baseUrl = (
   process.env.LIVE_SITE_URL ??
   process.env.NEXT_PUBLIC_SITE_URL ??
-  "https://alh.sciencecalchub.org"
+  "https://sciencecalchub.com"
 ).replace(/\/$/, "");
 
 const expectedOrigin = new URL(baseUrl).origin;
+
+if (expectedOrigin !== "https://sciencecalchub.com") {
+  throw new Error(`LIVE_SITE_URL must use https://sciencecalchub.com, received ${baseUrl}`);
+}
 
 const sitemapResponse = await fetch(`${baseUrl}/sitemap.xml`, {
   redirect: "follow",
@@ -16,12 +20,34 @@ if (!sitemapResponse.ok) {
 
 const sitemap = await sitemapResponse.text();
 
+if (!sitemap.includes("http://www.sitemaps.org/schemas/sitemap/0.9") && !sitemap.includes("http://www.sitemaps.org/schemas/sitemap/0.9")) {
+  console.warn("WARNING: sitemap namespace was not found in the response");
+}
+
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(
   (match) => match[1],
 );
 
 if (urls.length === 0) {
   throw new Error("Sitemap contains no URLs");
+}
+
+const invalidOrigins = urls.filter((url) => {
+  try {
+    return new URL(url).origin !== expectedOrigin;
+  } catch {
+    return true;
+  }
+});
+
+if (invalidOrigins.length > 0) {
+  throw new Error(
+    `Sitemap contains ${invalidOrigins.length} URL(s) outside ${expectedOrigin}: ${invalidOrigins.slice(0, 5).join(", ")}`,
+  );
+}
+
+if (urls.some((url) => /localhost|alh\.sciencecalchub\.org/i.test(url))) {
+  throw new Error("Sitemap contains a non-production hostname");
 }
 
 const results = [];
@@ -34,10 +60,6 @@ for (const [index, url] of urls.entries()) {
   try {
     const parsedUrl = new URL(url);
     const issues = [];
-
-    if (parsedUrl.origin !== expectedOrigin) {
-      issues.push(`wrong-origin-${parsedUrl.origin}`);
-    }
 
     const response = await fetch(url, {
       redirect: "follow",
