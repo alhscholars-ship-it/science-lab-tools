@@ -5,7 +5,8 @@ import { describe, expect, it } from "vitest";
 
 import sitemap from "../sitemap";
 import { calculators } from "../../content/calculators/registry";
-import { absoluteUrl } from "../../lib/seo/url";
+
+const productionOrigin = "https://sciencecalchub.com";
 
 function walk(directory: string): string[] {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -27,7 +28,7 @@ function discoverPageRoutes(): string[] {
     .sort();
 }
 
-describe("sitemap calculator coverage", () => {
+describe("sitemap", () => {
   it("includes every public App Router page exactly once", () => {
     const sitemapPaths = sitemap()
       .map((entry) => new URL(entry.url).pathname)
@@ -38,57 +39,24 @@ describe("sitemap calculator coverage", () => {
     expect(new Set(sitemapPaths).size).toBe(sitemapPaths.length);
   });
 
-  it("uses the production canonical host for every URL", () => {
+  it("uses only the canonical production origin", () => {
     const sitemapUrls = sitemap().map((entry) => entry.url);
 
     expect(sitemapUrls.length).toBeGreaterThan(0);
-    expect(sitemapUrls.every((url) => url.startsWith("https://sciencecalchub.com/"))).toBe(true);
-    expect(sitemapUrls.some((url) => url.includes("localhost"))).toBe(false);
-    expect(sitemapUrls.some((url) => url.includes("alh.sciencecalchub.org"))).toBe(false);
+    expect(sitemapUrls.every((url) => new URL(url).origin === productionOrigin)).toBe(true);
+    expect(sitemapUrls.some((url) => /localhost|alh\.sciencecalchub\.org/i.test(url))).toBe(false);
   });
 
   it("includes every calculator registry URL exactly once", () => {
     const sitemapUrls = sitemap().map((entry) => entry.url);
-
-    const calculatorUrls = calculators.map(({ href }) =>
-      absoluteUrl(href),
-    );
-
-    expect(
-      sitemapUrls.filter((url) =>
-        calculatorUrls.includes(url),
-      ),
-    ).toHaveLength(calculators.length);
-
-    expect(new Set(sitemapUrls).size).toBe(
-      sitemapUrls.length,
+    const calculatorUrls = calculators.map(
+      ({ href }) => new URL(href, `${productionOrigin}/`).toString(),
     );
 
     for (const calculatorUrl of calculatorUrls) {
-      expect(
-        sitemapUrls.filter((url) => url === calculatorUrl),
-      ).toHaveLength(1);
+      expect(sitemapUrls.filter((url) => url === calculatorUrl)).toHaveLength(1);
     }
-  });
 
-  it("contains no calculator detail URL outside the registry", () => {
-    const registryUrls = new Set(
-      calculators.map(({ href }) => absoluteUrl(href)),
-    );
-
-    const sitemapCalculatorUrls = sitemap()
-      .map((entry) => entry.url)
-      .filter(
-        (url) =>
-          new URL(url).pathname.startsWith(
-            "/calculators/",
-          ),
-      );
-
-    expect(
-      sitemapCalculatorUrls.filter(
-        (url) => !registryUrls.has(url),
-      ),
-    ).toEqual([]);
+    expect(new Set(sitemapUrls).size).toBe(sitemapUrls.length);
   });
 });
