@@ -1,15 +1,18 @@
-const fallbackUrl = "http://localhost:3000";
+const productionUrl = "https://sciencecalchub.com";
 
 function normalizeUrl(value: string): string {
   return value.replace(/\/+$/, "");
 }
+
+const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+const siteUrl = configuredUrl ? normalizeUrl(configuredUrl) : productionUrl;
 
 export const siteConfig = {
   name: "ALH Science Hub",
   shortName: "ALH Science",
   description:
     "A focused learning platform for interactive science calculators, formula practice, experiment planning, and laboratory reporting.",
-  url: normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL ?? fallbackUrl),
+  url: siteUrl,
   locale: "en_US",
   language: "en",
   creator: "ALH Scholars",
