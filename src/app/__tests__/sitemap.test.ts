@@ -38,6 +38,15 @@ describe("sitemap calculator coverage", () => {
     expect(new Set(sitemapPaths).size).toBe(sitemapPaths.length);
   });
 
+  it("uses the production canonical host for every URL", () => {
+    const sitemapUrls = sitemap().map((entry) => entry.url);
+
+    expect(sitemapUrls.length).toBeGreaterThan(0);
+    expect(sitemapUrls.every((url) => url.startsWith("https://sciencecalchub.com/"))).toBe(true);
+    expect(sitemapUrls.some((url) => url.includes("localhost"))).toBe(false);
+    expect(sitemapUrls.some((url) => url.includes("alh.sciencecalchub.org"))).toBe(false);
+  });
+
   it("includes every calculator registry URL exactly once", () => {
     const sitemapUrls = sitemap().map((entry) => entry.url);
 
