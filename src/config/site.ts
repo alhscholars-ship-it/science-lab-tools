@@ -11,6 +11,16 @@ export const siteConfig = {
   locale: "en_US",
   language: "en",
   creator: "ALH Scholars",
+  feedback: {
+    repositoryUrl:
+      "https://github.com/alhscholars-ship-it/science-lab-tools",
+    newIssueUrl:
+      "https://github.com/alhscholars-ship-it/science-lab-tools/issues/new/choose",
+    correctionIssueUrl:
+      "https://github.com/alhscholars-ship-it/science-lab-tools/issues/new?template=scientific-correction.yml",
+    bugReportIssueUrl:
+      "https://github.com/alhscholars-ship-it/science-lab-tools/issues/new?template=bug_report.yml",
+  },
   categories: [
     {
       name: "Calculate",

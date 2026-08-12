@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { ExternalLink } from "@/components/ui/external-link";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
@@ -131,6 +132,13 @@ export default function EditorialPolicyPage() {
                 Material errors should be corrected promptly after
                 verification. Minor formatting or readability changes
                 may be made without changing the scientific meaning.
+              </p>
+              <p>
+                Found a formula, unit, or result that looks wrong?{" "}
+                <ExternalLink href={siteConfig.feedback.correctionIssueUrl}>
+                  Submit a scientific correction
+                </ExternalLink>{" "}
+                with a reliable source so it can be verified.
               </p>
             </section>
 

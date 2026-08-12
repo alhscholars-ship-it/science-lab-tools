@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { ExternalLink } from "@/components/ui/external-link";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
@@ -152,6 +153,24 @@ export default function AboutPage() {
                 supervision, institutional procedures, manufacturer
                 instructions, professional engineering judgment, or
                 safety requirements.
+              </p>
+            </section>
+
+            <section aria-labelledby="contact-heading">
+              <p className="eyebrow">Questions and corrections</p>
+              <h2 id="contact-heading">
+                Found a problem or have feedback?
+              </h2>
+              <p>
+                Report a bug, an accessibility issue, or a scientific
+                error using our public issue tracker. Include the
+                affected page and, for scientific corrections, a
+                reliable source so it can be verified quickly.
+              </p>
+              <p>
+                <ExternalLink href={siteConfig.feedback.newIssueUrl}>
+                  Report an issue or suggest a correction
+                </ExternalLink>
               </p>
             </section>
           </article>

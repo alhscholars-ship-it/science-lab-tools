@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping improve Science Lab Tools. Do not include vulnerabilities, credentials, personal data, or sensitive logs here. Follow the repository security policy for suspected security issues.
+        Thanks for helping improve ALH Science Hub. Do not include vulnerabilities, credentials, personal data, or sensitive logs here. Follow the repository security policy for suspected security issues.
 
   - type: dropdown
     id: area
