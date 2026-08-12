@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import type { ReactNode } from "react";
 
-import { WebVitalsReporter } from "@/components/analytics/web-vitals-reporter";
+import { AnalyticsGate } from "@/components/analytics/analytics-gate";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { siteConfig } from "@/config/site";
+import { validGa4MeasurementId } from "@/lib/analytics/measurement-id";
 import { absoluteUrl } from "@/lib/seo/url";
 
 import "./globals.css";
@@ -63,15 +63,39 @@ export const viewport: Viewport = {
   themeColor: "#312e81",
 };
 
-const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gaMeasurementId = validGa4MeasurementId(
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+);
 
-const organizationSchema = {
+const organizationId = absoluteUrl("/#organization");
+const websiteId = absoluteUrl("/#website");
+
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  name: siteConfig.name,
-  url: siteConfig.url,
-  description: siteConfig.description,
-  logo: absoluteUrl("/favicon.ico"),
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": organizationId,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      description: siteConfig.description,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/icon"),
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: siteConfig.url,
+      name: siteConfig.name,
+      description: siteConfig.description,
+      inLanguage: siteConfig.language,
+      publisher: {
+        "@id": organizationId,
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -85,26 +109,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
-        {gaMeasurementId ? (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaMeasurementId}', { anonymize_ip: true });
-              `}
-            </Script>
-            <WebVitalsReporter />
-          </>
-        ) : null}
+        <AnalyticsGate measurementId={gaMeasurementId} />
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>

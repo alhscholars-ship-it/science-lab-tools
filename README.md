@@ -48,6 +48,8 @@ This value drives metadata, canonical URLs, sitemap output, and structured data,
 
 Keep `GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION`, and `NEXT_PUBLIC_GA_MEASUREMENT_ID` deployment-specific as well.
 
+Use the origin only: no path, query string, fragment, or credentials. Production builds fail fast (`NODE_ENV=production` with no usable origin) rather than silently publishing `localhost` canonical, sitemap, Open Graph, or structured-data URLs.
+
 ## Quality gates
 
 Run the full validation suite before production deployment:
@@ -66,3 +68,26 @@ The production mapping is intentionally split between two independent projects:
 - `https://alh.sciencecalchub.org` → `alhscholars-ship-it/science-lab-tools`
 
 Deploy this repository as its own hosting project. Do not attach `sciencecalchub.org` as an alternate production domain for this repository, and do not reuse the other project's analytics or search-verification values.
+
+## Project structure
+
+```text
+src/app/              Routes, metadata endpoints, and page composition
+src/components/       Shared layout, UI, calculator, and analytics components
+src/content/          Calculator registry, routes, and educational content
+src/lib/              Calculation, validation, formatting, and SEO utilities
+scripts/               SEO, link, accessibility, and performance checks
+public/                Static brand and public assets
+```
+
+## Content and product principles
+
+New calculators or resources should solve a clear user problem, provide accurate formulas and units, include explanatory content, link to related resources, and pass the existing quality checks. Avoid thin, duplicate, speculative, or keyword-stuffed pages. Remove code or content only after confirming it is unused and covered by tests or repository-wide references.
+
+## Contributing
+
+Before opening a pull request, run the relevant tests and `pnpm check`. For user-facing pages, verify mobile behavior, keyboard navigation, metadata, structured data, internal links, and scientific accuracy.
+
+## License
+
+This repository is currently marked `UNLICENSED`. No reuse rights are granted unless the repository owner adds an explicit license.

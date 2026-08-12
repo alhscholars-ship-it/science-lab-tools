@@ -1,15 +1,17 @@
-const CANONICAL_HOST = "sciencecalchub.com";
+import { siteConfig } from "./site";
 
 export function createCanonicalHostRedirect() {
+  const canonicalHost = new URL(siteConfig.url).host;
+
   return {
     source: "/:path*",
     has: [
       {
         type: "host" as const,
-        value: `www.${CANONICAL_HOST}`,
+        value: `www.${canonicalHost}`,
       },
     ],
-    destination: `https://${CANONICAL_HOST}/:path*`,
+    destination: `https://${canonicalHost}/:path*`,
     permanent: true,
   };
 }

@@ -1,7 +1,8 @@
 import { ImageResponse } from "next/og";
 
-export const alt =
-  "Science Lab Tools — accurate calculators and practical science resources";
+import { siteConfig } from "@/config/site";
+
+export const alt = `${siteConfig.name} — ${siteConfig.description}`;
 
 export const size = {
   width: 1200,
@@ -22,8 +23,8 @@ export default function OpenGraphImage() {
           overflow: "hidden",
           padding: "76px 82px",
           background:
-            "linear-gradient(135deg, #ffffff 0%, #f0fdfa 54%, #ccfbf1 100%)",
-          color: "#0f172a",
+            "linear-gradient(135deg, #ffffff 0%, #f7f7fb 54%, #efedff 100%)",
+          color: "#171b2c",
           fontFamily: "Arial, sans-serif",
         }}
       >
@@ -35,7 +36,7 @@ export default function OpenGraphImage() {
             width: 500,
             height: 500,
             borderRadius: "50%",
-            background: "rgba(15, 118, 110, 0.10)",
+            background: "rgba(103, 89, 232, 0.12)",
           }}
         />
 
@@ -59,14 +60,14 @@ export default function OpenGraphImage() {
               style={{
                 display: "flex",
                 marginBottom: 30,
-                color: "#115e59",
+                color: "#4d41c9",
                 fontSize: 26,
                 fontWeight: 700,
                 letterSpacing: 4,
                 textTransform: "uppercase",
               }}
             >
-              Practical science made clear
+              ALH Science Workspace
             </div>
 
             <div
@@ -78,27 +79,27 @@ export default function OpenGraphImage() {
                 letterSpacing: -3,
               }}
             >
-              Science Lab Tools
+              {siteConfig.name}
             </div>
 
             <div
               style={{
                 display: "flex",
                 marginTop: 28,
-                color: "#475569",
+                color: "#63697a",
                 fontSize: 32,
                 lineHeight: 1.35,
               }}
             >
-              Accurate calculators, laboratory templates, worksheets,
-              and step-by-step learning resources.
+              Guided calculations, formula practice, experiment
+              planning, and laboratory reporting in one workspace.
             </div>
 
             <div
               style={{
                 display: "flex",
                 marginTop: 38,
-                color: "#0f766e",
+                color: "#6759e8",
                 fontSize: 24,
                 fontWeight: 700,
               }}
@@ -115,8 +116,8 @@ export default function OpenGraphImage() {
               alignItems: "center",
               justifyContent: "center",
               borderRadius: 64,
-              background: "#0f766e",
-              boxShadow: "0 30px 70px rgba(15, 23, 42, 0.18)",
+              background: "#6759e8",
+              boxShadow: "0 30px 70px rgba(25, 27, 54, 0.18)",
             }}
           >
             <svg
@@ -140,8 +141,8 @@ export default function OpenGraphImage() {
                 strokeWidth="30"
                 strokeLinecap="round"
               />
-              <circle cx="218" cy="277" r="20" fill="#f59e0b" />
-              <circle cx="297" cy="366" r="20" fill="#f59e0b" />
+              <circle cx="218" cy="277" r="20" fill="#31b9ae" />
+              <circle cx="297" cy="366" r="20" fill="#31b9ae" />
             </svg>
           </div>
         </div>

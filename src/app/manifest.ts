@@ -4,13 +4,19 @@ import { siteConfig } from "@/config/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
+    id: "/",
     name: siteConfig.name,
     short_name: siteConfig.shortName,
     description: siteConfig.description,
     start_url: "/",
+    scope: "/",
     display: "standalone",
+    orientation: "any",
+    lang: siteConfig.language,
+    dir: "ltr",
+    categories: ["education", "science", "utilities"],
     background_color: "#ffffff",
-    theme_color: "#0f172a",
+    theme_color: "#312e81",
     icons: [
       {
         src: "/icon",

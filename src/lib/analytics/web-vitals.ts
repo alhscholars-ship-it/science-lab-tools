@@ -17,6 +17,22 @@ export type AnalyticsEvent = {
   };
 };
 
+export type GtagParameters = Record<
+  string,
+  string | number | boolean
+>;
+
+export type GtagCommand = [
+  command: "event",
+  eventName: string,
+  parameters: GtagParameters,
+];
+
+export type AnalyticsTarget = {
+  dataLayer?: GtagCommand[];
+  gtag?: (...command: GtagCommand) => void;
+};
+
 export function createWebVitalAnalyticsEvent(
   metric: WebVital,
 ): AnalyticsEvent {
@@ -32,4 +48,17 @@ export function createWebVitalAnalyticsEvent(
       non_interaction: true,
     },
   };
+}
+
+export function reportAnalyticsEvent(
+  target: AnalyticsTarget,
+  command: GtagCommand,
+): void {
+  if (target.gtag) {
+    target.gtag(...command);
+    return;
+  }
+
+  target.dataLayer = target.dataLayer ?? [];
+  target.dataLayer.push(command);
 }

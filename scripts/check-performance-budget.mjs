@@ -2,60 +2,100 @@ import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
 
-const fixedRoutes = {
-  Homepage:
-    ".next/server/app/page_client-reference-manifest.js",
-  "Calculators hub":
-    ".next/server/app/calculators/page_client-reference-manifest.js",
-  "Templates hub":
-    ".next/server/app/templates/page_client-reference-manifest.js",
-  "Lab Reports hub":
-    ".next/server/app/lab-reports/page_client-reference-manifest.js",
-  "Scientific Method hub":
-    ".next/server/app/scientific-method/page_client-reference-manifest.js",
-};
+const fixedRoutes = JSON.parse(
+  fs.readFileSync(
+    new URL("./performance-budget-routes.json", import.meta.url),
+    "utf8",
+  ),
+);
 
 const calculatorManifestDirectory =
   ".next/server/app/calculators";
 
-const calculatorRoutes = Object.fromEntries(
-  fs
-    .readdirSync(calculatorManifestDirectory, {
-      withFileTypes: true,
-    })
-    .filter(
-      (entry) =>
-        entry.isDirectory() &&
-        entry.name.endsWith("-calculator"),
-    )
-    .map((entry) => [
-      entry.name
-        .replace(/-calculator$/, "")
-        .split("-")
-        .map(
-          (word) =>
-            word.charAt(0).toUpperCase() +
-            word.slice(1),
-        )
-        .join(" "),
-      path.join(
+if (!fs.existsSync(calculatorManifestDirectory)) {
+  throw new Error(
+    `Calculator manifest directory is missing: ${calculatorManifestDirectory}`,
+  );
+}
+
+const calculatorRouteEntries = fs
+  .readdirSync(calculatorManifestDirectory, {
+    withFileTypes: true,
+  })
+  .filter(
+    (entry) =>
+      entry.isDirectory() &&
+      entry.name.endsWith("-calculator"),
+  )
+  .map((entry) => [
+    entry.name
+      .replace(/-calculator$/, "")
+      .split("-")
+      .map(
+        (word) =>
+          word.charAt(0).toUpperCase() +
+          word.slice(1),
+      )
+      .join(" "),
+    {
+      manifest: path.join(
         calculatorManifestDirectory,
         entry.name,
         "page_client-reference-manifest.js",
       ),
-    ]),
+      budget: "calculator",
+    },
+  ]);
+
+if (calculatorRouteEntries.length === 0) {
+  throw new Error(
+    "No calculator routes were discovered for performance budgeting",
+  );
+}
+
+const fixedLabels = new Set(Object.keys(fixedRoutes));
+const fixedManifests = new Set(
+  Object.values(fixedRoutes).map((route) => route.manifest),
 );
+
+for (const [label, route] of calculatorRouteEntries) {
+  if (fixedLabels.has(label)) {
+    throw new Error(
+      `Calculator performance label conflicts with a configured route: ${label}`,
+    );
+  }
+
+  if (fixedManifests.has(route.manifest)) {
+    throw new Error(
+      `Calculator manifest conflicts with a configured route: ${route.manifest}`,
+    );
+  }
+}
+
+const calculatorRoutes = Object.fromEntries(
+  calculatorRouteEntries,
+);
+
+if (
+  Object.keys(calculatorRoutes).length !==
+  calculatorRouteEntries.length
+) {
+  throw new Error(
+    "Calculator performance labels are not unique",
+  );
+}
 
 const routes = {
   ...fixedRoutes,
   ...calculatorRoutes,
 };
 
-
-const sharedGzipBudget = 25 * 1024;
-const calculatorUniqueGzipBudget = 8 * 1024;
-const calculatorsHubUniqueGzipBudget = 2 * 1024;
-const staticUniqueGzipBudget = 512;
+const budgetLimits = {
+  shared: 25 * 1024,
+  calculator: 8 * 1024,
+  directory: 2 * 1024,
+  static: 512,
+};
 
 function parseManifest(manifestPath) {
   const source = fs.readFileSync(manifestPath, "utf8");
@@ -118,21 +158,30 @@ function gzipSize(chunk) {
 
 const routeChunks = new Map();
 
-for (const [label, manifestPath] of Object.entries(routes)) {
-  if (!fs.existsSync(manifestPath)) {
-    throw new Error(`Manifest missing: ${manifestPath}`);
+for (const [label, route] of Object.entries(routes)) {
+  if (!Object.hasOwn(budgetLimits, route.budget)) {
+    throw new Error(
+      `Unknown performance budget class for ${label}: ${route.budget}`,
+    );
   }
 
-  routeChunks.set(
-    label,
-    getChunks(parseManifest(manifestPath)),
-  );
+  if (!fs.existsSync(route.manifest)) {
+    throw new Error(`Manifest missing: ${route.manifest}`);
+  }
+
+  routeChunks.set(label, {
+    chunks: getChunks(parseManifest(route.manifest)),
+    budget: route.budget,
+  });
 }
 
-const homepageChunks = new Set(
-  routeChunks.get("Homepage"),
-);
+const homepage = routeChunks.get("Homepage");
 
+if (!homepage) {
+  throw new Error("Homepage performance route is missing");
+}
+
+const homepageChunks = new Set(homepage.chunks);
 const homepageGzip = [...homepageChunks].reduce(
   (total, chunk) => total + gzipSize(chunk),
   0,
@@ -145,17 +194,17 @@ console.log(
   `Shared homepage JavaScript: ${(homepageGzip / 1024).toFixed(1)} KB gzip`,
 );
 
-if (homepageGzip > sharedGzipBudget) {
+if (homepageGzip > budgetLimits.shared) {
   console.error(
-    `FAIL: shared JavaScript exceeds ${(sharedGzipBudget / 1024).toFixed(0)} KB gzip`,
+    `FAIL: shared JavaScript exceeds ${(budgetLimits.shared / 1024).toFixed(0)} KB gzip`,
   );
   failed = true;
 } else {
   console.log("PASS: shared JavaScript budget");
 }
 
-for (const [label, chunks] of routeChunks) {
-  const uniqueChunks = chunks.filter(
+for (const [label, route] of routeChunks) {
+  const uniqueChunks = route.chunks.filter(
     (chunk) => !homepageChunks.has(chunk),
   );
 
@@ -163,15 +212,7 @@ for (const [label, chunks] of routeChunks) {
     (total, chunk) => total + gzipSize(chunk),
     0,
   );
-
-  const isCalculator =
-    Object.hasOwn(calculatorRoutes, label);
-
-  const budget = isCalculator
-    ? calculatorUniqueGzipBudget
-    : label === "Calculators hub"
-      ? calculatorsHubUniqueGzipBudget
-      : staticUniqueGzipBudget;
+  const budget = budgetLimits[route.budget];
 
   console.log(
     `${label}: ${(uniqueGzip / 1024).toFixed(1)} KB unique gzip`,

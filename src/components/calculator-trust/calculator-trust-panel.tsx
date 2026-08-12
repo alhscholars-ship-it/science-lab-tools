@@ -42,7 +42,7 @@ export function CalculatorTrustPanel({
             className="article-inline-link"
             href="/about"
           >
-            about Science Lab Tools
+            about {siteConfig.name}
           </Link>
           .
         </p>

@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "UV_THREADPOOL_SIZE=1 next build --webpack",
+    "build:measure": "node scripts/measure-build-processes.mjs",
     "start": "node scripts/start-standalone.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -15,26 +16,27 @@
     "test:watch": "vitest",
     "check:performance": "node scripts/check-performance-budget.mjs",
     "check:a11y": "node scripts/check-accessibility.mjs",
+    "verify:hostinger": "node scripts/verify-hostinger-build-safety.mjs",
     "seo:audit": "node scripts/seo/audit-pages.mjs",
     "seo:audit:live": "node scripts/seo/audit-live-site.mjs"
   },
   "dependencies": {
-    "next": "16.2.9",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.12.1",
-    "@tailwindcss/postcss": "4.3.1",
-    "@types/node": "20.19.43",
-    "@types/react": "19.2.17",
-    "@types/react-dom": "19.2.3",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
     "eslint": "9.39.4",
-    "eslint-config-next": "16.2.9",
-    "playwright-core": "^1.61.1",
-    "tailwindcss": "4.3.1",
-    "typescript": "5.9.3",
-    "vitest": "^4.1.9"
+    "eslint-config-next": "16.3.0",
+    "playwright-core": "^1.62.1",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3",
+    "vitest": "^4.1.10"
   },
   "description": "Interactive science learning, laboratory calculations, experiment planning, and report support from ALH Science Hub.",
   "license": "UNLICENSED",

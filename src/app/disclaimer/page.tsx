@@ -6,8 +6,7 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Educational Disclaimer";
-const pageDescription =
-  "Review the Science Lab Tools educational disclaimer covering calculator limitations, laboratory safety, professional advice, accuracy, and responsible use.";
+const pageDescription = `Review the ${siteConfig.name} educational disclaimer covering calculator limitations, laboratory safety, professional advice, accuracy, and responsible use.`;
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -67,7 +66,7 @@ export default function DisclaimerPage() {
             <p className="eyebrow">Responsible use</p>
             <h1>Educational Disclaimer</h1>
             <p>
-              Science Lab Tools provides general educational resources
+              {siteConfig.name} provides general educational resources
               and calculation aids. Users remain responsible for
               checking suitability, assumptions, and safety.
             </p>

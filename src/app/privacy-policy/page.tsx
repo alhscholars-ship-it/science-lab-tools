@@ -6,8 +6,7 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Privacy Policy";
-const pageDescription =
-  "Read the Science Lab Tools privacy policy covering analytics, technical data, cookies, third-party services, data retention, and user privacy choices.";
+const pageDescription = `Read the ${siteConfig.name} privacy policy covering analytics, technical data, cookies, third-party services, data retention, and user privacy choices.`;
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -68,7 +67,7 @@ export default function PrivacyPolicyPage() {
             <h1>Privacy Policy</h1>
             <p>
               This policy explains the limited technical information
-              that may be processed when visitors use Science Lab Tools.
+              that may be processed when visitors use {siteConfig.name}.
             </p>
           </div>
         </Container>
@@ -99,6 +98,13 @@ export default function PrivacyPolicyPage() {
                 data helps identify useful resources and technical
                 problems.
               </p>
+              <p>
+                Analytics does not load until a visitor explicitly
+                accepts it in the cookie preferences banner shown on
+                first visit. Declining, or not responding, keeps
+                analytics disabled. IP addresses are anonymized when
+                analytics is active.
+              </p>
             </section>
 
             <section aria-labelledby="cookies-heading">
@@ -106,10 +112,13 @@ export default function PrivacyPolicyPage() {
                 Cookies and similar technologies
               </h2>
               <p>
-                Analytics and infrastructure providers may use cookies
-                or similar technologies. Browser settings and relevant
-                privacy controls can be used to limit or remove stored
-                data.
+                Analytics providers use cookies or similar technologies
+                only after consent is given, as described above. A
+                small amount of local browser storage remembers that
+                choice so the banner does not reappear on every visit.
+                The choice can be changed anytime using the &ldquo;Cookie
+                preferences&rdquo; link in the site footer, or by
+                clearing site data in browser settings.
               </p>
             </section>
 
@@ -152,7 +161,7 @@ export default function PrivacyPolicyPage() {
                 </Link>
                 , or learn more{" "}
                 <Link href="/about">
-                  about Science Lab Tools
+                  about {siteConfig.name}
                 </Link>
                 .
               </p>

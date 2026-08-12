@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { ExternalLink } from "@/components/ui/external-link";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Editorial Policy";
-const pageDescription =
-  "Read the Science Lab Tools editorial policy covering research, formula validation, educational clarity, updates, corrections, and responsible content standards.";
+const pageDescription = `Read the ${siteConfig.name} editorial policy covering research, formula validation, educational clarity, updates, corrections, and responsible content standards.`;
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -133,6 +133,13 @@ export default function EditorialPolicyPage() {
                 verification. Minor formatting or readability changes
                 may be made without changing the scientific meaning.
               </p>
+              <p>
+                Found a formula, unit, or result that looks wrong?{" "}
+                <ExternalLink href={siteConfig.feedback.correctionIssueUrl}>
+                  Submit a scientific correction
+                </ExternalLink>{" "}
+                with a reliable source so it can be verified.
+              </p>
             </section>
 
             <section aria-labelledby="related-heading">
@@ -143,7 +150,7 @@ export default function EditorialPolicyPage() {
               <p>
                 Read more{" "}
                 <Link href="/about">
-                  about Science Lab Tools
+                  about {siteConfig.name}
                 </Link>
                 , review the{" "}
                 <Link href="/disclaimer">
