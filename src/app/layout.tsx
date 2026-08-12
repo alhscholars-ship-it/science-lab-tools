@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import type { ReactNode } from "react";
 
-import { WebVitalsReporter } from "@/components/analytics/web-vitals-reporter";
+import { AnalyticsGate } from "@/components/analytics/analytics-gate";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { siteConfig } from "@/config/site";
@@ -113,23 +112,7 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
-        {gaMeasurementId ? (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaMeasurementId}', { anonymize_ip: true });
-              `}
-            </Script>
-            <WebVitalsReporter />
-          </>
-        ) : null}
+        <AnalyticsGate measurementId={gaMeasurementId} />
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>

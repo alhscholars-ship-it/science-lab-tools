@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { CookiePreferencesButton } from "@/components/analytics/cookie-preferences-button";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 
@@ -49,6 +50,7 @@ export function SiteFooter() {
               <Link href="/terms-of-use">
                 Terms of Use
               </Link>
+              <CookiePreferencesButton />
             </nav>
           </div>
         </div>
