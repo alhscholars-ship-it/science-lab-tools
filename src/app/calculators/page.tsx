@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CalculatorDirectory } from "@/components/calculator-directory";
+import { ScienceCalculatorGuide } from "@/components/content/science-calculator-guide";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { calculators } from "@/content/calculators/registry";
@@ -223,6 +224,8 @@ export default function CalculatorsPage() {
           </div>
 
           <CalculatorDirectory calculators={calculators} />
+
+          <ScienceCalculatorGuide />
         </Container>
       </section>
 
