@@ -16,6 +16,23 @@ import {
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle = "Science Formula Library";
+
+const categoryDescriptions = {
+  Physics:
+    "Explore physics formulas for motion, forces, energy, electricity, and mechanics with equations, variables, and calculator tools.",
+  Chemistry:
+    "Explore chemistry formulas for reactions, solutions, moles, concentrations, and laboratory calculations with practical tools.",
+  Laboratory:
+    "Explore laboratory formulas for measurements, uncertainty, statistics, and experimental data analysis.",
+} as const;
+
+const featuredFormulaSlugs = [
+  "newtons-second-law",
+  "ideal-gas-law",
+  "molarity",
+  "percent-error",
+] as const;
+
 const pageDescription =
   "Reference essential physics, chemistry, and laboratory formulas, understand every variable, and open a calculator to check your work.";
 const pagePath = "/formulas";
@@ -106,12 +123,22 @@ export default function FormulasPage() {
             <p className="eyebrow">Quick-reference equations</p>
             <h1>{pageTitle}</h1>
             <p>{pageDescription}</p>
+            <p>
+              Explore {scienceFormulas.length}+ science formulas across Physics,
+              Chemistry, and Laboratory topics.
+            </p>
           </div>
           <nav className="formula-jump-links" aria-label="Formula categories">
             {formulaCategories.map((category) => (
-              <a key={category} href={`#${category.toLowerCase()}`}>
-                {category} formulas
-              </a>
+              <div key={category}>
+                <a href={`#${category.toLowerCase()}`}>
+                  {category} formulas
+                </a>
+                {" "}
+                <Link href={`/formulas/category/${category.toLowerCase()}`}>
+                  Explore →
+                </Link>
+              </div>
             ))}
           </nav>
         </Container>
@@ -137,6 +164,49 @@ export default function FormulasPage() {
             </p>
           </div>
 
+          <section className="formula-featured-section">
+            <div className="section-heading">
+              <p className="eyebrow">Popular formula tools</p>
+              <h2>Start with commonly used science formulas</h2>
+              <p>
+                Quickly open important formulas with explanations and calculator
+                tools for solving real science problems.
+              </p>
+            </div>
+
+            <div className="formula-library-grid">
+              {featuredFormulaSlugs.map((slug) => {
+                const formula = scienceFormulas.find(
+                  (item) => item.slug === slug,
+                );
+
+                if (!formula) return null;
+
+                return (
+                  <article
+                    className="formula-library-card"
+                    key={formula.slug}
+                  >
+                    <p className="eyebrow">{formula.category}</p>
+                    <h3>{formula.name}</h3>
+                    <p className="formula-library-card__equation">
+                      {formula.equation}
+                    </p>
+                    <p>{formula.description}</p>
+                    <div className="formula-card-links">
+                      <Link href={`/formulas/${formula.slug}`}>
+                        Learn formula →
+                      </Link>
+                      <Link href={formula.calculatorHref}>
+                        Calculator →
+                      </Link>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+
           {formulaCategories.map((category) => {
             const formulas = scienceFormulas.filter(
               (formula) => formula.category === category,
@@ -152,6 +222,7 @@ export default function FormulasPage() {
                   <div>
                     <p className="eyebrow">{category} reference</p>
                     <h2>{category} Formulas</h2>
+                    <p>{categoryDescriptions[category]}</p>
                   </div>
                   <span>{formulas.length} equations</span>
                 </div>
@@ -163,6 +234,7 @@ export default function FormulasPage() {
                       id={formula.slug}
                       key={formula.slug}
                     >
+                      <p className="eyebrow">{formula.category}</p>
                       <h3>{formula.name}</h3>
                       <p className="formula-library-card__equation">
                         {formula.equation}
@@ -172,9 +244,14 @@ export default function FormulasPage() {
                         <dt>Variables</dt>
                         <dd>{formula.variables.join("; ")}</dd>
                       </dl>
-                      <Link href={formula.calculatorHref}>
-                        Open calculator <span aria-hidden="true">→</span>
-                      </Link>
+                      <div className="formula-card-links">
+                        <Link href={`/formulas/${formula.slug}`}>
+                          Learn formula <span aria-hidden="true">→</span>
+                        </Link>
+                        <Link href={formula.calculatorHref}>
+                          Open calculator <span aria-hidden="true">→</span>
+                        </Link>
+                      </div>
                     </article>
                   ))}
                 </div>

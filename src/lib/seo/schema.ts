@@ -139,6 +139,59 @@ export function createCollectionPageSchema({
   };
 }
 
+
+type FormulaSchemaInput = {
+  name: string;
+  description: string;
+  equation: string;
+  path: string;
+};
+
+export function createFormulaSchema({
+  name,
+  description,
+  equation,
+  path,
+}: FormulaSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: `${name} Formula`,
+    description,
+    termCode: equation,
+    url: absoluteUrl(path),
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      name: "Science Formula Library",
+      url: absoluteUrl("/formulas"),
+    },
+  };
+}
+
+type ArticleSchemaInput = {
+  headline: string;
+  description: string;
+  path: string;
+};
+
+export function createArticleSchema({
+  headline,
+  description,
+  path,
+}: ArticleSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    url: absoluteUrl(path),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": absoluteUrl(path),
+    },
+  };
+}
+
 export function serializeJsonLd(
   schema: unknown,
 ): string {

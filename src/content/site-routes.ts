@@ -13,6 +13,21 @@ export const sitemapRoutes: readonly SitemapRoute[] = [
   { path: "/terms-of-use", changeFrequency: "yearly", priority: 0.3 },
   { path: "/calculators", changeFrequency: "weekly", priority: 0.9 },
   { path: "/formulas", changeFrequency: "weekly", priority: 0.9 },
+  {
+    path: "/formulas/category/physics",
+    changeFrequency: "weekly",
+    priority: 0.8,
+  },
+  {
+    path: "/formulas/category/chemistry",
+    changeFrequency: "weekly",
+    priority: 0.8,
+  },
+  {
+    path: "/formulas/category/laboratory",
+    changeFrequency: "weekly",
+    priority: 0.8,
+  },
   { path: "/physics-calculators", changeFrequency: "weekly", priority: 0.9 },
   { path: "/chemistry-calculators", changeFrequency: "weekly", priority: 0.9 },
   { path: "/laboratory-calculators", changeFrequency: "weekly", priority: 0.9 },
