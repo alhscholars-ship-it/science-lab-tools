@@ -5,9 +5,11 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
-const pageTitle = "How to Write a Hypothesis";
+const pageTitle =
+  "How to Write a Hypothesis - Science Examples & Guide";
+
 const pageDescription =
-  "Learn how to write a clear, testable scientific hypothesis using independent and dependent variables, evidence-based reasoning, and practical examples.";
+  "Learn how to write a scientific hypothesis with examples. Understand testable predictions, variables, if-then statements, and how to create a strong research hypothesis.";
 
 export const metadata: Metadata = {
   title: pageTitle,

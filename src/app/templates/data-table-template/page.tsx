@@ -5,9 +5,11 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
-const pageTitle = "Scientific Data Table Template";
+const pageTitle =
+  "Scientific Data Table Template - Printable Lab Data Table";
+
 const pageDescription =
-  "Use this printable scientific data table template to record variables, units, repeated trials, averages, qualitative observations, anomalies, and measurement notes.";
+  "Download and use a scientific data table template for lab experiments. Record variables, units, trials, measurements, observations, and results with a clear format.";
 
 export const metadata: Metadata = {
   title: pageTitle,

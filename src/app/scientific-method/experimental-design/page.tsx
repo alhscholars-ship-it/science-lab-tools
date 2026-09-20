@@ -5,9 +5,11 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
-const pageTitle = "How to Design a Scientific Experiment";
+const pageTitle =
+  "How to Design a Scientific Experiment - Steps & Guide";
+
 const pageDescription =
-  "Learn how to design a reliable scientific experiment with a focused question, testable variables, controls, repeat trials, measurements, and safety planning.";
+  "Learn how to design a scientific experiment step by step. Create research questions, variables, controls, procedures, measurements, and reliable tests with this complete guide.";
 
 export const metadata: Metadata = {
   title: pageTitle,

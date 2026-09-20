@@ -9,10 +9,10 @@ const pageTitle =
   "Independent, Dependent & Controlled Variables";
 
 const seoTitle =
-  "Experiment Variables Guide";
+  "Independent, Dependent & Controlled Variables - Science Experiment Guide";
 
 const pageDescription =
-  "Identify independent, dependent, and controlled variables in scientific experiments with clear definitions, examples, and guidance for fair testing.";
+  "Learn independent, dependent, and controlled variables in science experiments. Understand definitions, examples, and how to design fair tests with clear explanations.";
 
 export const metadata: Metadata = {
   title: seoTitle,

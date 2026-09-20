@@ -5,9 +5,11 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
-const pageTitle = "Steps of the Scientific Method";
+const pageTitle =
+  "Steps of the Scientific Method - Complete Guide";
+
 const pageDescription =
-  "Explore the steps of the scientific method, from observation and hypothesis to experimentation, data analysis, conclusions, and communicating results.";
+  "Learn the steps of the scientific method with a complete guide. Understand observation, questions, hypotheses, experiments, data analysis, conclusions, and scientific communication.";
 
 export const metadata: Metadata = {
   title: pageTitle,

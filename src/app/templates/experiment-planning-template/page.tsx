@@ -5,9 +5,11 @@ import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
-const pageTitle = "Experiment Planning Template";
+const pageTitle =
+  "Experiment Planning Template - Science Lab Worksheet";
+
 const pageDescription =
-  "Use this printable experiment planning template to define a research question, hypothesis, variables, controls, materials, procedure, measurements, trials, and safety.";
+  "Use this experiment planning template for science projects and lab investigations. Plan research questions, hypotheses, variables, controls, materials, procedures, measurements, and results.";
 
 export const metadata: Metadata = {
   title: pageTitle,
