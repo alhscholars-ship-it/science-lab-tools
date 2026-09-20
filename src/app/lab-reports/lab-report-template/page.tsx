@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
+import { createBreadcrumbSchema } from "@/lib/seo/schema";
 
 const pageTitle = "Lab Report Template";
 const pageDescription =
@@ -86,6 +87,17 @@ const faqSchema = {
     },
   })),
 };
+
+
+const breadcrumbSchema =
+  createBreadcrumbSchema({
+    pageName: "Lab Report Template",
+    pagePath: "/lab-reports/lab-report-template",
+    parentName: "Lab Reports",
+    parentPath: "/lab-reports",
+    sectionName: "Lab Report Format",
+    sectionPath: "/lab-reports/lab-report-format",
+  });
 
 const templateSections = [
   {
@@ -188,6 +200,15 @@ export default function LabReportTemplatePage() {
             /</g,
             "\\u003c",
           ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema,
+          ).replace(/</g, "\\u003c"),
         }}
       />
 

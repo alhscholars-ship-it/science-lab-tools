@@ -10,7 +10,7 @@ export const physicsHub = {
   category: "Physics",
 
   intro:
-    "Use our physics calculators to solve common physics problems accurately. Each tool includes formulas, explanations, and worked examples to help students and teachers understand the calculations.",
+  "Use our physics calculators to solve common physics problems accurately. Calculate force with the Force Calculator using Newton's Second Law (F = ma), solve motion and energy problems, and explore formulas with step-by-step explanations for students and teachers.",
 
   topics: [
     "Mechanics",

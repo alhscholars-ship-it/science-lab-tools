@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
+import { createBreadcrumbSchema } from "@/lib/seo/schema";
 
 const pageTitle = "How to Write a Lab Report Discussion";
 const pageDescription =
@@ -87,6 +88,17 @@ const faqSchema = {
   })),
 };
 
+
+const breadcrumbSchema =
+  createBreadcrumbSchema({
+    pageName: "How to Write a Lab Report Discussion",
+    pagePath: "/lab-reports/lab-report-discussion",
+    parentName: "Lab Reports",
+    parentPath: "/lab-reports",
+    sectionName: "Lab Report Format",
+    sectionPath: "/lab-reports/lab-report-format",
+  });
+
 export default function LabReportDiscussionPage() {
   return (
     <main>
@@ -104,6 +116,15 @@ export default function LabReportDiscussionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema,
+          ).replace(/</g, "\\u003c"),
         }}
       />
 

@@ -5,6 +5,12 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { scienceGuides } from "@/content/guides/registry";
 import { scienceFormulas } from "@/content/formulas/registry";
+import {
+  createArticleSchema,
+  createBreadcrumbSchema,
+  createFaqSchema,
+  serializeJsonLd,
+} from "@/lib/seo/schema";
 import { absoluteUrl } from "@/lib/seo/url";
 
 type GuidePageProps = {
@@ -65,8 +71,41 @@ export default async function GuidePage({
     notFound();
   }
 
+  const schemas = [
+    createArticleSchema({
+      headline: guide.title,
+      description: guide.shortDescription,
+      path: guide.href,
+    }),
+
+    createFaqSchema(
+      guide.faq.map((item) => ({
+        question: item.question,
+        answer: item.answer,
+      })),
+    ),
+
+    createBreadcrumbSchema({
+      pageName: guide.title,
+      pagePath: guide.href,
+      parentName: "Science Guides",
+      parentPath: "/guides",
+      sectionName: guide.category,
+      sectionPath: `/guides`,
+    }),
+  ];
+
   return (
     <main>
+      {schemas.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: serializeJsonLd(schema),
+          }}
+        />
+      ))}
       <section className="tool-page-hero">
         <Container>
           <nav className="breadcrumbs">

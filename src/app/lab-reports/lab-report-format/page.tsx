@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
+import { createBreadcrumbSchema } from "@/lib/seo/schema";
 
 const pageTitle = "Lab Report Format";
 const pageDescription =
@@ -87,6 +88,15 @@ const faqSchema = {
   })),
 };
 
+
+const breadcrumbSchema =
+  createBreadcrumbSchema({
+    pageName: "Lab Report Format",
+    pagePath: "/lab-reports/lab-report-format",
+    parentName: "Lab Reports",
+    parentPath: "/lab-reports",
+  });
+
 const reportSections = [
   {
     number: "01",
@@ -101,6 +111,7 @@ const reportSections = [
   {
     number: "02",
     title: "Introduction",
+    href: "/lab-reports/lab-report-introduction",
     purpose:
       "Provide the scientific background needed to understand the investigation.",
     include:
@@ -111,6 +122,7 @@ const reportSections = [
   {
     number: "03",
     title: "Materials and Methods",
+    href: "/lab-reports/materials-and-methods",
     purpose:
       "Explain what was used and how the investigation was performed.",
     include:
@@ -121,6 +133,7 @@ const reportSections = [
   {
     number: "04",
     title: "Results",
+    href: "/lab-reports/lab-report-results",
     purpose:
       "Present the observations, measurements, and calculations produced by the investigation.",
     include:
@@ -131,6 +144,7 @@ const reportSections = [
   {
     number: "05",
     title: "Discussion",
+    href: "/lab-reports/lab-report-discussion",
     purpose:
       "Interpret the evidence and evaluate the investigation.",
     include:
@@ -141,6 +155,7 @@ const reportSections = [
   {
     number: "06",
     title: "Conclusion",
+    href: "/lab-reports/lab-report-conclusion",
     purpose:
       "Answer the research question using the most important evidence.",
     include:
@@ -177,6 +192,15 @@ export default function LabReportFormatPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema,
+          ).replace(/</g, "\\u003c"),
         }}
       />
 
@@ -276,6 +300,13 @@ export default function LabReportFormatPage() {
                           <dd>{section.avoid}</dd>
                         </div>
                       </dl>
+
+                      {"href" in section && (
+                        <Link href={section.href}>
+                          Read detailed guide →
+                        </Link>
+                      )}
+
                     </div>
                   </section>
                 ))}

@@ -4,6 +4,7 @@ import { calculators } from "@/content/calculators/registry";
 import { scienceFormulas } from "@/content/formulas/registry";
 import { scienceGuides } from "@/content/guides/registry";
 import { sitemapRoutes } from "@/content/site-routes";
+import { scienceAITools } from "@/content/ai-tools/registry";
 
 const productionOrigin = "https://sciencecalchub.com";
 
@@ -12,9 +13,17 @@ function productionUrl(path: string): string {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticEntries = sitemapRoutes.map(({ path }) => ({
-    url: productionUrl(path),
-  }));
+  const staticEntries = sitemapRoutes.map(
+    ({
+      path,
+      changeFrequency,
+      priority,
+    }) => ({
+      url: productionUrl(path),
+      changeFrequency,
+      priority,
+    }),
+  );
 
   const calculatorEntries = calculators.map(({ href }) => ({
     url: productionUrl(href),
@@ -28,10 +37,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: productionUrl(`/guides/${slug}`),
   }));
 
+  const aiToolEntries = scienceAITools.map(({ href }) => ({
+    url: productionUrl(href),
+  }));
+
   return [
     ...staticEntries,
     ...calculatorEntries,
     ...formulaEntries,
     ...guideEntries,
+    ...aiToolEntries,
   ];
 }

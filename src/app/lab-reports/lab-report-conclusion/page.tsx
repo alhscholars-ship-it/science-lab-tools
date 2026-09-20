@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
+import { createBreadcrumbSchema } from "@/lib/seo/schema";
 
 const pageTitle = "How to Write a Lab Report Conclusion";
 const pageDescription =
@@ -87,6 +88,17 @@ const faqSchema = {
   })),
 };
 
+
+const breadcrumbSchema =
+  createBreadcrumbSchema({
+    pageName: "How to Write a Lab Report Conclusion",
+    pagePath: "/lab-reports/lab-report-conclusion",
+    parentName: "Lab Reports",
+    parentPath: "/lab-reports",
+    sectionName: "Lab Report Format",
+    sectionPath: "/lab-reports/lab-report-format",
+  });
+
 export default function LabReportConclusionPage() {
   return (
     <main>
@@ -107,6 +119,15 @@ export default function LabReportConclusionPage() {
             /</g,
             "\\u003c",
           ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema,
+          ).replace(/</g, "\\u003c"),
         }}
       />
 

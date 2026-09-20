@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
+import { createBreadcrumbSchema } from "@/lib/seo/schema";
 
 const pageTitle = "Tables and Graphs in Lab Reports";
 const pageDescription =
@@ -87,6 +88,17 @@ const faqSchema = {
   })),
 };
 
+
+const breadcrumbSchema =
+  createBreadcrumbSchema({
+    pageName: "Tables and Graphs in Lab Reports",
+    pagePath: "/lab-reports/tables-and-graphs",
+    parentName: "Lab Reports",
+    parentPath: "/lab-reports",
+    sectionName: "Lab Report Format",
+    sectionPath: "/lab-reports/lab-report-format",
+  });
+
 export default function TablesAndGraphsPage() {
   return (
     <main>
@@ -107,6 +119,15 @@ export default function TablesAndGraphsPage() {
             /</g,
             "\\u003c",
           ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema,
+          ).replace(/</g, "\\u003c"),
         }}
       />
 

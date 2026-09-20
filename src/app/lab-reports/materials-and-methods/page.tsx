@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
+import { createBreadcrumbSchema } from "@/lib/seo/schema";
 
 const pageTitle = "Materials and Methods in a Lab Report";
 const pageDescription =
@@ -87,6 +88,17 @@ const faqSchema = {
   })),
 };
 
+
+const breadcrumbSchema =
+  createBreadcrumbSchema({
+    pageName: "Materials and Methods in a Lab Report",
+    pagePath: "/lab-reports/materials-and-methods",
+    parentName: "Lab Reports",
+    parentPath: "/lab-reports",
+    sectionName: "Lab Report Format",
+    sectionPath: "/lab-reports/lab-report-format",
+  });
+
 export default function MaterialsAndMethodsPage() {
   return (
     <main>
@@ -104,6 +116,15 @@ export default function MaterialsAndMethodsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema,
+          ).replace(/</g, "\\u003c"),
         }}
       />
 
