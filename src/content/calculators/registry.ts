@@ -181,6 +181,12 @@ export const calculators: readonly CalculatorDefinition[] = [
     category: "Chemistry",
     href: "/calculators/molarity-calculator",
     keywords: ["molarity calculator", "moles and volume calculator"],
+    relatedCalculators: [
+      "normality-calculator",
+      "molality-calculator",
+      "dilution-calculator",
+      "mass-moles-calculator",
+    ],
   },
   {
     slug: "normality-calculator",
@@ -195,6 +201,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "normal concentration calculator",
       "solution normality calculator",
       "equivalent concentration calculator",
+    ],
+    relatedCalculators: [
+      "molarity-calculator",
+      "molality-calculator",
+      "dilution-calculator",
+      "mass-moles-calculator",
     ],
   },
   {
@@ -211,6 +223,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "solute moles calculator",
       "solvent mass calculator",
     ],
+    relatedCalculators: [
+      "molarity-calculator",
+      "mass-moles-calculator",
+      "mole-fraction-calculator",
+      "molecular-weight-calculator",
+    ],
   },
   {
     slug: "mass-moles-calculator",
@@ -225,6 +243,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "moles to grams calculator",
       "molar mass calculator",
     ],
+    relatedCalculators: [
+      "molarity-calculator",
+      "molality-calculator",
+      "molecular-weight-calculator",
+      "mole-fraction-calculator",
+    ],
   },
   {
     slug: "dilution-calculator",
@@ -234,6 +258,12 @@ export const calculators: readonly CalculatorDefinition[] = [
     category: "Chemistry",
     href: "/calculators/dilution-calculator",
     keywords: ["dilution calculator chemistry"],
+    relatedCalculators: [
+      "molarity-calculator",
+      "normality-calculator",
+      "mass-moles-calculator",
+      "molecular-weight-calculator",
+    ],
   },
   {
     slug: "molecular-weight-calculator",
@@ -248,6 +278,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "chemical formula mass calculator",
       "molecular mass calculator",
       "formula weight calculator",
+    ],
+    relatedCalculators: [
+      "mass-moles-calculator",
+      "molality-calculator",
+      "mole-fraction-calculator",
+      "stoichiometry-calculator",
     ],
   },
   {
@@ -264,6 +300,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "hydroxide ion concentration calculator",
       "acid base calculator",
     ],
+    relatedCalculators: [
+      "molarity-calculator",
+      "normality-calculator",
+      "dilution-calculator",
+      "stoichiometry-calculator",
+    ],
   },
   {
     slug: "stoichiometry-calculator",
@@ -279,6 +321,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "chemical mass conversion",
       "reaction quantity calculator",
     ],
+    relatedCalculators: [
+      "limiting-reactant-calculator",
+      "mass-moles-calculator",
+      "molecular-weight-calculator",
+      "molarity-calculator",
+    ],
   },
   {
     slug: "limiting-reactant-calculator",
@@ -293,6 +341,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "excess reactant calculator",
       "theoretical yield calculator",
       "stoichiometry limiting reactant",
+    ],
+    relatedCalculators: [
+      "stoichiometry-calculator",
+      "mass-moles-calculator",
+      "molecular-weight-calculator",
+      "percent-yield-calculator",
     ],
   },
   {
