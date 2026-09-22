@@ -1070,6 +1070,11 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "d = displacement",
       "t = time",
     ],
+    relatedCalculators: [
+      "/calculators/average-velocity-calculator",
+      "/calculators/kinematic-equations-calculator",
+      "/calculators/average-speed-calculator",
+    ],
     calculatorHref: "/calculators/average-velocity-calculator",
     applications: [
       "Motion analysis.",
@@ -1122,6 +1127,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "Δv = a × t",
       "t = Δv / a",
+    ],
+    relatedCalculators: [
+      "/calculators/acceleration-calculator",
+      "/calculators/kinematic-equations-calculator",
     ],
     calculatorHref: "/calculators/acceleration-calculator",
   },
@@ -1184,6 +1193,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "v = d / t",
       "t = d / v",
     ],
+    relatedCalculators: [
+      "/calculators/distance-calculator",
+      "/calculators/average-speed-calculator",
+    ],
     calculatorHref: "/calculators/distance-calculator",
   },
 
@@ -1213,6 +1226,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "x₂ = Δx + x₁",
       "x₁ = x₂ - Δx",
+    ],
+    relatedCalculators: [
+      "/calculators/displacement-calculator",
+      "/calculators/kinematic-equations-calculator",
     ],
     calculatorHref: "/calculators/displacement-calculator",
   },
@@ -1246,6 +1263,9 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "u = v - at",
       "a = (v - u) / t",
       "t = (v - u) / a",
+    ],
+    relatedCalculators: [
+      "/calculators/kinematic-equations-calculator",
     ],
     calculatorHref: "/calculators/kinematic-equations-calculator",
   },
@@ -1375,6 +1395,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "g = 2d / t²",
       "t = √(2d / g)",
+    ],
+    relatedCalculators: [
+      "/calculators/free-fall-calculator",
+      "/calculators/acceleration-due-to-gravity-calculator",
     ],
     calculatorHref: "/calculators/free-fall-calculator",
   },
