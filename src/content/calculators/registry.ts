@@ -384,6 +384,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "N equals mg calculator",
       "surface force calculator",
     ],
+    relatedCalculators: [
+      "force-calculator",
+      "normal-force-calculator",
+      "inclined-plane-calculator",
+      "acceleration-calculator",
+    ],
   },
   {
     slug: "weight-calculator",
@@ -438,6 +444,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "physics power calculator",
       "work time power calculator",
       "power formula calculator",
+    ],
+    relatedCalculators: [
+      "work-calculator",
+      "kinetic-energy-calculator",
+      "force-calculator",
+      "torque-calculator",
     ],
   },
   {
@@ -839,6 +851,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "force distance work calculator",
       "work formula calculator",
     ],
+    relatedCalculators: [
+      "force-calculator",
+      "power-calculator",
+      "kinetic-energy-calculator",
+      "torque-calculator",
+    ],
   },
   {
     slug: "tangential-acceleration-calculator",
@@ -1106,6 +1124,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "newton meter calculator",
       "rotational force calculator",
     ],
+    relatedCalculators: [
+      "force-calculator",
+      "work-calculator",
+      "rotational-work-calculator",
+      "moment-of-inertia-calculator",
+    ],
   },
   {
     slug: "impulse-calculator",
@@ -1150,6 +1174,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "free fall velocity calculator",
       "gravity calculator",
     ],
+    relatedCalculators: [
+      "acceleration-due-to-gravity-calculator",
+      "acceleration-calculator",
+      "kinematic-equations-calculator",
+      "projectile-motion-calculator",
+    ],
   },
   {
     slug: "projectile-motion-calculator",
@@ -1163,6 +1193,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "projectile range calculator",
       "maximum height calculator",
       "flight time calculator",
+    ],
+    relatedCalculators: [
+      "free-fall-calculator",
+      "kinematic-equations-calculator",
+      "acceleration-calculator",
+      "distance-calculator",
     ],
   },
   {
