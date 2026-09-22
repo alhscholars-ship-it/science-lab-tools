@@ -132,13 +132,32 @@ export default function ChemistryCalculatorsPage() {
               {chemistryHub.topics.map((topic) => (
                 <article
                   className="directory-card"
-                  key={topic}
+                  key={topic.name}
                 >
-                  <h3>{topic}</h3>
+                  <h3>{topic.name}</h3>
+
                   <p>
-                    Learn and calculate important{" "}
-                    {topic.toLowerCase()} concepts.
+                    Explore {topic.name.toLowerCase()} concepts
+                    with related chemistry calculators.
                   </p>
+
+                  <ul>
+                    {topic.calculators.map((slug) => {
+                      const calculator = calculators.find(
+                        (item) => item.slug === slug,
+                      );
+
+                      if (!calculator) return null;
+
+                      return (
+                        <li key={calculator.slug}>
+                          <Link href={calculator.href}>
+                            {calculator.name}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </article>
               ))}
             </div>

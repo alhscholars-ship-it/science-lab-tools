@@ -13,11 +13,46 @@ export const chemistryHub = {
     "Explore chemistry calculators for stoichiometry, solutions, acids and bases, gas laws, and laboratory work. Calculate chemical quantities with formulas, explanations, and practical examples.",
 
   topics: [
-    "Stoichiometry",
-    "Solutions",
-    "Molar Calculations",
-    "Acids and Bases",
-    "Chemical Properties",
+    {
+      name: "Stoichiometry",
+      calculators: [
+        "stoichiometry-calculator",
+        "limiting-reactant-calculator",
+        "percent-yield-calculator",
+      ],
+    },
+    {
+      name: "Solutions",
+      calculators: [
+        "molarity-calculator",
+        "molality-calculator",
+        "normality-calculator",
+        "dilution-calculator",
+      ],
+    },
+    {
+      name: "Molar Calculations",
+      calculators: [
+        "mass-moles-calculator",
+        "molecular-weight-calculator",
+        "mole-fraction-calculator",
+      ],
+    },
+    {
+      name: "Acids and Bases",
+      calculators: [
+        "ph-calculator",
+        "normality-calculator",
+      ],
+    },
+    {
+      name: "Chemical Properties",
+      calculators: [
+        "molecular-weight-calculator",
+        "density-calculator",
+        "ideal-gas-law-calculator",
+      ],
+    },
   ],
 
   faqs: [
