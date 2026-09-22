@@ -2284,6 +2284,11 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "m = n × M",
       "M = m / n",
     ],
+    relatedCalculators: [
+      "/calculators/stoichiometry-calculator",
+      "/calculators/limiting-reactant-calculator",
+      "/calculators/percent-yield-calculator",
+    ],
     calculatorHref: "/calculators/stoichiometry-calculator",
   },
 
@@ -2312,6 +2317,11 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "Total Atomic Mass = MW",
     ],
+    relatedCalculators: [
+      "/calculators/molecular-weight-calculator",
+      "/calculators/mass-moles-calculator",
+      "/calculators/stoichiometry-calculator",
+    ],
     calculatorHref: "/calculators/molecular-weight-calculator",
   },
 
@@ -2331,6 +2341,11 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "n = moles",
       "m = mass",
       "M = molar mass",
+    ],
+    relatedCalculators: [
+      "/calculators/mass-moles-calculator",
+      "/calculators/molecular-weight-calculator",
+      "/calculators/stoichiometry-calculator",
     ],
     calculatorHref: "/calculators/mass-moles-calculator",
   },
