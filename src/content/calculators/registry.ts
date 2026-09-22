@@ -5,6 +5,7 @@ export type CalculatorDefinition = {
   category: "Laboratory" | "Chemistry" | "Physics";
   href: string;
   keywords: readonly string[];
+  relatedCalculators?: readonly string[];
 };
 
 export const calculators: readonly CalculatorDefinition[] = [
@@ -398,6 +399,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "W equals mg calculator",
       "gravity weight calculator",
     ],
+    relatedCalculators: [
+      "force-calculator",
+      "acceleration-due-to-gravity-calculator",
+      "normal-force-calculator",
+      "friction-calculator",
+    ],
   },
   {
     slug: "force-calculator",
@@ -411,6 +418,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "newtons second law calculator",
       "force mass acceleration calculator",
       "f equals ma calculator",
+    ],
+    relatedCalculators: [
+      "acceleration-calculator",
+      "weight-calculator",
+      "momentum-calculator",
+      "kinetic-energy-calculator",
     ],
   },
   {
@@ -1221,6 +1234,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "mass speed energy calculator",
       "kinetic energy formula calculator",
     ],
+    relatedCalculators: [
+      "momentum-calculator",
+      "work-calculator",
+      "force-calculator",
+      "elastic-potential-energy-calculator",
+    ],
   },
   {
     slug: "momentum-calculator",
@@ -1234,6 +1253,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "linear momentum calculator",
       "mass velocity momentum calculator",
       "p equals mv calculator",
+    ],
+    relatedCalculators: [
+      "force-calculator",
+      "kinetic-energy-calculator",
+      "impulse-calculator",
+      "work-calculator",
     ],
   },
   {
@@ -1320,6 +1345,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "initial velocity calculator",
       "final velocity calculator",
       "velocity and time calculator",
+    ],
+    relatedCalculators: [
+      "force-calculator",
+      "free-fall-calculator",
+      "kinematic-equations-calculator",
+      "projectile-motion-calculator",
     ],
   },
   {

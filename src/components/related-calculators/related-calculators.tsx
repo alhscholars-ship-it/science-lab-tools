@@ -141,10 +141,44 @@ function scoreCalculatorRelationship(
   return score;
 }
 
+function getManualRelatedCalculators(
+  currentSlug: string,
+): readonly CalculatorDefinition[] {
+  const currentCalculator = calculators.find(
+    (calculator) => calculator.slug === currentSlug,
+  );
+
+  if (!currentCalculator?.relatedCalculators) {
+    return [];
+  }
+
+  return currentCalculator.relatedCalculators
+    .map((slug) =>
+      calculators.find(
+        (calculator) => calculator.slug === slug,
+      ),
+    )
+    .filter(
+      (
+        calculator,
+      ): calculator is CalculatorDefinition =>
+        Boolean(calculator),
+    );
+}
+
 export function getRelatedCalculators(
   currentSlug: string,
   limit = 4,
 ): readonly CalculatorDefinition[] {
+
+  const manualRelated = getManualRelatedCalculators(
+    currentSlug,
+  );
+
+  if (manualRelated.length) {
+    return manualRelated.slice(0, limit);
+  }
+
   const currentCalculator = calculators.find(
     (calculator) => calculator.slug === currentSlug,
   );
