@@ -36,6 +36,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "experimental error calculator",
       "chemistry percent error",
     ],
+    relatedCalculators: [
+      "percent-difference-calculator",
+      "uncertainty-propagation-calculator",
+      "measurement-uncertainty-calculator",
+      "significant-figures-calculator",
+    ],
   },
   {
     slug: "percent-difference-calculator",
@@ -45,6 +51,12 @@ export const calculators: readonly CalculatorDefinition[] = [
     category: "Laboratory",
     href: "/calculators/percent-difference-calculator",
     keywords: ["percent difference calculator"],
+    relatedCalculators: [
+      "percent-error-calculator",
+      "measurement-uncertainty-calculator",
+      "uncertainty-propagation-calculator",
+      "significant-figures-calculator",
+    ],
   },
   {
     slug: "significant-figures-calculator",
@@ -58,6 +70,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "sig figs calculator",
       "round to significant figures",
       "significant digits calculator",
+    ],
+    relatedCalculators: [
+      "percent-error-calculator",
+      "percent-difference-calculator",
+      "measurement-uncertainty-calculator",
+      "scientific-notation-calculator",
     ],
   },
   {
@@ -115,6 +133,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "combined uncertainty calculator",
       "absolute and relative uncertainty calculator",
     ],
+    relatedCalculators: [
+      "measurement-uncertainty-calculator",
+      "percent-error-calculator",
+      "percent-difference-calculator",
+      "significant-figures-calculator",
+    ],
   },
   {
     slug: "measurement-uncertainty-calculator",
@@ -128,6 +152,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "percentage uncertainty calculator",
       "relative uncertainty calculator",
       "absolute uncertainty calculator",
+    ],
+    relatedCalculators: [
+      "percent-error-calculator",
+      "percent-difference-calculator",
+      "uncertainty-propagation-calculator",
+      "significant-figures-calculator",
     ],
   },
   {
@@ -377,6 +407,12 @@ export const calculators: readonly CalculatorDefinition[] = [
       "component moles calculator",
       "total moles calculator",
       "mixture composition calculator",
+    ],
+    relatedCalculators: [
+      "molarity-calculator",
+      "molality-calculator",
+      "mass-moles-calculator",
+      "molecular-weight-calculator",
     ],
   },
   {
