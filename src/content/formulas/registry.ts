@@ -1791,6 +1791,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "I = V / R",
       "R = V / I",
     ],
+    relatedCalculators: [
+      "/calculators/ohms-law-calculator",
+      "/calculators/power-calculator",
+    ],
     calculatorHref: "/calculators/ohms-law-calculator",
   },
 
@@ -1857,6 +1861,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "q₂ = Fr² / (kq₁)",
       "r = √(kq₁q₂ / F)",
     ],
+    relatedCalculators: [
+      "/calculators/coulombs-law-calculator",
+      "/calculators/electric-field-calculator",
+    ],
     calculatorHref: "/calculators/coulombs-law-calculator",
   },
 
@@ -1886,6 +1894,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "F = Eq",
       "q = F / E",
+    ],
+    relatedCalculators: [
+      "/calculators/electric-field-calculator",
+      "/calculators/coulombs-law-calculator",
     ],
     calculatorHref: "/calculators/electric-field-calculator",
   },
@@ -1918,6 +1930,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "W = V × q",
       "q = W / V",
     ],
+    relatedCalculators: [
+      "/calculators/electric-potential-calculator",
+      "/calculators/electric-field-calculator",
+    ],
     calculatorHref: "/calculators/electric-potential-calculator",
   },
 
@@ -1949,6 +1965,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "R₂ = Vout × R₁ / (Vin - Vout)",
       "Vin = Vout × (R₁ + R₂) / R₂",
     ],
+    relatedCalculators: [
+      "/calculators/voltage-divider-calculator",
+      "/calculators/ohms-law-calculator",
+    ],
     calculatorHref: "/calculators/voltage-divider-calculator",
   },
 
@@ -1979,6 +1999,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "Itotal = I₁ × (R₁ + R₂) / R₂",
       "R₂ = I₁R₁ / (Itotal - I₁)",
+    ],
+    relatedCalculators: [
+      "/calculators/current-divider-calculator",
+      "/calculators/ohms-law-calculator",
     ],
     calculatorHref: "/calculators/current-divider-calculator",
   },
