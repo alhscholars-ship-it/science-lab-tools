@@ -2366,6 +2366,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "Actual Yield = measured product",
       "Theoretical Yield = expected product",
     ],
+    relatedCalculators: [
+      "/calculators/percent-yield-calculator",
+      "/calculators/stoichiometry-calculator",
+    ],
     calculatorHref: "/calculators/percent-yield-calculator",
   },
 
@@ -2385,6 +2389,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "pH = acidity measure",
       "[H⁺] = hydrogen ion concentration",
     ],
+    relatedCalculators: [
+      "/calculators/ph-calculator",
+      "/calculators/normality-calculator",
+    ],
     calculatorHref: "/calculators/ph-calculator",
   },
 
@@ -2403,6 +2411,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     variables: [
       "pOH = basicity measure",
       "[OH⁻] = hydroxide ion concentration",
+    ],
+    relatedCalculators: [
+      "/calculators/ph-calculator",
+      "/calculators/normality-calculator",
     ],
     calculatorHref: "/calculators/ph-calculator",
   },
@@ -2425,6 +2437,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "n = moles",
       "R = gas constant",
       "T = temperature",
+    ],
+    relatedCalculators: [
+      "/calculators/ideal-gas-law-calculator",
+      "/calculators/density-calculator",
     ],
     calculatorHref: "/calculators/ideal-gas-law-calculator",
   },
