@@ -2142,6 +2142,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "n = M × V",
       "V = n / M",
     ],
+    relatedCalculators: [
+      "/calculators/molarity-calculator",
+      "/calculators/dilution-calculator",
+    ],
     calculatorHref: "/calculators/molarity-calculator",
   },
 
@@ -2173,6 +2177,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "n = m × kg",
       "kg = n / m",
     ],
+    relatedCalculators: [
+      "/calculators/molality-calculator",
+      "/calculators/molarity-calculator",
+    ],
     calculatorHref: "/calculators/molality-calculator",
   },
 
@@ -2203,6 +2211,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "n₁ = X × n_total",
       "n_total = n₁ / X",
+    ],
+    relatedCalculators: [
+      "/calculators/mole-fraction-calculator",
+      "/calculators/molarity-calculator",
     ],
     calculatorHref: "/calculators/mole-fraction-calculator",
   },
@@ -2236,6 +2248,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "V₂ = (M₁ × V₁) / M₂",
       "M₁ = (M₂ × V₂) / V₁",
       "V₁ = (M₂ × V₂) / M₁",
+    ],
+    relatedCalculators: [
+      "/calculators/dilution-calculator",
+      "/calculators/molarity-calculator",
     ],
     calculatorHref: "/calculators/dilution-calculator",
   },
