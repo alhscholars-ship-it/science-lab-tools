@@ -1098,6 +1098,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "distance = total distance",
       "time = total time",
     ],
+    relatedCalculators: [
+      "/calculators/average-speed-calculator",
+      "/calculators/distance-calculator",
+    ],
     calculatorHref: "/calculators/average-speed-calculator",
   },
 
@@ -1162,6 +1166,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "Δx = v_avg × Δt",
       "Δt = Δx / v_avg",
+    ],
+    relatedCalculators: [
+      "/calculators/average-velocity-calculator",
+      "/calculators/displacement-calculator",
     ],
     calculatorHref: "/calculators/average-velocity-calculator",
   },
@@ -1299,6 +1307,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "u = v - at",
       "a = (v - u) / t",
     ],
+    relatedCalculators: [
+      "/calculators/kinematic-equations-calculator",
+      "/calculators/acceleration-calculator",
+    ],
     calculatorHref: "/calculators/kinematic-equations-calculator",
   },
 
@@ -1332,6 +1344,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "a = (v² - u²) / 2s",
       "s = (v² - u²) / 2a",
     ],
+    relatedCalculators: [
+      "/calculators/kinematic-equations-calculator",
+      "/calculators/acceleration-calculator",
+    ],
     calculatorHref: "/calculators/kinematic-equations-calculator",
   },
 
@@ -1364,6 +1380,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "x = v₀t cos(θ)",
       "y = v₀t sin(θ) - ½gt²",
+    ],
+    relatedCalculators: [
+      "/calculators/projectile-motion-calculator",
+      "/calculators/kinematic-equations-calculator",
     ],
     calculatorHref: "/calculators/projectile-motion-calculator",
   },
@@ -1430,6 +1450,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "v = √(aᶜr)",
       "r = v² / aᶜ",
     ],
+    relatedCalculators: [
+      "/calculators/centripetal-acceleration-calculator",
+      "/calculators/centripetal-force-calculator",
+    ],
     calculatorHref: "/calculators/centripetal-acceleration-calculator",
   },
 
@@ -1450,6 +1474,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "m = mass",
       "v = velocity",
       "r = radius",
+    ],
+    relatedCalculators: [
+      "/calculators/centripetal-force-calculator",
+      "/calculators/circular-velocity-calculator",
     ],
     units: [
       "Force: Newton (N)",
@@ -1495,6 +1523,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "θ = ω × t",
       "t = θ / ω",
     ],
+    relatedCalculators: [
+      "/calculators/angular-velocity-calculator",
+      "/calculators/rotational-frequency-calculator",
+    ],
     calculatorHref: "/calculators/angular-velocity-calculator",
   },
 
@@ -1522,6 +1554,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "Use this formula when converting between rotational frequency and angular frequency in circular or periodic motion.",
     rearranged: [
       "f = ω / 2π",
+    ],
+    relatedCalculators: [
+      "/calculators/rotational-frequency-calculator",
+      "/calculators/rpm-calculator",
     ],
     calculatorHref: "/calculators/rotational-frequency-calculator",
   },
@@ -1551,6 +1587,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "ω = 2πf",
     ],
+    relatedCalculators: [
+      "/calculators/rotational-frequency-calculator",
+      "/calculators/angular-velocity-calculator",
+    ],
     calculatorHref: "/calculators/rotational-frequency-calculator",
   },
 
@@ -1569,6 +1609,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     variables: [
       "RPM = revolutions per minute",
       "f = rotational frequency",
+    ],
+    relatedCalculators: [
+      "/calculators/rpm-calculator",
+      "/calculators/rotational-frequency-calculator",
     ],
     units: [
       "RPM: revolutions per minute",
@@ -1599,6 +1643,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "m = mass",
       "v = velocity",
     ],
+    relatedCalculators: [
+      "/calculators/kinetic-energy-calculator",
+      "/calculators/momentum-calculator",
+    ],
     calculatorHref: "/calculators/kinetic-energy-calculator",
   },
 
@@ -1620,6 +1668,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "g = gravitational acceleration",
       "h = height",
     ],
+    relatedCalculators: [
+      "/calculators/gravitational-potential-energy-calculator",
+      "/calculators/work-calculator",
+    ],
     calculatorHref: "/calculators/gravitational-potential-energy-calculator",
   },
 
@@ -1639,6 +1691,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "PE = elastic potential energy",
       "k = spring constant",
       "x = displacement",
+    ],
+    relatedCalculators: [
+      "/calculators/elastic-potential-energy-calculator",
+      "/calculators/hookes-law-calculator",
     ],
     calculatorHref: "/calculators/elastic-potential-energy-calculator",
   },
@@ -1661,6 +1717,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "d = displacement",
       "θ = angle between force and motion",
     ],
+    relatedCalculators: [
+      "/calculators/work-calculator",
+      "/calculators/force-calculator",
+    ],
     calculatorHref: "/calculators/work-calculator",
   },
 
@@ -1680,6 +1740,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "P = power",
       "W = work",
       "t = time",
+    ],
+    relatedCalculators: [
+      "/calculators/power-calculator",
+      "/calculators/work-calculator",
     ],
     calculatorHref: "/calculators/power-calculator",
   },
@@ -1701,6 +1765,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "KE = kinetic energy",
       "PE = potential energy",
     ],
+    relatedCalculators: [
+      "/calculators/kinetic-energy-calculator",
+      "/calculators/gravitational-potential-energy-calculator",
+    ],
     calculatorHref: "/calculators/kinetic-energy-calculator",
   },
 
@@ -1720,6 +1788,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "E_total = total energy",
       "KE = kinetic energy",
       "PE = potential energy",
+    ],
+    relatedCalculators: [
+      "/calculators/kinetic-energy-calculator",
+      "/calculators/gravitational-potential-energy-calculator",
     ],
     calculatorHref: "/calculators/kinetic-energy-calculator",
   },
@@ -1741,6 +1813,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "k = spring constant",
       "x = displacement",
     ],
+    relatedCalculators: [
+      "/calculators/hookes-law-calculator",
+      "/calculators/elastic-potential-energy-calculator",
+    ],
     calculatorHref: "/calculators/hookes-law-calculator",
   },
 
@@ -1759,6 +1835,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "F = force",
       "k = spring constant",
       "x = displacement",
+    ],
+    relatedCalculators: [
+      "/calculators/hookes-law-calculator",
+      "/calculators/elastic-potential-energy-calculator",
     ],
     calculatorHref: "/calculators/hookes-law-calculator",
   },
@@ -1825,6 +1905,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "V = P / I",
       "I = P / V",
+    ],
+    relatedCalculators: [
+      "/calculators/power-calculator",
+      "/calculators/ohms-law-calculator",
     ],
     calculatorHref: "/calculators/power-calculator",
   },
@@ -2035,6 +2119,11 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "Q = C × V",
       "V = Q / C",
     ],
+    relatedCalculators: [
+      "/calculators/capacitance-calculator",
+      "/calculators/capacitor-energy-calculator",
+      "/calculators/capacitive-reactance-calculator",
+    ],
     calculatorHref: "/calculators/capacitance-calculator",
   },
 
@@ -2065,6 +2154,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "C = 2E / V²",
       "V = √(2E / C)",
+    ],
+    relatedCalculators: [
+      "/calculators/capacitor-energy-calculator",
+      "/calculators/capacitance-calculator",
     ],
     calculatorHref: "/calculators/capacitor-energy-calculator",
   },
@@ -2097,6 +2190,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "Φ = L × I",
       "I = Φ / L",
     ],
+    relatedCalculators: [
+      "/calculators/inductance-calculator",
+      "/calculators/inductive-reactance-calculator",
+    ],
     calculatorHref: "/calculators/inductance-calculator",
   },
 
@@ -2128,6 +2225,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "f = 1 / (2πCXc)",
       "C = 1 / (2πfXc)",
     ],
+    relatedCalculators: [
+      "/calculators/capacitive-reactance-calculator",
+      "/calculators/capacitance-calculator",
+    ],
     calculatorHref: "/calculators/capacitive-reactance-calculator",
   },
 
@@ -2158,6 +2259,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "f = Xl / (2πL)",
       "L = Xl / (2πf)",
+    ],
+    relatedCalculators: [
+      "/calculators/inductive-reactance-calculator",
+      "/calculators/inductance-calculator",
     ],
     calculatorHref: "/calculators/inductive-reactance-calculator",
   },
@@ -2512,6 +2617,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "R = gas constant",
       "T = temperature",
     ],
+    relatedCalculators: [
+      "/calculators/density-calculator",
+      "/calculators/ideal-gas-law-calculator",
+    ],
     calculatorHref: "/calculators/ideal-gas-law-calculator",
   },
 
@@ -2532,6 +2641,11 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "Σx = sum of values",
       "n = number of values",
     ],
+    relatedCalculators: [
+      "/calculators/mean-median-mode-calculator",
+      "/calculators/standard-deviation-calculator",
+      "/calculators/coefficient-variation-calculator",
+    ],
     calculatorHref: "/calculators/mean-median-mode-calculator",
   },
 
@@ -2549,6 +2663,9 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     ],
     variables: [
       "ordered data = sorted values",
+    ],
+    relatedCalculators: [
+      "/calculators/mean-median-mode-calculator",
     ],
     calculatorHref: "/calculators/mean-median-mode-calculator",
   },
@@ -2571,6 +2688,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "μ = mean",
       "N = number of values",
     ],
+    relatedCalculators: [
+      "/calculators/standard-deviation-calculator",
+      "/calculators/coefficient-variation-calculator",
+    ],
     calculatorHref: "/calculators/standard-deviation-calculator",
   },
 
@@ -2589,6 +2710,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     variables: [
       "Experimental = measured value",
       "Accepted = reference value",
+    ],
+    relatedCalculators: [
+      "/calculators/percent-error-calculator",
+      "/calculators/percent-difference-calculator",
     ],
     calculatorHref: "/calculators/percent-error-calculator",
   },
@@ -2609,6 +2734,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "A = first value",
       "B = second value",
     ],
+    relatedCalculators: [
+      "/calculators/percent-difference-calculator",
+      "/calculators/percent-error-calculator",
+    ],
     calculatorHref: "/calculators/percent-difference-calculator",
   },
 
@@ -2627,6 +2756,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     variables: [
       "U = uncertainty",
       "measured value = experimental measurement",
+    ],
+    relatedCalculators: [
+      "/calculators/uncertainty-propagation-calculator",
+      "/calculators/significant-figures-calculator",
     ],
     calculatorHref: "/calculators/uncertainty-propagation-calculator",
   },
@@ -2648,6 +2781,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "σ = standard deviation",
       "μ = mean",
     ],
+    relatedCalculators: [
+      "/calculators/coefficient-variation-calculator",
+      "/calculators/standard-deviation-calculator",
+    ],
     calculatorHref: "/calculators/coefficient-variation-calculator",
   },
 
@@ -2665,6 +2802,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     ],
     variables: [
       "significant digits = meaningful measurement digits",
+    ],
+    relatedCalculators: [
+      "/calculators/significant-figures-calculator",
+      "/calculators/uncertainty-propagation-calculator",
     ],
     calculatorHref: "/calculators/significant-figures-calculator",
   },
