@@ -398,4 +398,68 @@ export const scienceGuides: readonly ScienceGuide[] = [
       "/calculators/molecular-weight-calculator",
     ],
   },
+
+  {
+    slug: "newtons-second-law-explained",
+    title: "Newton's Second Law Explained",
+    shortDescription:
+      "Learn Newton's Second Law, understand the F = ma formula, calculate force, and solve force, mass, and acceleration problems.",
+    category: "Physics",
+    href: "/guides/newtons-second-law-explained",
+    keywords: [
+      "newtons second law",
+      "newtons second law explained",
+      "force formula",
+      "f = ma formula",
+      "how to calculate force",
+    ],
+
+    intro:
+      "Newton's Second Law explains the relationship between force, mass, and acceleration. It states that the net force acting on an object equals its mass multiplied by its acceleration.",
+
+    sections: [
+      {
+        heading: "What is Newton's Second Law?",
+        content:
+          "Newton's Second Law describes how the motion of an object changes when a net force acts on it. Greater force produces greater acceleration, while greater mass requires more force for the same acceleration.",
+      },
+      {
+        heading: "Force formula F = ma",
+        content:
+          "The force formula is F = m × a, where F represents force measured in newtons, m represents mass measured in kilograms, and a represents acceleration measured in meters per second squared.",
+      },
+      {
+        heading: "How to calculate force",
+        content:
+          "To calculate force, multiply the object's mass by its acceleration. Make sure all values are converted into SI units before performing the calculation.",
+      },
+      {
+        heading: "Common force calculation mistakes",
+        content:
+          "Common mistakes include using incorrect units, confusing mass with weight, and forgetting that Newton's Second Law uses net force rather than a single unbalanced force.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What is the formula for force?",
+        answer:
+          "Force is calculated using Newton's Second Law: F = m × a, where force equals mass multiplied by acceleration.",
+      },
+      {
+        question: "How do you calculate force from mass and acceleration?",
+        answer:
+          "Multiply the object's mass by its acceleration to find the net force in newtons.",
+      },
+    ],
+
+    relatedFormulas: [
+      "newtons-second-law",
+    ],
+    relatedCalculators: [
+      "/calculators/force-calculator",
+      "/calculators/acceleration-calculator",
+    ],
+  },
+
 ];
