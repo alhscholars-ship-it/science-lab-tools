@@ -462,4 +462,67 @@ export const scienceGuides: readonly ScienceGuide[] = [
     ],
   },
 
+  {
+    slug: "kinetic-energy-explained",
+    title: "Kinetic Energy Explained",
+    shortDescription:
+      "Learn kinetic energy, understand the kinetic energy formula, calculate energy from mass and velocity, and solve physics problems.",
+    category: "Physics",
+    href: "/guides/kinetic-energy-explained",
+    keywords: [
+      "kinetic energy explained",
+      "kinetic energy formula",
+      "how to calculate kinetic energy",
+      "kinetic energy equation",
+    ],
+
+    intro:
+      "Kinetic energy is the energy an object has because of its motion. It depends on the object's mass and the square of its velocity.",
+
+    sections: [
+      {
+        heading: "What is kinetic energy?",
+        content:
+          "Kinetic energy describes the energy stored in a moving object. Objects with greater mass or higher velocity have more kinetic energy.",
+      },
+      {
+        heading: "Kinetic energy formula",
+        content:
+          "The kinetic energy formula is KE = ½mv², where KE represents kinetic energy, m represents mass, and v represents velocity.",
+      },
+      {
+        heading: "How to calculate kinetic energy",
+        content:
+          "To calculate kinetic energy, convert mass into kilograms and velocity into meters per second, then substitute the values into the formula.",
+      },
+      {
+        heading: "Common kinetic energy mistakes",
+        content:
+          "Common mistakes include forgetting to square velocity, using incorrect units, and confusing kinetic energy with force or momentum.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What is the kinetic energy formula?",
+        answer:
+          "Kinetic energy is calculated using KE = ½mv², where mass is multiplied by the square of velocity.",
+      },
+      {
+        question: "What factors affect kinetic energy?",
+        answer:
+          "Kinetic energy depends on an object's mass and velocity. Increasing velocity has a larger effect because velocity is squared.",
+      },
+    ],
+
+    relatedFormulas: [
+      "kinetic-energy-formula",
+    ],
+    relatedCalculators: [
+      "/calculators/kinetic-energy-calculator",
+      "/calculators/momentum-calculator",
+      "/calculators/gravitational-potential-energy-calculator",
+    ],
+  },
+
 ];
