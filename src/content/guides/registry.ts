@@ -525,4 +525,67 @@ export const scienceGuides: readonly ScienceGuide[] = [
     ],
   },
 
+
+  {
+    slug: "momentum-explained",
+    title: "Momentum Explained",
+    shortDescription:
+      "Learn what momentum means, understand the p = mv formula, calculate momentum, and solve physics motion problems.",
+    category: "Physics",
+    href: "/guides/momentum-explained",
+    keywords: [
+      "momentum explained",
+      "momentum formula",
+      "p = mv formula",
+      "how to calculate momentum",
+    ],
+
+    intro:
+      "Momentum describes the quantity of motion an object has. It depends on both the object's mass and its velocity.",
+
+    sections: [
+      {
+        heading: "What is momentum?",
+        content:
+          "Momentum is a measure of motion that combines an object's mass and velocity. Objects with greater mass or higher velocity have greater momentum.",
+      },
+      {
+        heading: "Momentum formula p = mv",
+        content:
+          "The momentum formula is p = m × v, where p represents momentum, m represents mass, and v represents velocity.",
+      },
+      {
+        heading: "How to calculate momentum",
+        content:
+          "To calculate momentum, multiply the object's mass by its velocity. Use kilograms for mass and meters per second for velocity to get SI units.",
+      },
+      {
+        heading: "Common momentum mistakes",
+        content:
+          "Common mistakes include confusing momentum with kinetic energy, ignoring velocity direction, and using incorrect units.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What is the momentum formula?",
+        answer:
+          "Momentum is calculated using p = m × v, where mass is multiplied by velocity.",
+      },
+      {
+        question: "What unit is momentum measured in?",
+        answer:
+          "Momentum is measured in kilogram meters per second (kg·m/s).",
+      },
+    ],
+
+    relatedFormulas: [
+      "momentum",
+    ],
+    relatedCalculators: [
+      "/calculators/momentum-calculator",
+      "/calculators/force-calculator",
+    ],
+  },
+
 ];
