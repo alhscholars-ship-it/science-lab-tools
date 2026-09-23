@@ -17,10 +17,10 @@ import {
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle =
-  "Force Calculator - Calculate Force, Mass & Acceleration (F = ma)";
+  "Force Calculator | Calculate Force Using F = ma Formula";
 
 const pageDescription =
-  "Calculate force, mass, and acceleration using Newton's Second Law F = ma. Solve physics problems with formula steps, SI units, and clear explanations.";
+  "Use this Force Calculator to calculate force, mass, or acceleration with Newton's Second Law F = ma. Get results in Newtons with formula and examples.";
 
 const pagePath =
   "/calculators/force-calculator";
@@ -120,7 +120,7 @@ export default function ForceCalculatorPage() {
               Newton&apos;s second law tool
             </p>
 
-            <h1>Force Calculator: Calculate Force, Mass & Acceleration (F = ma)</h1>
+            <h1>Force Calculator</h1>
 
             <p>
               Solve force, mass, or acceleration from
@@ -187,6 +187,37 @@ export default function ForceCalculatorPage() {
                   meters per second squared.
                 </li>
               </ul>
+            </section>
+
+            <section aria-labelledby="calculate-heading">
+              <p className="eyebrow">
+                Calculation guide
+              </p>
+
+              <h2 id="calculate-heading">
+                How to calculate force
+              </h2>
+
+              <p>
+                To calculate force, multiply the object's
+                mass by its acceleration using Newton's
+                Second Law. The result is measured in
+                newtons (N).
+              </p>
+
+              <ol className="calculation-steps">
+                <li>
+                  Measure the object's mass in kilograms.
+                </li>
+                <li>
+                  Find acceleration in meters per second
+                  squared.
+                </li>
+                <li>
+                  Multiply mass by acceleration to get
+                  force.
+                </li>
+              </ol>
             </section>
 
             <section aria-labelledby="example-heading">
