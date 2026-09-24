@@ -1039,7 +1039,6 @@ export const scienceGuides: readonly ScienceGuide[] = [
       "/calculators/kinetic-energy-calculator",
     ],
   },
-,
 
   {
     slug: "kinetic-energy-explained",
