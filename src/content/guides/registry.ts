@@ -1119,5 +1119,86 @@ export const scienceGuides: readonly ScienceGuide[] = [
       "/calculators/momentum-calculator",
     ],
   },
+,
+
+  {
+    slug: "momentum-explained",
+    title: "Momentum Explained",
+    shortDescription:
+      "Learn what momentum means, understand the p = mv formula, calculate momentum, and explore how mass and velocity affect motion.",
+    category: "Physics",
+    href: "/guides/momentum-explained",
+    keywords: [
+      "momentum explained",
+      "momentum formula",
+      "p = mv formula",
+      "how to calculate momentum",
+      "momentum calculator",
+    ],
+
+    intro:
+      "Momentum is the quantity of motion an object has. It depends on both the object's mass and its velocity.",
+
+    sections: [
+      {
+        heading: "What is momentum?",
+        content:
+          "Momentum describes how much motion an object has. Objects with greater mass or greater velocity have greater momentum.",
+      },
+      {
+        heading: "Momentum formula p = mv",
+        content:
+          "The momentum formula is p = m × v, where p represents momentum, m represents mass, and v represents velocity.",
+      },
+      {
+        heading: "How to calculate momentum",
+        content:
+          "To calculate momentum, multiply the object's mass by its velocity. Use kilograms for mass and meters per second for velocity.",
+      },
+      {
+        heading: "Momentum and velocity",
+        content:
+          "Momentum increases when velocity increases. Because velocity has direction, momentum is also a vector quantity.",
+      },
+      {
+        heading: "Momentum vs kinetic energy",
+        content:
+          "Momentum measures motion using mass and velocity, while kinetic energy measures the energy of motion and depends on velocity squared.",
+      },
+      {
+        heading: "Common momentum mistakes",
+        content:
+          "Common mistakes include confusing momentum with kinetic energy, ignoring velocity direction, and using incorrect units.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What is the momentum formula?",
+        answer:
+          "Momentum is calculated using p = m × v, where mass is multiplied by velocity.",
+      },
+      {
+        question: "What unit is momentum measured in?",
+        answer:
+          "Momentum is measured in kilogram meters per second (kg·m/s).",
+      },
+      {
+        question: "Is momentum conserved?",
+        answer:
+          "Momentum is conserved in a closed system where no external forces act on the objects.",
+      },
+    ],
+
+    relatedFormulas: [
+      "momentum",
+    ],
+
+    relatedCalculators: [
+      "/calculators/momentum-calculator",
+      "/calculators/kinetic-energy-calculator",
+      "/calculators/force-calculator",
+    ],
+  },
 
 ];
