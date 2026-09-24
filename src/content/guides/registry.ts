@@ -817,4 +817,76 @@ export const scienceGuides: readonly ScienceGuide[] = [
     ],
   },
 
+  {
+    slug: "acceleration-explained",
+    title: "Acceleration Explained: Formula, Units & Examples",
+    shortDescription:
+      "Learn what acceleration means, understand the acceleration formula, calculate acceleration, units, examples, and common mistakes.",
+
+    category: "Physics",
+    href: "/guides/acceleration-explained",
+
+    keywords: [
+      "acceleration explained",
+      "acceleration formula",
+      "how to calculate acceleration",
+      "acceleration equation",
+      "acceleration calculator",
+    ],
+
+    intro:
+      "Acceleration describes how quickly an object's velocity changes over time. It is a fundamental concept in physics used to analyze motion and forces.",
+
+    sections: [
+      {
+        heading: "What is acceleration?",
+        content:
+          "Acceleration is the rate at which velocity changes with time. An object accelerates when it speeds up, slows down, or changes direction.",
+      },
+      {
+        heading: "Acceleration formula",
+        content:
+          "The acceleration formula is a = Δv / t, where a represents acceleration, Δv represents the change in velocity, and t represents time.",
+      },
+      {
+        heading: "How to calculate acceleration",
+        content:
+          "To calculate acceleration, subtract the initial velocity from the final velocity and divide the result by the time interval.",
+      },
+      {
+        heading: "Acceleration units",
+        content:
+          "The SI unit of acceleration is meters per second squared (m/s²). It represents how much velocity changes every second.",
+      },
+      {
+        heading: "Common acceleration mistakes",
+        content:
+          "Common mistakes include confusing speed with velocity, using incorrect time units, and forgetting the direction of acceleration.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What is the acceleration formula?",
+        answer:
+          "Acceleration is calculated using a = Δv / t, which divides the change in velocity by the time taken.",
+      },
+      {
+        question: "What unit is acceleration measured in?",
+        answer:
+          "Acceleration is measured in meters per second squared (m/s²).",
+      },
+    ],
+
+    relatedFormulas: [
+      "acceleration-formula",
+    ],
+
+    relatedCalculators: [
+      "/calculators/acceleration-calculator",
+      "/calculators/force-calculator",
+      "/calculators/free-fall-calculator",
+    ],
+  },
+
 ];
