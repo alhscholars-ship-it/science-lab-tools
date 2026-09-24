@@ -588,4 +588,86 @@ export const scienceGuides: readonly ScienceGuide[] = [
     ],
   },
 
+
+  {
+    slug: "potential-energy-explained",
+    title: "Potential Energy Explained",
+    shortDescription:
+      "Learn what potential energy means, understand gravitational and elastic potential energy formulas, and solve energy problems.",
+    category: "Physics",
+    href: "/guides/potential-energy-explained",
+    keywords: [
+      "potential energy explained",
+      "potential energy formula",
+      "gravitational potential energy formula",
+      "elastic potential energy formula",
+      "how to calculate potential energy",
+    ],
+
+    intro:
+      "Potential energy is stored energy that an object has because of its position, shape, or configuration. It can be converted into kinetic energy when conditions change.",
+
+    sections: [
+      {
+        heading: "What is potential energy?",
+        content:
+          "Potential energy is stored energy associated with an object's position or condition. Common examples include gravitational potential energy and elastic potential energy.",
+      },
+      {
+        heading: "Gravitational potential energy formula",
+        content:
+          "Gravitational potential energy is calculated using PE = mgh, where mass, gravitational acceleration, and height determine stored energy.",
+      },
+      {
+        heading: "Elastic potential energy formula",
+        content:
+          "Elastic potential energy is stored in stretched or compressed objects. The formula PE = ½kx² uses spring constant and displacement.",
+      },
+      {
+        heading: "How to calculate potential energy",
+        content:
+          "Identify the correct formula, convert values into SI units, and substitute the values to calculate potential energy.",
+      },
+      {
+        heading: "Potential energy vs kinetic energy",
+        content:
+          "Potential energy is stored energy due to position, while kinetic energy is energy of motion. Energy can transfer between these forms.",
+      },
+      {
+        heading: "Common potential energy mistakes",
+        content:
+          "Common mistakes include incorrect units, confusing mass with weight, and using the wrong energy formula.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What is the formula for potential energy?",
+        answer:
+          "Gravitational potential energy uses PE = mgh, while elastic potential energy uses PE = ½kx².",
+      },
+      {
+        question: "How is gravitational potential energy calculated?",
+        answer:
+          "Multiply mass, gravitational acceleration, and height to calculate gravitational potential energy.",
+      },
+      {
+        question: "What is elastic potential energy?",
+        answer:
+          "Elastic potential energy is stored energy in stretched or compressed objects such as springs.",
+      },
+    ],
+
+    relatedFormulas: [
+      "gravitational-potential-energy-formula",
+      "elastic-potential-energy-formula",
+    ],
+
+    relatedCalculators: [
+      "/calculators/gravitational-potential-energy-calculator",
+      "/calculators/elastic-potential-energy-calculator",
+      "/calculators/work-calculator",
+    ],
+  },
+
 ];
