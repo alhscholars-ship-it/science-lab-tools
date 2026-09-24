@@ -965,4 +965,79 @@ export const scienceGuides: readonly ScienceGuide[] = [
     ],
   },
 
+  {
+    slug: "power-explained",
+    title: "Power Explained",
+    shortDescription:
+      "Learn what power means in physics, understand the P = W / t formula, calculate mechanical power, and solve energy transfer problems.",
+    category: "Physics",
+    href: "/guides/power-explained",
+    keywords: [
+      "power explained",
+      "power formula physics",
+      "p = w / t formula",
+      "how to calculate power",
+      "mechanical power",
+    ],
+
+    intro:
+      "Power describes how quickly work is done or energy is transferred. It measures the rate at which energy changes or is used over time.",
+
+    sections: [
+      {
+        heading: "What is power in physics?",
+        content:
+          "Power is the rate of doing work. Two systems can perform the same amount of work, but the one that completes it in less time has greater power.",
+      },
+      {
+        heading: "Power formula P = W / t",
+        content:
+          "The power formula is P = W / t, where P represents power, W represents work done, and t represents the time taken.",
+      },
+      {
+        heading: "How to calculate power",
+        content:
+          "To calculate power, divide the amount of work completed by the time required. Use joules for work and seconds for time to get watts.",
+      },
+      {
+        heading: "Unit of power: watts",
+        content:
+          "The SI unit of power is the watt (W). One watt equals one joule of work done per second.",
+      },
+      {
+        heading: "Work vs power",
+        content:
+          "Work measures the amount of energy transferred, while power measures how quickly that energy transfer happens.",
+      },
+      {
+        heading: "Common power calculation mistakes",
+        content:
+          "Common mistakes include confusing power with work, using incorrect time units, and forgetting to convert values into SI units.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What is the formula for power?",
+        answer:
+          "Power is calculated using P = W / t, where work is divided by the time taken.",
+      },
+      {
+        question: "What unit is power measured in?",
+        answer:
+          "Power is measured in watts (W), which equals joules per second.",
+      },
+    ],
+
+    relatedFormulas: [
+      "power",
+    ],
+
+    relatedCalculators: [
+      "/calculators/power-calculator",
+      "/calculators/work-calculator",
+      "/calculators/kinetic-energy-calculator",
+    ],
+  },
+
 ];
