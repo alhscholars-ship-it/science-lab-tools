@@ -1039,5 +1039,86 @@ export const scienceGuides: readonly ScienceGuide[] = [
       "/calculators/kinetic-energy-calculator",
     ],
   },
+,
+
+  {
+    slug: "kinetic-energy-explained",
+    title: "Kinetic Energy Explained",
+    shortDescription:
+      "Learn what kinetic energy means, understand the KE = ½mv² formula, calculate kinetic energy, and solve physics motion problems.",
+    category: "Physics",
+    href: "/guides/kinetic-energy-explained",
+    keywords: [
+      "kinetic energy explained",
+      "kinetic energy formula",
+      "ke formula",
+      "how to calculate kinetic energy",
+      "kinetic energy calculator",
+    ],
+
+    intro:
+      "Kinetic energy is the energy an object has because of its motion. It depends on the object's mass and velocity.",
+
+    sections: [
+      {
+        heading: "What is kinetic energy?",
+        content:
+          "Kinetic energy is the energy associated with a moving object. Any object with mass and motion has kinetic energy.",
+      },
+      {
+        heading: "Kinetic energy formula KE = ½mv²",
+        content:
+          "The kinetic energy formula is KE = ½mv², where KE represents kinetic energy, m represents mass, and v represents velocity.",
+      },
+      {
+        heading: "How to calculate kinetic energy",
+        content:
+          "To calculate kinetic energy, multiply half the object's mass by the square of its velocity. Use kilograms for mass and meters per second for velocity.",
+      },
+      {
+        heading: "Effect of mass and velocity on kinetic energy",
+        content:
+          "Increasing mass increases kinetic energy proportionally, while increasing velocity has a larger effect because velocity is squared.",
+      },
+      {
+        heading: "Kinetic energy vs potential energy",
+        content:
+          "Kinetic energy is energy of motion, while potential energy is stored energy due to position or configuration.",
+      },
+      {
+        heading: "Common kinetic energy mistakes",
+        content:
+          "Common mistakes include forgetting to square velocity, using incorrect units, and confusing kinetic energy with momentum.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What is the kinetic energy formula?",
+        answer:
+          "Kinetic energy is calculated using KE = ½mv², where mass is multiplied by the square of velocity.",
+      },
+      {
+        question: "What unit is kinetic energy measured in?",
+        answer:
+          "Kinetic energy is measured in joules (J).",
+      },
+      {
+        question: "Does velocity affect kinetic energy more than mass?",
+        answer:
+          "Yes. Velocity has a greater effect because it is squared in the kinetic energy formula.",
+      },
+    ],
+
+    relatedFormulas: [
+      "kinetic-energy-formula",
+    ],
+
+    relatedCalculators: [
+      "/calculators/kinetic-energy-calculator",
+      "/calculators/work-calculator",
+      "/calculators/momentum-calculator",
+    ],
+  },
 
 ];
