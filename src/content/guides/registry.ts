@@ -889,4 +889,80 @@ export const scienceGuides: readonly ScienceGuide[] = [
     ],
   },
 
+  {
+    slug: "newtons-laws-of-motion-explained",
+    title: "Newton's Laws of Motion Explained",
+    shortDescription:
+      "Learn Newton's three laws of motion, understand force, inertia, acceleration, action and reaction, and solve physics motion problems.",
+    category: "Physics",
+    href: "/guides/newtons-laws-of-motion-explained",
+    keywords: [
+      "newtons laws of motion",
+      "newtons laws explained",
+      "first law of motion",
+      "second law of motion",
+      "third law of motion",
+      "force and motion",
+    ],
+
+    intro:
+      "Newton's Laws of Motion explain how objects move and how forces affect motion. These three fundamental laws form the foundation of classical mechanics.",
+
+    sections: [
+      {
+        heading: "What are Newton's Laws of Motion?",
+        content:
+          "Newton's Laws of Motion describe the relationship between forces and the movement of objects. They explain why objects remain at rest, accelerate, or interact with other objects.",
+      },
+      {
+        heading: "Newton's First Law: Law of Inertia",
+        content:
+          "Newton's First Law states that an object remains at rest or continues moving at constant velocity unless acted upon by an external force. This property is called inertia.",
+      },
+      {
+        heading: "Newton's Second Law: Force and Acceleration",
+        content:
+          "Newton's Second Law explains that net force is related to mass and acceleration. It helps calculate how forces change an object's motion.",
+      },
+      {
+        heading: "Newton's Third Law: Action and Reaction",
+        content:
+          "Newton's Third Law states that every action force has an equal and opposite reaction force. Forces always occur in pairs between interacting objects.",
+      },
+      {
+        heading: "Examples of Newton's Laws",
+        content:
+          "Examples include a car accelerating due to engine force, passengers moving forward when a vehicle stops suddenly, and rockets moving upward through reaction forces.",
+      },
+      {
+        heading: "Common Newton's Laws mistakes",
+        content:
+          "Common mistakes include confusing mass with weight, ignoring net force, and misunderstanding action-reaction force pairs.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What are Newton's three laws of motion?",
+        answer:
+          "Newton's three laws explain inertia, the relationship between force and acceleration, and action-reaction force pairs.",
+      },
+      {
+        question: "What formula is used in Newton's Second Law?",
+        answer:
+          "Newton's Second Law uses F = m × a, where force equals mass multiplied by acceleration.",
+      },
+    ],
+
+    relatedFormulas: [
+      "newtons-second-law",
+    ],
+
+    relatedCalculators: [
+      "/calculators/force-calculator",
+      "/calculators/acceleration-calculator",
+      "/calculators/momentum-calculator",
+    ],
+  },
+
 ];
