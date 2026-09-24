@@ -1119,7 +1119,6 @@ export const scienceGuides: readonly ScienceGuide[] = [
       "/calculators/momentum-calculator",
     ],
   },
-,
 
   {
     slug: "momentum-explained",
