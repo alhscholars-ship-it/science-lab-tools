@@ -670,4 +670,78 @@ export const scienceGuides: readonly ScienceGuide[] = [
     ],
   },
 
+  {
+    slug: "work-explained",
+    title: "Work Explained",
+    shortDescription:
+      "Learn what work means in physics, understand the W = F × d formula, calculate mechanical work, and solve energy problems.",
+    category: "Physics",
+    href: "/guides/work-explained",
+    keywords: [
+      "work explained",
+      "work formula",
+      "w = f × d formula",
+      "how to calculate work",
+      "mechanical work",
+    ],
+
+    intro:
+      "Work in physics describes energy transferred when a force causes an object to move through a displacement. It depends on force, distance, and direction.",
+
+    sections: [
+      {
+        heading: "What is work in physics?",
+        content:
+          "Work is the transfer of energy that occurs when a force moves an object through a distance. If there is no displacement, no mechanical work is done.",
+      },
+      {
+        heading: "Work formula W = F × d",
+        content:
+          "The basic work formula is W = F × d, where W represents work, F represents force, and d represents displacement in the direction of the force.",
+      },
+      {
+        heading: "How to calculate work",
+        content:
+          "To calculate work, multiply the applied force by the distance moved. Use SI units with force measured in newtons and distance measured in meters.",
+      },
+      {
+        heading: "Work and angle of force",
+        content:
+          "When a force acts at an angle, only the component of force in the direction of motion contributes to work.",
+      },
+      {
+        heading: "Work vs energy",
+        content:
+          "Work and energy are closely related because work represents energy transferred by a force acting over a distance.",
+      },
+      {
+        heading: "Common work calculation mistakes",
+        content:
+          "Common mistakes include confusing force with work, ignoring displacement, and using incorrect units.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What is the formula for work?",
+        answer:
+          "Work is calculated using W = F × d, where force is multiplied by displacement.",
+      },
+      {
+        question: "What unit is work measured in?",
+        answer:
+          "Work is measured in joules (J), which is equivalent to newton meters.",
+      },
+    ],
+
+    relatedFormulas: [
+      "work",
+    ],
+    relatedCalculators: [
+      "/calculators/work-calculator",
+      "/calculators/force-calculator",
+      "/calculators/kinetic-energy-calculator",
+    ],
+  },
+
 ];
