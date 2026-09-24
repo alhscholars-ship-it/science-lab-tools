@@ -744,4 +744,77 @@ export const scienceGuides: readonly ScienceGuide[] = [
     ],
   },
 
+  {
+    slug: "force-explained",
+    title: "Force Explained: Definition, Formula, Units & Examples",
+    shortDescription:
+      "Learn what force means in physics, understand the F = ma formula, force units, examples, and how to calculate force.",
+
+    category: "Physics",
+    href: "/guides/force-explained",
+
+    keywords: [
+      "what is force",
+      "force explained",
+      "force formula",
+      "f = ma formula",
+      "how to calculate force",
+      "newton force unit",
+    ],
+
+    intro:
+      "Force is a push or pull that can change an object's motion. In physics, force is described using Newton's Second Law, which relates force, mass, and acceleration.",
+
+    sections: [
+      {
+        heading: "What is force?",
+        content:
+          "Force is an interaction that can change the velocity of an object. A force can accelerate an object, slow it down, or change its direction.",
+      },
+      {
+        heading: "Force formula F = ma",
+        content:
+          "Newton's Second Law gives the force formula F = m × a, where F represents force, m represents mass, and a represents acceleration.",
+      },
+      {
+        heading: "How to calculate force",
+        content:
+          "To calculate force, multiply an object's mass by its acceleration. Use kilograms for mass and meters per second squared for acceleration.",
+      },
+      {
+        heading: "Force unit Newton",
+        content:
+          "The SI unit of force is the newton (N). One newton is the force required to accelerate a one kilogram object by one meter per second squared.",
+      },
+      {
+        heading: "Common force calculation mistakes",
+        content:
+          "Common mistakes include confusing mass with weight, ignoring direction, and using incorrect units.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What is the formula for force?",
+        answer:
+          "Force is calculated using Newton's Second Law: F = m × a.",
+      },
+      {
+        question: "What unit is force measured in?",
+        answer:
+          "Force is measured in newtons (N).",
+      },
+    ],
+
+    relatedFormulas: [
+      "newtons-second-law",
+    ],
+
+    relatedCalculators: [
+      "/calculators/force-calculator",
+      "/calculators/acceleration-calculator",
+      "/calculators/work-calculator",
+    ],
+  },
+
 ];
