@@ -1200,4 +1200,84 @@ export const scienceGuides: readonly ScienceGuide[] = [
     ],
   },
 
+  {
+    slug: "physics-fundamentals",
+    title: "Physics Fundamentals",
+    shortDescription:
+      "Explore essential physics concepts including Newton's Laws, force, acceleration, work, power, kinetic energy, and momentum with formulas and calculators.",
+
+    category: "Physics",
+
+    href: "/guides/physics-fundamentals",
+
+    keywords: [
+      "physics fundamentals",
+      "basic physics concepts",
+      "physics formulas",
+      "mechanics explained",
+      "physics calculators",
+    ],
+
+    intro:
+      "Physics fundamentals explain how objects move, interact, and transfer energy. This guide covers core mechanics concepts including forces, motion, energy, and momentum.",
+
+    sections: [
+      {
+        heading: "Newton's Laws of Motion",
+        content:
+          "Newton's Laws explain the relationship between forces and motion. They form the foundation of classical mechanics.",
+      },
+      {
+        heading: "Force and acceleration",
+        content:
+          "Force changes an object's motion. Newton's Second Law describes force using F = m × a, connecting force, mass, and acceleration.",
+      },
+      {
+        heading: "Work, energy, and power",
+        content:
+          "Work describes energy transfer through force and displacement. Power measures how quickly work is performed.",
+      },
+      {
+        heading: "Kinetic energy and momentum",
+        content:
+          "Kinetic energy describes energy of motion, while momentum describes the quantity of motion based on mass and velocity.",
+      },
+      {
+        heading: "Physics calculators and formulas",
+        content:
+          "Use physics calculators to solve mechanics problems and explore related scientific formulas.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "What are the main topics in physics fundamentals?",
+        answer:
+          "Physics fundamentals include motion, force, acceleration, energy, work, power, and momentum.",
+      },
+      {
+        question: "What formula connects force and acceleration?",
+        answer:
+          "Newton's Second Law uses F = m × a, where force equals mass multiplied by acceleration.",
+      },
+    ],
+
+    relatedFormulas: [
+      "newtons-second-law",
+      "kinetic-energy-formula",
+      "momentum",
+      "power",
+      "work",
+    ],
+
+    relatedCalculators: [
+      "/calculators/force-calculator",
+      "/calculators/acceleration-calculator",
+      "/calculators/work-calculator",
+      "/calculators/power-calculator",
+      "/calculators/kinetic-energy-calculator",
+      "/calculators/momentum-calculator",
+    ],
+  },
+
 ];
