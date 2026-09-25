@@ -587,6 +587,12 @@ export const scienceGuides: readonly ScienceGuide[] = [
       "/calculators/momentum-calculator",
       "/calculators/force-calculator",
     ],
+
+    relatedGuides: [
+      "kinetic-energy-explained",
+      "newtons-laws-of-motion-explained",
+      "physics-fundamentals",
+    ],
   },
 
 
@@ -815,6 +821,12 @@ export const scienceGuides: readonly ScienceGuide[] = [
       "/calculators/force-calculator",
       "/calculators/acceleration-calculator",
       "/calculators/work-calculator",
+    ],
+
+    relatedGuides: [
+      "newtons-laws-of-motion-explained",
+      "acceleration-explained",
+      "physics-fundamentals",
     ],
   },
 
