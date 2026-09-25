@@ -228,6 +228,45 @@ export default async function GuidePage({
                   </ul>
                 </section>
               )}
+            {guide.relatedGuides &&
+              guide.relatedGuides.length > 0 && (
+                <section>
+                  <h2>
+                    Related Guides
+                  </h2>
+
+                  <div className="formula-card-grid">
+                    {guide.relatedGuides.map((slug) => {
+                      const relatedGuide =
+                        scienceGuides.find(
+                          (item) => item.slug === slug,
+                        );
+
+                      if (!relatedGuide) return null;
+
+                      return (
+                        <div
+                          className="formula-card"
+                          key={slug}
+                        >
+                          <h3>
+                            {relatedGuide.title}
+                          </h3>
+
+                          <p>
+                            {relatedGuide.shortDescription}
+                          </p>
+
+                          <Link href={`/guides/${slug}`}>
+                            Read guide →
+                          </Link>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </section>
+              )}
+
           </article>
         </Container>
       </section>

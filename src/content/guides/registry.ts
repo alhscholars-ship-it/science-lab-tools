@@ -29,6 +29,7 @@ export type ScienceGuide = {
 
   relatedFormulas?: readonly string[];
   relatedCalculators?: readonly string[];
+  relatedGuides?: readonly string[];
 };
 
 export const scienceGuides: readonly ScienceGuide[] = [
@@ -963,6 +964,12 @@ export const scienceGuides: readonly ScienceGuide[] = [
       "/calculators/acceleration-calculator",
       "/calculators/momentum-calculator",
     ],
+
+    relatedGuides: [
+      "force-explained",
+      "acceleration-explained",
+      "physics-fundamentals",
+    ],
   },
 
   {
@@ -1037,6 +1044,12 @@ export const scienceGuides: readonly ScienceGuide[] = [
       "/calculators/power-calculator",
       "/calculators/work-calculator",
       "/calculators/kinetic-energy-calculator",
+    ],
+
+    relatedGuides: [
+      "work-explained",
+      "kinetic-energy-explained",
+      "physics-fundamentals",
     ],
   },
 
