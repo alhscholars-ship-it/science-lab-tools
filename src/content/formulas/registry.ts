@@ -68,7 +68,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "/calculators/acceleration-calculator",
     ],
     relatedGuides: [
-      "/scientific-method/experimental-design",
+      "/guides/newtons-laws-of-motion-explained",
+      "/guides/force-explained",
+      "/guides/acceleration-explained",
+      "/guides/physics-fundamentals",
     ],
     units: [
       "Force: Newton (N)",
@@ -114,7 +117,10 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "/calculators/force-calculator",
     ],
     relatedGuides: [
-      "/scientific-method/experimental-design",
+      "/guides/momentum-explained",
+      "/guides/kinetic-energy-explained",
+      "/guides/newtons-laws-of-motion-explained",
+      "/guides/physics-fundamentals",
     ],
     calculatorHref: "/calculators/weight-calculator",
   },
