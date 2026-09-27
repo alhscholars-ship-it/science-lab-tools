@@ -1648,6 +1648,12 @@ export const scienceFormulas: readonly ScienceFormula[] = [
       "/calculators/momentum-calculator",
     ],
     calculatorHref: "/calculators/kinetic-energy-calculator",
+
+    relatedGuides: [
+      "/guides/kinetic-energy-explained",
+      "/guides/momentum-explained",
+      "/guides/potential-energy-explained",
+    ],
   },
 
   {
