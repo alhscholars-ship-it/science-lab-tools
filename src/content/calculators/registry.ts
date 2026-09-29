@@ -6,6 +6,8 @@ export type CalculatorDefinition = {
   href: string;
   keywords: readonly string[];
   relatedCalculators?: readonly string[];
+  relatedFormulas?: readonly string[];
+  relatedGuides?: readonly string[];
 };
 
 export const calculators: readonly CalculatorDefinition[] = [
@@ -520,6 +522,17 @@ export const calculators: readonly CalculatorDefinition[] = [
       "weight-calculator",
       "momentum-calculator",
       "kinetic-energy-calculator",
+    ],
+
+    relatedFormulas: [
+      "newtons-second-law",
+    ],
+
+    relatedGuides: [
+      "/guides/force-explained",
+      "/guides/newtons-laws-of-motion-explained",
+      "/guides/acceleration-explained",
+      "/guides/physics-fundamentals",
     ],
   },
   {
@@ -1385,6 +1398,17 @@ export const calculators: readonly CalculatorDefinition[] = [
       "kinetic-energy-calculator",
       "impulse-calculator",
       "work-calculator",
+    ],
+
+    relatedFormulas: [
+      "momentum",
+    ],
+
+    relatedGuides: [
+      "/guides/momentum-explained",
+      "/guides/kinetic-energy-explained",
+      "/guides/force-explained",
+      "/guides/physics-fundamentals",
     ],
   },
   {
