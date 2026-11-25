@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      NEXT_PUBLIC_SITE_URL: https://science-lab-tools.example
+      NEXT_PUBLIC_SITE_URL: https://sciencecalchub.com
       NEXT_TELEMETRY_DISABLED: "1"
 
     steps:
@@ -55,6 +55,9 @@ jobs:
 
       - name: Validate rendered SEO output
         run: pnpm check:seo
+
+      - name: Audit rendered HTML SEO
+        run: pnpm seo:audit:rendered
 
       - name: Enforce JavaScript performance budgets
         run: pnpm check:performance

@@ -69,22 +69,22 @@ describe("SEO page audit regression coverage", () => {
   it("resolves imported category-hub metadata and title templates", () => {
     expect(getPage("/physics-calculators")).toMatchObject({
       title:
-        "Physics Calculators & Formula Tools | Science Lab Tools",
-      titleLength: 55,
+        "Physics Calculators & Formula Tools | ALH Science Hub",
+      titleLength: 53,
       issues: [],
     });
 
     expect(getPage("/chemistry-calculators")).toMatchObject({
       title:
-        "Chemistry Calculators & Formula Tools | Science Lab Tools",
-      titleLength: 57,
+        "Chemistry Calculators & Formula Tools | ALH Science Hub",
+      titleLength: 55,
       issues: [],
     });
 
     expect(getPage("/laboratory-calculators")).toMatchObject({
       title:
-        "Laboratory Calculators & Analysis Tools | Science Lab Tools",
-      titleLength: 59,
+        "Laboratory Calculators & Analysis Tools | ALH Science Hub",
+      titleLength: 57,
       issues: [],
     });
   });

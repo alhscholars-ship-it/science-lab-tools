@@ -30,16 +30,26 @@ export const biologyKnowledge: ScienceTopicKnowledge[] = [
       "dna",
       "genetic material",
       "genes",
+      "dna replication",
+      "replication of dna",
+      "copying dna",
+      "how dna replicates",
+      "dna ki naqal",
+      "dna ki nakal",
+      "dna ki replication",
+      "ڈی این اے",
+      "نقل کیسے بنتی",
+      "ڈی این اے کی نقل",
     ],
 
     title:
-      "DNA",
+      "DNA and DNA Replication",
 
     explanation:
-      "DNA is the molecule that stores genetic information. It contains instructions used for growth, development, and reproduction.",
+      "DNA replication is the process by which a cell copies its DNA before cell division. The DNA double helix unwinds, and the two strands separate. Each original strand acts as a template for building a complementary new strand using base-pairing rules: A pairs with T, and C pairs with G. This produces two DNA molecules, each containing one original strand and one newly made strand.",
 
     example:
-      "Genes are segments of DNA that influence inherited characteristics.",
+      "If a DNA template strand contains A-T-C-G, its complementary strand is T-A-G-C. DNA polymerase helps add the complementary nucleotides during replication.",
 
     units: [
       "base pairs",

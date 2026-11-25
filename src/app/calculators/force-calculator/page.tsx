@@ -17,7 +17,7 @@ import {
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle =
-  "Force Calculator | Calculate Force Using F = ma Formula";
+  "Force Calculator (F = ma)";
 
 const pageDescription =
   "Use this Force Calculator to calculate force, mass, or acceleration with Newton's Second Law F = ma. Get results in Newtons with formula and examples.";
@@ -199,15 +199,15 @@ export default function ForceCalculatorPage() {
               </h2>
 
               <p>
-                To calculate force, multiply the object's
-                mass by its acceleration using Newton's
+                To calculate force, multiply the object&apos;s
+                mass by its acceleration using Newton&apos;s
                 Second Law. The result is measured in
                 newtons (N).
               </p>
 
               <ol className="calculation-steps">
                 <li>
-                  Measure the object's mass in kilograms.
+                  Measure the object&apos;s mass in kilograms.
                 </li>
                 <li>
                   Find acceleration in meters per second

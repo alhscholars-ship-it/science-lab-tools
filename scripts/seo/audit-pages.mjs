@@ -409,7 +409,7 @@ function getRenderedTitle(
         rawExpression.trim();
 
       if (expression === "siteConfig.name") {
-        return "Science Lab Tools";
+        return siteConfigName;
       }
 
       const memberMatch = expression.match(
@@ -448,6 +448,10 @@ const siteConfigText = fs.existsSync(
   ? fs.readFileSync(siteConfigPath, "utf8")
   : "";
 
+const siteConfigName =
+  siteConfigText.match(/name:\s*"([^"]+)"/)?.[1] ??
+  "Unknown Site";
+
 const siteConfigDescriptionMatch =
   siteConfigText.match(
     /description:\s*\n?\s*"([^"]+)"/,
@@ -467,7 +471,7 @@ const inherited = {
     layoutPath,
   ).replace(
     /\$\{siteConfig\.name\}/g,
-    "Science Lab Tools",
+    siteConfigName,
   ),
   description:
     resolveMetadataValue(
@@ -494,6 +498,8 @@ const pages = walk(appDirectory)
 
     const route = routeFromFile(filePath);
     const isHomepage = route === "/";
+    const hasDynamicMetadata =
+      /export\s+(?:async\s+)?function\s+generateMetadata\b/.test(text);
 
     const ownTitle = isHomepage
       ? ""
@@ -557,7 +563,7 @@ const pages = walk(appDirectory)
 
     const dynamicInternalLinks = countMatches(
       text,
-      /href=\{(?:calculator|resource|category|link)\.href\}/g,
+      /href=\{(?:calculator|resource|category|link|guide)\.href\}/g,
     );
 
     const componentInternalLinks =
@@ -613,27 +619,27 @@ const pages = walk(appDirectory)
       issues.push("missing-metadata");
     }
 
-    if (!title) {
+    if (!hasDynamicMetadata && !title) {
       issues.push("missing-title");
-    } else if (title.length < 20) {
+    } else if (!hasDynamicMetadata && title.length < 20) {
       issues.push("short-title");
-    } else if (title.length > 65) {
+    } else if (!hasDynamicMetadata && title.length > 65) {
       issues.push("long-title");
     }
 
-    if (!description) {
+    if (!hasDynamicMetadata && !description) {
       issues.push("missing-description");
-    } else if (description.length < 100) {
+    } else if (!hasDynamicMetadata && description.length < 100) {
       issues.push(
         "short-description",
       );
-    } else if (description.length > 170) {
+    } else if (!hasDynamicMetadata && description.length > 170) {
       issues.push(
         "long-description",
       );
     }
 
-    if (!canonical) {
+    if (!hasDynamicMetadata && !canonical) {
       issues.push("missing-canonical");
     }
 
@@ -649,13 +655,13 @@ const pages = walk(appDirectory)
       );
     }
 
-    if (internalLinks < 2) {
+    if (!hasDynamicMetadata && internalLinks < 2) {
       issues.push(
         "weak-internal-linking",
       );
     }
 
-    if (!pageHasJsonLd) {
+    if (!hasDynamicMetadata && !pageHasJsonLd) {
       issues.push("missing-jsonld");
     }
 

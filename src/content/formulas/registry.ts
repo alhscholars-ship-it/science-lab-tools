@@ -1629,7 +1629,7 @@ export const scienceFormulas: readonly ScienceFormula[] = [
     rearranged: [
       "f = RPM / 60",
     ],
-    calculatorHref: "/calculators/rpm-to-angular-velocity-calculator",
+    calculatorHref: "/calculators/rpm-calculator",
   },
 
   {

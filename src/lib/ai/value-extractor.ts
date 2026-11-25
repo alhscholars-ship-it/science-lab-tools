@@ -10,7 +10,7 @@ export function extractValues(
 
   const matches =
     question.match(
-      /(\d+\.?\d*)\s*(kg|m\/s²|m\/s2|m|s|l|L|mol)/gi,
+      /(\d+\.?\d*)\s*(kg|m\/s²|m\/s2|m\/s|m|s|l|L|mol)/gi,
     );
 
 
@@ -21,13 +21,17 @@ export function extractValues(
 
   return matches.map((item) => {
 
-    const parts =
-      item.trim().split(/\s+/);
+    const parsed = item.trim().match(
+      /^(\d+\.?\d*)\s*(kg|m\/s²|m\/s2|m\/s|m|s|l|mol)$/i,
+    );
 
+    if (!parsed) {
+      throw new Error("Unexpected science value format.");
+    }
 
     return {
-      value: Number(parts[0]),
-      unit: parts[1],
+      value: Number(parsed[1]),
+      unit: parsed[2],
     };
 
   });

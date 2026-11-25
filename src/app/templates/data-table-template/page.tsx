@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle =
-  "Scientific Data Table Template - Printable Lab Data Table";
+  "Scientific Data Table Template";
 
 const pageDescription =
   "Download and use a scientific data table template for lab experiments. Record variables, units, trials, measurements, observations, and results with a clear format.";

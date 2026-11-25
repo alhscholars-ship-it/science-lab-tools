@@ -6,10 +6,10 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle =
-  "Experiment Planning Template - Science Lab Worksheet";
+  "Experiment Planning Template";
 
 const pageDescription =
-  "Use this experiment planning template for science projects and lab investigations. Plan research questions, hypotheses, variables, controls, materials, procedures, measurements, and results.";
+  "Use this experiment planning template to organize science projects and lab investigations, including hypotheses, variables, controls, procedures, and results.";
 
 export const metadata: Metadata = {
   title: pageTitle,

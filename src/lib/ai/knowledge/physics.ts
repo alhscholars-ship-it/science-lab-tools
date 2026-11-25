@@ -2,6 +2,7 @@ export type ScienceTopicKnowledge = {
   keywords: string[];
   title: string;
   explanation: string;
+  romanUrduExplanation?: string;
   formula?: string;
   example?: string;
   units?: string[];
@@ -24,6 +25,9 @@ export const physicsKnowledge: ScienceTopicKnowledge[] = [
 
     explanation:
       "Newton's Second Law explains the relationship between force, mass, and acceleration. The net force acting on an object equals its mass multiplied by its acceleration.",
+
+    romanUrduExplanation:
+      "Force aik dhakka ya khainchao hoti hai jo kisi cheez ki harkat, raftaar, ya simt badal sakti hai. Newton ke Second Law ke mutabiq, net force mass aur acceleration ko multiply karne se milti hai.",
 
     formula:
       "F = m × a",
