@@ -46,7 +46,7 @@ if (invalidOrigins.length > 0) {
   );
 }
 
-if (urls.some((url) => /localhost|alh\.sciencecalchub\.org/i.test(url))) {
+if (urls.some((url) => ["localhost", "alh.sciencecalchub.org"].includes(new URL(url).hostname))) {
   throw new Error("Sitemap contains a non-production hostname");
 }
 

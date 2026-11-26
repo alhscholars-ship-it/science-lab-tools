@@ -65,7 +65,7 @@ describe("sitemap", () => {
 
     expect(sitemapUrls.length).toBeGreaterThan(0);
     expect(sitemapUrls.every((url) => new URL(url).origin === productionOrigin)).toBe(true);
-    expect(sitemapUrls.some((url) => /localhost|alh\.sciencecalchub\.org/i.test(url))).toBe(false);
+    expect(sitemapUrls.some((url) => ["localhost", "alh.sciencecalchub.org"].includes(new URL(url).hostname))).toBe(false);
   });
 
   it("includes every calculator registry URL exactly once", () => {
