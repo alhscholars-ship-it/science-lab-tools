@@ -501,7 +501,17 @@ export const scienceGuides: readonly ScienceGuide[] = [
         content:
           "Common mistakes include forgetting to square velocity, using incorrect units, and confusing kinetic energy with force or momentum.",
       },
-    ],
+
+      {
+        heading: "Effect of mass and velocity on kinetic energy",
+        content:
+          "Increasing mass increases kinetic energy proportionally, while increasing velocity has a larger effect because velocity is squared.",
+      },
+      {
+        heading: "Kinetic energy vs potential energy",
+        content:
+          "Kinetic energy is energy of motion, while potential energy is stored energy due to position or configuration.",
+      },],
 
     faq: [
       {
@@ -514,7 +524,17 @@ export const scienceGuides: readonly ScienceGuide[] = [
         answer:
           "Kinetic energy depends on an object's mass and velocity. Increasing velocity has a larger effect because velocity is squared.",
       },
-    ],
+
+      {
+        question: "What unit is kinetic energy measured in?",
+        answer:
+          "Kinetic energy is measured in joules (J).",
+      },
+      {
+        question: "Does velocity affect kinetic energy more than mass?",
+        answer:
+          "Yes. Velocity has a greater effect because it is squared in the kinetic energy formula.",
+      },],
 
     relatedFormulas: [
       "kinetic-energy-formula",
@@ -565,7 +585,17 @@ export const scienceGuides: readonly ScienceGuide[] = [
         content:
           "Common mistakes include confusing momentum with kinetic energy, ignoring velocity direction, and using incorrect units.",
       },
-    ],
+
+      {
+        heading: "Momentum and velocity",
+        content:
+          "Momentum increases when velocity increases. Because velocity has direction, momentum is also a vector quantity.",
+      },
+      {
+        heading: "Momentum vs kinetic energy",
+        content:
+          "Momentum measures motion using mass and velocity, while kinetic energy measures the energy of motion and depends on velocity squared.",
+      },],
 
     faq: [
       {
@@ -578,7 +608,12 @@ export const scienceGuides: readonly ScienceGuide[] = [
         answer:
           "Momentum is measured in kilogram meters per second (kg·m/s).",
       },
-    ],
+
+      {
+        question: "Is momentum conserved?",
+        answer:
+          "Momentum is conserved in a closed system where no external forces act on the objects.",
+      },],
 
     relatedFormulas: [
       "momentum",
@@ -1065,165 +1100,9 @@ export const scienceGuides: readonly ScienceGuide[] = [
     ],
   },
 
-  {
-    slug: "kinetic-energy-explained",
-    title: "Kinetic Energy Explained",
-    shortDescription:
-      "Learn what kinetic energy means, understand the KE = ½mv² formula, calculate kinetic energy, and solve physics motion problems.",
-    category: "Physics",
-    href: "/guides/kinetic-energy-explained",
-    keywords: [
-      "kinetic energy explained",
-      "kinetic energy formula",
-      "ke formula",
-      "how to calculate kinetic energy",
-      "kinetic energy calculator",
-    ],
 
-    intro:
-      "Kinetic energy is the energy an object has because of its motion. It depends on the object's mass and velocity.",
 
-    sections: [
-      {
-        heading: "What is kinetic energy?",
-        content:
-          "Kinetic energy is the energy associated with a moving object. Any object with mass and motion has kinetic energy.",
-      },
-      {
-        heading: "Kinetic energy formula KE = ½mv²",
-        content:
-          "The kinetic energy formula is KE = ½mv², where KE represents kinetic energy, m represents mass, and v represents velocity.",
-      },
-      {
-        heading: "How to calculate kinetic energy",
-        content:
-          "To calculate kinetic energy, multiply half the object's mass by the square of its velocity. Use kilograms for mass and meters per second for velocity.",
-      },
-      {
-        heading: "Effect of mass and velocity on kinetic energy",
-        content:
-          "Increasing mass increases kinetic energy proportionally, while increasing velocity has a larger effect because velocity is squared.",
-      },
-      {
-        heading: "Kinetic energy vs potential energy",
-        content:
-          "Kinetic energy is energy of motion, while potential energy is stored energy due to position or configuration.",
-      },
-      {
-        heading: "Common kinetic energy mistakes",
-        content:
-          "Common mistakes include forgetting to square velocity, using incorrect units, and confusing kinetic energy with momentum.",
-      },
-    ],
 
-    faq: [
-      {
-        question: "What is the kinetic energy formula?",
-        answer:
-          "Kinetic energy is calculated using KE = ½mv², where mass is multiplied by the square of velocity.",
-      },
-      {
-        question: "What unit is kinetic energy measured in?",
-        answer:
-          "Kinetic energy is measured in joules (J).",
-      },
-      {
-        question: "Does velocity affect kinetic energy more than mass?",
-        answer:
-          "Yes. Velocity has a greater effect because it is squared in the kinetic energy formula.",
-      },
-    ],
-
-    relatedFormulas: [
-      "kinetic-energy-formula",
-    ],
-
-    relatedCalculators: [
-      "/calculators/kinetic-energy-calculator",
-      "/calculators/work-calculator",
-      "/calculators/momentum-calculator",
-    ],
-  },
-
-  {
-    slug: "momentum-explained",
-    title: "Momentum Explained",
-    shortDescription:
-      "Learn what momentum means, understand the p = mv formula, calculate momentum, and explore how mass and velocity affect motion.",
-    category: "Physics",
-    href: "/guides/momentum-explained",
-    keywords: [
-      "momentum explained",
-      "momentum formula",
-      "p = mv formula",
-      "how to calculate momentum",
-      "momentum calculator",
-    ],
-
-    intro:
-      "Momentum is the quantity of motion an object has. It depends on both the object's mass and its velocity.",
-
-    sections: [
-      {
-        heading: "What is momentum?",
-        content:
-          "Momentum describes how much motion an object has. Objects with greater mass or greater velocity have greater momentum.",
-      },
-      {
-        heading: "Momentum formula p = mv",
-        content:
-          "The momentum formula is p = m × v, where p represents momentum, m represents mass, and v represents velocity.",
-      },
-      {
-        heading: "How to calculate momentum",
-        content:
-          "To calculate momentum, multiply the object's mass by its velocity. Use kilograms for mass and meters per second for velocity.",
-      },
-      {
-        heading: "Momentum and velocity",
-        content:
-          "Momentum increases when velocity increases. Because velocity has direction, momentum is also a vector quantity.",
-      },
-      {
-        heading: "Momentum vs kinetic energy",
-        content:
-          "Momentum measures motion using mass and velocity, while kinetic energy measures the energy of motion and depends on velocity squared.",
-      },
-      {
-        heading: "Common momentum mistakes",
-        content:
-          "Common mistakes include confusing momentum with kinetic energy, ignoring velocity direction, and using incorrect units.",
-      },
-    ],
-
-    faq: [
-      {
-        question: "What is the momentum formula?",
-        answer:
-          "Momentum is calculated using p = m × v, where mass is multiplied by velocity.",
-      },
-      {
-        question: "What unit is momentum measured in?",
-        answer:
-          "Momentum is measured in kilogram meters per second (kg·m/s).",
-      },
-      {
-        question: "Is momentum conserved?",
-        answer:
-          "Momentum is conserved in a closed system where no external forces act on the objects.",
-      },
-    ],
-
-    relatedFormulas: [
-      "momentum",
-    ],
-
-    relatedCalculators: [
-      "/calculators/momentum-calculator",
-      "/calculators/kinetic-energy-calculator",
-      "/calculators/force-calculator",
-    ],
-  },
 
   {
     slug: "physics-fundamentals",

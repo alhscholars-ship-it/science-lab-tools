@@ -5,6 +5,12 @@ import { describe, expect, it } from "vitest";
 
 import sitemap from "../sitemap";
 import { calculators } from "../../content/calculators/registry";
+import { scienceAITools } from "../../content/ai-tools/registry";
+import {
+  formulaCategories,
+  scienceFormulas,
+} from "../../content/formulas/registry";
+import { scienceGuides } from "../../content/guides/registry";
 
 const productionOrigin = "https://sciencecalchub.com";
 
@@ -25,6 +31,7 @@ function discoverPageRoutes(): string[] {
       const directory = path.relative(appDirectory, path.dirname(file));
       return directory ? `/${directory.split(path.sep).join("/")}` : "/";
     })
+    .filter((route) => !route.includes("["))
     .sort();
 }
 
@@ -33,9 +40,23 @@ describe("sitemap", () => {
     const sitemapPaths = sitemap()
       .map((entry) => new URL(entry.url).pathname)
       .sort();
-    const pageRoutes = discoverPageRoutes();
+    const staticPageRoutes = discoverPageRoutes();
 
-    expect(sitemapPaths).toEqual(pageRoutes);
+    const dynamicPageRoutes = [
+      ...scienceAITools.map(({ slug }) => `/ai-tools/${slug}`),
+      ...scienceFormulas.map(({ slug }) => `/formulas/${slug}`),
+      ...formulaCategories.map(
+        (category) => `/formulas/category/${category.toLowerCase()}`,
+      ),
+      ...scienceGuides.map(({ slug }) => `/guides/${slug}`),
+    ];
+
+    const expectedRoutes = [
+      ...staticPageRoutes,
+      ...dynamicPageRoutes,
+    ].sort();
+
+    expect(sitemapPaths).toEqual(expectedRoutes);
     expect(new Set(sitemapPaths).size).toBe(sitemapPaths.length);
   });
 
@@ -44,7 +65,7 @@ describe("sitemap", () => {
 
     expect(sitemapUrls.length).toBeGreaterThan(0);
     expect(sitemapUrls.every((url) => new URL(url).origin === productionOrigin)).toBe(true);
-    expect(sitemapUrls.some((url) => /localhost|alh\.sciencecalchub\.org/i.test(url))).toBe(false);
+    expect(sitemapUrls.some((url) => ["localhost", "alh.sciencecalchub.org"].includes(new URL(url).hostname))).toBe(false);
   });
 
   it("includes every calculator registry URL exactly once", () => {

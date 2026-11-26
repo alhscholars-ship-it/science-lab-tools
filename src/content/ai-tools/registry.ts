@@ -52,7 +52,7 @@ export const scienceAITools: readonly ScienceAITool[] = [
     slug: "chemistry-ai-solver",
     name: "Chemistry AI Solver",
     description:
-      "Solve chemistry problems, understand reactions, and learn chemistry concepts step by step.",
+      "Explore chemistry problems with step-by-step explanations of chemical equations, reactions, and key concepts to support science learning.",
     category: "Chemistry AI",
     href: "/ai-tools/chemistry-ai-solver",
 
@@ -74,7 +74,7 @@ export const scienceAITools: readonly ScienceAITool[] = [
     slug: "physics-ai-solver",
     name: "Physics AI Solver",
     description:
-      "Solve physics problems with formulas, calculations, explanations, and related tools.",
+      "Explore physics problems with step-by-step formula explanations, calculations, and related learning tools for motion, forces, and energy.",
     category: "Physics AI",
     href: "/ai-tools/physics-ai-solver",
 
@@ -96,7 +96,7 @@ export const scienceAITools: readonly ScienceAITool[] = [
     slug: "lab-report-generator",
     name: "AI Lab Report Generator",
     description:
-      "Create structured scientific lab reports with objectives, methods, results, and conclusions.",
+      "Create structured science lab report drafts with objectives, methods, results, and conclusions, supported by practical report-writing guidance.",
     category: "Education AI",
     href: "/ai-tools/lab-report-generator",
 
@@ -122,7 +122,7 @@ export const scienceAITools: readonly ScienceAITool[] = [
     slug: "science-quiz-generator",
     name: "Science Quiz Generator",
     description:
-      "Generate science quizzes with questions, answers, and explanations for students.",
+      "Create science practice quizzes with questions, answers, and explanations to help students review scientific concepts and assess understanding.",
     category: "Education AI",
     href: "/ai-tools/science-quiz-generator",
 

@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/seo/url";
 
 const pageTitle =
-  "How to Write a Hypothesis - Science Examples & Guide";
+  "How to Write a Scientific Hypothesis";
 
 const pageDescription =
   "Learn how to write a scientific hypothesis with examples. Understand testable predictions, variables, if-then statements, and how to create a strong research hypothesis.";

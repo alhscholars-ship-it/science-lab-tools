@@ -30,7 +30,14 @@ export function matchScienceTopic(
 
     for (const keyword of item.keywords) {
 
-      if (text.includes(keyword)) {
+      const normalizedKeyword = keyword.trim().toLowerCase();
+      const escapedKeyword = normalizedKeyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const keywordPattern = new RegExp(
+        `(^|[^\\p{L}\\p{N}])${escapedKeyword}(?=$|[^\\p{L}\\p{N}])`,
+        "u",
+      );
+
+      if (keywordPattern.test(text)) {
         score += 1;
       }
 

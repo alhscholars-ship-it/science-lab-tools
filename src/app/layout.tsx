@@ -3,6 +3,7 @@ import Script from "next/script";
 import type { ReactNode } from "react";
 
 import { WebVitalsReporter } from "@/components/analytics/web-vitals-reporter";
+import { ScienceAIFloatingWidget } from "@/components/ai/science-ai-floating-widget";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { siteConfig } from "@/config/site";
@@ -113,6 +114,7 @@ export default function RootLayout({
           {children}
         </div>
         <SiteFooter />
+        <ScienceAIFloatingWidget />
       </body>
     </html>
   );

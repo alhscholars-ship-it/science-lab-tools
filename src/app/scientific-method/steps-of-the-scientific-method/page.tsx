@@ -9,7 +9,7 @@ const pageTitle =
   "Steps of the Scientific Method - Complete Guide";
 
 const pageDescription =
-  "Learn the steps of the scientific method with a complete guide. Understand observation, questions, hypotheses, experiments, data analysis, conclusions, and scientific communication.";
+  "Explore the steps of the scientific method, from observation and hypotheses to experiments, data analysis, conclusions, and communicating results.";
 
 export const metadata: Metadata = {
   title: pageTitle,

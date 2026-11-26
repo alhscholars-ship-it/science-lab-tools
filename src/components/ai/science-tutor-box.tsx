@@ -157,7 +157,7 @@ export function ScienceTutorBox() {
           className="button button--primary"
         >
           {loading
-            ? "Thinking..."
+            ? loadingMessage || "Thinking..."
             : "Ask Tutor"}
         </button>
 

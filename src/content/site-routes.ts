@@ -12,6 +12,8 @@ export const sitemapRoutes: readonly SitemapRoute[] = [
   { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms-of-use", changeFrequency: "yearly", priority: 0.3 },
   { path: "/calculators", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/ai-tools", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/guides", changeFrequency: "weekly", priority: 0.9 },
   { path: "/formulas", changeFrequency: "weekly", priority: 0.9 },
   {
     path: "/formulas/category/physics",
