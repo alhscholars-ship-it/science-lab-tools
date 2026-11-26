@@ -246,8 +246,6 @@ async function generateGemini(
     data = await request() as GeminiResponse;
   }
 
-  const result = data;
-
   const answer = data.candidates?.[0]?.content?.parts
     ?.map((part) => part.text || "")
     .join("")
